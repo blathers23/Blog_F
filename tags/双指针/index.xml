@@ -1,11 +1,9 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>Blathers&#39; Blog</title>
-    <link>https://blathers23.netlify.app/</link>
-    <description>Blathers&#39; Blog</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 24 Apr 2022 14:40:00 &#43;0800</lastBuildDate>
-      <atom:link href="https://blathers23.netlify.app/index.xml" rel="self" type="application/rss+xml" />
-    <item>
+    <title>双指针 - 标签 - Blathers&#39; Blog</title>
+    <link>https://blathers23.netlify.app/tags/%E5%8F%8C%E6%8C%87%E9%92%88/</link>
+    <description>双指针 - 标签 - Blathers&#39; Blog</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 24 Apr 2022 14:40:00 &#43;0800</lastBuildDate><atom:link href="https://blathers23.netlify.app/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" rel="self" type="application/rss+xml" /><item>
   <title>LC15 - 三数之和</title>
   <link>https://blathers23.netlify.app/posts/lc15/</link>
   <pubDate>Sun, 24 Apr 2022 14:40:00 &#43;0800</pubDate>
