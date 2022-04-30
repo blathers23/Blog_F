@@ -10,13 +10,13 @@
   <pubDate>Wed, 20 Apr 2022 21:38:00 &#43;0800</pubDate>
   <author>Blathers</author>
   <guid>https://blathers23.netlify.app/%E6%9D%82%E8%B0%88%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/</guid>
-  <description><![CDATA[简单记录下毕业设计的内容，以及解决问题的历程。 毕设灵感 很久之前，我就有将循环神经网络用在大气污染物浓度预测上的想法，可以自由选择题目的课程设]]></description>
+  <description><![CDATA[《基于人工智能的大气重点污染物浓度预测》]]></description>
 </item><item>
   <title>浅入浅出 WRF 教程</title>
   <link>https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAwrf%E6%95%99%E7%A8%8B/</link>
   <pubDate>Wed, 20 Apr 2022 17:09:58 &#43;0800</pubDate>
   <author>Blathers</author>
   <guid>https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAwrf%E6%95%99%E7%A8%8B/</guid>
-  <description><![CDATA[为了做毕设，这两天被 WRF 折磨的头疼了不少时间。网络上找到的教程往往是支离破碎，一人一个说法；WRF-Chem 官方教程又因为网络问题看不得，只能]]></description>
+  <description><![CDATA[为了做毕设，这两天被 WRF 折磨的头疼了不少时间。网络上找到的教程往往是支离破碎，一人一个说法；WRF-Chem 官方教程又因为网络问题看不得，只能自己摸着石头过河。在此处记录一份完整的 WRF 安装教程，免得重蹈覆辙。]]></description>
 </item></channel>
 </rss>

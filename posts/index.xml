@@ -10,7 +10,7 @@
   <pubDate>Sun, 24 Apr 2022 16:33:00 &#43;0800</pubDate>
   <author>Blathers</author>
   <guid>https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAhugo%E6%95%99%E7%A8%8B/</guid>
-  <description><![CDATA[⚠️ 任何教程都会有其时效性，切忌一路蛮干到底，如有问题欢迎与我联系😀。 🔍 本文包括但不限于：我也不知道为什么要这么搞反正这么搞就对了😎。 技巧 :(far]]></description>
+  <description><![CDATA[轻松拿下 Hugo，因为我站在大佬的肩膀上。]]></description>
 </item><item>
   <title>LC15 - 三数之和</title>
   <link>https://blathers23.netlify.app/lc15/</link>
@@ -19,7 +19,7 @@
   <guid>https://blathers23.netlify.app/lc15/</guid>
   <description><![CDATA[<div class="featured-image">
         <img src="/images/leetcode.jpg" referrerpolicy="no-referrer">
-      </div>问题链接：三数之和 思考 从一个列表中选出所有和为零的三个数的组合，并且不重复，最简单的方式即为三重 for 循环，然后排除重复的组合。时间复杂度为 $\]]></description>
+      </div>双指针真是太棒啦 -> 二分查找也是]]></description>
 </item><item>
   <title>LC11 - 盛水最多的容器</title>
   <link>https://blathers23.netlify.app/lc11/</link>
@@ -28,21 +28,21 @@
   <guid>https://blathers23.netlify.app/lc11/</guid>
   <description><![CDATA[<div class="featured-image">
         <img src="/images/leetcode.jpg" referrerpolicy="no-referrer">
-      </div>问题链接：盛水最多的容器 思考 易得：面积公式为 $S = (r - l) \times min(height[r], height[l])$，$r$ 和 $l$ 分别为所选择两条线的序号。最容易想到的解决方式即]]></description>
+      </div>双指针是好文明]]></description>
 </item><item>
   <title>杂谈毕业设计</title>
   <link>https://blathers23.netlify.app/%E6%9D%82%E8%B0%88%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/</link>
   <pubDate>Wed, 20 Apr 2022 21:38:00 &#43;0800</pubDate>
   <author>Blathers</author>
   <guid>https://blathers23.netlify.app/%E6%9D%82%E8%B0%88%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/</guid>
-  <description><![CDATA[简单记录下毕业设计的内容，以及解决问题的历程。 毕设灵感 很久之前，我就有将循环神经网络用在大气污染物浓度预测上的想法，可以自由选择题目的课程设]]></description>
+  <description><![CDATA[《基于人工智能的大气重点污染物浓度预测》]]></description>
 </item><item>
   <title>浅入浅出 WRF 教程</title>
   <link>https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAwrf%E6%95%99%E7%A8%8B/</link>
   <pubDate>Wed, 20 Apr 2022 17:09:58 &#43;0800</pubDate>
   <author>Blathers</author>
   <guid>https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAwrf%E6%95%99%E7%A8%8B/</guid>
-  <description><![CDATA[为了做毕设，这两天被 WRF 折磨的头疼了不少时间。网络上找到的教程往往是支离破碎，一人一个说法；WRF-Chem 官方教程又因为网络问题看不得，只能]]></description>
+  <description><![CDATA[为了做毕设，这两天被 WRF 折磨的头疼了不少时间。网络上找到的教程往往是支离破碎，一人一个说法；WRF-Chem 官方教程又因为网络问题看不得，只能自己摸着石头过河。在此处记录一份完整的 WRF 安装教程，免得重蹈覆辙。]]></description>
 </item><item>
   <title>VSCode 搭配 g&#43;&#43; 配置 Cpp 编译环境</title>
   <link>https://blathers23.netlify.app/vscode_and_msys2/</link>

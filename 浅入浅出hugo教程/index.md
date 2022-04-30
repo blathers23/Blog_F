@@ -1,36 +1,37 @@
 # 浅入浅出 Hugo 教程
 
 
-> ⚠️ 任何教程都会有其时效性，切忌一路蛮干到底，如有问题欢迎[与我联系](/about/#与我联系)😀。
+<!--more-->
 
-> 🔍 本文包括但不限于：我也不知道为什么要这么搞反正这么搞就对了😎。
+{{< admonition tip "提示">}}
 
+如有问题欢迎[与我联系](/about/##与我联系)😀。
 
-{{< admonition tip >}}
-:(far fa-bookmark fa-fw): 将此页保存为书签，以备将来参考！
 {{< /admonition >}}
+
+> 本文包括但不限于：我也不知道为什么要这么搞反正这么搞就对了😎。
 
 &emsp;&emsp;本文旨在提供使用 **Hugo** + **GitHub Pages** or **Netlify** + **Waline** + **PicGo** 搭建个人博客的轻松无脑一站式体验教程。
 
-# 0. 安装 Hugo
+## 0. 安装 Hugo
 
 ---
 
 &emsp;&emsp;**Hugo** 可以选择二进制安装或者自行下载源码编译安装。此处选择轻松简单快捷的二进制安装。进入 [Hugo Releases](https://github.com/gohugoio/hugo/releases)，根据你的操作系统选择相应的版本。在此处我推荐安装 **Hugo_extended** 版本。该版本可以允许你更加轻松的修改主题。
 
-# 1. 生成站点
+## 1. 生成站点
 
 ---
 
 &emsp;&emsp;以 Windows 系统为例，下载二进制程序后，在程序所在文件夹打开 `PowerShell`，运行：
 
-```powershell
+```shell
 .\hugo new site .\your_stie_name
 ```
 
 &emsp;&emsp;即可在 `.\your_site_name` 路径下生成你的站点文件夹。现在：
 
-```powershell
+```shell
 cd .\your_site_name
 ..\hugo new about.md
 ```
@@ -52,7 +53,7 @@ date: 2022-04-19T21:43:04+08:00
 
 &emsp;&emsp;夹在两排 `---` 之间的内容是对将要生成的页面的描述，包含了标题，日期等内容。现在创建第一篇文章，放到 `post` 目录，方便之后生成聚合页面：
 
-```powershell
+```shell
 ..\hugo new post\first.md
 ```
 
@@ -72,39 +73,43 @@ title: "first"
 
 &emsp;&emsp;就可以对你将要发布的页面进行编辑。此时你可能正在寻找一款好用的 Markdown 编辑器， [Typora](https://typoraio.cn/) 是很棒的选择。
 
-# 2. 挑选主题
+## 2. 挑选主题
 
 ---
 
 &emsp;&emsp;在正式发布你的页面之前，你还需要为页面挑选一款耐看的主题。进入 [Hugo themes](https://themes.gohugo.io/) 网页挑选主题并下载后，将其解压到 `\your_stie_name\themes` 文件夹下，例如我下载了 Diary 主题，那么我的文件夹布局为：`\your_stie_name\themes\diary`。请注意，你可以将主题的文件夹修改成一个好记的名字，以后将多次键入这个文件夹的名字。
 
-> ⏰ 不同的主题在一些细节上可能有所不同，当然这是日后的课题。对于不同的主题，你可以查询该主题的文档来获得更多的支持。
+{{< admonition info "注意"  >}}
 
-# 3. 测试你的页面
+不同的主题在一些细节上可能有所不同，当然这是日后的课题。对于不同的主题，你可以查询该主题的文档来获得更多的支持。
+
+{{< /admonition >}}
+
+## 3. 测试你的页面
 
 ---
 
 &emsp;&emsp;在挑选并下载主题之后，你可以在本地运行你的博客并查看效果。在 `\your_site_name` 打开 PowerShell，运行：
 
-``` powershell
+``` shell
 ..\hugo --theme=your_theme_name server
 ```
 
 &emsp;&emsp;你就可以在 `http://localhost:1313/` 预览网页的效果。值得一提的是，如果你此时对 `about.md` 或者 `config.toml` （稍后会讲到）等进行修改并保存，这些改动将会实时的反映在你的网页上。
 
-# 4. 发布你的页面
+## 4. 发布你的页面
 
 ---
 
 &emsp;&emsp;当你对页面改动满意后，你可以将你的页面发布到 GitHub 上以便使用 GitHub Pages 来托管你的网页。首先在 GitHub 上为你的 Blog 新建一个仓库，然后在 `your_site_name` 文件夹下运行：
 
-```powershell
+```shell
 ..\hugo --theme=your_theme_name
 ```
 
 &emsp;&emsp;运行结束后，你的页面将会被保存到 `\your_site_name\public` 文件下，接下来你可以将该文件夹上传到仓库，运行：
 
-```powershell
+```shell
 cd .\public\
 git init
 git remote add origin https://github.com/your_user_name/your_repo_name.git
@@ -113,7 +118,7 @@ git commit -m 'first commit'
 git push -u origin master
 ```
 
-# 5. GitHub Pages or Netlify
+## 5. GitHub Pages or Netlify
 
 ---
 
@@ -123,7 +128,7 @@ git push -u origin master
 
 &emsp;&emsp;访问你的页面，你可能会发现一些问题，例如点击页面链接后跳转失败等。这些问题需要通过一些设置来解决。👇
 
-# 6. config.toml
+## 6. config.toml
 
 ---
 
@@ -155,7 +160,11 @@ git push -u origin master
 
 &emsp;&emsp;就可以将页面调整的边栏调整为4个选项，分别是 `Archive`、`Tags`、`Categories` 和 `About`。对于 `\about` ，在 `\content` 文件夹内，该地址为一个 `.md` 文件，因此该边栏选项点击后将呈现 `About` 页面，也就是根据你在 `about.md` 中所键入内容生成的网页。对于 `\posts` ，在 `\content` 文件夹下，该地址为一个文件夹，因此该边栏选项点击后将呈现一个页面聚合。`\tags` 和 `\categories` 则是自动对标签和分类进行聚集生成的页面，有关标签和分类的内容将会在稍后讨论。
 
-> ⏰ 有关 `\` 和 `/` ，这是 Windows 和 Linux 的一个稍稍的不同。
+{{<admonition tip "提示">}}
+
+有关 `\` 和 `/` 的差别，这是 Windows 和 Linux 的一个稍稍的不同。
+
+{{< /admonition >}}
 
 &emsp;&emsp;另外一个例子是网页图标，你也可以在 `config.toml` 中进行控制，你可以输入：
 
@@ -166,13 +175,19 @@ git push -u origin master
 
 &emsp;&emsp;来控制网页的图标位置。你需要将你的图片放入到 `\your_site_name\static\images` 文件夹下。例如我将图片 `QUIN.png` 放置到该文件夹中，对于 GitHub Pages 的一般仓库名，我的 `"your_image_path"` 应当为 `"\your_repo_name\images\QUIN.png"`，而对于 Netlify 和 GitHub Pages 的独有仓库名，我的`"your_image_path"` 应当为 `"\images\QUIN.png"`。
 
-> ⚠ 需要注意的是，尽管这种方式可以正确的加载网页图标和页面头图（稍后会讲到），但是这种方式并**不能很好的支持页面内图片**的内容，我不清楚这是什么原因。但是这种方式来放置页面内图片，不仅会导致本地编辑 `.md` 文件时不能正常预览图片，有限的网速也会导致网页浏览体验下降，因此可以使用网络图床来解决这个问题。
->
-> > 当然网页图标和页面头图也可以使用图床。
+{{<admonition note "注意">}}
+
+尽管这种方式可以正确的加载网页图标和页面头图（稍后会讲到），但是这种方式并**不能很好的支持页面内图片**的内容，我不清楚这是什么原因。但是这种方式来放置页面内图片，不仅会导致本地编辑 `.md` 文件时不能正常预览图片，有限的网速也会导致网页浏览体验下降，因此可以使用网络图床来解决这个问题。
+
+{{<admonition tip "提示">}}
+当然网页图标和页面头图也可以使用图床。
+{{</admonition>}}
+
+{{</admonition>}}
 
 &emsp;&emsp;当然，网页当中还有很多元素可以自定义，根据你使用的主题不同，又有一些额外的内容可以控制。对于额外的内容，你需要查询你选择的主题的文档，对于通用内容，你可以阅读 [Hugo 文档](https://gohugo.io/variables/)来学习如何调整。
 
-# 7. 写作
+## 7. 写作
 
 ---
 
@@ -201,7 +216,7 @@ enableLaTeX: False
 
 不同的主题**可能**有所出入，这里需要以你所用主题的文档为准。以主题 Diary 为例，当你为一篇文章添加 `tags` 和 `categories` 后，将会自动聚合内容生成 `\Tags` 和 `\Categories` 页面，尽管这两个文件夹并不在你 `\content` 文件夹下。
 
-# 8. 评论区
+## 8. 评论区
 
 ---
 
@@ -247,7 +262,7 @@ enableLaTeX: False
 
 &emsp;&emsp;即可对主题色进行修改。更多内容，请参考 [Waline 官方文档](https://waline.js.org/)。
 
-# ⑨. 图床
+## ⑨. 图床
 
 ---
 

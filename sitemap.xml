@@ -2,13 +2,14 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   ><url>
-      <loc>https://blathers23.netlify.app/</loc><lastmod>2022-04-27T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://blathers23.netlify.app/friends/</loc><lastmod>2022-05-01T03:52:07&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://blathers23.netlify.app/</loc><lastmod>2022-05-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
       <loc>https://blathers23.netlify.app/tags/blog/</loc><lastmod>2022-04-25T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://blathers23.netlify.app/categories/</loc><lastmod>2022-04-27T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://blathers23.netlify.app/categories/</loc><lastmod>2022-05-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
       <loc>https://blathers23.netlify.app/tags/hugo/</loc><lastmod>2022-04-25T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://blathers23.netlify.app/posts/</loc><lastmod>2022-04-27T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://blathers23.netlify.app/tags/</loc><lastmod>2022-04-27T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://blathers23.netlify.app/categories/%E6%95%99%E7%A8%8B/</loc><lastmod>2022-04-26T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://blathers23.netlify.app/posts/</loc><lastmod>2022-05-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://blathers23.netlify.app/tags/</loc><lastmod>2022-05-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://blathers23.netlify.app/categories/%E6%95%99%E7%A8%8B/</loc><lastmod>2022-05-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
       <loc>https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAhugo%E6%95%99%E7%A8%8B/</loc><lastmod>2022-04-25T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
       <loc>https://blathers23.netlify.app/lc15/</loc><lastmod>2022-04-26T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
       <loc>https://blathers23.netlify.app/categories/leetcode/</loc><lastmod>2022-04-26T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
@@ -18,18 +19,18 @@
       <loc>https://blathers23.netlify.app/tags/c/</loc><lastmod>2022-04-21T02:43:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
       <loc>https://blathers23.netlify.app/lc11/</loc><lastmod>2022-04-21T02:43:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
       <loc>https://blathers23.netlify.app/categories/ai/</loc><lastmod>2022-04-27T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://blathers23.netlify.app/tags/wrf/</loc><lastmod>2022-04-27T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://blathers23.netlify.app/tags/wrf/</loc><lastmod>2022-05-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
       <loc>https://blathers23.netlify.app/%E6%9D%82%E8%B0%88%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/</loc><lastmod>2022-04-27T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAwrf%E6%95%99%E7%A8%8B/</loc><lastmod>2022-04-25T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAwrf%E6%95%99%E7%A8%8B/</loc><lastmod>2022-05-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
       <loc>https://blathers23.netlify.app/about/</loc><lastmod>2022-04-30T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://blathers23.netlify.app/tags/cpp/</loc><lastmod>2022-04-26T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://blathers23.netlify.app/tags/vscode/</loc><lastmod>2022-04-26T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://blathers23.netlify.app/vscode_and_msys2/</loc><lastmod>2022-04-26T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://blathers23.netlify.app/tags/golang/</loc><lastmod>2022-04-26T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://blathers23.netlify.app/golang_hello_world/</loc><lastmod>2022-04-26T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://blathers23.netlify.app/tags/bug/</loc><lastmod>2022-04-26T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://blathers23.netlify.app/tags/gitalk/</loc><lastmod>2022-04-26T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://blathers23.netlify.app/tags/gridea/</loc><lastmod>2022-04-26T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://blathers23.netlify.app/gitalk/</loc><lastmod>2022-04-26T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://blathers23.netlify.app/hello_gridea_domain/</loc><lastmod>2022-04-26T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://blathers23.netlify.app/hello_gridea/</loc><lastmod>2022-04-26T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url></urlset>
+      <loc>https://blathers23.netlify.app/tags/cpp/</loc><lastmod>2021-03-14T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blathers23.netlify.app/tags/vscode/</loc><lastmod>2021-03-14T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blathers23.netlify.app/vscode_and_msys2/</loc><lastmod>2021-03-14T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blathers23.netlify.app/tags/golang/</loc><lastmod>2021-02-13T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blathers23.netlify.app/golang_hello_world/</loc><lastmod>2021-02-13T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blathers23.netlify.app/tags/bug/</loc><lastmod>2021-02-13T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blathers23.netlify.app/tags/gitalk/</loc><lastmod>2021-02-13T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blathers23.netlify.app/tags/gridea/</loc><lastmod>2022-02-12T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blathers23.netlify.app/gitalk/</loc><lastmod>2021-02-13T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blathers23.netlify.app/hello_gridea_domain/</loc><lastmod>2021-02-13T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+      <loc>https://blathers23.netlify.app/hello_gridea/</loc><lastmod>2022-02-12T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>

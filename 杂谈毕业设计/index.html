@@ -54,9 +54,9 @@
     data-srcset="/favicon.ico, /favicon.ico 1.5x, /favicon.ico 2x"
     data-sizes="auto"
     alt="/favicon.ico"
-    title="/favicon.ico" /><span class="header-title-text">Blathers&#39; Blog</span></a><span id="typeit-header-subtitle-desktop" class="typeit header-subtitle"></span></div>
+    title="/favicon.ico" /><span class="header-title-text">Blathers&#39; Blog</span></a><span class="header-subtitle"></span></div>
     <div class="menu">
-      <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+      <div class="menu-inner"><a class="menu-item" href="/posts/" title="全部文章"> Posts </a><a class="menu-item" href="/tags/" title="标签"> Tags </a><a class="menu-item" href="/categories/" title="分类"> Categories </a><a class="menu-item" href="/friends" title="友情链接"> Friends </a><a class="menu-item" href="/about" title="关于我"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
             <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-desktop">
             <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
               <i class="fas fa-search fa-fw"></i>
@@ -84,7 +84,7 @@
     data-srcset="/favicon.ico, /favicon.ico 1.5x, /favicon.ico 2x"
     data-sizes="auto"
     alt="/favicon.ico"
-    title="/favicon.ico" /><span class="header-title-text">Blathers&#39; Blog</span></a><span id="typeit-header-subtitle-mobile" class="typeit header-subtitle"></span></div>
+    title="/favicon.ico" /><span class="header-title-text">Blathers&#39; Blog</span></a><span class="header-subtitle"></span></div>
       <div class="menu-toggle" id="menu-toggle-mobile">
         <span></span><span></span><span></span>
       </div>
@@ -105,7 +105,7 @@
           <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
             取消
           </a>
-        </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+        </div><a class="menu-item" href="/posts/" title="全部文章">Posts</a><a class="menu-item" href="/tags/" title="标签">Tags</a><a class="menu-item" href="/categories/" title="分类">Categories</a><a class="menu-item" href="/friends" title="友情链接">Friends</a><a class="menu-item" href="/about" title="关于我">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
         <i class="fas fa-adjust fa-fw"></i>
       </a></div>
   </div>
@@ -150,42 +150,48 @@
         </div>
         <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#模型实现">模型实现</a>
+    <li><a href="#毕设灵感">毕设灵感</a></li>
+    <li><a href="#实验推进">实验推进</a>
       <ul>
-        <li><a href="#convlstm">ConvLSTM</a></li>
-        <li><a href="#convgru">ConvGRU</a></li>
-      </ul>
-    </li>
-    <li><a href="#数据分析">数据分析</a>
-      <ul>
-        <li><a href="#模拟范围">模拟范围</a></li>
-        <li><a href="#变量选择">变量选择</a></li>
-      </ul>
-    </li>
-    <li><a href="#预实验">预实验</a>
-      <ul>
-        <li><a href="#预实验--1">预实验  1</a>
+        <li><a href="#模型实现">模型实现</a>
           <ul>
-            <li><a href="#方案-1">方案 1</a></li>
-            <li><a href="#方案-2">方案 2</a></li>
+            <li><a href="#convlstm">ConvLSTM</a></li>
+            <li><a href="#convgru">ConvGRU</a></li>
           </ul>
         </li>
-        <li><a href="#预实验-2">预实验 2</a></li>
-        <li><a href="#预实验-3">预实验 3</a></li>
+        <li><a href="#数据分析">数据分析</a>
+          <ul>
+            <li><a href="#模拟范围">模拟范围</a></li>
+          </ul>
+        </li>
+        <li><a href="#变量选择">变量选择</a></li>
+        <li><a href="#预实验">预实验</a>
+          <ul>
+            <li><a href="#预实验--1">预实验  1</a>
+              <ul>
+                <li><a href="#方案-1">方案 1</a></li>
+                <li><a href="#方案-2">方案 2</a></li>
+              </ul>
+            </li>
+            <li><a href="#预实验-2">预实验 2</a></li>
+            <li><a href="#预实验-3">预实验 3</a></li>
+          </ul>
+        </li>
+        <li><a href="#实验">实验</a>
+          <ul>
+            <li><a href="#基准实验">基准实验</a></li>
+            <li><a href="#实验-1">实验 1</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="#实验">实验</a>
-      <ul>
-        <li><a href="#基准实验">基准实验</a></li>
-        <li><a href="#实验-1">实验 1</a></li>
-      </ul>
-    </li>
+    <li><a href="#工作时间线">工作时间线</a></li>
   </ul>
 </nav></div>
       </div><div class="content" id="content"><blockquote>
 <p>简单记录下毕业设计的内容，以及解决问题的历程。</p>
 </blockquote>
-<h1 id="毕设灵感">毕设灵感</h1>
+<h2 id="毕设灵感">毕设灵感</h2>
 <hr>
 <p>  很久之前，我就有将循环神经网络用在大气污染物浓度预测上的想法，可以自由选择题目的课程设计也就成了实现这个想法最好的平台。最初的想法非常简单：随便找几个监测站的大气污染物数据，把别人写好的 LSTM、GRU 之类的模型拿来用一用，再随便拟合一下就算大功告成。</p>
 <p>  考研初试结束后，我也总算有了一些时间继续做一些自己喜欢的工作。在学习的过程中，我发现了一个以前没有注意到过的领域 — <a
@@ -243,14 +249,14 @@
   
 >Papers with Code</a> 的网站上就可以看到。但是这些变化，还没有应用到大气污染物预测的领域，作为一个专业的学术易拉罐，这样的好机会我是不会放过的。</p>
 <p>  就这样，毕设难度一下子顶了上去，从原本的浓度单点预测，变成了现在的浓度分度预测。</p>
-<h1 id="实验推进">实验推进</h1>
+<h2 id="实验推进">实验推进</h2>
 <hr>
 <p>  深度学习，模型、数据、计算资源缺一不可。</p>
 <p>  模型方面，目前实现了 ConvLSTM 和 ConvGRU 两个模型，打算最后要是有时间还可以再做一下 Transformer 的结合，虽然说大概率没希望，因为数据量太少了，难以支撑起 Transformer 的效果。</p>
 <p>  数据方面，我原本想要自己安装一下 WRF-Chem 来跑些训练数据出来，先是根本找不到 WRF-Chem 完整的学习资料，导致安装摸爬滚打完之后，连软件该怎么运行都搞不清楚；后是排放清单数据拿不到，最终只好搁置了这个计划。转头去找学姐发文时用的数据，终于找到了大概有 550 多条数据，数据量堪忧。</p>
 <p>  计算资源方面，目前只有我寝室使用的 1050Ti。</p>
 <p>  总之就是前途非常渺茫。</p>
-<h2 id="模型实现">模型实现</h2>
+<h3 id="模型实现">模型实现</h3>
 <p>  代码仓库：<a
   href="https://gitee.com/Blathers/dl_-pm_-pred"
   
@@ -265,7 +271,7 @@
   
   
 >DL_PM_Pred</a>，公式如下：</p>
-<h3 id="convlstm">ConvLSTM</h3>
+<h4 id="convlstm">ConvLSTM</h4>
 <p>$$
 I_{t} = Sigmoid(Conv(X_t, W_{xi}) + Conv(H_{t-1}, W_{hi}) + b_i) \\
 F_{t} = Sigmoid(Conv(X_t, W_{xf}) + Conv(H_{t-1}, W_{hf}) + b_f) \\
@@ -275,15 +281,15 @@ C_t = F_t \odot C_{t-1} + I_t \odot \tilde{C_t} \\
 H_t = O_t  \odot Tanh(C_t)\\
 Pred = ReLU(Conv(X_t, W*{xx}) + Conv(H_t, W_{xh}) + b_{p}) \\
 $$</p>
-<h3 id="convgru">ConvGRU</h3>
+<h4 id="convgru">ConvGRU</h4>
 <p>$$
 R_{t} = Sigmoid(Conv(X_t, W_{xr}) + Conv(H_{t-1}, W_{hr})+b_r) \\ 
 Z_{t} = Sigmoid(Conv(X_t, W_{xz}) + Conv(H_{t-1}, W_{hz})+b_z) \\ \tilde{H_t} = Tanh(Conv(X_t, W*{xh})+Conv(R_t \odot H_{t-1}, W_{rh}) + b_{h}) \\ 
 H_t = Z_t \odot H_{t-1} + (1 - Z_t) \odot \tilde{H} \\ 
 Pred = ReLU(Conv(X_t, W_{xx}) + Conv(H_t, W_{xh}) + b_{p}) \\
 $$</p>
-<h2 id="数据分析">数据分析</h2>
-<h3 id="模拟范围">模拟范围</h3>
+<h3 id="数据分析">数据分析</h3>
+<h4 id="模拟范围">模拟范围</h4>
 <p>  模拟范围如图：</p>
 <p><img
     class="lazyload"
@@ -909,7 +915,7 @@ $$</p>
 <p>补充：颗粒物的三模态。</p>
 <p>根据颗粒物的表面积和粒径分布的关系，将大气中的气溶胶粒子分为三种模结构，分别是爱根核模(Aitken nuclei mode)、积聚模(Accumulation mode)和粗粒子模(Coarse particle mode)。</p>
 </blockquote>
-<h2 id="预实验">预实验</h2>
+<h3 id="预实验">预实验</h3>
 <p>  默认实验条件如下：</p>
 <table>
 <thead>
@@ -957,9 +963,9 @@ $$</p>
 </tr>
 </tbody>
 </table>
-<h3 id="预实验--1">预实验  1</h3>
+<h4 id="预实验--1">预实验  1</h4>
 <p>  预实验 1 的目的是确定变量的选择。有两个方案可供选择：</p>
-<h4 id="方案-1">方案 1</h4>
+<h5 id="方案-1">方案 1</h5>
 <p>  变量为全部的非零变量中去重后的变量，总计 78 个变量，变量名如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -978,7 +984,7 @@ $$</p>
     data-sizes="auto"
     alt="https://s2.loli.net/2022/04/27/WTAg4ru7sLlK2et.jpg"
     title="https://s2.loli.net/2022/04/27/WTAg4ru7sLlK2et.jpg" /></p>
-<h4 id="方案-2">方案 2</h4>
+<h5 id="方案-2">方案 2</h5>
 <p>   变量为上述 78 个变量中按照变量描述选择的 30 个变量：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -998,7 +1004,7 @@ $$</p>
     alt="https://s2.loli.net/2022/04/27/I6gAv1T3dhJQGlr.png"
     title="https://s2.loli.net/2022/04/27/I6gAv1T3dhJQGlr.png" /></p>
 <p>  可以看出所选的 30 个变量效果甚至优于 78 个变量。因此后续实验以 30 变量进行。</p>
-<h3 id="预实验-2">预实验 2</h3>
+<h4 id="预实验-2">预实验 2</h4>
 <p>  预实验 2 讨论的问题为训练当中的两个 MSE 尖峰是如何产生的，猜测原因为数据中存在时序上不连续的数据。减少数据量，选择时序上一直连续的数据，进行实验：</p>
 <p><img
     class="lazyload"
@@ -1018,7 +1024,7 @@ $$</p>
     alt="https://s2.loli.net/2022/04/28/IBdH3npuzXQb2i9.png"
     title="https://s2.loli.net/2022/04/28/IBdH3npuzXQb2i9.png" /></p>
 <p>  可以看出尖峰的出现的确与数据时序不连贯有关，但尖峰依旧存在，猜测这是因为在优化的过程中出现了训练集上的局部过拟合。解决方法一般为增加 Batch Size，但是由于硬件原因不能实现。此处尝试增加正则化手段减少过拟合。</p>
-<h3 id="预实验-3">预实验 3</h3>
+<h4 id="预实验-3">预实验 3</h4>
 <p>  预实验 3 讨论的问题为 Batch Normalization 的作用。添加 BN 层，进行试验：</p>
 <p><img
     class="lazyload"
@@ -1029,8 +1035,8 @@ $$</p>
     alt="https://s2.loli.net/2022/04/28/ljihNxqZdesSC8F.png"
     title="https://s2.loli.net/2022/04/28/ljihNxqZdesSC8F.png" /></p>
 <p>  效果提升显著并且不再出现 MSE 上升，证明了上述猜测。因此后续采用带有 Batch Normalization 的网络。并且本次实验结果作为实验的基准效果。</p>
-<h2 id="实验">实验</h2>
-<h3 id="基准实验">基准实验</h3>
+<h3 id="实验">实验</h3>
+<h4 id="基准实验">基准实验</h4>
 <p>  基准实验的参数选择如下：</p>
 <table>
 <thead>
@@ -1071,15 +1077,14 @@ $$</p>
     data-sizes="auto"
     alt="https://s2.loli.net/2022/04/29/PTCX1Fn2qLVZgtE.png"
     title="https://s2.loli.net/2022/04/29/PTCX1Fn2qLVZgtE.png" /></p>
-<h3 id="实验-1">实验 1</h3>
+<h4 id="实验-1">实验 1</h4>
 <p>  实验 1 讨论的问题为 Weigth Decay 的影响。当 Weigth_Decay 为 1e-4 时：</p>
-<h1 id="工作时间线">工作时间线</h1>
+<h2 id="工作时间线">工作时间线</h2>
 <hr>
 <p>2022/04/21及之前：完成了模型训练、预测的代码。</p>
 <p>2022/04/22：从实验室区筛选了带有 PM 的 WRF 数据，大概有550条。</p>
 <p>2022/04/23：确认数据，筛选合适的数据。</p>
-<p>2022/04/25：训练一部分数据，训练集 MSELoss 为 12.6。</p>
-</div><div class="post-footer" id="post-footer">
+<p>2022/04/25：训练一部分数据，训练集 MSELoss 为 12.6。</p></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
@@ -1092,7 +1097,7 @@ $$</p>
               <a class="link-to-markdown" href="/%E6%9D%82%E8%B0%88%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/index.md" target="_blank">阅读原始文档</a>
             </span></div>
       <div class="post-info-share">
-        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://blathers23.netlify.app/%E6%9D%82%E8%B0%88%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" data-title="杂谈毕业设计" data-hashtags="WRF,Python"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://blathers23.netlify.app/%E6%9D%82%E8%B0%88%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" data-hashtag="WRF"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://blathers23.netlify.app/%E6%9D%82%E8%B0%88%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" data-title="杂谈毕业设计" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://blathers23.netlify.app/%E6%9D%82%E8%B0%88%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" data-title="杂谈毕业设计"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blathers23.netlify.app/%E6%9D%82%E8%B0%88%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" data-title="杂谈毕业设计"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://blathers23.netlify.app/%E6%9D%82%E8%B0%88%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" data-title="杂谈毕业设计" data-description="《基于人工智能的大气重点污染物浓度预测》"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://blathers23.netlify.app/%E6%9D%82%E8%B0%88%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" data-title="杂谈毕业设计" data-description="《基于人工智能的大气重点污染物浓度预测》"><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://blathers23.netlify.app/%E6%9D%82%E8%B0%88%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" data-title="杂谈毕业设计"><i class="fab fa-evernote fa-fw"></i></a></span>
+        <span><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blathers23.netlify.app/%E6%9D%82%E8%B0%88%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" data-title="杂谈毕业设计"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://blathers23.netlify.app/%E6%9D%82%E8%B0%88%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" data-title="杂谈毕业设计"><i class="fab fa-evernote fa-fw"></i></a></span>
       </div>
     </div>
   </div>
@@ -1140,5 +1145,5 @@ $$</p>
       </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
         <i class="fas fa-comment fa-fw"></i>
       </a>
-    </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/waline/Waline.min.js" defer></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js" defer></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js" async defer></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js" defer></script><script type="text/javascript" src="/lib/sharer/sharer.min.js" async defer></script><script type="text/javascript" src="/lib/typeit/typeit.min.js" defer></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":30},"comment":{"waline":{"copyright":true,"dark":"body[theme='dark']","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"highlight":true,"lang":"zh-cn","login":"enable","meta":["nick","mail","link"],"pageSize":10,"serverURL":"https://eke-sai-ting-b9q9mvc8d-blathers.vercel.app"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"typeit-header-subtitle-desktop":"think better","typeit-header-subtitle-mobile":"think better"},"enablePWA":null,"ibruce":{"enable":true,"siteTime":null},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"typeit-header-subtitle-desktop":["typeit-header-subtitle-desktop"],"typeit-header-subtitle-mobile":["typeit-header-subtitle-mobile"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js" defer></script><script type="text/javascript" src="/js/_custom.min.js" defer></script></body>
+    </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/waline/Waline.min.js" defer></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js" defer></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js" async defer></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js" defer></script><script type="text/javascript" src="/lib/sharer/sharer.min.js" async defer></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":20},"comment":{"waline":{"copyright":true,"dark":"body[theme='dark']","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/bilibili"],"highlight":true,"lang":"zh-cn","login":"enable","meta":["nick","mail","link"],"pageSize":10,"serverURL":"https://eke-sai-ting-b9q9mvc8d-blathers.vercel.app"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":null,"ibruce":{"enable":true,"siteTime":null},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js" defer></script><script type="text/javascript" src="/js/_custom.min.js" defer></script></body>
 </html>

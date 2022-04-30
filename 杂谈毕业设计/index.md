@@ -1,9 +1,11 @@
 # 杂谈毕业设计
 
 
+<!--more-->
+
 > 简单记录下毕业设计的内容，以及解决问题的历程。
 
-# 毕设灵感
+## 毕设灵感
 
 ---
 
@@ -15,7 +17,7 @@
 
 &emsp;&emsp;就这样，毕设难度一下子顶了上去，从原本的浓度单点预测，变成了现在的浓度分度预测。
 
-# 实验推进
+## 实验推进
 
 ---
 
@@ -29,11 +31,11 @@
 
 &emsp;&emsp;总之就是前途非常渺茫。
 
-## 模型实现
+### 模型实现
 
 &emsp;&emsp;代码仓库：[DL_PM_Pred](https://gitee.com/Blathers/dl_-pm_-pred)，公式如下：
 
-### ConvLSTM
+#### ConvLSTM
 
 
 $$
@@ -46,7 +48,7 @@ H_t = O_t  \odot Tanh(C_t)\\\
 Pred = ReLU(Conv(X_t, W*{xx}) + Conv(H_t, W_{xh}) + b_{p}) \\\
 $$
 
-### ConvGRU
+#### ConvGRU
 
 
 $$
@@ -56,10 +58,10 @@ H_t = Z_t \odot H_{t-1} + (1 - Z_t) \odot \tilde{H} \\\
 Pred = ReLU(Conv(X_t, W_{xx}) + Conv(H_t, W_{xh}) + b_{p}) \\\
 $$
 
-## 数据分析
+### 数据分析
 
 
-### 模拟范围
+#### 模拟范围
 
 &emsp;&emsp;模拟范围如图：
 
@@ -201,7 +203,7 @@ $$
 >
 > 根据颗粒物的表面积和粒径分布的关系，将大气中的气溶胶粒子分为三种模结构，分别是爱根核模(Aitken nuclei mode)、积聚模(Accumulation mode)和粗粒子模(Coarse particle mode)。
 
-## 预实验
+### 预实验
 
 &emsp;&emsp;默认实验条件如下：
 
@@ -217,11 +219,11 @@ $$
 |   Random Iter    |  True   |
 |   Weight Decay   |    0    |
 
-### 预实验  1
+#### 预实验  1
 
 &emsp;&emsp;预实验 1 的目的是确定变量的选择。有两个方案可供选择：
 
-#### 方案 1
+##### 方案 1
 
 &emsp;&emsp;变量为全部的非零变量中去重后的变量，总计 78 个变量，变量名如下：
 
@@ -233,7 +235,7 @@ key = ['PM10', 'PM2_5_DRY', 'U', 'V', 'QVAPOR','CLDFRA','QRAIN','QICE','QSNOW','
 
 ![](https://s2.loli.net/2022/04/27/WTAg4ru7sLlK2et.jpg)
 
-#### 方案 2
+##### 方案 2
 
 &emsp;&emsp; 变量为上述 78 个变量中按照变量描述选择的 30 个变量：
 
@@ -247,7 +249,7 @@ key = ['PM10', 'PM2_5_DRY', 'U', 'V', 'QVAPOR','CLDFRA','so2','no2', 'no','so4aj
 
 &emsp;&emsp;可以看出所选的 30 个变量效果甚至优于 78 个变量。因此后续实验以 30 变量进行。
 
-### 预实验 2
+#### 预实验 2
 
 &emsp;&emsp;预实验 2 讨论的问题为训练当中的两个 MSE 尖峰是如何产生的，猜测原因为数据中存在时序上不连续的数据。减少数据量，选择时序上一直连续的数据，进行实验：
 
@@ -259,7 +261,7 @@ key = ['PM10', 'PM2_5_DRY', 'U', 'V', 'QVAPOR','CLDFRA','so2','no2', 'no','so4aj
 
 &emsp;&emsp;可以看出尖峰的出现的确与数据时序不连贯有关，但尖峰依旧存在，猜测这是因为在优化的过程中出现了训练集上的局部过拟合。解决方法一般为增加 Batch Size，但是由于硬件原因不能实现。此处尝试增加正则化手段减少过拟合。
 
-### 预实验 3
+#### 预实验 3
 
 &emsp;&emsp;预实验 3 讨论的问题为 Batch Normalization 的作用。添加 BN 层，进行试验：
 
@@ -267,9 +269,9 @@ key = ['PM10', 'PM2_5_DRY', 'U', 'V', 'QVAPOR','CLDFRA','so2','no2', 'no','so4aj
 
 &emsp;&emsp;效果提升显著并且不再出现 MSE 上升，证明了上述猜测。因此后续采用带有 Batch Normalization 的网络。并且本次实验结果作为实验的基准效果。
 
-## 实验
+### 实验
 
-### 基准实验
+#### 基准实验
 
 &emsp;&emsp;基准实验的参数选择如下：
 
@@ -285,13 +287,13 @@ key = ['PM10', 'PM2_5_DRY', 'U', 'V', 'QVAPOR','CLDFRA','so2','no2', 'no','so4aj
 
 ![](https://s2.loli.net/2022/04/29/PTCX1Fn2qLVZgtE.png)
 
-### 实验 1
+#### 实验 1
 
 &emsp;&emsp;实验 1 讨论的问题为 Weigth Decay 的影响。当 Weigth_Decay 为 1e-4 时：
 
 
 
-# 工作时间线
+## 工作时间线
 
 ---
 

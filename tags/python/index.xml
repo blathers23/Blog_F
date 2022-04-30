@@ -12,7 +12,7 @@
   <guid>https://blathers23.netlify.app/lc15/</guid>
   <description><![CDATA[<div class="featured-image">
         <img src="/images/leetcode.jpg" referrerpolicy="no-referrer">
-      </div>问题链接：三数之和 思考 从一个列表中选出所有和为零的三个数的组合，并且不重复，最简单的方式即为三重 for 循环，然后排除重复的组合。时间复杂度为 $\]]></description>
+      </div>双指针真是太棒啦 -> 二分查找也是]]></description>
 </item><item>
   <title>LC11 - 盛水最多的容器</title>
   <link>https://blathers23.netlify.app/lc11/</link>
@@ -21,13 +21,13 @@
   <guid>https://blathers23.netlify.app/lc11/</guid>
   <description><![CDATA[<div class="featured-image">
         <img src="/images/leetcode.jpg" referrerpolicy="no-referrer">
-      </div>问题链接：盛水最多的容器 思考 易得：面积公式为 $S = (r - l) \times min(height[r], height[l])$，$r$ 和 $l$ 分别为所选择两条线的序号。最容易想到的解决方式即]]></description>
+      </div>双指针是好文明]]></description>
 </item><item>
   <title>杂谈毕业设计</title>
   <link>https://blathers23.netlify.app/%E6%9D%82%E8%B0%88%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/</link>
   <pubDate>Wed, 20 Apr 2022 21:38:00 &#43;0800</pubDate>
   <author>Blathers</author>
   <guid>https://blathers23.netlify.app/%E6%9D%82%E8%B0%88%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/</guid>
-  <description><![CDATA[简单记录下毕业设计的内容，以及解决问题的历程。 毕设灵感 很久之前，我就有将循环神经网络用在大气污染物浓度预测上的想法，可以自由选择题目的课程设]]></description>
+  <description><![CDATA[《基于人工智能的大气重点污染物浓度预测》]]></description>
 </item></channel>
 </rss>

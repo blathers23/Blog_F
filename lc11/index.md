@@ -1,15 +1,17 @@
 # LC11 - 盛水最多的容器
 
 
+<!--more-->
+
 > 问题链接：[盛水最多的容器](https://leetcode.cn/problems/container-with-most-water/)
 
-# 思考
+## 思考
 
 ---
 
 &emsp;&emsp;易得：面积公式为 $S = (r - l) \times min(height[r], height[l])$，$r$ 和 $l$ 分别为所选择两条线的序号。最容易想到的解决方式即为双循环，遍历所有可能的 $r$ 和 $l$ 的组合。
 
-# 代码
+## 代码
 
 ---
 
@@ -68,7 +70,7 @@ int maxArea(int* height, int heightSize){
 
 &emsp;&emsp;在这样的优化条件下，代码依旧碰上了喜闻乐见的 TLE。事实证明 $\mathcal{O}(n^2)$ 的算法在这种拙劣的优化下没有什么用处，该 $\mathcal{O}(n^2)$ 还是 $\mathcal{O}(n^2)$。
 
-# 双指针解法
+## 双指针解法
 
 ---
 
@@ -108,7 +110,7 @@ int maxArea(int* height, int heightSize){
 
 > 事实上我认为双指针从中间往两边扩散也是可行的？那么扩散的初试条件是什么？这个有待进一步思考。
 
-# 双指针解法代码
+## 双指针解法代码
 
 ---
 
@@ -162,7 +164,7 @@ int maxArea(int* height, int heightSize){
 >
 > 内存消耗: **11.4 MB**，超过了 **67%** 的 **c** 提交记录。
 
-# 结尾碎碎念
+## 结尾碎碎念
 
 ---
 

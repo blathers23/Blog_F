@@ -54,9 +54,9 @@
     data-srcset="/favicon.ico, /favicon.ico 1.5x, /favicon.ico 2x"
     data-sizes="auto"
     alt="/favicon.ico"
-    title="/favicon.ico" /><span class="header-title-text">Blathers&#39; Blog</span></a><span id="typeit-header-subtitle-desktop" class="typeit header-subtitle"></span></div>
+    title="/favicon.ico" /><span class="header-title-text">Blathers&#39; Blog</span></a><span class="header-subtitle"></span></div>
     <div class="menu">
-      <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+      <div class="menu-inner"><a class="menu-item" href="/posts/" title="全部文章"> Posts </a><a class="menu-item" href="/tags/" title="标签"> Tags </a><a class="menu-item" href="/categories/" title="分类"> Categories </a><a class="menu-item" href="/friends" title="友情链接"> Friends </a><a class="menu-item" href="/about" title="关于我"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
             <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-desktop">
             <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
               <i class="fas fa-search fa-fw"></i>
@@ -84,7 +84,7 @@
     data-srcset="/favicon.ico, /favicon.ico 1.5x, /favicon.ico 2x"
     data-sizes="auto"
     alt="/favicon.ico"
-    title="/favicon.ico" /><span class="header-title-text">Blathers&#39; Blog</span></a><span id="typeit-header-subtitle-mobile" class="typeit header-subtitle"></span></div>
+    title="/favicon.ico" /><span class="header-title-text">Blathers&#39; Blog</span></a><span class="header-subtitle"></span></div>
       <div class="menu-toggle" id="menu-toggle-mobile">
         <span></span><span></span><span></span>
       </div>
@@ -105,7 +105,7 @@
           <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
             取消
           </a>
-        </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+        </div><a class="menu-item" href="/posts/" title="全部文章">Posts</a><a class="menu-item" href="/tags/" title="标签">Tags</a><a class="menu-item" href="/categories/" title="分类">Categories</a><a class="menu-item" href="/friends" title="友情链接">Friends</a><a class="menu-item" href="/about" title="关于我">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
         <i class="fas fa-adjust fa-fw"></i>
       </a></div>
   </div>
@@ -116,7 +116,8 @@
 <div class="search-dropdown mobile">
   <div id="search-dropdown-mobile"></div>
 </div>
-<main class="container" page-style="normal"><aside class="toc" id="toc-auto"></aside>
+<main class="container" page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录</h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
 
   <aside class="aside-custom">
     
@@ -149,7 +150,21 @@
     data-srcset="/images/leetcode.jpg, /images/leetcode.jpg 1.5x, /images/leetcode.jpg 2x"
     data-sizes="auto"
     alt="/images/leetcode.jpg"
-    title="双指针是好文明" /></div><div class="content" id="content"><blockquote>
+    title="双指针是好文明" /></div><div class="details toc" id="toc-static" kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fas fa-angle-right"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#思考">思考</a></li>
+    <li><a href="#代码">代码</a></li>
+    <li><a href="#双指针解法">双指针解法</a></li>
+    <li><a href="#双指针解法代码">双指针解法代码</a></li>
+    <li><a href="#结尾碎碎念">结尾碎碎念</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><blockquote>
 <p>问题链接：<a
   href="https://leetcode.cn/problems/container-with-most-water/"
   
@@ -165,10 +180,10 @@
   
 >盛水最多的容器</a></p>
 </blockquote>
-<h1 id="思考">思考</h1>
+<h2 id="思考">思考</h2>
 <hr>
 <p>  易得：面积公式为 $S = (r - l) \times min(height[r], height[l])$，$r$ 和 $l$ 分别为所选择两条线的序号。最容易想到的解决方式即为双循环，遍历所有可能的 $r$ 和 $l$ 的组合。</p>
-<h1 id="代码">代码</h1>
+<h2 id="代码">代码</h2>
 <hr>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -260,7 +275,7 @@
 </li>
 </ol>
 <p>  在这样的优化条件下，代码依旧碰上了喜闻乐见的 TLE。事实证明 $\mathcal{O}(n^2)$ 的算法在这种拙劣的优化下没有什么用处，该 $\mathcal{O}(n^2)$ 还是 $\mathcal{O}(n^2)$。</p>
-<h1 id="双指针解法">双指针解法</h1>
+<h2 id="双指针解法">双指针解法</h2>
 <hr>
 <p>  换个思路。双重循环实际上就是双指针，右指针每次向右移动一位，而左指针每次从开始位置移动到右指针所在位置。这带来一个问题，注意到 $S = (r - l) \times min(height[r], height[l])$ ，在内循环过程中，第一项始终不断变小，而当外循环每移动一次，第一项又会变大，这就导致我们需要重新将 $r$ 放置到初始位置，重新计算所有的可能结果。有没有一种方法能够让 $(r - l)$ 不断变小呢？这样我们只需要考虑 $min(height[r], height[l])$ 带来的变化。</p>
 <p>  考虑一个通常的情况：$l$ 和 $r$ 处在不同的位置并且相距一定的距离（注意到 $l$ 一定是小于 $r$ 的）。我们假设 $height[l]$ 比 $height[r]$ 更高。那么此时，我们的盛水量由 $height[r]$ 决定的。为了寻求更大的盛水量，我们有四种做法：</p>
@@ -294,7 +309,7 @@
 <blockquote>
 <p>事实上我认为双指针从中间往两边扩散也是可行的？那么扩散的初试条件是什么？这个有待进一步思考。</p>
 </blockquote>
-<h1 id="双指针解法代码">双指针解法代码</h1>
+<h2 id="双指针解法代码">双指针解法代码</h2>
 <hr>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -383,12 +398,11 @@
 <p>执行用时: <strong>76 ms</strong>，超过了 <strong>88%</strong> 的 <strong>c</strong> 提交记录。</p>
 <p>内存消耗: <strong>11.4 MB</strong>，超过了 <strong>67%</strong> 的 <strong>c</strong> 提交记录。</p>
 </blockquote>
-<h1 id="结尾碎碎念">结尾碎碎念</h1>
+<h2 id="结尾碎碎念">结尾碎碎念</h2>
 <hr>
 <p>  现在时间是2:37，原本只想随便写写，结果越写越多。这同样是一个梳理自己思路的过程，很多不清晰的事情，如果不加以思考，是很难落笔的。第一次写关于技术细节的文章，只能说比写浅入浅出教程有意义多了。</p>
 <p>  下一步学学怎么画图，图解还是非常重要的。有时间把 LC10 正则匹配也记录一下，用到了动态规划，也非常有用。</p>
-<p>  夜深了，该洗洗衣服睡觉了。</p>
-</div><div class="post-footer" id="post-footer">
+<p>  夜深了，该洗洗衣服睡觉了。</p></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
@@ -401,7 +415,7 @@
               <a class="link-to-markdown" href="/lc11/index.md" target="_blank">阅读原始文档</a>
             </span></div>
       <div class="post-info-share">
-        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://blathers23.netlify.app/lc11/" data-title="LC11 - 盛水最多的容器" data-hashtags="C,Python,双指针"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://blathers23.netlify.app/lc11/" data-hashtag="C"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://blathers23.netlify.app/lc11/" data-title="LC11 - 盛水最多的容器" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://blathers23.netlify.app/lc11/" data-title="LC11 - 盛水最多的容器"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blathers23.netlify.app/lc11/" data-title="LC11 - 盛水最多的容器" data-image="/images/leetcode.jpg"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://blathers23.netlify.app/lc11/" data-title="LC11 - 盛水最多的容器" data-description="双指针是好文明"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://blathers23.netlify.app/lc11/" data-title="LC11 - 盛水最多的容器" data-description="双指针是好文明"><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://blathers23.netlify.app/lc11/" data-title="LC11 - 盛水最多的容器"><i class="fab fa-evernote fa-fw"></i></a></span>
+        <span><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blathers23.netlify.app/lc11/" data-title="LC11 - 盛水最多的容器" data-image="/images/leetcode.jpg"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://blathers23.netlify.app/lc11/" data-title="LC11 - 盛水最多的容器"><i class="fab fa-evernote fa-fw"></i></a></span>
       </div>
     </div>
   </div>
@@ -449,5 +463,5 @@
       </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
         <i class="fas fa-comment fa-fw"></i>
       </a>
-    </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/waline/Waline.min.js" defer></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js" defer></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js" async defer></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js" defer></script><script type="text/javascript" src="/lib/sharer/sharer.min.js" async defer></script><script type="text/javascript" src="/lib/typeit/typeit.min.js" defer></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":30},"comment":{"waline":{"copyright":true,"dark":"body[theme='dark']","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"highlight":true,"lang":"zh-cn","login":"enable","meta":["nick","mail","link"],"pageSize":10,"serverURL":"https://eke-sai-ting-b9q9mvc8d-blathers.vercel.app"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"typeit-header-subtitle-desktop":"think better","typeit-header-subtitle-mobile":"think better"},"enablePWA":null,"ibruce":{"enable":true,"siteTime":null},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"typeit-header-subtitle-desktop":["typeit-header-subtitle-desktop"],"typeit-header-subtitle-mobile":["typeit-header-subtitle-mobile"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js" defer></script><script type="text/javascript" src="/js/_custom.min.js" defer></script></body>
+    </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/waline/Waline.min.js" defer></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js" defer></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js" async defer></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js" defer></script><script type="text/javascript" src="/lib/sharer/sharer.min.js" async defer></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":20},"comment":{"waline":{"copyright":true,"dark":"body[theme='dark']","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/bilibili"],"highlight":true,"lang":"zh-cn","login":"enable","meta":["nick","mail","link"],"pageSize":10,"serverURL":"https://eke-sai-ting-b9q9mvc8d-blathers.vercel.app"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":null,"ibruce":{"enable":true,"siteTime":null},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js" defer></script><script type="text/javascript" src="/js/_custom.min.js" defer></script></body>
 </html>

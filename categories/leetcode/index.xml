@@ -12,7 +12,7 @@
   <guid>https://blathers23.netlify.app/lc15/</guid>
   <description><![CDATA[<div class="featured-image">
         <img src="/images/leetcode.jpg" referrerpolicy="no-referrer">
-      </div>问题链接：三数之和 思考 从一个列表中选出所有和为零的三个数的组合，并且不重复，最简单的方式即为三重 for 循环，然后排除重复的组合。时间复杂度为 $\]]></description>
+      </div>双指针真是太棒啦 -> 二分查找也是]]></description>
 </item><item>
   <title>LC11 - 盛水最多的容器</title>
   <link>https://blathers23.netlify.app/lc11/</link>
@@ -21,6 +21,6 @@
   <guid>https://blathers23.netlify.app/lc11/</guid>
   <description><![CDATA[<div class="featured-image">
         <img src="/images/leetcode.jpg" referrerpolicy="no-referrer">
-      </div>问题链接：盛水最多的容器 思考 易得：面积公式为 $S = (r - l) \times min(height[r], height[l])$，$r$ 和 $l$ 分别为所选择两条线的序号。最容易想到的解决方式即]]></description>
+      </div>双指针是好文明]]></description>
 </item></channel>
 </rss>

@@ -7,7 +7,7 @@
 *😧博主理解粗浅，如有错误还请包涵，或联系博主订正*
 
 
-# Ⅰ. 安装  MSYS2
+## Ⅰ. 安装  MSYS2
 
 博主选择使用 MSYS2 管理 g++ 的版本，有关 MSYS2 的介绍请参照[此处](https://www.zhihu.com/question/22137175/answer/90908473)。
 
@@ -21,7 +21,7 @@
 
 ![](https://s2.loli.net/2022/04/26/WyqprOANLYoS3gF.jpg)
 
-# Ⅱ.  下载 g++  和  gdb 
+## Ⅱ.  下载 g++  和  gdb 
 
 首先更新核心软件包，运行指令：
 `pacman -Syu`
@@ -32,13 +32,13 @@
 然后下载 gdb，运行指令：
 `pacman -S mingw-w64-x86_64-gdb`
 
-# Ⅲ.  配置环境变量
+## Ⅲ.  配置环境变量
 
 将 MSYS2 安装地址下的 `\usr\bin` 加入到Path变量。然后启动 powershell，输入指令 `g++ -v`检查安装是否成功。
 
 *如果使用 everything 搜索 g++.exe 是搜索不到 \usr\bin 文件夹中的，就算它就在文件夹里面。*
 
-# Ⅳ.  配置 VSCode
+## Ⅳ.  配置 VSCode
 
 在 VSCode 扩展商店中搜索 `C++`，然后安装此扩展：
 ![](https://s2.loli.net/2022/04/26/sGVLxpDm6CQJOiu.jpg)

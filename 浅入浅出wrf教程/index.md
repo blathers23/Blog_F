@@ -1,11 +1,17 @@
 # 浅入浅出 WRF 教程
 
 
-> 为了做毕设，这两天被 WRF 折磨的头疼了不少时间。网络上找到的教程往往是支离破碎，一人一个说法；WRF-Chem 官方教程又因为网络问题看不得，只能自己摸着石头过河。在此处记录一份完整的 WRF 安装教程，免得重蹈覆辙。
+<!--more-->
 
-> ⚠ 任何教程都会有其时效性，切忌一路蛮干到底，如有问题欢迎[与我联系](/blathers/about/#与我联系)😀。
+> 猴子都能懂的 WRF 教程，简称猴懂 WRF。
 
-# 0. 在这之前
+{{<admonition tip " 提示">}}
+
+如有问题欢迎[与我联系](//about/##与我联系)😀
+
+{{</admonition>}}
+
+## 在这之前
 
 ---
 
@@ -17,7 +23,7 @@
 
 &emsp;&emsp;有繁琐工作的地方就有自动化脚本，当然包括 WRF-Chem 的安装。这里也推荐我在Gitee上发现的一个[全自动安装脚本](https://gitee.com/xuejingkai/WRFCHEM-4.3-install-script-linux-64bit)，直接免除下面的所有工作，你仅仅需要根据自己的需求对脚本做一些简单的修改即可。
 
-# 1. 平台准备
+## 平台准备
 
 ---
 
@@ -29,7 +35,7 @@
 
 中的其中一种方式来使用 Linux 系统。如果你的操作系统是 Windows 10 或者 Windows 11，那么 WSL 可能是一个最佳的选择。WSL 的安装可以参考[微软官方的教程](https://docs.microsoft.com/zh-cn/windows/wsl/install)。本文中使用的系统为 Windows11 下的 WSL，安装的系统为 Ubuntu 20.04。
 
-# 2. 文件下载及环境准备
+## 文件下载及环境准备
 
 ---
 
@@ -39,7 +45,7 @@
 
 &emsp;&emsp;除了三个编译器之外，你可能还需要安装 `csh` 和 `perl` 。你同样可以通过 `sudo apt-get install` 命令来安装它们。
 
-# 3. 依赖库
+## 依赖库
 
 ---
 
@@ -53,7 +59,7 @@
 
 你可以通过点击上述链接，下载库的源代码。现在进入到放置 WRF 和 WPS 的文件夹中，在该文件夹内新建名为 `Bulid_WRF` 的文件夹，并在该文件夹内新建名为 `LIBRARIES` 的文件夹。将这些程序在 `LIBRARIES` 文件夹中逐一解压。
 
-## 添加环境变量
+### 添加环境变量
 
 &emsp;&emsp;在进行以下的操作前，请先在终端（ bash ）中运行下面的代码来添加环境变量：
 
@@ -75,7 +81,7 @@ export PATH=$DIR/netcdf/bin:$PATH
 export NETCDF=$DIR/netcdf
 ```
 
-## mpich
+### mpich
 
 &emsp;&emsp;mpich 是并行计算所需要的库，你可以运行以下的代码来安装：
 
@@ -86,7 +92,7 @@ make
 make install
 ```
 
-## netCDF
+### netCDF
 
 &emsp;&emsp;netCDF 是编译 WRF 所需要的数据格式库，你可以通过运行以下的代码来安装：
 
@@ -97,7 +103,7 @@ make
 make install
 ```
 
-## zlib
+### zlib
 
 &emsp;&emsp;编译 WPS 所需的库，你可以通过运行以下的代码来安装：
 
@@ -108,7 +114,7 @@ make
 make install
 ```
 
-## libpng
+### libpng
 
 &emsp;&emsp;编译 WPS 所需的库，你可以通过运行以下的代码来安装：
 
@@ -119,7 +125,7 @@ make
 make install
 ```
 
-## Jasper
+### Jasper
 
 &emsp;&emsp;编译 WPS 所需的库，你可以通过运行以下的代码来安装：
 
@@ -132,7 +138,7 @@ make install
 
 &emsp;&emsp;请按照上述顺序来安装以避免预料之外的错误。
 
-## WRF-Chem
+### WRF-Chem
 
 &emsp;&emsp;对 WRF-Chem 来说，这里还需要一些额外的步骤。对于 WRF4  以下的版本，你可能需要下载单独的 WRF-Chem 编译所需的文件，并将这些文件解压到你的 WRF 文件夹内的 chem 文件夹中。对于 WRF4 以后的版本，则不需要进行此操作。
 
@@ -159,7 +165,7 @@ export WRFIO_NCD_LARGE_FILE_SUPPORT=1
 sudo apt-get install yacc flex
 ```
 
-# 4. 编译 WRF
+## 编译 WRF
 
 ---
 
@@ -207,7 +213,7 @@ ls -s main/*.exe
 
 > ⚠ 如果你编译失败，需要重新开始编译，请在重新执行本步骤前执行 `./clean`。
 
-# 5.编译 WPS
+## 编译 WPS
 
 ---
 

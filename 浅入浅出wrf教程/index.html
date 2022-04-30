@@ -6,21 +6,21 @@
     <meta name="robots" content="noodp" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <title>浅入浅出 WRF 教程 - Blathers&#39; Blog</title><meta name="author" content="Blathers: ">
-<meta name="description" content="猴子都能懂的 WRF 教程，简称猴懂 WRF " />
+<meta name="description" content="为了做毕设，这两天被 WRF 折磨的头疼了不少时间。网络上找到的教程往往是支离破碎，一人一个说法；WRF-Chem 官方教程又因为网络问题看不得，只能自己摸着石头过河。在此处记录一份完整的 WRF 安装教程，免得重蹈覆辙。" />
 <meta name="keywords" content="WRF" /><meta itemprop="name" content="浅入浅出 WRF 教程">
-<meta itemprop="description" content="猴子都能懂的 WRF 教程，简称猴懂 WRF "><meta itemprop="datePublished" content="2022-04-20T17:09:58+08:00" />
-<meta itemprop="dateModified" content="2022-04-25T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2191">
+<meta itemprop="description" content="为了做毕设，这两天被 WRF 折磨的头疼了不少时间。网络上找到的教程往往是支离破碎，一人一个说法；WRF-Chem 官方教程又因为网络问题看不得，只能自己摸着石头过河。在此处记录一份完整的 WRF 安装教程，免得重蹈覆辙。"><meta itemprop="datePublished" content="2022-04-20T17:09:58+08:00" />
+<meta itemprop="dateModified" content="2022-05-01T00:00:00+00:00" />
+<meta itemprop="wordCount" content="2079">
 <meta itemprop="keywords" content="WRF," /><meta property="og:title" content="浅入浅出 WRF 教程" />
-<meta property="og:description" content="猴子都能懂的 WRF 教程，简称猴懂 WRF " />
+<meta property="og:description" content="为了做毕设，这两天被 WRF 折磨的头疼了不少时间。网络上找到的教程往往是支离破碎，一人一个说法；WRF-Chem 官方教程又因为网络问题看不得，只能自己摸着石头过河。在此处记录一份完整的 WRF 安装教程，免得重蹈覆辙。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAwrf%E6%95%99%E7%A8%8B/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-04-20T17:09:58+08:00" />
-<meta property="article:modified_time" content="2022-04-25T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-05-01T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="浅入浅出 WRF 教程"/>
-<meta name="twitter:description" content="猴子都能懂的 WRF 教程，简称猴懂 WRF "/>
+<meta name="twitter:description" content="为了做毕设，这两天被 WRF 折磨的头疼了不少时间。网络上找到的教程往往是支离破碎，一人一个说法；WRF-Chem 官方教程又因为网络问题看不得，只能自己摸着石头过河。在此处记录一份完整的 WRF 安装教程，免得重蹈覆辙。"/>
 <meta name="application-name" content="Blathers&#39; Blog">
 <meta name="apple-mobile-web-app-title" content="Blathers&#39; Blog"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -33,13 +33,13 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/blathers23.netlify.app\/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAwrf%E6%95%99%E7%A8%8B\/"
-    },"genre": "posts","keywords": "WRF","wordcount":  2191 ,
-    "url": "https:\/\/blathers23.netlify.app\/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAwrf%E6%95%99%E7%A8%8B\/","datePublished": "2022-04-20T17:09:58+08:00","dateModified": "2022-04-25T00:00:00+00:00","publisher": {
+    },"genre": "posts","keywords": "WRF","wordcount":  2079 ,
+    "url": "https:\/\/blathers23.netlify.app\/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAwrf%E6%95%99%E7%A8%8B\/","datePublished": "2022-04-20T17:09:58+08:00","dateModified": "2022-05-01T00:00:00+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
         "name": "Blathers"
-      },"description": "猴子都能懂的 WRF 教程，简称猴懂 WRF "
+      },"description": "为了做毕设，这两天被 WRF 折磨的头疼了不少时间。网络上找到的教程往往是支离破碎，一人一个说法；WRF-Chem 官方教程又因为网络问题看不得，只能自己摸着石头过河。在此处记录一份完整的 WRF 安装教程，免得重蹈覆辙。"
   }
   </script></head>
   <body header-desktop="sticky" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
@@ -54,9 +54,9 @@
     data-srcset="/favicon.ico, /favicon.ico 1.5x, /favicon.ico 2x"
     data-sizes="auto"
     alt="/favicon.ico"
-    title="/favicon.ico" /><span class="header-title-text">Blathers&#39; Blog</span></a><span id="typeit-header-subtitle-desktop" class="typeit header-subtitle"></span></div>
+    title="/favicon.ico" /><span class="header-title-text">Blathers&#39; Blog</span></a><span class="header-subtitle"></span></div>
     <div class="menu">
-      <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+      <div class="menu-inner"><a class="menu-item" href="/posts/" title="全部文章"> Posts </a><a class="menu-item" href="/tags/" title="标签"> Tags </a><a class="menu-item" href="/categories/" title="分类"> Categories </a><a class="menu-item" href="/friends" title="友情链接"> Friends </a><a class="menu-item" href="/about" title="关于我"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
             <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-desktop">
             <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
               <i class="fas fa-search fa-fw"></i>
@@ -84,7 +84,7 @@
     data-srcset="/favicon.ico, /favicon.ico 1.5x, /favicon.ico 2x"
     data-sizes="auto"
     alt="/favicon.ico"
-    title="/favicon.ico" /><span class="header-title-text">Blathers&#39; Blog</span></a><span id="typeit-header-subtitle-mobile" class="typeit header-subtitle"></span></div>
+    title="/favicon.ico" /><span class="header-title-text">Blathers&#39; Blog</span></a><span class="header-subtitle"></span></div>
       <div class="menu-toggle" id="menu-toggle-mobile">
         <span></span><span></span><span></span>
       </div>
@@ -105,7 +105,7 @@
           <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
             取消
           </a>
-        </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+        </div><a class="menu-item" href="/posts/" title="全部文章">Posts</a><a class="menu-item" href="/tags/" title="标签">Tags</a><a class="menu-item" href="/categories/" title="分类">Categories</a><a class="menu-item" href="/friends" title="友情链接">Friends</a><a class="menu-item" href="/about" title="关于我">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
         <i class="fas fa-adjust fa-fw"></i>
       </a></div>
   </div>
@@ -141,7 +141,7 @@
 ><i class="fas fa-user-circle fa-fw"></i>Blathers</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%95%99%E7%A8%8B/"><i class="far fa-folder fa-fw"></i>教程</a></span></div>
       <div class="post-meta-line"><span title=2022-04-20&#32;17:09:58>
             <i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-04-20" >2022-04-20</time>
-          </span>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2191 字&nbsp;
+          </span>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2079 字&nbsp;
         <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;</div>
     </div><div class="details toc" id="toc-static" kept="false">
         <div class="details-summary toc-title">
@@ -150,30 +150,49 @@
         </div>
         <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#添加环境变量">添加环境变量</a></li>
-    <li><a href="#mpich">mpich</a></li>
-    <li><a href="#netcdf">netCDF</a></li>
-    <li><a href="#zlib">zlib</a></li>
-    <li><a href="#libpng">libpng</a></li>
-    <li><a href="#jasper">Jasper</a></li>
-    <li><a href="#wrf-chem">WRF-Chem</a></li>
+    <li><a href="#在这之前">在这之前</a></li>
+    <li><a href="#平台准备">平台准备</a></li>
+    <li><a href="#文件下载及环境准备">文件下载及环境准备</a></li>
+    <li><a href="#依赖库">依赖库</a>
+      <ul>
+        <li><a href="#添加环境变量">添加环境变量</a></li>
+        <li><a href="#mpich">mpich</a></li>
+        <li><a href="#netcdf">netCDF</a></li>
+        <li><a href="#zlib">zlib</a></li>
+        <li><a href="#libpng">libpng</a></li>
+        <li><a href="#jasper">Jasper</a></li>
+        <li><a href="#wrf-chem">WRF-Chem</a></li>
+      </ul>
+    </li>
+    <li><a href="#编译-wrf">编译 WRF</a></li>
+    <li><a href="#编译-wps">编译 WPS</a></li>
   </ul>
 </nav></div>
       </div><div class="content" id="content"><blockquote>
-<p>为了做毕设，这两天被 WRF 折磨的头疼了不少时间。网络上找到的教程往往是支离破碎，一人一个说法；WRF-Chem 官方教程又因为网络问题看不得，只能自己摸着石头过河。在此处记录一份完整的 WRF 安装教程，免得重蹈覆辙。</p>
+<p>猴子都能懂的 WRF 教程，简称猴懂 WRF。</p>
 </blockquote>
-<blockquote>
-<p>⚠ 任何教程都会有其时效性，切忌一路蛮干到底，如有问题欢迎<a
-  href="/blathers/about/#%e4%b8%8e%e6%88%91%e8%81%94%e7%b3%bb"
+<div class="details admonition tip open">
+    <div class="details-summary admonition-title">
+      <i class="icon fas fa-lightbulb fa-fw"></i>提示<i class="details-icon fas fa-angle-right fa-fw"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">如有问题欢迎<a
+  href="//about/##%e4%b8%8e%e6%88%91%e8%81%94%e7%b3%bb"
+  
+  
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
   
   
   
   
-  
-  
->与我联系</a>😀。</p>
-</blockquote>
-<h1 id="0-在这之前">0. 在这之前</h1>
+>与我联系</a>😀</div>
+    </div>
+  </div>
+<h2 id="在这之前">在这之前</h2>
 <hr>
 <p>  在安装 WRF(The Weather Research and Forecasting Model) 之前，请先确定你的<strong>需求</strong>。比如要使用 WRF 来预测 PM ，这就要求你应当安装 WRF-Chem 而不仅仅是 WRF 。</p>
 <p>  本文内容包含 WRF 及 WRF-Chem 的编译。 有关 WRF-Chem 运行的部分，请参考 <a
@@ -218,7 +237,7 @@
   
   
 >全自动安装脚本</a>，直接免除下面的所有工作，你仅仅需要根据自己的需求对脚本做一些简单的修改即可。</p>
-<h1 id="1-平台准备">1. 平台准备</h1>
+<h2 id="平台准备">平台准备</h2>
 <hr>
 <p>  WRF 模型仅能运行在 Linux 系统上。为此，你可能需要：</p>
 <ol>
@@ -240,7 +259,7 @@
   
   
 >微软官方的教程</a>。本文中使用的系统为 Windows11 下的 WSL，安装的系统为 Ubuntu 20.04。</p>
-<h1 id="2-文件下载及环境准备">2. 文件下载及环境准备</h1>
+<h2 id="文件下载及环境准备">文件下载及环境准备</h2>
 <hr>
 <p>  首先要准备 <a
   href="https://github.com/wrf-model/WRF"
@@ -271,7 +290,7 @@
 >WPS(WRF Pre-Processing System)</a> 的安装文件 ，这两个程序的最新版本可以在 GitHub 很容易的下载下来，现在你需要新建一个文件夹，把 WRF 和 WPS 放在同一文件夹内（这个文件夹将会成为你放置 WRF 和 WPS 程序的文件夹），并将它们解压。对于 zip 类型的压缩包，你可以使用 <code>unzip</code> 命令来解压缩；对于 tar.gz 类型的压缩包，你需要使用 <code>tar xzvf</code>  命令来解压缩。</p>
 <p>  接下来，你可能需要安装一些编译器。编译 WRF 需要三个编译器，分别是 <code>gfortran</code> 、 <code>cpp</code> 和 <code>gcc</code>。你可以分别使用命令 <code>which gfortran</code> 、 <code>which cpp</code> 和 <code>which gcc</code> 来检查你的环境中是否包含这三个编译器，对于包含编译器的环境，<code>which</code> 命令将会返回对应地址，如果 <code>which</code> 命令没有任何反应，你可能需要手动安装这些编译器。不同的操作系统可能会有所差异，对于 Ubuntu 来说，你只需要运行 <code>sudo apt-get install gfortran</code> 来安装 <code>gfortran</code> 编译器，其它缺失的编译器同理。</p>
 <p>  除了三个编译器之外，你可能还需要安装 <code>csh</code> 和 <code>perl</code> 。你同样可以通过 <code>sudo apt-get install</code> 命令来安装它们。</p>
-<h1 id="3-依赖库">3. 依赖库</h1>
+<h2 id="依赖库">依赖库</h2>
 <hr>
 <p>  在这里，你需要安装 5 个与 WRF 运行有关的库，分别是：</p>
 <ul>
@@ -347,7 +366,7 @@
 >zlib-1.2.7</a></li>
 </ul>
 <p>你可以通过点击上述链接，下载库的源代码。现在进入到放置 WRF 和 WPS 的文件夹中，在该文件夹内新建名为 <code>Bulid_WRF</code> 的文件夹，并在该文件夹内新建名为 <code>LIBRARIES</code> 的文件夹。将这些程序在 <code>LIBRARIES</code> 文件夹中逐一解压。</p>
-<h2 id="添加环境变量">添加环境变量</h2>
+<h3 id="添加环境变量">添加环境变量</h3>
 <p>  在进行以下的操作前，请先在终端（ bash ）中运行下面的代码来添加环境变量：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -385,7 +404,7 @@
 </span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">NETCDF</span><span class="o">=</span><span class="nv">$DIR</span>/netcdf
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="mpich">mpich</h2>
+</div><h3 id="mpich">mpich</h3>
 <p>  mpich 是并行计算所需要的库，你可以运行以下的代码来安装：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -401,7 +420,7 @@
 </span></span><span class="line"><span class="cl">make install
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="netcdf">netCDF</h2>
+</div><h3 id="netcdf">netCDF</h3>
 <p>  netCDF 是编译 WRF 所需要的数据格式库，你可以通过运行以下的代码来安装：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -417,7 +436,7 @@
 </span></span><span class="line"><span class="cl">make install
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="zlib">zlib</h2>
+</div><h3 id="zlib">zlib</h3>
 <p>  编译 WPS 所需的库，你可以通过运行以下的代码来安装：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -433,7 +452,7 @@
 </span></span><span class="line"><span class="cl">make install
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="libpng">libpng</h2>
+</div><h3 id="libpng">libpng</h3>
 <p>  编译 WPS 所需的库，你可以通过运行以下的代码来安装：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -449,7 +468,7 @@
 </span></span><span class="line"><span class="cl">make install
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="jasper">Jasper</h2>
+</div><h3 id="jasper">Jasper</h3>
 <p>  编译 WPS 所需的库，你可以通过运行以下的代码来安装：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -466,7 +485,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>  请按照上述顺序来安装以避免预料之外的错误。</p>
-<h2 id="wrf-chem">WRF-Chem</h2>
+<h3 id="wrf-chem">WRF-Chem</h3>
 <p>  对 WRF-Chem 来说，这里还需要一些额外的步骤。对于 WRF4  以下的版本，你可能需要下载单独的 WRF-Chem 编译所需的文件，并将这些文件解压到你的 WRF 文件夹内的 chem 文件夹中。对于 WRF4 以后的版本，则不需要进行此操作。</p>
 <p>  为了编译 WRF-Chem，这里需要添加一些环境变量：</p>
 <div class="highlight"><div class="chroma">
@@ -508,7 +527,7 @@
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt-get install yacc flex
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h1 id="4-编译-wrf">4. 编译 WRF</h1>
+</div><h2 id="编译-wrf">编译 WRF</h2>
 <hr>
 <p>  进入解压好的 WRF 文件夹，然后运行：</p>
 <div class="highlight"><div class="chroma">
@@ -563,7 +582,7 @@
 <blockquote>
 <p>⚠ 如果你编译失败，需要重新开始编译，请在重新执行本步骤前执行 <code>./clean</code>。</p>
 </blockquote>
-<h1 id="5编译-wps">5.编译 WPS</h1>
+<h2 id="编译-wps">编译 WPS</h2>
 <hr>
 <p>  进入解压后的 WPS 文件夹，然后执行:</p>
 <div class="highlight"><div class="chroma">
@@ -590,12 +609,11 @@
 <li><i class="far fa-square fa-fw"></i> WRF 的运行</li>
 <li><i class="far fa-square fa-fw"></i> wrfout 数据的处理</li>
 </ul>
-<p>等内容。</p>
-</div><div class="post-footer" id="post-footer">
+<p>等内容。</p></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title=2022-04-25&#32;00:00:00>更新于 2022-04-25</span>
+        <span title=2022-05-01&#32;00:00:00>更新于 2022-05-01</span>
       </div>
       <div class="post-info-license"><span><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
     </div>
@@ -604,7 +622,7 @@
               <a class="link-to-markdown" href="/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAwrf%E6%95%99%E7%A8%8B/index.md" target="_blank">阅读原始文档</a>
             </span></div>
       <div class="post-info-share">
-        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAwrf%E6%95%99%E7%A8%8B/" data-title="浅入浅出 WRF 教程" data-hashtags="WRF"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAwrf%E6%95%99%E7%A8%8B/" data-hashtag="WRF"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAwrf%E6%95%99%E7%A8%8B/" data-title="浅入浅出 WRF 教程" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAwrf%E6%95%99%E7%A8%8B/" data-title="浅入浅出 WRF 教程"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAwrf%E6%95%99%E7%A8%8B/" data-title="浅入浅出 WRF 教程"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAwrf%E6%95%99%E7%A8%8B/" data-title="浅入浅出 WRF 教程" data-description="猴子都能懂的 WRF 教程，简称猴懂 WRF "><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAwrf%E6%95%99%E7%A8%8B/" data-title="浅入浅出 WRF 教程" data-description="猴子都能懂的 WRF 教程，简称猴懂 WRF "><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAwrf%E6%95%99%E7%A8%8B/" data-title="浅入浅出 WRF 教程"><i class="fab fa-evernote fa-fw"></i></a></span>
+        <span><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAwrf%E6%95%99%E7%A8%8B/" data-title="浅入浅出 WRF 教程"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAwrf%E6%95%99%E7%A8%8B/" data-title="浅入浅出 WRF 教程"><i class="fab fa-evernote fa-fw"></i></a></span>
       </div>
     </div>
   </div>
@@ -652,5 +670,5 @@
       </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
         <i class="fas fa-comment fa-fw"></i>
       </a>
-    </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/waline/Waline.min.js" defer></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js" defer></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js" async defer></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js" defer></script><script type="text/javascript" src="/lib/sharer/sharer.min.js" async defer></script><script type="text/javascript" src="/lib/typeit/typeit.min.js" defer></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":30},"comment":{"waline":{"copyright":true,"dark":"body[theme='dark']","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"highlight":true,"lang":"zh-cn","login":"enable","meta":["nick","mail","link"],"pageSize":10,"serverURL":"https://eke-sai-ting-b9q9mvc8d-blathers.vercel.app"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"typeit-header-subtitle-desktop":"think better","typeit-header-subtitle-mobile":"think better"},"enablePWA":null,"ibruce":{"enable":true,"siteTime":null},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"typeit-header-subtitle-desktop":["typeit-header-subtitle-desktop"],"typeit-header-subtitle-mobile":["typeit-header-subtitle-mobile"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js" defer></script><script type="text/javascript" src="/js/_custom.min.js" defer></script></body>
+    </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/waline/Waline.min.js" defer></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js" defer></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js" async defer></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js" defer></script><script type="text/javascript" src="/lib/sharer/sharer.min.js" async defer></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":20},"comment":{"waline":{"copyright":true,"dark":"body[theme='dark']","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/bilibili"],"highlight":true,"lang":"zh-cn","login":"enable","meta":["nick","mail","link"],"pageSize":10,"serverURL":"https://eke-sai-ting-b9q9mvc8d-blathers.vercel.app"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":null,"ibruce":{"enable":true,"siteTime":null},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js" defer></script><script type="text/javascript" src="/js/_custom.min.js" defer></script></body>
 </html>
