@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Golang - 标签 - Blathers&#39; Blog</title>
+    <link>https://blathers23.netlify.app/tags/golang/</link>
+    <description>Golang - 标签 - Blathers&#39; Blog</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>blathers233@outlook.com (Blathers)</managingEditor>
+      <webMaster>blathers233@outlook.com (Blathers)</webMaster><lastBuildDate>Sat, 13 Feb 2021 23:44:30 &#43;0000</lastBuildDate><atom:link href="https://blathers23.netlify.app/tags/golang/" rel="self" type="application/rss+xml" /><item>
+  <title>Golang - Hello World!</title>
+  <link>https://blathers23.netlify.app/golang_hello_world/</link>
+  <pubDate>Sat, 13 Feb 2021 23:44:30 &#43;0000</pubDate>
+  <author>Blathers</author>
+  <guid>https://blathers23.netlify.app/golang_hello_world/</guid>
+  <description><![CDATA[⚠️ 这篇文章发布于以往的 Blog 网站，此处仅仅搬运收藏，不再对内容订正。 ✍️ go verison 1.15.8 使用 VSCODE 配置 go 开发环境时遇到了一些问题，主要是无法下载 Go modul]]></description>
+</item></channel>
+</rss>

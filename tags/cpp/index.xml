@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Cpp - 标签 - Blathers&#39; Blog</title>
+    <link>https://blathers23.netlify.app/tags/cpp/</link>
+    <description>Cpp - 标签 - Blathers&#39; Blog</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>blathers233@outlook.com (Blathers)</managingEditor>
+      <webMaster>blathers233@outlook.com (Blathers)</webMaster><lastBuildDate>Sun, 14 Mar 2021 09:00:04 &#43;0000</lastBuildDate><atom:link href="https://blathers23.netlify.app/tags/cpp/" rel="self" type="application/rss+xml" /><item>
+  <title>VSCode 搭配 g&#43;&#43; 配置 Cpp 编译环境</title>
+  <link>https://blathers23.netlify.app/vscode_and_msys2/</link>
+  <pubDate>Sun, 14 Mar 2021 09:00:04 &#43;0000</pubDate>
+  <author>Blathers</author>
+  <guid>https://blathers23.netlify.app/vscode_and_msys2/</guid>
+  <description><![CDATA[⚠️ 这篇文章发布于以往的 Blog 网站，此处仅仅搬运收藏，不再对内容订正。 🙃请注意，任何教程都具有时效性。随着版本的迭代，教程有失去其有效性的风险。]]></description>
+</item></channel>
+</rss>

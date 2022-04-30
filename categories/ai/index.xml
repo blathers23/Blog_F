@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>AI - 分类 - Blathers&#39; Blog</title>
+    <link>https://blathers23.netlify.app/categories/ai/</link>
+    <description>AI - 分类 - Blathers&#39; Blog</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>blathers233@outlook.com (Blathers)</managingEditor>
+      <webMaster>blathers233@outlook.com (Blathers)</webMaster><lastBuildDate>Wed, 20 Apr 2022 21:38:00 &#43;0800</lastBuildDate><atom:link href="https://blathers23.netlify.app/categories/ai/" rel="self" type="application/rss+xml" /><item>
+  <title>杂谈毕业设计</title>
+  <link>https://blathers23.netlify.app/%E6%9D%82%E8%B0%88%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/</link>
+  <pubDate>Wed, 20 Apr 2022 21:38:00 &#43;0800</pubDate>
+  <author>Blathers</author>
+  <guid>https://blathers23.netlify.app/%E6%9D%82%E8%B0%88%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/</guid>
+  <description><![CDATA[简单记录下毕业设计的内容，以及解决问题的历程。 毕设灵感 很久之前，我就有将循环神经网络用在大气污染物浓度预测上的想法，可以自由选择题目的课程设]]></description>
+</item></channel>
+</rss>

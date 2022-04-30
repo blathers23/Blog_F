@@ -1,0 +1,33 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Gridea - 标签 - Blathers&#39; Blog</title>
+    <link>https://blathers23.netlify.app/tags/gridea/</link>
+    <description>Gridea - 标签 - Blathers&#39; Blog</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>blathers233@outlook.com (Blathers)</managingEditor>
+      <webMaster>blathers233@outlook.com (Blathers)</webMaster><lastBuildDate>Sat, 13 Feb 2021 21:48:20 &#43;0000</lastBuildDate><atom:link href="https://blathers23.netlify.app/tags/gridea/" rel="self" type="application/rss+xml" /><item>
+  <title>记录Gitalk的一个Bug</title>
+  <link>https://blathers23.netlify.app/gitalk/</link>
+  <pubDate>Sat, 13 Feb 2021 21:48:20 &#43;0000</pubDate>
+  <author>Blathers</author>
+  <guid>https://blathers23.netlify.app/gitalk/</guid>
+  <description><![CDATA[⚠️ 这篇文章发布于以往的 Blog 网站，此处仅仅搬运收藏，不再对内容订正。 ✍️ Gitalk版本 1.7.0；Gridea版本 0.9.2。 使用 Gridea 配置 Gitalk 功]]></description>
+</item><item>
+  <title>Hello Gridea! - 怎样给Blog网站设置自己的域名</title>
+  <link>https://blathers23.netlify.app/hello_gridea_domain/</link>
+  <pubDate>Sat, 13 Feb 2021 14:52:22 &#43;0000</pubDate>
+  <author>Blathers</author>
+  <guid>https://blathers23.netlify.app/hello_gridea_domain/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://s2.loli.net/2022/04/26/Ik5uhlUmrVG4cFo.png" referrerpolicy="no-referrer">
+      </div>⚠️ 这篇文章发布于以往的 Blog 网站，此处仅仅搬运收藏，不再对内容订正。 🙃请注意，任何教程都具有时效性。随着版本的迭代，教程有失去其有效性的风险。]]></description>
+</item><item>
+  <title>Hello Gridea! - 如何使用Gridea和Coding搭建自己的Blog</title>
+  <link>https://blathers23.netlify.app/hello_gridea/</link>
+  <pubDate>Fri, 12 Feb 2021 23:14:33 &#43;0000</pubDate>
+  <author>Blathers</author>
+  <guid>https://blathers23.netlify.app/hello_gridea/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://s2.loli.net/2022/04/26/Cdq54O1sMnyc2L9.png" referrerpolicy="no-referrer">
+      </div>⚠️ 这篇文章发布于以往的 Blog 网站，此处仅仅搬运收藏，不再对内容订正。 🙃请注意，任何教程都具有时效性。随着版本的迭代，教程有失去其有效性的风险。]]></description>
+</item></channel>
+</rss>
