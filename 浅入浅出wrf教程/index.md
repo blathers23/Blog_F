@@ -15,19 +15,19 @@
 
 ---
 
-&emsp;&emsp;在安装 WRF(The Weather Research and Forecasting Model) 之前，请先确定你的**需求**。比如要使用 WRF 来预测 PM ，这就要求你应当安装 WRF-Chem 而不仅仅是 WRF 。
+在安装 WRF(The Weather Research and Forecasting Model) 之前，请先确定你的**需求**。比如要使用 WRF 来预测 PM ，这就要求你应当安装 WRF-Chem 而不仅仅是 WRF 。
 
-&emsp;&emsp;本文内容包含 WRF 及 WRF-Chem 的编译。 有关 WRF-Chem 运行的部分，请参考 [WRF-Chem User's Guide](https://ruc.noaa.gov/wrf/wrf-chem/Users_guide.pdf)。
+本文内容包含 WRF 及 WRF-Chem 的编译。 有关 WRF-Chem 运行的部分，请参考 [WRF-Chem User's Guide](https://ruc.noaa.gov/wrf/wrf-chem/Users_guide.pdf)。
 
-&emsp;&emsp;在 WRF 官网有提供一个[非常友善的 WRF 编译教程](https://www2.mmm.ucar.edu/wrf/OnLineTutorial/compilation_tutorial.php)，但是该教程编译只包含 WRF 的部分，而且使用了 tcsh，与现在比较流行的 bash 可能会有一些出入。
+在 WRF 官网有提供一个[非常友善的 WRF 编译教程](https://www2.mmm.ucar.edu/wrf/OnLineTutorial/compilation_tutorial.php)，但是该教程编译只包含 WRF 的部分，而且使用了 tcsh，与现在比较流行的 bash 可能会有一些出入。
 
-&emsp;&emsp;有繁琐工作的地方就有自动化脚本，当然包括 WRF-Chem 的安装。这里也推荐我在Gitee上发现的一个[全自动安装脚本](https://gitee.com/xuejingkai/WRFCHEM-4.3-install-script-linux-64bit)，直接免除下面的所有工作，你仅仅需要根据自己的需求对脚本做一些简单的修改即可。
+有繁琐工作的地方就有自动化脚本，当然包括 WRF-Chem 的安装。这里也推荐我在Gitee上发现的一个[全自动安装脚本](https://gitee.com/xuejingkai/WRFCHEM-4.3-install-script-linux-64bit)，直接免除下面的所有工作，你仅仅需要根据自己的需求对脚本做一些简单的修改即可。
 
 ## 平台准备
 
 ---
 
-&emsp;&emsp;WRF 模型仅能运行在 Linux 系统上。为此，你可能需要：
+WRF 模型仅能运行在 Linux 系统上。为此，你可能需要：
 
 1. 一台安装了 Linux 系统的电脑
 2. 带有 Linux 系统的虚拟机
@@ -39,17 +39,17 @@
 
 ---
 
-&emsp;&emsp;首先要准备 [WRF](https://github.com/wrf-model/WRF) 和 [WPS(WRF Pre-Processing System)](https://github.com/wrf-model/WPS) 的安装文件 ，这两个程序的最新版本可以在 GitHub 很容易的下载下来，现在你需要新建一个文件夹，把 WRF 和 WPS 放在同一文件夹内（这个文件夹将会成为你放置 WRF 和 WPS 程序的文件夹），并将它们解压。对于 zip 类型的压缩包，你可以使用 `unzip` 命令来解压缩；对于 tar.gz 类型的压缩包，你需要使用 `tar xzvf`  命令来解压缩。
+首先要准备 [WRF](https://github.com/wrf-model/WRF) 和 [WPS(WRF Pre-Processing System)](https://github.com/wrf-model/WPS) 的安装文件 ，这两个程序的最新版本可以在 GitHub 很容易的下载下来，现在你需要新建一个文件夹，把 WRF 和 WPS 放在同一文件夹内（这个文件夹将会成为你放置 WRF 和 WPS 程序的文件夹），并将它们解压。对于 zip 类型的压缩包，你可以使用 `unzip` 命令来解压缩；对于 tar.gz 类型的压缩包，你需要使用 `tar xzvf`  命令来解压缩。
 
-&emsp;&emsp;接下来，你可能需要安装一些编译器。编译 WRF 需要三个编译器，分别是 `gfortran` 、 `cpp` 和 `gcc`。你可以分别使用命令 `which gfortran` 、 `which cpp` 和 `which gcc` 来检查你的环境中是否包含这三个编译器，对于包含编译器的环境，`which` 命令将会返回对应地址，如果 `which` 命令没有任何反应，你可能需要手动安装这些编译器。不同的操作系统可能会有所差异，对于 Ubuntu 来说，你只需要运行 `sudo apt-get install gfortran` 来安装 `gfortran` 编译器，其它缺失的编译器同理。
+接下来，你可能需要安装一些编译器。编译 WRF 需要三个编译器，分别是 `gfortran` 、 `cpp` 和 `gcc`。你可以分别使用命令 `which gfortran` 、 `which cpp` 和 `which gcc` 来检查你的环境中是否包含这三个编译器，对于包含编译器的环境，`which` 命令将会返回对应地址，如果 `which` 命令没有任何反应，你可能需要手动安装这些编译器。不同的操作系统可能会有所差异，对于 Ubuntu 来说，你只需要运行 `sudo apt-get install gfortran` 来安装 `gfortran` 编译器，其它缺失的编译器同理。
 
-&emsp;&emsp;除了三个编译器之外，你可能还需要安装 `csh` 和 `perl` 。你同样可以通过 `sudo apt-get install` 命令来安装它们。
+除了三个编译器之外，你可能还需要安装 `csh` 和 `perl` 。你同样可以通过 `sudo apt-get install` 命令来安装它们。
 
 ## 依赖库
 
 ---
 
-&emsp;&emsp;在这里，你需要安装 5 个与 WRF 运行有关的库，分别是：
+在这里，你需要安装 5 个与 WRF 运行有关的库，分别是：
 
 - [mpich-3.0.4](https://www2.mmm.ucar.edu/wrf/OnLineTutorial/compile_tutorial/tar_files/mpich-3.0.4.tar.gz)
 - [netcdf-4.1.3](https://www2.mmm.ucar.edu/wrf/OnLineTutorial/compile_tutorial/tar_files/netcdf-4.1.3.tar.gz)
@@ -61,7 +61,7 @@
 
 ### 添加环境变量
 
-&emsp;&emsp;在进行以下的操作前，请先在终端（ bash ）中运行下面的代码来添加环境变量：
+在进行以下的操作前，请先在终端（ bash ）中运行下面的代码来添加环境变量：
 
 ```bash
 export DIR=$HOME/software/Build_WRF/LIBRARIES	# 请修改此条为你的 LIBRARIES 文件夹路径
@@ -83,7 +83,7 @@ export NETCDF=$DIR/netcdf
 
 ### mpich
 
-&emsp;&emsp;mpich 是并行计算所需要的库，你可以运行以下的代码来安装：
+mpich 是并行计算所需要的库，你可以运行以下的代码来安装：
 
 ```bash
 cd mpich-3.0.4								# 进入解压后的 mpich-3.0.4 文件夹
@@ -94,7 +94,7 @@ make install
 
 ### netCDF
 
-&emsp;&emsp;netCDF 是编译 WRF 所需要的数据格式库，你可以通过运行以下的代码来安装：
+netCDF 是编译 WRF 所需要的数据格式库，你可以通过运行以下的代码来安装：
 
 ```bash
 cd netcdf-4.1.3								# 进入解压后的 netcdf-4.1.3 文件夹
@@ -105,7 +105,7 @@ make install
 
 ### zlib
 
-&emsp;&emsp;编译 WPS 所需的库，你可以通过运行以下的代码来安装：
+编译 WPS 所需的库，你可以通过运行以下的代码来安装：
 
 ```bash
 cd zlib-1.2.7
@@ -116,7 +116,7 @@ make install
 
 ### libpng
 
-&emsp;&emsp;编译 WPS 所需的库，你可以通过运行以下的代码来安装：
+编译 WPS 所需的库，你可以通过运行以下的代码来安装：
 
 ```bash
 cd libpng-1.2.50
@@ -127,7 +127,7 @@ make install
 
 ### Jasper
 
-&emsp;&emsp;编译 WPS 所需的库，你可以通过运行以下的代码来安装：
+编译 WPS 所需的库，你可以通过运行以下的代码来安装：
 
 ```bash
 cd jasper-1.900.1
@@ -136,13 +136,13 @@ make
 make install
 ```
 
-&emsp;&emsp;请按照上述顺序来安装以避免预料之外的错误。
+请按照上述顺序来安装以避免预料之外的错误。
 
 ### WRF-Chem
 
-&emsp;&emsp;对 WRF-Chem 来说，这里还需要一些额外的步骤。对于 WRF4  以下的版本，你可能需要下载单独的 WRF-Chem 编译所需的文件，并将这些文件解压到你的 WRF 文件夹内的 chem 文件夹中。对于 WRF4 以后的版本，则不需要进行此操作。
+对 WRF-Chem 来说，这里还需要一些额外的步骤。对于 WRF4  以下的版本，你可能需要下载单独的 WRF-Chem 编译所需的文件，并将这些文件解压到你的 WRF 文件夹内的 chem 文件夹中。对于 WRF4 以后的版本，则不需要进行此操作。
 
-&emsp;&emsp;为了编译 WRF-Chem，这里需要添加一些环境变量：
+为了编译 WRF-Chem，这里需要添加一些环境变量：
 
 ```bash
 export WRF_EM_CORE=1
@@ -159,7 +159,7 @@ export SED=/usr/bin/sed
 export WRFIO_NCD_LARGE_FILE_SUPPORT=1
 ```
 
-&emsp;&emsp;然后安装两个额外的库：
+然后安装两个额外的库：
 
 ```bash
 sudo apt-get install yacc flex
@@ -169,7 +169,7 @@ sudo apt-get install yacc flex
 
 ---
 
-&emsp;&emsp;进入解压好的 WRF 文件夹，然后运行：
+进入解压好的 WRF 文件夹，然后运行：
 
 ```bash
 ./configure
@@ -177,7 +177,7 @@ sudo apt-get install yacc flex
 
 在这里你将会看到非常多不同的编译选项，一般选择 34 即可，这表示你使用 gcc 分布式并行编译 WRF。接下来，对于 nesting，直接选择默认选项即可。
 
-&emsp;&emsp;接下来就可以对 WRF 进行编译，在此处你可以选择你想使用的 WRF 运行类型，有以下选项可以选择：
+接下来就可以对 WRF 进行编译，在此处你可以选择你想使用的 WRF 运行类型，有以下选项可以选择：
 
 - `em_real` (三维真实情况)
 - `em_quarter_ss `(三维理想状况)
@@ -217,7 +217,7 @@ ls -s main/*.exe
 
 ---
 
-&emsp;&emsp;进入解压后的 WPS 文件夹，然后执行:
+进入解压后的 WPS 文件夹，然后执行:
 
 ```bash
 ./configure
@@ -229,9 +229,9 @@ ls -s main/*.exe
 ./compile
 ```
 
-&emsp;&emsp;这可能会花费一段时间，执行成功后，输入  `ls -s *.exe`，将会看到三个 `.exe` 文件，分别是：`geogrid.exe`，`ungrib.exe` 和 `metgrid.exe`。
+这可能会花费一段时间，执行成功后，输入  `ls -s *.exe`，将会看到三个 `.exe` 文件，分别是：`geogrid.exe`，`ungrib.exe` 和 `metgrid.exe`。
 
-&emsp;&emsp;至此，所有的编译工作已经完成。如果有时间，我会考虑增加：
+至此，所有的编译工作已经完成。如果有时间，我会考虑增加：
 
 - [ ] WPS 的运行
 - [ ] WRF 的运行

@@ -42,21 +42,57 @@
       },"description": "嗦 嗨 嗨！-\u003e 害 嗨 嗨！"
   }
   </script></head>
-  <body header-desktop="sticky" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
-
-    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+  <body header-desktop="sticky" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script><div class="wrapper"><header class="desktop" id="header-desktop">
   <div class="header-wrapper">
     <div class="header-title">
-      <a href="/" title="Blathers&#39; Blog"><img
-    class="lazyload logo"
-    src="/svg/loading.min.svg"
-    data-src="/favicon.ico"
-    data-srcset="/favicon.ico, /favicon.ico 1.5x, /favicon.ico 2x"
-    data-sizes="auto"
-    alt="/favicon.ico"
-    title="/favicon.ico" /><span class="header-title-text">Blathers&#39; Blog</span></a><span class="header-subtitle"></span></div>
-    <div class="menu">
-      <div class="menu-inner"><a class="menu-item" href="/posts/" title="全部文章"> Posts </a><a class="menu-item" href="/tags/" title="标签"> Tags </a><a class="menu-item" href="/categories/" title="分类"> Categories </a><a class="menu-item" href="/friends" title="友情链接"> Friends </a><a class="menu-item" href="/about" title="关于我"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+      <a href="/" title="Blathers&#39; Blog"><span class="header-title-text">Blathers&#39; Blog</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/posts/"
+                title="全部文章"
+                
+              >Posts</a></li><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/tags/"
+                title="标签"
+                
+              >Tags</a></li><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/categories/"
+                title="分类"
+                
+              >Categories</a></li><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/friends"
+                title="友情链接"
+                
+              >Friends</a></li><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/about"
+                title="关于我"
+                
+              >About</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
             <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-desktop">
             <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
               <i class="fas fa-search fa-fw"></i>
@@ -67,47 +103,77 @@
             <span class="search-button search-loading" id="search-loading-desktop">
               <i class="fas fa-spinner fa-fw fa-spin"></i>
             </span>
-          </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+          </li><li class="menu-item theme-switch" title="切换主题">
           <i class="fas fa-adjust fa-fw"></i>
-        </a>
-      </div>
-    </div>
+        </li>
+      </ul>
+    </nav>
   </div>
 </header><header class="mobile" id="header-mobile">
   <div class="header-container">
     <div class="header-wrapper">
       <div class="header-title">
-        <a href="/" title="Blathers&#39; Blog"><img
-    class="lazyload logo"
-    src="/svg/loading.min.svg"
-    data-src="/favicon.ico"
-    data-srcset="/favicon.ico, /favicon.ico 1.5x, /favicon.ico 2x"
-    data-sizes="auto"
-    alt="/favicon.ico"
-    title="/favicon.ico" /><span class="header-title-text">Blathers&#39; Blog</span></a><span class="header-subtitle"></span></div>
+        <a href="/" title="Blathers&#39; Blog"><span class="header-title-text">Blathers&#39; Blog</span></a><span class="header-subtitle"></span></div>
       <div class="menu-toggle" id="menu-toggle-mobile">
         <span></span><span></span><span></span>
       </div>
     </div>
-    <div class="menu" id="menu-mobile"><div class="search-wrapper">
-          <div class="search mobile" id="search-mobile">
-            <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-mobile">
-            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
-              <i class="fas fa-search fa-fw"></i>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fas fa-search fa-fw"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fas fa-times-circle fa-fw"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fas fa-spinner fa-fw fa-spin"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
             </a>
-            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
-              <i class="fas fa-times-circle fa-fw"></i>
-            </a>
-            <span class="search-button search-loading" id="search-loading-mobile">
-              <i class="fas fa-spinner fa-fw fa-spin"></i>
-            </span>
-          </div>
-          <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-            取消
-          </a>
-        </div><a class="menu-item" href="/posts/" title="全部文章">Posts</a><a class="menu-item" href="/tags/" title="标签">Tags</a><a class="menu-item" href="/categories/" title="分类">Categories</a><a class="menu-item" href="/friends" title="友情链接">Friends</a><a class="menu-item" href="/about" title="关于我">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
-        <i class="fas fa-adjust fa-fw"></i>
-      </a></div>
+          </li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/posts/"
+                title="全部文章"
+                
+              >Posts</a></li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/tags/"
+                title="标签"
+                
+              >Tags</a></li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/categories/"
+                title="分类"
+                
+              >Categories</a></li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/friends"
+                title="友情链接"
+                
+              >Friends</a></li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/about"
+                title="关于我"
+                
+              >About</a></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fas fa-adjust fa-fw"></i>
+        </li></ul>
+    </nav>
   </div>
 </header>
 <div class="search-dropdown desktop">
@@ -121,17 +187,18 @@
 </blockquote>
 <h2 id="简介">简介</h2>
 <hr>
-<p>😀 博主是一个跨考计算机二战的三非院校四大天坑本科待毕业生，最近正在刷LeetCode，目标是数据结构张口就来。</p>
+<p>😀 本人是一个跨考计算机二战的三非院校四大天坑本科待毕业生，最近正在刷LeetCode，目标是数据结构张口就来。</p>
 <h2 id="关于本站">关于本站</h2>
 <hr>
 <h3 id="写-blog-的想法">写 Blog 的想法</h3>
-<p>  就在建站的约摸两周前，一战跨考计算机最终宣告失败，最主要的因素还是准备不足。在回顾考研这一年来碰壁原因的时候，我意识到，很多知识之所以自己不能学以致用，其原因往往还是用的太少，正所谓眼高手低，又或者说 talk is cheap。<strong>纸上得来终觉浅，绝知此事要躬行。</strong> 建立本站，通过将思维落实成文字的方式来加强自己的理解，我认为会是一种很有效的方式。</p>
+<p>就在建站的约摸两周前，一战跨考计算机最终宣告失败，最主要的因素还是准备不足。在回顾考研这一年来碰壁原因的时候，我意识到，很多知识之所以自己不能学以致用，其原因往往还是用的太少，正所谓眼高手低，又或者说 talk is cheap。<strong>纸上得来终觉浅，绝知此事要躬行。</strong> 建立本站，通过将思维落实成文字的方式来加强自己的理解，我认为会是一种很有效的方式。</p>
 <h3 id="施工时间线">施工时间线</h3>
-<pre><code>😎 2022/04/19 Hello Hugo!
-🥱 2022/04/22 页面施工基本完毕，等待上线。
-😛 2022/04/22 正式上线 GitHub Pages！
-✈️ 2022/04/25 迁移至 netlify
-</code></pre>
+<ul>
+<li>😎 2022/04/19 Hello Hugo!</li>
+<li>🥱 2022/04/22 页面施工基本完毕，等待上线。</li>
+<li>😛 2022/04/22 正式上线 GitHub Pages！</li>
+<li>✈️ 2022/04/25 迁移至 netlify</li>
+</ul>
 <h2 id="与我联系">与我联系</h2>
 <hr>
 <p>📫  <del>唯一指定</del>邮箱: <a
@@ -148,6 +215,7 @@
   
   
     
+    
     target="_blank"
   
   
@@ -161,6 +229,7 @@
   href="https://gitee.com/Blathers"
   
   
+    
     
     target="_blank"
   
@@ -176,6 +245,7 @@
   
   
     
+    
     target="_blank"
   
   
@@ -187,8 +257,9 @@
 >@blathers23</a></p></div><div id="comments"><div id="waline" class="comment"></div><noscript>
         Please enable JavaScript to view the comments powered by <a href="https://waline.js.org/" rel="external nofollow noopener noreffer">Waline</a>.
       </noscript></div></div></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer" title="Hugo 0.97.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/Lruihao/FixIt" target="_blank" rel="external nofollow noopener noreffer" title="FixIt 0.2.13"><img class="fixit-icon" src="/images/fixit.svg" alt="FixIt logo" /> FixIt</a>
-        </div><div class="footer-line copyright"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer" title="Hugo 0.97.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/Lruihao/FixIt" target="_blank" rel="external nofollow noopener noreffer" title="FixIt v0.2.14-RC"><img class="fixit-icon" src="/images/fixit.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright"><i class="far fa-copyright fa-fw"></i>
+            <span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">
               <a
   href="/"
   
@@ -197,25 +268,15 @@
   
   
   
->Blathers</a></span><span class="footer-divider"></span><span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line ibruce">
-          <span id="busuanzi_container_site_uv" title=总访客数
-            ><i class="far fa-user"></i>
-            <span id="busuanzi_value_site_uv"
-              ><i class="fa fa-spinner fa-spin"></i
-            ></span
-          ></span><span id="busuanzi_container_site_pv" class="footer-divider" title=总访问量
-            ><i class="far fa-eye"></i>
-            <span id="busuanzi_value_site_pv"
-              ><i class="fa fa-spinner fa-spin"></i
-            ></span
-          ></span>
+>Blathers</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fas fa-heartbeat fa-fw animate-icon"></i>&nbsp;<span class="run-times">网站运行中 ...</span></span><span class="total-word-count footer-divider" title='总计约 18319 字'><i class="far fa-keyboard fa-fw"></i>&nbsp;总计约 18.32K 字</span></div><div class="footer-line ibruce">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="far fa-user fa-fw"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin fa-fw"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="far fa-eye fa-fw"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin fa-fw"></i></span></span>
         </div></div>
-  </footer></div>
-
-    <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
-        <i class="fas fa-arrow-up fa-fw"></i>
-      </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
-        <i class="fas fa-comment fa-fw"></i>
-      </a>
-    </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/waline/Waline.min.js" defer></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js" defer></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js" async defer></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js" defer></script><script type="text/javascript" src="/lib/sharer/sharer.min.js" async defer></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":20},"comment":{"waline":{"copyright":true,"dark":"body[theme='dark']","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/bilibili"],"highlight":true,"lang":"zh-cn","login":"enable","meta":["nick","mail","link"],"pageSize":10,"serverURL":"https://eke-sai-ting-b9q9mvc8d-blathers.vercel.app"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":null,"ibruce":{"enable":true,"siteTime":null},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js" defer></script><script type="text/javascript" src="/js/_custom.min.js" defer></script></body>
+  </footer></div><div class="widgets">
+  <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+      <i class="fas fa-arrow-up fa-fw"></i>
+    </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+      <i class="fas fa-comment fa-fw"></i>
+    </a>
+  </div><div id="mask"></div>
+</div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/waline/Waline.min.js" defer></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js" defer></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js" async defer></script><script type="text/javascript" src="/lib/sharer/sharer.min.js" async defer></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":50},"comment":{"waline":{"copyright":true,"dark":"body[theme='dark']","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/bilibili"],"highlight":true,"lang":"zh-cn","login":"enable","meta":["nick","mail","link"],"pageSize":10,"serverURL":"https://eke-sai-ting-b9q9mvc8d-blathers.vercel.app"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":null,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"siteTime":"2022-04-19T19:30:34+08:00"};</script><script type="text/javascript" src="/js/theme.min.js" defer></script><script type="text/javascript" src="/js/_custom.min.js" defer></script></body>
 </html>

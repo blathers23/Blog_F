@@ -10,7 +10,7 @@
   <pubDate>Sun, 24 Apr 2022 16:33:00 &#43;0800</pubDate>
   <author>Blathers</author>
   <guid>https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAhugo%E6%95%99%E7%A8%8B/</guid>
-  <description><![CDATA[轻松拿下 Hugo，因为我站在大佬的肩膀上。]]></description>
+  <description><![CDATA[本文旨在提供使用 Hugo + GitHub Pages or Netlify + Waline + PicGo 搭建个人博客的轻松无脑一站式体验教程。]]></description>
 </item><item>
   <title>浅入浅出 WRF 教程</title>
   <link>https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAwrf%E6%95%99%E7%A8%8B/</link>
@@ -24,21 +24,21 @@
   <pubDate>Sun, 14 Mar 2021 09:00:04 &#43;0000</pubDate>
   <author>Blathers</author>
   <guid>https://blathers23.netlify.app/vscode_and_msys2/</guid>
-  <description><![CDATA[⚠️ 这篇文章发布于以往的 Blog 网站，此处仅仅搬运收藏，不再对内容订正。 🙃请注意，任何教程都具有时效性。随着版本的迭代，教程有失去其有效性的风险。]]></description>
+  <description><![CDATA[]]></description>
 </item><item>
   <title>Golang - Hello World!</title>
   <link>https://blathers23.netlify.app/golang_hello_world/</link>
   <pubDate>Sat, 13 Feb 2021 23:44:30 &#43;0000</pubDate>
   <author>Blathers</author>
   <guid>https://blathers23.netlify.app/golang_hello_world/</guid>
-  <description><![CDATA[⚠️ 这篇文章发布于以往的 Blog 网站，此处仅仅搬运收藏，不再对内容订正。 ✍️ go verison 1.15.8 使用 VSCODE 配置 go 开发环境时遇到了一些问题，主要是无法下载 Go modul]]></description>
+  <description><![CDATA[]]></description>
 </item><item>
   <title>记录Gitalk的一个Bug</title>
   <link>https://blathers23.netlify.app/gitalk/</link>
   <pubDate>Sat, 13 Feb 2021 21:48:20 &#43;0000</pubDate>
   <author>Blathers</author>
   <guid>https://blathers23.netlify.app/gitalk/</guid>
-  <description><![CDATA[⚠️ 这篇文章发布于以往的 Blog 网站，此处仅仅搬运收藏，不再对内容订正。 ✍️ Gitalk版本 1.7.0；Gridea版本 0.9.2。 使用 Gridea 配置 Gitalk 功]]></description>
+  <description><![CDATA[]]></description>
 </item><item>
   <title>Hello Gridea! - 怎样给Blog网站设置自己的域名</title>
   <link>https://blathers23.netlify.app/hello_gridea_domain/</link>
@@ -47,7 +47,7 @@
   <guid>https://blathers23.netlify.app/hello_gridea_domain/</guid>
   <description><![CDATA[<div class="featured-image">
         <img src="https://s2.loli.net/2022/04/26/Ik5uhlUmrVG4cFo.png" referrerpolicy="no-referrer">
-      </div>⚠️ 这篇文章发布于以往的 Blog 网站，此处仅仅搬运收藏，不再对内容订正。 🙃请注意，任何教程都具有时效性。随着版本的迭代，教程有失去其有效性的风险。]]></description>
+      </div>]]></description>
 </item><item>
   <title>Hello Gridea! - 如何使用Gridea和Coding搭建自己的Blog</title>
   <link>https://blathers23.netlify.app/hello_gridea/</link>
@@ -56,6 +56,6 @@
   <guid>https://blathers23.netlify.app/hello_gridea/</guid>
   <description><![CDATA[<div class="featured-image">
         <img src="https://s2.loli.net/2022/04/26/Cdq54O1sMnyc2L9.png" referrerpolicy="no-referrer">
-      </div>⚠️ 这篇文章发布于以往的 Blog 网站，此处仅仅搬运收藏，不再对内容订正。 🙃请注意，任何教程都具有时效性。随着版本的迭代，教程有失去其有效性的风险。]]></description>
+      </div>]]></description>
 </item></channel>
 </rss>
