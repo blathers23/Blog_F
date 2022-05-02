@@ -5,24 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noodp" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-    <title>LC15 - 三数之和 - Blathers&#39; Blog</title><meta name="author" content="Blathers: ">
+    <title>LC15 - 三数之和 - Blathers&#39; Tent</title><meta name="author" content="Blathers: ">
 <meta name="description" content="双指针真是太棒啦 -&gt; 二分查找也是" />
 <meta name="keywords" content="Python,双指针,二分查找" /><meta itemprop="name" content="LC15 - 三数之和">
 <meta itemprop="description" content="双指针真是太棒啦 -&gt; 二分查找也是"><meta itemprop="datePublished" content="2022-04-24T14:40:00+08:00" />
-<meta itemprop="dateModified" content="2022-04-26T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2418">
+<meta itemprop="dateModified" content="2022-05-03T00:00:00+00:00" />
+<meta itemprop="wordCount" content="2420">
 <meta itemprop="keywords" content="Python,双指针,二分查找," /><meta property="og:title" content="LC15 - 三数之和" />
 <meta property="og:description" content="双指针真是太棒啦 -&gt; 二分查找也是" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blathers23.netlify.app/lc15/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-04-24T14:40:00+08:00" />
-<meta property="article:modified_time" content="2022-04-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-05-03T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="LC15 - 三数之和"/>
 <meta name="twitter:description" content="双指针真是太棒啦 -&gt; 二分查找也是"/>
-<meta name="application-name" content="Blathers&#39; Blog">
-<meta name="apple-mobile-web-app-title" content="Blathers&#39; Blog"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<meta name="application-name" content="Blathers&#39; Tent">
+<meta name="apple-mobile-web-app-title" content="Blathers&#39; Tent"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="https://blathers23.netlify.app/lc15/" /><link rel="prev" href="https://blathers23.netlify.app/lc11/" /><link rel="next" href="https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAhugo%E6%95%99%E7%A8%8B/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
   {
@@ -33,8 +33,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/blathers23.netlify.app\/lc15\/"
-    },"genre": "posts","keywords": "Python, 双指针, 二分查找","wordcount":  2418 ,
-    "url": "https:\/\/blathers23.netlify.app\/lc15\/","datePublished": "2022-04-24T14:40:00+08:00","dateModified": "2022-04-26T00:00:00+00:00","publisher": {
+    },"genre": "posts","keywords": "Python, 双指针, 二分查找","wordcount":  2420 ,
+    "url": "https:\/\/blathers23.netlify.app\/lc15\/","datePublished": "2022-04-24T14:40:00+08:00","dateModified": "2022-05-03T00:00:00+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -45,7 +45,7 @@
   <body header-desktop="sticky" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script><div class="wrapper"><header class="desktop" id="header-desktop">
   <div class="header-wrapper">
     <div class="header-title">
-      <a href="/" title="Blathers&#39; Blog"><span class="header-title-text">Blathers&#39; Blog</span></a><span class="header-subtitle"></span></div>
+      <a href="/" title="Blathers&#39; Tent"><span class="header-title-pre">🏕️</span><span class="header-title-text">Blathers&#39; Tent</span></a><span class="header-subtitle"></span></div>
     <nav>
       <ul class="menu"><li
               class="menu-item"
@@ -56,7 +56,7 @@
                 href="/posts/"
                 title="全部文章"
                 
-              >Posts</a></li><li
+              >Posts 📑</a></li><li
               class="menu-item"
               
             >
@@ -65,7 +65,7 @@
                 href="/tags/"
                 title="标签"
                 
-              >Tags</a></li><li
+              >Tags 🏷️</a></li><li
               class="menu-item"
               
             >
@@ -74,7 +74,7 @@
                 href="/categories/"
                 title="分类"
                 
-              >Categories</a></li><li
+              >Categories 📚</a></li><li
               class="menu-item"
               
             >
@@ -83,7 +83,7 @@
                 href="/friends"
                 title="友情链接"
                 
-              >Friends</a></li><li
+              >Friends 🎈</a></li><li
               class="menu-item"
               
             >
@@ -92,7 +92,7 @@
                 href="/about"
                 title="关于我"
                 
-              >About</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+              >About 🦉</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
             <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-desktop">
             <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
               <i class="fas fa-search fa-fw"></i>
@@ -113,7 +113,7 @@
   <div class="header-container">
     <div class="header-wrapper">
       <div class="header-title">
-        <a href="/" title="Blathers&#39; Blog"><span class="header-title-text">Blathers&#39; Blog</span></a><span class="header-subtitle"></span></div>
+        <a href="/" title="Blathers&#39; Tent"><span class="header-title-pre">🏕️</span><span class="header-title-text">Blathers&#39; Tent</span></a><span class="header-subtitle"></span></div>
       <div class="menu-toggle" id="menu-toggle-mobile">
         <span></span><span></span><span></span>
       </div>
@@ -142,35 +142,35 @@
                 href="/posts/"
                 title="全部文章"
                 
-              >Posts</a></li><li
+              >Posts 📑</a></li><li
               class="menu-item"
             ><a
                 class="menu-link"
                 href="/tags/"
                 title="标签"
                 
-              >Tags</a></li><li
+              >Tags 🏷️</a></li><li
               class="menu-item"
             ><a
                 class="menu-link"
                 href="/categories/"
                 title="分类"
                 
-              >Categories</a></li><li
+              >Categories 📚</a></li><li
               class="menu-item"
             ><a
                 class="menu-link"
                 href="/friends"
                 title="友情链接"
                 
-              >Friends</a></li><li
+              >Friends 🎈</a></li><li
               class="menu-item"
             ><a
                 class="menu-link"
                 href="/about"
                 title="关于我"
                 
-              >About</a></li><li class="menu-item theme-switch" title="切换主题">
+              >About 🦉</a></li><li class="menu-item theme-switch" title="切换主题">
           <i class="fas fa-adjust fa-fw"></i>
         </li></ul>
     </nav>
@@ -201,7 +201,7 @@
           <span class="post-category">收录于 <a href="/categories/leetcode/"><i class="far fa-folder fa-fw"></i>&nbsp;leetcode</a></span></div>
       <div class="post-meta-line"><span title=2022-04-24&#32;14:40:00>
             <i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-04-24" >2022-04-24</time>
-          </span>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2418 字&nbsp;
+          </span>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2420 字&nbsp;
         <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;</div>
     </div><div class="featured-image"><img
     class="lazyload"
@@ -473,14 +473,14 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="err">······</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># ······</span>
 </span></span><span class="line"><span class="cl">            <span class="n">k</span> <span class="o">=</span> <span class="n">length</span> <span class="o">-</span> <span class="mi">1</span>
 </span></span><span class="line"><span class="cl">            <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
 </span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">target</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">                <span class="n">k</span> <span class="o">=</span> <span class="n">bisect</span><span class="o">.</span><span class="n">bisect_right</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">target</span> <span class="o">-</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">            <span class="k">else</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">                <span class="n">j</span> <span class="o">=</span> <span class="n">bisect</span><span class="o">.</span><span class="n">bisect_left</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">target</span> <span class="o">-</span> <span class="n">nums</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="err">······</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ······</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>最终结果：</p>
@@ -615,7 +615,7 @@
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title=2022-04-26&#32;00:00:00>更新于 2022-04-26</span>
+        <span title=2022-05-03&#32;00:00:00>更新于 2022-05-03</span>
       </div>
       <div class="post-info-license"><span><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
     </div>
@@ -665,7 +665,7 @@
   
   
   
->Blathers</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fas fa-heartbeat fa-fw animate-icon"></i>&nbsp;<span class="run-times">网站运行中 ...</span></span><span class="total-word-count footer-divider" title='总计约 18158 字'><i class="far fa-keyboard fa-fw"></i>&nbsp;总计约 18.16K 字</span></div><div class="footer-line ibruce">
+>Blathers</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fas fa-heartbeat fa-fw animate-icon"></i>&nbsp;<span class="run-times">网站运行中 ...</span></span><span class="total-word-count footer-divider" title='总计约 18163 字'><i class="far fa-keyboard fa-fw"></i>&nbsp;总计约 18.16K 字</span></div><div class="footer-line ibruce">
           <span id="busuanzi_container_site_uv" title='总访客数'><i class="far fa-user fa-fw"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin fa-fw"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="far fa-eye fa-fw"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin fa-fw"></i></span></span>
         </div></div>
   </footer></div><div class="widgets">
@@ -675,5 +675,5 @@
       <i class="fas fa-comment fa-fw"></i>
     </a>
   </div><div id="mask"></div>
-</div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/waline/Waline.min.js" defer></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js" defer></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js" async defer></script><script type="text/javascript" src="/lib/sharer/sharer.min.js" async defer></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":50},"comment":{"waline":{"copyright":true,"dark":"body[theme='dark']","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/bilibili"],"highlight":true,"lang":"zh-cn","login":"enable","meta":["nick","mail","link"],"pageSize":10,"serverURL":"https://eke-sai-ting-b9q9mvc8d-blathers.vercel.app"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":null,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"siteTime":"2022-04-19T19:30:34+08:00"};</script><script type="text/javascript" src="/js/theme.min.js" defer></script><script type="text/javascript" src="/js/_custom.min.js" defer></script></body>
+</div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/waline/Waline.min.js" defer></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js" defer></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js" async defer></script><script type="text/javascript" src="/lib/sharer/sharer.min.js" async defer></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":50},"comment":{"waline":{"copyright":true,"dark":"body[theme='dark']","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/bilibili"],"highlight":true,"lang":"zh-cn","login":"enable","meta":["nick","mail","link"],"pageSize":10,"serverURL":"https://eke-sai-ting-b9q9mvc8d-blathers.vercel.app"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":null,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"siteTime":"2022-04-19T01:19:11+08:00"};</script><script type="text/javascript" src="/js/theme.min.js" defer></script><script type="text/javascript" src="/js/_custom.min.js" defer></script></body>
 </html>

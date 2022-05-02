@@ -158,14 +158,14 @@ class Solution:
 注意到 $j$ 和 $k$ 的初值设置问题。由于列表有序，我们完全可以使用二分查找减少双指针最初无用的查找。Python 内置了 `bisect` 库，可以使用二分查找方便的生成列表中目标元素的索引。增加二分查找后，代码如下：
 
 ```python
-······
+# ······
             k = length - 1
             j = i + 1
             if nums[j] + nums[k] > target:
                 k = bisect.bisect_right(nums, target - nums[j], j + 1, k)
             else:
                 j = bisect.bisect_left(nums, target - nums[k], j, k - 1)
-······
+# ······
 ```
 
 最终结果：

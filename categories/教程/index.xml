@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>教程 - 分类 - Blathers&#39; Blog</title>
+    <title>教程 - 分类 - Blathers&#39; Tent</title>
     <link>https://blathers23.netlify.app/categories/%E6%95%99%E7%A8%8B/</link>
-    <description>教程 - 分类 - Blathers&#39; Blog</description>
+    <description>教程 - 分类 - Blathers&#39; Tent</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>blathers233@outlook.com (Blathers)</managingEditor>
       <webMaster>blathers233@outlook.com (Blathers)</webMaster><lastBuildDate>Sun, 24 Apr 2022 16:33:00 &#43;0800</lastBuildDate><atom:link href="https://blathers23.netlify.app/categories/%E6%95%99%E7%A8%8B/" rel="self" type="application/rss+xml" /><item>
   <title>浅入浅出 Hugo 教程</title>
