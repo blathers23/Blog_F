@@ -247,7 +247,11 @@ key = ['PM10', 'PM2_5_DRY', 'U', 'V', 'QVAPOR','CLDFRA','so2','no2', 'no','so4aj
 
 <img src="https://s2.loli.net/2022/04/27/I6gAv1T3dhJQGlr.png" style="zoom:150%;" />
 
-可以看出所选的 30 个变量效果甚至优于 78 个变量。因此后续实验以 30 变量进行。
+{{<admonition type=Note title="结论">}}
+
+可以看出所选的 30 个变量效果甚至优于 78 个变量。因此后续实验以 30 变量进行。猜测这是因为选择的 30 个变量中已经包含了预测 PM 所需的大部分信息。
+
+{{</admonition>}}
 
 #### 预实验 2
 
@@ -259,7 +263,11 @@ key = ['PM10', 'PM2_5_DRY', 'U', 'V', 'QVAPOR','CLDFRA','so2','no2', 'no','so4aj
 
 <img src="https://s2.loli.net/2022/04/28/IBdH3npuzXQb2i9.png" style="zoom:150%;" />
 
+{{<admonition type=Note title="结论">}}
+
 可以看出尖峰的出现的确与数据时序不连贯有关，但尖峰依旧存在，猜测这是因为在优化的过程中出现了训练集上的局部过拟合。解决方法一般为增加 Batch Size，但是由于硬件原因不能实现。此处尝试增加正则化手段减少过拟合。
+
+{{</admonition>}}
 
 #### 预实验 3
 
@@ -267,7 +275,11 @@ key = ['PM10', 'PM2_5_DRY', 'U', 'V', 'QVAPOR','CLDFRA','so2','no2', 'no','so4aj
 
 <img src="https://s2.loli.net/2022/04/28/ljihNxqZdesSC8F.png" style="zoom:150%;" />
 
+{{<admonition type=Note title="结论">}}
+
 效果提升显著并且不再出现 MSE 上升，证明了上述猜测。因此后续采用带有 Batch Normalization 的网络。并且本次实验结果作为实验的基准效果。
+
+{{</admonition>}}
 
 ### 实验
 
@@ -402,6 +414,6 @@ key = ['PM10', 'PM2_5_DRY', 'U', 'V', 'QVAPOR','CLDFRA','so2','no2', 'no','so4aj
 
 2022/04/25：训练一部分数据，训练集 MSELoss 为 12.6。
 
-2022/05/01: 实验完成。
+2022/05/01：实验完成。
 
 
