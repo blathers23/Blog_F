@@ -40,5 +40,3 @@
 
 👾 GitHub 主页(不经常出没): [@blathers23](https://github.com/blathers23)
 
-{{< music netease song 1433984588 >}}
-

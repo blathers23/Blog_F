@@ -233,7 +233,7 @@ key = ['PM10', 'PM2_5_DRY', 'U', 'V', 'QVAPOR','CLDFRA','QRAIN','QICE','QSNOW','
 
 实验结果如下：
 
-![](https://s2.loli.net/2022/04/27/WTAg4ru7sLlK2et.jpg)
+<img src="https://s2.loli.net/2022/04/27/WTAg4ru7sLlK2et.jpg" style="zoom:150%;" />
 
 ##### 方案 2
 
@@ -245,7 +245,7 @@ key = ['PM10', 'PM2_5_DRY', 'U', 'V', 'QVAPOR','CLDFRA','so2','no2', 'no','so4aj
 
 实验结果如下：
 
-![](https://s2.loli.net/2022/04/27/I6gAv1T3dhJQGlr.png)
+<img src="https://s2.loli.net/2022/04/27/I6gAv1T3dhJQGlr.png" style="zoom:150%;" />
 
 可以看出所选的 30 个变量效果甚至优于 78 个变量。因此后续实验以 30 变量进行。
 
@@ -253,11 +253,11 @@ key = ['PM10', 'PM2_5_DRY', 'U', 'V', 'QVAPOR','CLDFRA','so2','no2', 'no','so4aj
 
 预实验 2 讨论的问题为训练当中的两个 MSE 尖峰是如何产生的，猜测原因为数据中存在时序上不连续的数据。减少数据量，选择时序上一直连续的数据，进行实验：
 
-![](https://s2.loli.net/2022/04/27/wTnzW2MRsclSFGh.png)
+<img src="https://s2.loli.net/2022/04/27/wTnzW2MRsclSFGh.png" style="zoom:150%;" />
 
 发现不存在尖峰且效果良好，因此增加去除非时序连续数据代码，恢复数据量，重新实验：
 
-![](https://s2.loli.net/2022/04/28/IBdH3npuzXQb2i9.png)
+<img src="https://s2.loli.net/2022/04/28/IBdH3npuzXQb2i9.png" style="zoom:150%;" />
 
 可以看出尖峰的出现的确与数据时序不连贯有关，但尖峰依旧存在，猜测这是因为在优化的过程中出现了训练集上的局部过拟合。解决方法一般为增加 Batch Size，但是由于硬件原因不能实现。此处尝试增加正则化手段减少过拟合。
 
@@ -265,7 +265,7 @@ key = ['PM10', 'PM2_5_DRY', 'U', 'V', 'QVAPOR','CLDFRA','so2','no2', 'no','so4aj
 
 预实验 3 讨论的问题为 Batch Normalization 的作用。添加 BN 层，进行试验：
 
-![](https://s2.loli.net/2022/04/28/ljihNxqZdesSC8F.png)
+<img src="https://s2.loli.net/2022/04/28/ljihNxqZdesSC8F.png" style="zoom:150%;" />
 
 效果提升显著并且不再出现 MSE 上升，证明了上述猜测。因此后续采用带有 Batch Normalization 的网络。并且本次实验结果作为实验的基准效果。
 
@@ -285,13 +285,110 @@ key = ['PM10', 'PM2_5_DRY', 'U', 'V', 'QVAPOR','CLDFRA','so2','no2', 'no','so4aj
 
 实验效果：
 
-![](https://s2.loli.net/2022/04/29/PTCX1Fn2qLVZgtE.png)
+<img src="https://s2.loli.net/2022/04/29/PTCX1Fn2qLVZgtE.png" style="zoom: 150%;" />
 
 #### 实验 1
 
 实验 1 讨论的问题为 Weigth Decay 的影响。当 Weigth_Decay 为 1e-4 时：
 
+<img src="https://s2.loli.net/2022/05/03/SIpM1wsb7q5xnzC.png" style="zoom: 50%;" />
 
+当 Weight_Decay = 1e-5 时：
+
+<img src="https://s2.loli.net/2022/05/03/TG5pydvW9FcPzeC.png" style="zoom:50%;" />
+
+当 Weight_Decay = 1e-6  时：
+
+<img src="https://s2.loli.net/2022/05/03/J4v5P2qWZc9yawg.png" style="zoom:50%;" />
+
+{{<admonition type=Note title="结论">}}
+
+可以看出 Weigth_Decay 确实对过拟合有一定程度的缓和，但总体影响不大。
+
+ {{</admonition>}}
+
+#### 实验 2
+
+实验 2 主要的讨论目标为 Kernel_Size 对训练效果的影响。当降低 Kernel_Size 为 4 时：
+
+<img src="https://s2.loli.net/2022/05/04/QUP4CSiuvMzNq3J.png" style="zoom:50%;" />
+
+ 当增加 Kernel_Size 为 7 时：
+
+<img src="https://s2.loli.net/2022/05/04/bF2foXILUB3YRKt.png" style="zoom:50%;" />
+
+{{<admonition type=Note title="结论">}}
+
+可以看出，减小 Kernel_Size 后，模型泛化能力下降，增加 Kernel_Size 后，模型过拟合现象更加严重。
+
+{{</admonition>}}
+
+#### 实验 3
+
+实验 3 主要讨论的影响因素为 Batch_Size 对训练效果的影响。当减小 Batch_Size 到 2 时：
+
+<img src="https://s2.loli.net/2022/05/04/5bmD8ykLC6d4AGP.png" style="zoom:50%;" />
+
+当增加 Batch_Size 到 6 时：
+
+<img src="https://s2.loli.net/2022/05/04/ZsMT5oXzQ2NE9CB.png" style="zoom:50%;" />
+
+{{<admonition type=Note title="结论">}}
+
+可以看出，增加或减小 Batch_Size 并没有明显影响。
+
+{{</admonition>}}
+
+#### 实验 4
+
+实验 4 的目的为探究 Num_Steps 对训练效果的影响。当减小 Num_Steps 到 3 时：
+
+<img src="https://s2.loli.net/2022/05/04/RzSpUxBjYCrP7u6.png" style="zoom:50%;" />
+
+当增加 Num_Steps 到 7 时：
+
+<img src="https://s2.loli.net/2022/05/04/FSXyb4tHRqsf1xj.png" style="zoom:50%;" />
+
+{{<admonition type=Note title="结论">}}
+
+可以看出，增加 Num_Steps 加剧了过拟合现象，减小 Num_Steps 降低了模型的泛化能力。
+
+{{</admonition>}}
+
+#### 实验 5
+
+ 实验 5 的目的为探究 ConvLSTM 的效果。当将模型切换为 ConvLSTM 后：
+
+<img src="https://s2.loli.net/2022/05/04/nrMiCJ1tZ9s3lHG.png" style="zoom:50%;" />
+
+{{<admonition type=Note title="结论">}}
+
+可以看出模型泛化能力下降。
+
+{{</admonition>}}
+
+### 总结
+
+在上述的实验中，可以得出：
+
+1. **Batch Size** 对网络训练效果影响不大；
+2. **Weigth Decay** 的引入可以提升网络的泛化能力；
+3.  **Kernel Size**、**Num Steps** 的增加会加剧网络过拟合，其减小又会引发泛化能力的下降；
+4. 相较于 **ConvLSTM**，**ConvGRU** 具有更好的泛化能力。
+
+{{<admonition type=question title="问题">}}
+
+事实上，上述实验结果的导出十分具有局限性。因为最后实验数据仅仅整理出 166 条训练集数据及 55 条测试集数据。在深度学习领域，这样的数据量是极小的。并且值得注意的是，训练集数据并没有分布在测试数据所在的时间段上，这也是训练集效果良好，测试集效果差距较大的原因之一。
+
+{{</admonition>}}
+
+## 绘图
+
+---
+
+```python
+	raise NotImplementedError()
+```
 
 ## 工作时间线
 
@@ -301,6 +398,10 @@ key = ['PM10', 'PM2_5_DRY', 'U', 'V', 'QVAPOR','CLDFRA','so2','no2', 'no','so4aj
 
 2022/04/22：从实验室区筛选了带有 PM 的 WRF 数据，大概有550条。
 
-2022/04/23：确认数据，筛选合适的数据。
+2022/04/23：确认数据，筛选合适的数据。最终数据分布在 3 个时间段上，共计 221 条。
 
 2022/04/25：训练一部分数据，训练集 MSELoss 为 12.6。
+
+2022/05/01: 实验完成。
+
+
