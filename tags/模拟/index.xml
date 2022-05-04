@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>模拟 - 标签 - Blathers&#39; Tent</title>
+    <link>https://blathers23.netlify.app/tags/%E6%A8%A1%E6%8B%9F/</link>
+    <description>模拟 - 标签 - Blathers&#39; Tent</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>blathers233@outlook.com (Blathers)</managingEditor>
+      <webMaster>blathers233@outlook.com (Blathers)</webMaster><lastBuildDate>Thu, 05 May 2022 01:54:00 &#43;0800</lastBuildDate><atom:link href="https://blathers23.netlify.app/tags/%E6%A8%A1%E6%8B%9F/" rel="self" type="application/rss+xml" /><item>
+  <title>LC1823 - 找出游戏的获胜者</title>
+  <link>https://blathers23.netlify.app/lc1823/</link>
+  <pubDate>Thu, 05 May 2022 01:54:00 &#43;0800</pubDate>
+  <author>Blathers</author>
+  <guid>https://blathers23.netlify.app/lc1823/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="/images/leetcode.jpg" referrerpolicy="no-referrer">
+      </div>找出隐藏在模拟之下的数学规律是巧解本题的关键。]]></description>
+</item></channel>
+</rss>

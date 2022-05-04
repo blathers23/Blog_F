@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>LC1823 - 找出游戏的获胜者 - Blathers&#39; Tent</title><meta name="author" content="Blathers: ">
+<meta name="description" content="找出隐藏在模拟之下的数学规律是巧解本题的关键。" />
+<meta name="keywords" content="Python,模拟,递归,迭代,约瑟夫环" /><meta itemprop="name" content="LC1823 - 找出游戏的获胜者">
+<meta itemprop="description" content="找出隐藏在模拟之下的数学规律是巧解本题的关键。"><meta itemprop="datePublished" content="2022-05-05T01:54:00+08:00" />
+<meta itemprop="dateModified" content="2022-05-05T00:00:00+00:00" />
+<meta itemprop="wordCount" content="3329">
+<meta itemprop="keywords" content="Python,模拟,递归,迭代,约瑟夫环," /><meta property="og:title" content="LC1823 - 找出游戏的获胜者" />
+<meta property="og:description" content="找出隐藏在模拟之下的数学规律是巧解本题的关键。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blathers23.netlify.app/lc1823/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-05-05T01:54:00+08:00" />
+<meta property="article:modified_time" content="2022-05-05T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="LC1823 - 找出游戏的获胜者"/>
+<meta name="twitter:description" content="找出隐藏在模拟之下的数学规律是巧解本题的关键。"/>
+<meta name="application-name" content="Blathers&#39; Tent">
+<meta name="apple-mobile-web-app-title" content="Blathers&#39; Tent"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="https://blathers23.netlify.app/lc1823/" /><link rel="prev" href="https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAhugo%E6%95%99%E7%A8%8B/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "LC1823 - 找出游戏的获胜者",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blathers23.netlify.app\/lc1823\/"
+    },"genre": "posts","keywords": "Python, 模拟, 递归, 迭代, 约瑟夫环","wordcount":  3329 ,
+    "url": "https:\/\/blathers23.netlify.app\/lc1823\/","datePublished": "2022-05-05T01:54:00+08:00","dateModified": "2022-05-05T00:00:00+00:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Blathers"
+      },"description": "找出隐藏在模拟之下的数学规律是巧解本题的关键。"
+  }
+  </script></head>
+  <body header-desktop="sticky" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script><div class="wrapper"><header class="desktop" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Blathers&#39; Tent"><span class="header-title-pre">🏕️</span><span class="header-title-text">Blathers&#39; Tent</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/posts/"
+                title="全部文章"
+                
+              >Posts 📑</a></li><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/tags/"
+                title="标签"
+                
+              >Tags 🏷️</a></li><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/categories/"
+                title="分类"
+                
+              >Categories 📚</a></li><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/friends"
+                title="友情链接"
+                
+              >Friends 🎈</a></li><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/about"
+                title="关于我"
+                
+              >About 🦉</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fas fa-search fa-fw"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fas fa-times-circle fa-fw"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fas fa-spinner fa-fw fa-spin"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fas fa-adjust fa-fw"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Blathers&#39; Tent"><span class="header-title-pre">🏕️</span><span class="header-title-text">Blathers&#39; Tent</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fas fa-search fa-fw"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fas fa-times-circle fa-fw"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fas fa-spinner fa-fw fa-spin"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/posts/"
+                title="全部文章"
+                
+              >Posts 📑</a></li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/tags/"
+                title="标签"
+                
+              >Tags 🏷️</a></li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/categories/"
+                title="分类"
+                
+              >Categories 📚</a></li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/friends"
+                title="友情链接"
+                
+              >Friends 🎈</a></li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/about"
+                title="关于我"
+                
+              >About 🦉</a></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fas fa-adjust fa-fw"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header>
+<div class="search-dropdown desktop">
+  <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+  <div id="search-dropdown-mobile"></div>
+</div>
+<main class="container" page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录</h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    
+  </aside>
+
+  <article class="page single"><h1 class="single-title animate__animated animate__flipInX">LC1823 - 找出游戏的获胜者</h1><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="https://gravatar.loli.net/avatar/1cc24367e7133aceb81bfd9ef41481cd?s=32&amp;d="
+    data-srcset="https://gravatar.loli.net/avatar/1cc24367e7133aceb81bfd9ef41481cd?s=32&amp;d=, https://gravatar.loli.net/avatar/1cc24367e7133aceb81bfd9ef41481cd?s=32&amp;d= 1.5x, https://gravatar.loli.net/avatar/1cc24367e7133aceb81bfd9ef41481cd?s=32&amp;d= 2x"
+    data-sizes="auto"
+    alt="Blathers"
+    title="Blathers" />&nbsp;Blathers</span></span>
+          <span class="post-category">收录于 <a href="/categories/leetcode/"><i class="far fa-folder fa-fw"></i>&nbsp;leetcode</a></span></div>
+      <div class="post-meta-line"><span title=2022-05-05&#32;01:54:00>
+            <i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-05-05" >2022-05-05</time>
+          </span>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3329 字&nbsp;
+        <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 7 分钟&nbsp;</div>
+    </div><div class="featured-image"><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="/images/leetcode.jpg"
+    data-srcset="/images/leetcode.jpg, /images/leetcode.jpg 1.5x, /images/leetcode.jpg 2x"
+    data-sizes="auto"
+    alt="/images/leetcode.jpg"
+    title="找出隐藏在模拟之下的数学规律是巧解本题的关键。" /></div><div class="details toc" id="toc-static" kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fas fa-angle-right"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#思考">思考</a></li>
+    <li><a href="#代码">代码</a></li>
+    <li><a href="#优化">优化</a></li>
+    <li><a href="#约瑟夫环代码">约瑟夫环代码</a></li>
+    <li><a href="#最后优化">最后优化</a></li>
+    <li><a href="#结尾碎碎念">结尾碎碎念</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><blockquote>
+<p>问题链接：<a
+  href="https://leetcode.cn/problems/find-the-winner-of-the-circular-game/"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>找出游戏的获胜者</a></p>
+</blockquote>
+<h2 id="思考">思考</h2>
+<hr>
+<p>本题就描述而言并不困难，可以很轻松的想出基于模拟的做法。数字按顺序绕成一圈，明显为<strong>单循环链表</strong>，接下来仅仅需要按照题目描叙，指针每次向下移动一位，移动到 $k$ 的整数倍后便将指针所指节点删去，直至最后只剩一个节点，该节点即为游戏的获胜者。</p>
+<p>对于单纯的模拟来讲，只需要实现计数和单循环链表节点的删除即可轻松拿下本题。但是我们可以注意到，维护一个单循环链表，并不断地从链表上删除元素，所消耗的时间复杂度是很高的，并且这个动作并不是无可取代的。</p>
+<p>具体而言怎样实现呢？此处提供一个不需要维护单循环链表的思路。</p>
+<p>对于没有插入动作的单循环链表，我们可以用数组对其进行模拟。我们可以完全可以申请一片连续的内存空间：对于单循环链表<strong>指针的移动</strong>而言，可以使用取余来实现。我们可以将指针设为一个整形，每次移动意味着指针值 $+1$，当指针值，或者说数组下标超出数组长度后，对指针值除以数组长度做取余运算，指针值便又回到了最初的 $0$，意味着开始指针回到链表头的位置，开始了新一轮的循环。这样便会带来一个问题，那就是我们需要额外增加一个变量来记录数过了几个小伙伴，这是因为指针值（数组下标）会发生变化，单纯将指针值的 $k$ 倍所在的节点进行删除并不能删除正确的节点。</p>
+<p>对于单循环链表<strong>节点的删除</strong>而言，由于小伙伴们的取值为从 $1$ 开始的整数，我们可以将已经被淘汰的小伙伴的值设为 $-1$，来代指小伙伴已经被从链表上删除，当指针经过被淘汰的小伙伴的时候，指针值 $+1$，但数过的小伙伴的数量保持不变（也就是在<strong>指针的移动</strong>步骤中最后增加的变量）。这样，我们就增加两个变量，使用数组取代了时间复杂度更高的单循环链表以及其维护操作。</p>
+<h2 id="代码">代码</h2>
+<hr>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">findTheWinner</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">gamer</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>	<span class="c1"># 使用数组来代表所有参加游戏的小伙伴</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">count</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="n">alive</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span>			<span class="c1"># count 为在游戏中已经数过了多少个小伙伴，ptr 为指针（数组下标） </span>
+</span></span><span class="line"><span class="cl">											<span class="c1"># alive 为现在剩余的小伙伴数量，每次淘汰一个小伙伴，alive - 1</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ptr</span> <span class="o">+=</span> <span class="mi">1</span>						<span class="c1"># 指针移动到下一个位置</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ptr</span> <span class="o">=</span> <span class="n">ptr</span> <span class="o">%</span> <span class="n">n</span>					<span class="c1"># 当指针超出数组下标后，回到原点</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">gamer</span><span class="p">[</span><span class="n">ptr</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>			<span class="c1"># 如果指针当前位置的小伙伴已经被淘汰</span>
+</span></span><span class="line"><span class="cl">                <span class="k">continue</span>					<span class="c1"># 不再做任何操作</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span><span class="p">:</span>							<span class="c1"># 如果未被淘汰</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">alive</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>				<span class="c1"># 并且场上存活的小伙伴数量 &gt; 1 </span>
+</span></span><span class="line"><span class="cl">                    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>				<span class="c1"># 数过一个小伙伴</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="n">count</span> <span class="o">%</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>		<span class="c1"># 如果已经数到了第 k 个小伙伴</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">gamer</span><span class="p">[</span><span class="n">ptr</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>		<span class="c1"># 将小伙伴淘汰</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">alive</span> <span class="o">-=</span> <span class="mi">1</span>			<span class="c1"># 场上存活的小伙伴数量 - 1</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span><span class="p">:</span>						<span class="c1"># 如果场上只剩余 1 名小伙伴</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">return</span> <span class="n">gamer</span><span class="p">[</span><span class="n">ptr</span><span class="p">]</span>		<span class="c1"># 返回该名小伙伴</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>模拟代码并不难，最终结果也并不好🤣：</p>
+<blockquote>
+<p>执行用时: <strong>1256 ms</strong>，超过了 <strong>0%</strong> 的 <strong>Python3</strong> 提交记录。</p>
+<p>内存消耗: <strong>14.9 MB</strong>，超过了 <strong>64%</strong> 的 <strong>Python3</strong> 提交记录。</p>
+</blockquote>
+<p>有点搞笑了只能说，怕不是紧贴着 TLE 通过的。</p>
+<h2 id="优化">优化</h2>
+<hr>
+<p>当暴力效果不好的时候，我们要做的便是用数学的眼光来发掘其内在规律，减少无用功。当然，互联网时代，如此便利的条件我们更应该站在巨人的肩膀上（<del>面向搜索引擎解题</del>）。</p>
+<p>闲话休叙。了解了一下之后发现，从 $0$ 开始，首尾相接，每次数 $k$ 并将其淘汰，称之为<strong>约瑟夫环</strong>。也就是说，本题就是原汁原味的约瑟夫环问题，仅仅是将开头给换成了 $1$。事实上，本题可以使用归纳的方式寻找出规律。</p>
+<p>关于约瑟夫环，很有趣的一点便是，<strong>在第一轮循环中</strong>，只要 $k$（每次淘汰要数几个数）相同，那么无论 $n$（约瑟夫环中节点总数）为多少，第一次淘汰的位置总是一样的。当然我们这里假设 $n &gt; k$。以图为例：</p>
+<img src="https://s2.loli.net/2022/05/05/5bds6L1kGp9wVEq.png" alt="lc1835.drawio.png"  />
+<p>假设 $k = 3$ 那么我们将要淘汰的数字为环中第 $3$ 个数，也就是 $2$。可以看到，图中两环虽然 $n$ 不相同，但是所淘汰的数是相同的。</p>
+<div class="details admonition note open">
+    <div class="details-summary admonition-title">
+      <i class="icon fas fa-pencil-alt fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">我们大可以一直不停的淘汰下去，但是这样解决不了任何问题。因为一直淘汰下去又会使问题回归到模拟，现在我们应当试图寻找一些<strong>规律</strong>。</div>
+    </div>
+  </div>
+<p>这里我们先将 $n = 9$ 的环上的数进行淘汰：</p>
+<img src="https://s2.loli.net/2022/05/05/EviptoMu9AG43QU.png"  />
+<p>现在，两个约瑟夫环的 $n$  是相同的，但是很难找到规律，因为上环已经断开，而下环依旧完好，两者结构相差太多。如果我们简单的将断处续接，也就是连接 $1$ 和 $3$：</p>
+<img src="https://s2.loli.net/2022/05/05/gwOuLHcxdnpryZP.png"  />
+<p>事情似乎并没有朝着我们想要发掘的内在规律靠拢，第一次循环中要被淘汰的数错列排布，依旧让人摸不到头脑。</p>
+<p>退回到上一步，重新考虑这个约瑟夫环的问题。是的，现在我们考虑的是一个<strong>环</strong>，也就是说这些数是首尾相接的。既然 $1$ 和 $3$ 相接看不出端倪，那么 $0$ 和 $8$ 相接又如何呢？</p>
+<img src="https://s2.loli.net/2022/05/05/LPDAkWrCIbj8hq4.png"  />
+<p>我们注意到，需要淘汰的数，和存活的数，竟然<strong>排列在了一起</strong>！并且在数组的前 $6$ 位，我们可以注意到，上排数和下排数相差为定值 $3$ ，这很容易理解，因为我们将第一轮存活的数接在了数组的尾部，共 $2$ 个数，而第 $3$ 个数，也就是 <strong>$k$ 的倍数</strong>被淘汰。将数组上下对齐后，上排数和下排数差值为定值，也就是 $k$。</p>
+<p>似乎忘记了续接的两个数？无需担心，因为这个问题我们早就在模拟解法中使用余数解决了。也就是说：</p>
+<ul>
+<li>对于前 $6$ 个数，上下数组之间的对应关系为差值 $k$，例如 $4 = 1 + k = 1 + 3$。</li>
+<li>对于后 $2$ 个数，上下数组之间的对应关系为差值 $k$ 及除以 $n$ 的余数，例如 $0 = (6 + 3) 取余 9$。</li>
+</ul>
+<p>也就是可以表示为：</p>
+<img src="https://s2.loli.net/2022/05/05/i1bn7PZfSgEm849.png"  />
+<p>至此，我们找到了一种上下对应的关系。换句话说：<strong>如果我们已知</strong> $n=8,k=3$ <strong>时何数的去留，我们便能通过数学关系</strong> $(x+k) 取余 n$ <strong>得知</strong> $n=9,k=3$ <strong>时何数的去留</strong>。这是因为由上图可知，<strong>去留关系应该是一一对应的</strong>。</p>
+<div class="details admonition note open">
+    <div class="details-summary admonition-title">
+      <i class="icon fas fa-pencil-alt fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">我们考虑的问题为约瑟夫环，这个环是首尾相接的，对上图而言，两环的差距，仅仅在<strong>标上的数字不相同</strong>。而由约瑟夫环的特性我们可以知道，对于一个约瑟夫环，只要起点相同，$n$ 和 $k$ 相同，那么对应位置的数字最终存活与否肯定是相同的。现在我们通过一个数学转换找到了数字之间的对应关系。</div>
+    </div>
+  </div>
+<p>当然了，你可能会注意到，<strong>我</strong> $2$ <strong>怎么没了</strong>？上环的数字 $2$ 已经为了寻找规律而被淘汰，但这不重要。因为我们知道，最后的胜者肯定不会在最开始就被淘汰！因为我们所求的是最后的胜者！现在，我们假设 $f(n,k)$ 为该条件下最后的胜者，那么我们可以知道，其肯定不会被淘汰，也就是该数一定是符合下述关系的：
+$$
+f(n,k) = (f(n-1,k) + k) 取余 n
+$$
+而我们又知道，如果仅有一个数，那么无论 $k$ 为多少，最后赢家一定是它，也就是约瑟夫环最开始的那个数 $0$。数学表达式为：
+$$
+f(1,k)=0
+$$
+现在，无论 $k$ 的值是多少，我们都能在时间复杂度 $\mathcal{O}(n)$ 的时间复杂度下，利用递推公式求出最后的赢家！</p>
+<h2 id="约瑟夫环代码">约瑟夫环代码</h2>
+<hr>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">findTheWinner</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">findTheWinner</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="o">+</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>	<span class="c1"># 递推公式</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>将多行代码优化至一行！数学，很神奇吧！</p>
+<div class="details admonition tip open">
+    <div class="details-summary admonition-title">
+      <i class="icon fas fa-lightbulb fa-fw"></i>提示<i class="details-icon fas fa-angle-right fa-fw"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">你可能已经注意到本题与约瑟夫环的不同，那就是约瑟夫环起始数为 $0$ 而本题起始数为 $1$。这也不难解决，只需要在输出结果后使结果 $+1$ 并在进行约瑟夫环迭代计算前将其减去即可。</div>
+    </div>
+  </div>
+<p>最终效果：</p>
+<blockquote>
+<p>执行用时: <strong>40 ms</strong>，超过了 <strong>71%</strong> 的 <strong>Python3</strong> 提交记录。</p>
+<p>内存消耗: <strong>15.3 MB</strong>，超过了 <strong>8%</strong> 的 <strong>Python3</strong> 提交记录。</p>
+</blockquote>
+<h2 id="最后优化">最后优化</h2>
+<hr>
+<p>上述代码使用迭代实现，迭代到最后有一个堆栈返回的过程，这还可以进行优化。将迭代换成循环，也就是将倒着求结果换成正着推，并不难实现，代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">findTheWinner</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span>							<span class="c1"># 起始条件</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">res</span> <span class="o">+</span> <span class="n">k</span><span class="p">)</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>		<span class="c1"># 约瑟夫环递推公式</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">res</span> <span class="o">+</span> <span class="mi">1</span>					<span class="c1"># 最终结果 + 1 因为本题数字从 1 开始</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>最后节约了 4ms 的执行时间和大量的内存：</p>
+<blockquote>
+<p>执行用时: <strong>36 ms</strong>，超过了 <strong>89%</strong> 的 <strong>Python3</strong> 提交记录。</p>
+<p>内存消耗: <strong>14.8 MB</strong>，超过了 <strong>93%</strong> 的 <strong>Python3</strong> 提交记录。</p>
+</blockquote>
+<h2 id="结尾碎碎念">结尾碎碎念</h2>
+<hr>
+<p>距离上次写题解过去了好多天，并不是因为我懒，这里还是要反思一下刷题的技巧的。</p>
+<p>最开始我是顺着题目顺序刷题，事实上很多简单题做起来确实没有什么好讲的地方，导致没有什么收获。而困难题呢，又因为难度太高，就算勉强做出来，也不至于能到达清晰的梳理好题目的程度，收获甚微。反而是中等题，常常能带来很多有益的思考。我并不是说困难题和简单题就没有不能带来这种思考，只是出现的频率较少罢了。最近在按照每日一题来做，收获还是不错了。</p>
+<p>前几天试着做了一下全站通过率最低的 LCP60 力扣泡泡龙，做了一个半小时，总算是写了出来一个通过的结果。但是说实话诈胡成分比较高，怕是测试再复杂一些就要挂在时间上。光是做就已经绞尽脑汁，优化更是有心无力了。然后第二天又连做两道 hard，头昏脑胀，直接摸了一晚上。最后也没学到什么，只能说头铁 hard 不可取。</p>
+<p>现在是 4:32 ，明天还得，哦，今天中午 12 点还得开会，得赶紧睡了。写题解还是很耗时间的，3 千字大概写了 130 分钟，估计回家备考就很难写这种长篇题解了。</p>
+<p>这篇文章题解绘图用的是 Draw.io 这款软件，还挺好用的。</p>
+<p>不知道为啥公式内百分号不能正常显示，还得再研究一下。</p>
+<p>最后就是，《相合之物》这动画片真好看！</p>
+<meting-js server="netease" type="song" id="1939422917" theme="#448aff"></meting-js></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2022-05-05&#32;00:00:00>更新于 2022-05-05</span>
+      </div>
+      <div class="post-info-license"><span><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+    <div class="post-info-line">
+      <div class="post-info-md"><span><a
+  href="/lc1823/index.md"
+  
+    title="阅读原始文档"
+  
+  
+  
+  
+  
+    class="link-to-markdown"
+  
+  
+>阅读原始文档</a></span></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blathers23.netlify.app/lc1823/" data-title="LC1823 - 找出游戏的获胜者" data-image="/images/leetcode.jpg"><i class="fab fa-weibo fa-fw"></i></a>
+  <a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://blathers23.netlify.app/lc1823/" data-title="LC1823 - 找出游戏的获胜者"><i data-svg-src="/lib/simple-icons/icons/baidu.min.svg"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://blathers23.netlify.app/lc1823/" data-title="LC1823 - 找出游戏的获胜者"><i class="fab fa-evernote fa-fw"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/python/">Python</a>,&nbsp;<a href="/tags/%E6%A8%A1%E6%8B%9F/">模拟</a>,&nbsp;<a href="/tags/%E9%80%92%E5%BD%92/">递归</a>,&nbsp;<a href="/tags/%E8%BF%AD%E4%BB%A3/">迭代</a>,&nbsp;<a href="/tags/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/">约瑟夫环</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAhugo%E6%95%99%E7%A8%8B/" class="prev" rel="prev" title="浅入浅出 Hugo 教程"><i class="fas fa-angle-left fa-fw"></i>浅入浅出 Hugo 教程</a></div>
+</div>
+<div id="comments"><div id="waline" class="comment"></div><noscript>
+        Please enable JavaScript to view the comments powered by <a href="https://waline.js.org/" rel="external nofollow noopener noreffer">Waline</a>.
+      </noscript></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer" title="Hugo 0.97.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/Lruihao/FixIt" target="_blank" rel="external nofollow noopener noreffer" title="FixIt v0.2.14-RC"><img class="fixit-icon" src="/images/fixit.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright"><i class="far fa-copyright fa-fw"></i>
+            <span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">
+              <a
+  href="/"
+  
+  
+  
+  
+  
+  
+>Blathers</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fas fa-heartbeat fa-fw animate-icon"></i>&nbsp;<span class="run-times">网站运行中 ...</span></span><span class="total-word-count footer-divider" title='总计约 22106 字'><i class="far fa-keyboard fa-fw"></i>&nbsp;总计约 22.11K 字</span></div><div class="footer-line ibruce">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="far fa-user fa-fw"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin fa-fw"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="far fa-eye fa-fw"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin fa-fw"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets">
+  <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+      <i class="fas fa-arrow-up fa-fw"></i>
+    </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+      <i class="fas fa-comment fa-fw"></i>
+    </a>
+  </div><div id="mask"></div>
+</div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/aplayer/APlayer.min.css"><link rel="stylesheet" href="/lib/aplayer/dark.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/waline/Waline.min.js" defer></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js" defer></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js" async defer></script><script type="text/javascript" src="/lib/sharer/sharer.min.js" async defer></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/lib/aplayer/APlayer.min.js" defer></script><script type="text/javascript" src="/lib/meting/Meting.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":50},"comment":{"waline":{"copyright":true,"dark":"body[theme='dark']","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/bilibili"],"highlight":true,"lang":"zh-cn","login":"enable","meta":["nick","mail","link"],"pageSize":10,"serverURL":"https://eke-sai-ting-b9q9mvc8d-blathers.vercel.app"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":null,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"siteTime":"2022-04-19T01:19:11+08:00"};</script><script type="text/javascript" src="/js/theme.min.js" defer></script><script type="text/javascript" src="/js/_custom.min.js" defer></script></body>
+</html>
