@@ -24,8 +24,9 @@
 
  - 😎  2022/04/19 Hello Hugo!
  - 🥱  2022/04/22 页面施工基本完毕，等待上线。
- - 😛  2022/04/22 正式上线 GitHub Pages！
- - ✈️  2022/04/25 迁移至 netlify
+ - 😛  2022/04/22 正式上线 GitHub Pages!
+ - ✈️  2022/04/25 迁移至 netlify!
+ - 🦊  2022/05/05 仓库迁移至 GitLab!
 
 
 ## 与我联系
@@ -38,5 +39,6 @@
 
 🤖 Gitee 主页: [@blathers](https://gitee.com/Blathers)
 
-👾 GitHub 主页(不经常出没): [@blathers23](https://github.com/blathers23)
+👾 GitHub 主页（不经常出没）: [@blathers23](https://github.com/blathers23)
 
+🦊 GitLab 主页（不经常出没）: [@blathers23](https://gitlab.com/blathers23)

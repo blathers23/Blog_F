@@ -7,7 +7,7 @@
 - nickname: Blathers
   avatar: https://gravatar.loli.net/avatar/1cc24367e7133aceb81bfd9ef41481cd?s=240&d=mp
   url: https://blathers233.netlify.app
-  description: Blathers Tent
+  description: Blathers' Tent
 ```
 
 
