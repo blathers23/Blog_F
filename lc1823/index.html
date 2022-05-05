@@ -10,7 +10,7 @@
 <meta name="keywords" content="Python,模拟,递归,迭代,约瑟夫环" /><meta itemprop="name" content="LC1823 - 找出游戏的获胜者">
 <meta itemprop="description" content="找出隐藏在模拟之下的数学规律是巧解本题的关键。"><meta itemprop="datePublished" content="2022-05-05T01:54:00+08:00" />
 <meta itemprop="dateModified" content="2022-05-05T00:00:00+00:00" />
-<meta itemprop="wordCount" content="3329">
+<meta itemprop="wordCount" content="3325">
 <meta itemprop="keywords" content="Python,模拟,递归,迭代,约瑟夫环," /><meta property="og:title" content="LC1823 - 找出游戏的获胜者" />
 <meta property="og:description" content="找出隐藏在模拟之下的数学规律是巧解本题的关键。" />
 <meta property="og:type" content="article" />
@@ -33,7 +33,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/blathers23.netlify.app\/lc1823\/"
-    },"genre": "posts","keywords": "Python, 模拟, 递归, 迭代, 约瑟夫环","wordcount":  3329 ,
+    },"genre": "posts","keywords": "Python, 模拟, 递归, 迭代, 约瑟夫环","wordcount":  3325 ,
     "url": "https:\/\/blathers23.netlify.app\/lc1823\/","datePublished": "2022-05-05T01:54:00+08:00","dateModified": "2022-05-05T00:00:00+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -201,7 +201,7 @@
           <span class="post-category">收录于 <a href="/categories/leetcode/"><i class="far fa-folder fa-fw"></i>&nbsp;leetcode</a></span></div>
       <div class="post-meta-line"><span title=2022-05-05&#32;01:54:00>
             <i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-05-05" >2022-05-05</time>
-          </span>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3329 字&nbsp;
+          </span>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3325 字&nbsp;
         <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 7 分钟&nbsp;</div>
     </div><div class="featured-image"><img
     class="lazyload"
@@ -350,7 +350,7 @@ $$
 $$
 f(1,k)=0
 $$
-现在，无论 $k$ 的值是多少，我们都能在时间复杂度 $\mathcal{O}(n)$ 的时间复杂度下，利用递推公式求出最后的赢家！</p>
+现在，无论 $k$ 的值是多少，我们都能在 $\mathcal{O}(n)$ 的时间复杂度下，利用递推公式求出最后的赢家！</p>
 <h2 id="约瑟夫环代码">约瑟夫环代码</h2>
 <hr>
 <div class="highlight"><div class="chroma">
@@ -371,7 +371,7 @@ $$
       <i class="icon fas fa-lightbulb fa-fw"></i>提示<i class="details-icon fas fa-angle-right fa-fw"></i>
     </div>
     <div class="details-content">
-      <div class="admonition-content">你可能已经注意到本题与约瑟夫环的不同，那就是约瑟夫环起始数为 $0$ 而本题起始数为 $1$。这也不难解决，只需要在输出结果后使结果 $+1$ 并在进行约瑟夫环迭代计算前将其减去即可。</div>
+      <div class="admonition-content">你可能已经注意到本题与约瑟夫环的不同，那就是约瑟夫环起始数为 $0$ 而本题起始数为 $1$。这也不难解决，只需要在输出结果后使结果 $+1$ 并在进行约瑟夫环递归计算前将其减去即可。</div>
     </div>
   </div>
 <p>最终效果：</p>
@@ -381,7 +381,7 @@ $$
 </blockquote>
 <h2 id="最后优化">最后优化</h2>
 <hr>
-<p>上述代码使用迭代实现，迭代到最后有一个堆栈返回的过程，这还可以进行优化。将迭代换成循环，也就是将倒着求结果换成正着推，并不难实现，代码如下：</p>
+<p>上述代码使用递归实现，递归到最后有一个堆栈返回的过程，这还可以进行优化。将递归替换为迭代，也就是将倒着求结果换成正着推，并不难实现，代码如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -468,7 +468,7 @@ $$
   
   
   
->Blathers</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fas fa-heartbeat fa-fw animate-icon"></i>&nbsp;<span class="run-times">网站运行中 ...</span></span><span class="total-word-count footer-divider" title='总计约 22106 字'><i class="far fa-keyboard fa-fw"></i>&nbsp;总计约 22.11K 字</span></div><div class="footer-line ibruce">
+>Blathers</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fas fa-heartbeat fa-fw animate-icon"></i>&nbsp;<span class="run-times">网站运行中 ...</span></span><span class="total-word-count footer-divider" title='总计约 22102 字'><i class="far fa-keyboard fa-fw"></i>&nbsp;总计约 22.10K 字</span></div><div class="footer-line ibruce">
           <span id="busuanzi_container_site_uv" title='总访客数'><i class="far fa-user fa-fw"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin fa-fw"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="far fa-eye fa-fw"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin fa-fw"></i></span></span>
         </div></div>
   </footer></div><div class="widgets">
