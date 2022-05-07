@@ -398,9 +398,7 @@ key = ['PM10', 'PM2_5_DRY', 'U', 'V', 'QVAPOR','CLDFRA','so2','no2', 'no','so4aj
 
 ---
 
-```python
-	raise NotImplementedError()
-```
+<image src="/images/Res_Tiny.gif" style="zoom:150%;">
 
 ## 工作时间线
 
@@ -415,5 +413,7 @@ key = ['PM10', 'PM2_5_DRY', 'U', 'V', 'QVAPOR','CLDFRA','so2','no2', 'no','so4aj
 2022/04/25：训练一部分数据，训练集 MSELoss 为 12.6。
 
 2022/05/01：实验完成。
+
+2022/05/08：画个图。
 
 

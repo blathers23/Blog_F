@@ -4,9 +4,25 @@
     <link>https://blathers23.netlify.app/</link>
     <description>Blathers&#39; Tent</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>blathers233@outlook.com (Blathers)</managingEditor>
-      <webMaster>blathers233@outlook.com (Blathers)</webMaster><lastBuildDate>Thu, 05 May 2022 01:54:00 &#43;0800</lastBuildDate>
+      <webMaster>blathers233@outlook.com (Blathers)</webMaster><lastBuildDate>Sun, 08 May 2022 02:39:00 &#43;0800</lastBuildDate>
       <atom:link href="https://blathers23.netlify.app/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>Python常用内置容器及方法</title>
+  <link>https://blathers23.netlify.app/python%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%AE%B9%E5%99%A8%E5%8F%8A%E6%96%B9%E6%B3%95/</link>
+  <pubDate>Sun, 08 May 2022 02:39:00 &#43;0800</pubDate>
+  <author>Blathers</author>
+  <guid>https://blathers23.netlify.app/python%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%AE%B9%E5%99%A8%E5%8F%8A%E6%96%B9%E6%B3%95/</guid>
+  <description><![CDATA[磨刀不误砍柴功。]]></description>
+</item><item>
+  <title>LC433 - 最小基因变化</title>
+  <link>https://blathers23.netlify.app/lc433/</link>
+  <pubDate>Sun, 08 May 2022 00:09:00 &#43;0800</pubDate>
+  <author>Blathers</author>
+  <guid>https://blathers23.netlify.app/lc433/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="/images/leetcode.jpg" referrerpolicy="no-referrer">
+      </div>做题应当由浅入深。]]></description>
+</item><item>
   <title>LC1823 - 找出游戏的获胜者</title>
   <link>https://blathers23.netlify.app/lc1823/</link>
   <pubDate>Thu, 05 May 2022 01:54:00 &#43;0800</pubDate>
@@ -30,7 +46,7 @@
   <guid>https://blathers23.netlify.app/lc15/</guid>
   <description><![CDATA[<div class="featured-image">
         <img src="/images/leetcode.jpg" referrerpolicy="no-referrer">
-      </div>双指针真是太棒啦 -> 二分查找也是]]></description>
+      </div>双指针真是太棒啦 -> 二分查找也是。]]></description>
 </item><item>
   <title>LC11 - 盛水最多的容器</title>
   <link>https://blathers23.netlify.app/lc11/</link>
@@ -39,7 +55,7 @@
   <guid>https://blathers23.netlify.app/lc11/</guid>
   <description><![CDATA[<div class="featured-image">
         <img src="/images/leetcode.jpg" referrerpolicy="no-referrer">
-      </div>双指针是好文明]]></description>
+      </div>双指针是好文明!]]></description>
 </item><item>
   <title>杂谈毕业设计</title>
   <link>https://blathers23.netlify.app/%E6%9D%82%E8%B0%88%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/</link>
@@ -68,21 +84,5 @@
   <author>Blathers</author>
   <guid>https://blathers23.netlify.app/golang_hello_world/</guid>
   <description><![CDATA[]]></description>
-</item><item>
-  <title>记录Gitalk的一个Bug</title>
-  <link>https://blathers23.netlify.app/gitalk/</link>
-  <pubDate>Sat, 13 Feb 2021 21:48:20 &#43;0000</pubDate>
-  <author>Blathers</author>
-  <guid>https://blathers23.netlify.app/gitalk/</guid>
-  <description><![CDATA[]]></description>
-</item><item>
-  <title>Hello Gridea! - 怎样给Blog网站设置自己的域名</title>
-  <link>https://blathers23.netlify.app/hello_gridea_domain/</link>
-  <pubDate>Sat, 13 Feb 2021 14:52:22 &#43;0000</pubDate>
-  <author>Blathers</author>
-  <guid>https://blathers23.netlify.app/hello_gridea_domain/</guid>
-  <description><![CDATA[<div class="featured-image">
-        <img src="https://s2.loli.net/2022/04/26/Ik5uhlUmrVG4cFo.png" referrerpolicy="no-referrer">
-      </div>]]></description>
 </item></channel>
 </rss>
