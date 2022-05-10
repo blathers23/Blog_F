@@ -9,14 +9,14 @@
 <meta name="description" content="磨刀不误砍柴功。" />
 <meta name="keywords" content="Python" /><meta itemprop="name" content="Python常用内置容器及方法">
 <meta itemprop="description" content="磨刀不误砍柴功。"><meta itemprop="datePublished" content="2022-05-08T02:39:00+08:00" />
-<meta itemprop="dateModified" content="2022-05-08T00:00:00+00:00" />
-<meta itemprop="wordCount" content="558">
+<meta itemprop="dateModified" content="2022-05-11T00:00:00+00:00" />
+<meta itemprop="wordCount" content="664">
 <meta itemprop="keywords" content="Python," /><meta property="og:title" content="Python常用内置容器及方法" />
 <meta property="og:description" content="磨刀不误砍柴功。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blathers23.netlify.app/python%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%AE%B9%E5%99%A8%E5%8F%8A%E6%96%B9%E6%B3%95/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-05-08T02:39:00+08:00" />
-<meta property="article:modified_time" content="2022-05-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-05-11T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Python常用内置容器及方法"/>
@@ -33,8 +33,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/blathers23.netlify.app\/python%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%AE%B9%E5%99%A8%E5%8F%8A%E6%96%B9%E6%B3%95\/"
-    },"genre": "posts","keywords": "Python","wordcount":  558 ,
-    "url": "https:\/\/blathers23.netlify.app\/python%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%AE%B9%E5%99%A8%E5%8F%8A%E6%96%B9%E6%B3%95\/","datePublished": "2022-05-08T02:39:00+08:00","dateModified": "2022-05-08T00:00:00+00:00","publisher": {
+    },"genre": "posts","keywords": "Python","wordcount":  664 ,
+    "url": "https:\/\/blathers23.netlify.app\/python%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%AE%B9%E5%99%A8%E5%8F%8A%E6%96%B9%E6%B3%95\/","datePublished": "2022-05-08T02:39:00+08:00","dateModified": "2022-05-11T00:00:00+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -201,7 +201,7 @@
           <span class="post-category">收录于 <a href="/categories/python/"><i class="far fa-folder fa-fw"></i>&nbsp;Python</a></span></div>
       <div class="post-meta-line"><span title=2022-05-08&#32;02:39:00>
             <i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-05-08" >2022-05-08</time>
-          </span>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 558 字&nbsp;
+          </span>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 664 字&nbsp;
         <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
     </div><div class="details toc" id="toc-static" kept="false">
         <div class="details-summary toc-title">
@@ -220,6 +220,7 @@
       <ul>
         <li><a href="#heapq-堆">heapq 堆</a></li>
         <li><a href="#bisect-二分查找">bisect 二分查找</a></li>
+        <li><a href="#map-映射">map 映射</a></li>
       </ul>
     </li>
   </ul>
@@ -412,11 +413,66 @@
 </span></span><span class="line"><span class="cl"><span class="mi">1</span>
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h3 id="map-映射">map 映射</h3>
+<p><code>map</code> 方法将提供的函数对给定的序列做映射并返回迭代器。</p>
+<p>举例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">A</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl"><span class="o">...</span>     <span class="k">return</span>
+</span></span><span class="line"><span class="cl"><span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">A</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">A</span><span class="p">()</span> <span class="o">==</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl"><span class="kc">True</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl"><span class="o">...</span>     <span class="k">return</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">ite</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">ite</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="mi">4</span>
+</span></span><span class="line"><span class="cl"><span class="mi">9</span>
+</span></span><span class="line"><span class="cl"><span class="mi">16</span>
+</span></span><span class="line"><span class="cl"><span class="mi">25</span>
+</span></span><span class="line"><span class="cl"><span class="mi">36</span>
+</span></span><span class="line"><span class="cl"><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="n">File</span> <span class="s2">&#34;&lt;stdin&gt;&#34;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">2</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="ne">StopIteration</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> 
+</span></span></code></pre></td></tr></table>
+</div>
 </div></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title=2022-05-08&#32;00:00:00>更新于 2022-05-08</span>
+        <span title=2022-05-11&#32;00:00:00>更新于 2022-05-11</span>
       </div>
       <div class="post-info-license"><span><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
     </div>
@@ -466,7 +522,7 @@
   
   
   
->Blathers</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fas fa-heartbeat fa-fw animate-icon"></i>&nbsp;<span class="run-times">网站运行中 ...</span></span><span class="total-word-count footer-divider" title='总计约 24035 字'><i class="far fa-keyboard fa-fw"></i>&nbsp;总计约 24.04K 字</span></div><div class="footer-line ibruce">
+>Blathers</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fas fa-heartbeat fa-fw animate-icon"></i>&nbsp;<span class="run-times">网站运行中 ...</span></span><span class="total-word-count footer-divider" title='总计约 24141 字'><i class="far fa-keyboard fa-fw"></i>&nbsp;总计约 24.14K 字</span></div><div class="footer-line ibruce">
           <span id="busuanzi_container_site_uv" title='总访客数'><i class="far fa-user fa-fw"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin fa-fw"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="far fa-eye fa-fw"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin fa-fw"></i></span></span>
         </div></div>
   </footer></div><div class="widgets">

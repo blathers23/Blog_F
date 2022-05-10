@@ -129,6 +129,38 @@ deque([1, 2])
 1
 ```
 
+### map 映射
+
+`map` 方法将提供的函数对给定的序列做映射并返回迭代器。
+
+举例：
+
+```python
+>>> def A():
+...     return
+...
+>>> A()
+>>> A() == None
+True
+>>> def f(x):
+...     return x ** 2
+...
+>>> ite = map(f, [1,2,3,4,5,6])
+>>> while True:
+...     print(next(ite))
+...
+1
+4
+9
+16
+25
+36
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+StopIteration
+>>> 
+```
+
 
 
 
