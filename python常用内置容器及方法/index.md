@@ -37,8 +37,6 @@ KeyError: 1
 >>> 
 ```
 
-
-
 ### deque 双端队列
 
 `collections.deque` 全称为 double-end queue，也就是双端队列。可以通过该容器模拟栈或者队列，从而获得比 `list` 更好的性能。
@@ -76,7 +74,22 @@ deque([1, 2])
 >>> 
 ```
 
+### collections.Counter 计数器
 
+`Counter` 是 `dict` 的一个子类，用于计数可哈希对象。
+
+举例：
+
+```python
+>>> import collections
+>>> c = collections.Counter("ABSBSBSBSBSBSBSB")
+>>> c
+Counter({'B': 8, 'S': 7, 'A': 1})
+>>> c.update("ABABA")
+>>> c
+Counter({'B': 10, 'S': 7, 'A': 4})
+>>> 
+```
 
 ## 方法
 
@@ -161,6 +174,53 @@ StopIteration
 >>> 
 ```
 
+### itertools.pairwise 叠对
 
+`pairwise` 方法返回从迭代器中获取的连续叠对。
 
+这是 Python 3.10 新增的方法。
+
+举例：
+
+```python
+>>> import itertools
+>>> list(itertools.pairwise("ABCDEF"))
+[('A', 'B'), ('B', 'C'), ('C', 'D'), ('D', 'E'), ('E', 'F')]
+>>> 
+```
+
+### sort 排序
+
+`sort` 方法是列表所提供的方法，用于排序，其排序是稳定的，并且可以通过传入参数来自定义排序。可以参见 [LC937 从新排列日志文件](https://leetcode.cn/problems/reorder-data-in-log-files/)。
+
+举例：
+
+```python
+>>> l = [1, 2, 3, -4, 5, -6]
+>>> l.sort()
+>>> l
+[-6, -4, 1, 2, 3, 5]
+>>> l.sort(reverse=True)
+>>> l
+[5, 3, 2, 1, -4, -6]
+>>> l.sort(key=lambda x: abs(x))
+>>> l
+[1, 2, 3, -4, 5, -6]
+>>>
+```
+
+### itertools.combinations 组合
+
+`combinations` 方法返回一个迭代器，迭代内容为可迭代对象的全部非重复组合。这里的非重复指的是位置非重复。
+
+举例：
+
+```python
+>>> import itertools
+>>> list(itertools.combinations('ABCD', 2))
+[('A', 'B'), ('A', 'C'), ('A', 'D'), ('B', 'C'), ('B', 'D'), ('C', 'D')]
+>>> list(itertools.combinations('ABCD', 3))
+[('A', 'B', 'C'), ('A', 'B', 'D'), ('A', 'C', 'D'), ('B', 'C', 'D')]
+>>> 
+```
 

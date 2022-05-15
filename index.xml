@@ -4,9 +4,18 @@
     <link>https://blathers23.netlify.app/</link>
     <description>Blathers&#39; Tent</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>blathers233@outlook.com (Blathers)</managingEditor>
-      <webMaster>blathers233@outlook.com (Blathers)</webMaster><lastBuildDate>Sun, 08 May 2022 02:39:00 &#43;0800</lastBuildDate>
+      <webMaster>blathers233@outlook.com (Blathers)</webMaster><lastBuildDate>Mon, 16 May 2022 00:52:00 &#43;0800</lastBuildDate>
       <atom:link href="https://blathers23.netlify.app/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>LC691 - 贴纸拼词</title>
+  <link>https://blathers23.netlify.app/lc691/</link>
+  <pubDate>Mon, 16 May 2022 00:52:00 &#43;0800</pubDate>
+  <author>Blathers</author>
+  <guid>https://blathers23.netlify.app/lc691/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="/images/leetcode.jpg" referrerpolicy="no-referrer">
+      </div>BFS or DFS?]]></description>
+</item><item>
   <title>Python常用内置容器及方法</title>
   <link>https://blathers23.netlify.app/python%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%AE%B9%E5%99%A8%E5%8F%8A%E6%96%B9%E6%B3%95/</link>
   <pubDate>Sun, 08 May 2022 02:39:00 &#43;0800</pubDate>
@@ -76,13 +85,6 @@
   <pubDate>Sun, 14 Mar 2021 09:00:04 &#43;0000</pubDate>
   <author>Blathers</author>
   <guid>https://blathers23.netlify.app/vscode_and_msys2/</guid>
-  <description><![CDATA[]]></description>
-</item><item>
-  <title>Golang - Hello World!</title>
-  <link>https://blathers23.netlify.app/golang_hello_world/</link>
-  <pubDate>Sat, 13 Feb 2021 23:44:30 &#43;0000</pubDate>
-  <author>Blathers</author>
-  <guid>https://blathers23.netlify.app/golang_hello_world/</guid>
   <description><![CDATA[]]></description>
 </item></channel>
 </rss>
