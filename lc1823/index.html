@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
+    
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-    <title>LC1823 - 找出游戏的获胜者 - Blathers&#39; Tent</title><meta name="author" content="Blathers: ">
+    <title>LC1823 - 找出游戏的获胜者 - Blathers&#39; Tent</title><meta name="author" content="Blathers">
+<meta name="author-link" content="">
 <meta name="description" content="找出隐藏在模拟之下的数学规律是巧解本题的关键。" />
 <meta name="keywords" content="Python,模拟,递归,迭代,约瑟夫环" /><meta itemprop="name" content="LC1823 - 找出游戏的获胜者">
 <meta itemprop="description" content="找出隐藏在模拟之下的数学规律是巧解本题的关键。"><meta itemprop="datePublished" content="2022-05-05T01:54:00+08:00" />
 <meta itemprop="dateModified" content="2022-05-05T00:00:00+00:00" />
-<meta itemprop="wordCount" content="3352">
+<meta itemprop="wordCount" content="3371">
 <meta itemprop="keywords" content="Python,模拟,递归,迭代,约瑟夫环," /><meta property="og:title" content="LC1823 - 找出游戏的获胜者" />
 <meta property="og:description" content="找出隐藏在模拟之下的数学规律是巧解本题的关键。" />
 <meta property="og:type" content="article" />
@@ -33,7 +35,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/blathers23.netlify.app\/lc1823\/"
-    },"genre": "posts","keywords": "Python, 模拟, 递归, 迭代, 约瑟夫环","wordcount":  3352 ,
+    },"genre": "posts","keywords": "Python, 模拟, 递归, 迭代, 约瑟夫环","wordcount":  3371 ,
     "url": "https:\/\/blathers23.netlify.app\/lc1823\/","datePublished": "2022-05-05T01:54:00+08:00","dateModified": "2022-05-05T00:00:00+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -201,7 +203,7 @@
           <span class="post-category">收录于 <a href="/categories/leetcode/"><i class="far fa-folder fa-fw"></i>&nbsp;leetcode</a></span></div>
       <div class="post-meta-line"><span title=2022-05-05&#32;01:54:00>
             <i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-05-05" >2022-05-05</time>
-          </span>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3352 字&nbsp;
+          </span>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3371 字&nbsp;
         <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 7 分钟&nbsp;</div>
     </div><div class="featured-image"><img
     class="lazyload"
@@ -329,11 +331,11 @@
 <p>似乎忘记了续接的两个数？无需担心，因为这个问题我们早就在模拟解法中使用余数解决了。也就是说：</p>
 <ul>
 <li>对于前 $6$ 个数，上下数组之间的对应关系为差值 $k$，例如 $4 = 1 + k = 1 + 3$。</li>
-<li>对于后 $2$ 个数，上下数组之间的对应关系为差值 $k$ 及除以 $n$ 的余数，例如 $0 = (6 + 3) \% 9$。</li>
+<li>对于后 $2$ 个数，上下数组之间的对应关系为差值 $k$ 及除以 $n$ 的余数，例如 $0 = (6 + 3) % 9$。</li>
 </ul>
 <p>也就是可以表示为：</p>
 <img src="https://s2.loli.net/2022/05/05/i1bn7PZfSgEm849.png"  />
-<p>至此，我们找到了一种上下对应的关系。换句话说：<strong>如果我们已知</strong> $n=8,k=3$ <strong>时何数的去留，我们便能通过数学关系</strong> $(x+k) \% n$ <strong>得知</strong> $n=9,k=3$ <strong>时何数的去留</strong>。这是因为由上图可知，<strong>去留关系应该是一一对应的</strong>。</p>
+<p>至此，我们找到了一种上下对应的关系。换句话说：<strong>如果我们已知</strong> $n=8,k=3$ <strong>时何数的去留，我们便能通过数学关系</strong> $(x+k) % n$ <strong>得知</strong> $n=9,k=3$ <strong>时何数的去留</strong>。这是因为由上图可知，<strong>去留关系应该是一一对应的</strong>。</p>
 <div class="details admonition note open">
     <div class="details-summary admonition-title">
       <i class="icon fas fa-pencil-alt fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
@@ -344,7 +346,7 @@
   </div>
 <p>当然了，你可能会注意到，<strong>我</strong> $2$ <strong>怎么没了</strong>？上环的数字 $2$ 已经为了寻找规律而被淘汰，但这不重要。因为我们知道，最后的胜者肯定不会在最开始就被淘汰！因为我们所求的是最后的胜者！现在，我们假设 $f(n,k)$ 为该条件下最后的胜者，那么我们可以知道，其肯定不会被淘汰，也就是该数一定是符合下述关系的：
 $$
-f(n,k) = (f(n-1,k) + k) \% n
+f(n,k) = (f(n-1,k) + k) \ % n
 $$
 而我们又知道，如果仅有一个数，那么无论 $k$ 为多少，最后赢家一定是它，也就是约瑟夫环最开始的那个数 $0$。数学表达式为：
 $$
@@ -412,9 +414,11 @@ $$
 <p>前几天试着做了一下全站通过率最低的 LCP60 力扣泡泡龙，做了一个半小时，总算是写了出来一个通过的结果。但是说实话诈胡成分比较高，怕是测试再复杂一些就要挂在时间上。光是做就已经绞尽脑汁，优化更是有心无力了。然后第二天又连做两道 hard，头昏脑胀，直接摸了一晚上。最后也没学到什么，只能说头铁 hard 不可取。</p>
 <p>现在是 4:32 ，明天还得，哦，今天中午 12 点还得开会，得赶紧睡了。写题解还是很耗时间的，3 千字大概写了 130 分钟，估计回家备考就很难写这种长篇题解了。</p>
 <p>这篇文章题解绘图用的是 Draw.io 这款软件，还挺好用的。</p>
-<p>不知道为啥公式内百分号不能正常显示，还得再研究一下。Update：百分号前要加双反斜杠进行转义，目前不清楚原因。</p>
+<p>不知道为啥公式内百分号不能正常显示，还得再研究一下。</p>
+<p>Update：百分号前要加双反斜杠进行转义，目前不清楚原因。</p>
+<p>Update：主题版本更新后已修复。</p>
 <p>最后就是，《相合之物》这动画片真好看！</p>
-<meting-js server="netease" type="song" id="1939422917" theme="#448aff"></meting-js></div><div class="post-footer" id="post-footer">
+<meting-js url="/music/%e8%8f%ab.mp3" name="堇" artist="坂本真绫" cover="/images/相合之物.jpg" theme="#448aff"></meting-js></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
@@ -458,7 +462,7 @@ $$
 <div id="comments"><div id="waline" class="comment"></div><noscript>
         Please enable JavaScript to view the comments powered by <a href="https://waline.js.org/" rel="external nofollow noopener noreffer">Waline</a>.
       </noscript></div></article></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer" title="Hugo 0.97.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/Lruihao/FixIt" target="_blank" rel="external nofollow noopener noreffer" title="FixIt v0.2.14-RC"><img class="fixit-icon" src="/images/fixit.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer" title="Hugo 0.97.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/Lruihao/FixIt" target="_blank" rel="external nofollow noopener noreffer" title="FixIt v0.2.14"><img class="fixit-icon" src="/images/fixit.svg" alt="FixIt logo" />&nbsp;FixIt</a>
         </div><div class="footer-line copyright"><i class="far fa-copyright fa-fw"></i>
             <span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">
               <a
@@ -469,7 +473,7 @@ $$
   
   
   
->Blathers</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fas fa-heartbeat fa-fw animate-icon"></i>&nbsp;<span class="run-times">网站运行中 ...</span></span><span class="total-word-count footer-divider" title='总计约 25866 字'><i class="far fa-keyboard fa-fw"></i>&nbsp;总计约 25.87K 字</span></div><div class="footer-line ibruce">
+>Blathers</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fas fa-heartbeat fa-fw animate-icon"></i>&nbsp;<span class="run-times">网站运行中 ...</span></span></div><div class="footer-line ibruce">
           <span id="busuanzi_container_site_uv" title='总访客数'><i class="far fa-user fa-fw"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin fa-fw"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="far fa-eye fa-fw"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin fa-fw"></i></span></span>
         </div></div>
   </footer></div><div class="widgets">
