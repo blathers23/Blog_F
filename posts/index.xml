@@ -4,7 +4,14 @@
     <link>https://blathers23.netlify.app/posts/</link>
     <description>所有文章 | Blathers&#39; Tent</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>blathers233@outlook.com (Blathers)</managingEditor>
-      <webMaster>blathers233@outlook.com (Blathers)</webMaster><lastBuildDate>Mon, 16 May 2022 00:52:00 &#43;0800</lastBuildDate><atom:link href="https://blathers23.netlify.app/posts/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>blathers233@outlook.com (Blathers)</webMaster><lastBuildDate>Wed, 25 May 2022 13:49:00 &#43;0800</lastBuildDate><atom:link href="https://blathers23.netlify.app/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>毕业设计-基于人工智能的大气颗粒污染物扩散模拟技术的研究</title>
+  <link>https://blathers23.netlify.app/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E5%A4%A7%E6%B0%94%E6%B1%A1%E6%9F%93%E7%89%A9%E6%89%A9%E6%95%A3%E6%A8%A1%E6%8B%9F/</link>
+  <pubDate>Wed, 25 May 2022 13:49:00 &#43;0800</pubDate>
+  <author>Blathers</author>
+  <guid>https://blathers23.netlify.app/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E5%A4%A7%E6%B0%94%E6%B1%A1%E6%9F%93%E7%89%A9%E6%89%A9%E6%95%A3%E6%A8%A1%E6%8B%9F/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
   <title>LC691 - 贴纸拼词</title>
   <link>https://blathers23.netlify.app/lc691/</link>
   <pubDate>Mon, 16 May 2022 00:52:00 &#43;0800</pubDate>
@@ -77,12 +84,5 @@
   <author>Blathers</author>
   <guid>https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAwrf%E6%95%99%E7%A8%8B/</guid>
   <description><![CDATA[为了做毕设，这两天被 WRF 折磨的头疼了不少时间。网络上找到的教程往往是支离破碎，一人一个说法；WRF-Chem 官方教程又因为网络问题看不得，只能自己摸着石头过河。在此处记录一份完整的 WRF 安装教程，免得重蹈覆辙。]]></description>
-</item><item>
-  <title>VSCode 搭配 g&#43;&#43; 配置 Cpp 编译环境</title>
-  <link>https://blathers23.netlify.app/vscode_and_msys2/</link>
-  <pubDate>Sun, 14 Mar 2021 09:00:04 &#43;0000</pubDate>
-  <author>Blathers</author>
-  <guid>https://blathers23.netlify.app/vscode_and_msys2/</guid>
-  <description><![CDATA[]]></description>
 </item></channel>
 </rss>
