@@ -4,14 +4,21 @@
     <link>https://blathers23.netlify.app/</link>
     <description>Blathers&#39; Tent</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>blathers233@outlook.com (Blathers)</managingEditor>
-      <webMaster>blathers233@outlook.com (Blathers)</webMaster><lastBuildDate>Wed, 25 May 2022 13:49:00 &#43;0800</lastBuildDate>
+      <webMaster>blathers233@outlook.com (Blathers)</webMaster><lastBuildDate>Thu, 09 Jun 2022 04:39:00 &#43;0800</lastBuildDate>
       <atom:link href="https://blathers23.netlify.app/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>优雅地使用Linux之Wine的食用方式</title>
+  <link>https://blathers23.netlify.app/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8linux%E4%B9%8Bwine%E7%9A%84%E9%A3%9F%E7%94%A8%E6%96%B9%E5%BC%8F/</link>
+  <pubDate>Thu, 09 Jun 2022 04:39:00 &#43;0800</pubDate>
+  <author>Blathers</author>
+  <guid>https://blathers23.netlify.app/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8linux%E4%B9%8Bwine%E7%9A%84%E9%A3%9F%E7%94%A8%E6%96%B9%E5%BC%8F/</guid>
+  <description><![CDATA[Linux只要花点功夫配置好就会很好用？]]></description>
+</item><item>
   <title>毕业设计-基于人工智能的大气颗粒污染物扩散模拟技术的研究</title>
-  <link>https://blathers23.netlify.app/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E5%A4%A7%E6%B0%94%E6%B1%A1%E6%9F%93%E7%89%A9%E6%89%A9%E6%95%A3%E6%A8%A1%E6%8B%9F/</link>
+  <link>https://blathers23.netlify.app/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E5%A4%A7%E6%B0%94%E9%A2%97%E7%B2%92%E6%B1%A1%E6%9F%93%E7%89%A9%E6%89%A9%E6%95%A3%E6%A8%A1%E6%8B%9F%E6%8A%80%E6%9C%AF%E7%9A%84%E7%A0%94%E7%A9%B6/</link>
   <pubDate>Wed, 25 May 2022 13:49:00 &#43;0800</pubDate>
   <author>Blathers</author>
-  <guid>https://blathers23.netlify.app/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E5%A4%A7%E6%B0%94%E6%B1%A1%E6%9F%93%E7%89%A9%E6%89%A9%E6%95%A3%E6%A8%A1%E6%8B%9F/</guid>
+  <guid>https://blathers23.netlify.app/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E5%A4%A7%E6%B0%94%E9%A2%97%E7%B2%92%E6%B1%A1%E6%9F%93%E7%89%A9%E6%89%A9%E6%95%A3%E6%A8%A1%E6%8B%9F%E6%8A%80%E6%9C%AF%E7%9A%84%E7%A0%94%E7%A9%B6/</guid>
   <description><![CDATA[]]></description>
 </item><item>
   <title>LC691 - 贴纸拼词</title>
@@ -79,12 +86,5 @@
   <author>Blathers</author>
   <guid>https://blathers23.netlify.app/%E6%9D%82%E8%B0%88%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/</guid>
   <description><![CDATA[简单记录下毕业设计的内容，以及解决问题的历程。]]></description>
-</item><item>
-  <title>浅入浅出 WRF 教程</title>
-  <link>https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAwrf%E6%95%99%E7%A8%8B/</link>
-  <pubDate>Wed, 20 Apr 2022 17:09:58 &#43;0800</pubDate>
-  <author>Blathers</author>
-  <guid>https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAwrf%E6%95%99%E7%A8%8B/</guid>
-  <description><![CDATA[为了做毕设，这两天被 WRF 折磨的头疼了不少时间。网络上找到的教程往往是支离破碎，一人一个说法；WRF-Chem 官方教程又因为网络问题看不得，只能自己摸着石头过河。在此处记录一份完整的 WRF 安装教程，免得重蹈覆辙。]]></description>
 </item></channel>
 </rss>

@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>浅入浅出 WRF 教程 - Blathers&#39; Tent</title><meta name="author" content="Blathers">
+<meta name="author-link" content="">
+<meta name="description" content="为了做毕设，这两天被 WRF 折磨的头疼了不少时间。网络上找到的教程往往是支离破碎，一人一个说法；WRF-Chem 官方教程又因为网络问题看不得，只能自己摸着石头过河。在此处记录一份完整的 WRF 安装教程，免得重蹈覆辙。" />
+<meta name="keywords" content="WRF" /><meta itemprop="name" content="浅入浅出 WRF 教程">
+<meta itemprop="description" content="为了做毕设，这两天被 WRF 折磨的头疼了不少时间。网络上找到的教程往往是支离破碎，一人一个说法；WRF-Chem 官方教程又因为网络问题看不得，只能自己摸着石头过河。在此处记录一份完整的 WRF 安装教程，免得重蹈覆辙。"><meta itemprop="datePublished" content="2022-04-20T17:09:58+08:00" />
+<meta itemprop="dateModified" content="2022-05-01T00:00:00+00:00" />
+<meta itemprop="wordCount" content="2079">
+<meta itemprop="keywords" content="WRF," /><meta property="og:title" content="浅入浅出 WRF 教程" />
+<meta property="og:description" content="为了做毕设，这两天被 WRF 折磨的头疼了不少时间。网络上找到的教程往往是支离破碎，一人一个说法；WRF-Chem 官方教程又因为网络问题看不得，只能自己摸着石头过河。在此处记录一份完整的 WRF 安装教程，免得重蹈覆辙。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blathers23.netlify.app/%D1%8B%D1%9Ewrf/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-04-20T17:09:58+08:00" />
+<meta property="article:modified_time" content="2022-05-01T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="浅入浅出 WRF 教程"/>
+<meta name="twitter:description" content="为了做毕设，这两天被 WRF 折磨的头疼了不少时间。网络上找到的教程往往是支离破碎，一人一个说法；WRF-Chem 官方教程又因为网络问题看不得，只能自己摸着石头过河。在此处记录一份完整的 WRF 安装教程，免得重蹈覆辙。"/>
+<meta name="application-name" content="Blathers&#39; Tent">
+<meta name="apple-mobile-web-app-title" content="Blathers&#39; Tent"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="https://blathers23.netlify.app/%D1%8B%D1%9Ewrf/" /><link rel="prev" href="https://blathers23.netlify.app/vscode_and_msys2/" /><link rel="next" href="https://blathers23.netlify.app/%D1%88/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "浅入浅出 WRF 教程",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blathers23.netlify.app\/%D1%8B%D1%9Ewrf\/"
+    },"genre": "posts","keywords": "WRF","wordcount":  2079 ,
+    "url": "https:\/\/blathers23.netlify.app\/%D1%8B%D1%9Ewrf\/","datePublished": "2022-04-20T17:09:58+08:00","dateModified": "2022-05-01T00:00:00+00:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Blathers"
+      },"description": "为了做毕设，这两天被 WRF 折磨的头疼了不少时间。网络上找到的教程往往是支离破碎，一人一个说法；WRF-Chem 官方教程又因为网络问题看不得，只能自己摸着石头过河。在此处记录一份完整的 WRF 安装教程，免得重蹈覆辙。"
+  }
+  </script></head>
+  <body header-desktop="sticky" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script><div class="wrapper"><header class="desktop" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Blathers&#39; Tent"><span class="header-title-pre">🏕️</span><span class="header-title-text">Blathers&#39; Tent</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/posts/"
+                title="全部文章"
+                
+              >Posts 📑</a></li><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/tags/"
+                title="标签"
+                
+              >Tags 🏷️</a></li><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/categories/"
+                title="分类"
+                
+              >Categories 📚</a></li><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/friends"
+                title="友情链接"
+                
+              >Friends 🎈</a></li><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/about"
+                title="关于我"
+                
+              >About 🦉</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fas fa-search fa-fw"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fas fa-times-circle fa-fw"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fas fa-spinner fa-fw fa-spin"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fas fa-adjust fa-fw"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Blathers&#39; Tent"><span class="header-title-pre">🏕️</span><span class="header-title-text">Blathers&#39; Tent</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fas fa-search fa-fw"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fas fa-times-circle fa-fw"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fas fa-spinner fa-fw fa-spin"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/posts/"
+                title="全部文章"
+                
+              >Posts 📑</a></li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/tags/"
+                title="标签"
+                
+              >Tags 🏷️</a></li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/categories/"
+                title="分类"
+                
+              >Categories 📚</a></li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/friends"
+                title="友情链接"
+                
+              >Friends 🎈</a></li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/about"
+                title="关于我"
+                
+              >About 🦉</a></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fas fa-adjust fa-fw"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header>
+<div class="search-dropdown desktop">
+  <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+  <div id="search-dropdown-mobile"></div>
+</div>
+<main class="container" page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录</h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    
+  </aside>
+
+  <article class="page single"><h1 class="single-title animate__animated animate__flipInX">浅入浅出 WRF 教程</h1><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="https://gravatar.loli.net/avatar/1cc24367e7133aceb81bfd9ef41481cd?s=32&amp;d="
+    data-srcset="https://gravatar.loli.net/avatar/1cc24367e7133aceb81bfd9ef41481cd?s=32&amp;d=, https://gravatar.loli.net/avatar/1cc24367e7133aceb81bfd9ef41481cd?s=32&amp;d= 1.5x, https://gravatar.loli.net/avatar/1cc24367e7133aceb81bfd9ef41481cd?s=32&amp;d= 2x"
+    data-sizes="auto"
+    alt="Blathers"
+    title="Blathers" />&nbsp;Blathers</span></span>
+          <span class="post-category">收录于 <a href="/categories/%E6%95%99%E7%A8%8B/"><i class="far fa-folder fa-fw"></i>&nbsp;教程</a></span></div>
+      <div class="post-meta-line"><span title=2022-04-20&#32;17:09:58>
+            <i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-04-20" >2022-04-20</time>
+          </span>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2079 字&nbsp;
+        <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;</div>
+    </div><div class="details toc" id="toc-static" kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fas fa-angle-right"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#在这之前">在这之前</a></li>
+    <li><a href="#平台准备">平台准备</a></li>
+    <li><a href="#文件下载及环境准备">文件下载及环境准备</a></li>
+    <li><a href="#依赖库">依赖库</a>
+      <ul>
+        <li><a href="#添加环境变量">添加环境变量</a></li>
+        <li><a href="#mpich">mpich</a></li>
+        <li><a href="#netcdf">netCDF</a></li>
+        <li><a href="#zlib">zlib</a></li>
+        <li><a href="#libpng">libpng</a></li>
+        <li><a href="#jasper">Jasper</a></li>
+        <li><a href="#wrf-chem">WRF-Chem</a></li>
+      </ul>
+    </li>
+    <li><a href="#编译-wrf">编译 WRF</a></li>
+    <li><a href="#编译-wps">编译 WPS</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><blockquote>
+<p>猴子都能懂的 WRF 教程，简称猴懂 WRF。</p>
+</blockquote>
+<div class="details admonition tip open">
+    <div class="details-summary admonition-title">
+      <i class="icon fas fa-lightbulb fa-fw"></i>提示<i class="details-icon fas fa-angle-right fa-fw"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">如有问题欢迎<a
+  href="//about/##%e4%b8%8e%e6%88%91%e8%81%94%e7%b3%bb"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>与我联系</a>😀</div>
+    </div>
+  </div>
+<h2 id="在这之前">在这之前</h2>
+<hr>
+<p>在安装 WRF(The Weather Research and Forecasting Model) 之前，请先确定你的<strong>需求</strong>。比如要使用 WRF 来预测 PM ，这就要求你应当安装 WRF-Chem 而不仅仅是 WRF 。</p>
+<p>本文内容包含 WRF 及 WRF-Chem 的编译。 有关 WRF-Chem 运行的部分，请参考 <a
+  href="https://ruc.noaa.gov/wrf/wrf-chem/Users_guide.pdf"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>WRF-Chem User&rsquo;s Guide</a>。</p>
+<p>在 WRF 官网有提供一个<a
+  href="https://www2.mmm.ucar.edu/wrf/OnLineTutorial/compilation_tutorial.php"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>非常友善的 WRF 编译教程</a>，但是该教程编译只包含 WRF 的部分，而且使用了 tcsh，与现在比较流行的 bash 可能会有一些出入。</p>
+<p>有繁琐工作的地方就有自动化脚本，当然包括 WRF-Chem 的安装。这里也推荐我在Gitee上发现的一个<a
+  href="https://gitee.com/xuejingkai/WRFCHEM-4.3-install-script-linux-64bit"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>全自动安装脚本</a>，直接免除下面的所有工作，你仅仅需要根据自己的需求对脚本做一些简单的修改即可。</p>
+<h2 id="平台准备">平台准备</h2>
+<hr>
+<p>WRF 模型仅能运行在 Linux 系统上。为此，你可能需要：</p>
+<ol>
+<li>一台安装了 Linux 系统的电脑</li>
+<li>带有 Linux 系统的虚拟机</li>
+<li>WSL(Windows Subsystem Linux)</li>
+</ol>
+<p>中的其中一种方式来使用 Linux 系统。如果你的操作系统是 Windows 10 或者 Windows 11，那么 WSL 可能是一个最佳的选择。WSL 的安装可以参考<a
+  href="https://docs.microsoft.com/zh-cn/windows/wsl/install"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>微软官方的教程</a>。本文中使用的系统为 Windows11 下的 WSL，安装的系统为 Ubuntu 20.04。</p>
+<h2 id="文件下载及环境准备">文件下载及环境准备</h2>
+<hr>
+<p>首先要准备 <a
+  href="https://github.com/wrf-model/WRF"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>WRF</a> 和 <a
+  href="https://github.com/wrf-model/WPS"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>WPS(WRF Pre-Processing System)</a> 的安装文件 ，这两个程序的最新版本可以在 GitHub 很容易的下载下来，现在你需要新建一个文件夹，把 WRF 和 WPS 放在同一文件夹内（这个文件夹将会成为你放置 WRF 和 WPS 程序的文件夹），并将它们解压。对于 zip 类型的压缩包，你可以使用 <code>unzip</code> 命令来解压缩；对于 tar.gz 类型的压缩包，你需要使用 <code>tar xzvf</code>  命令来解压缩。</p>
+<p>接下来，你可能需要安装一些编译器。编译 WRF 需要三个编译器，分别是 <code>gfortran</code> 、 <code>cpp</code> 和 <code>gcc</code>。你可以分别使用命令 <code>which gfortran</code> 、 <code>which cpp</code> 和 <code>which gcc</code> 来检查你的环境中是否包含这三个编译器，对于包含编译器的环境，<code>which</code> 命令将会返回对应地址，如果 <code>which</code> 命令没有任何反应，你可能需要手动安装这些编译器。不同的操作系统可能会有所差异，对于 Ubuntu 来说，你只需要运行 <code>sudo apt-get install gfortran</code> 来安装 <code>gfortran</code> 编译器，其它缺失的编译器同理。</p>
+<p>除了三个编译器之外，你可能还需要安装 <code>csh</code> 和 <code>perl</code> 。你同样可以通过 <code>sudo apt-get install</code> 命令来安装它们。</p>
+<h2 id="依赖库">依赖库</h2>
+<hr>
+<p>在这里，你需要安装 5 个与 WRF 运行有关的库，分别是：</p>
+<ul>
+<li><a
+  href="https://www2.mmm.ucar.edu/wrf/OnLineTutorial/compile_tutorial/tar_files/mpich-3.0.4.tar.gz"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>mpich-3.0.4</a></li>
+<li><a
+  href="https://www2.mmm.ucar.edu/wrf/OnLineTutorial/compile_tutorial/tar_files/netcdf-4.1.3.tar.gz"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>netcdf-4.1.3</a></li>
+<li><a
+  href="https://www2.mmm.ucar.edu/wrf/OnLineTutorial/compile_tutorial/tar_files/jasper-1.900.1.tar.gz"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>jasper-1.900.1</a></li>
+<li><a
+  href="https://www2.mmm.ucar.edu/wrf/OnLineTutorial/compile_tutorial/tar_files/libpng-1.2.50.tar.gz"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>libpng-1.2.50</a></li>
+<li><a
+  href="https://www2.mmm.ucar.edu/wrf/OnLineTutorial/compile_tutorial/tar_files/zlib-1.2.7.tar.gz"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+  
+>zlib-1.2.7</a></li>
+</ul>
+<p>你可以通过点击上述链接，下载库的源代码。现在进入到放置 WRF 和 WPS 的文件夹中，在该文件夹内新建名为 <code>Bulid_WRF</code> 的文件夹，并在该文件夹内新建名为 <code>LIBRARIES</code> 的文件夹。将这些程序在 <code>LIBRARIES</code> 文件夹中逐一解压。</p>
+<h3 id="添加环境变量">添加环境变量</h3>
+<p>在进行以下的操作前，请先在终端（ bash ）中运行下面的代码来添加环境变量：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">DIR</span><span class="o">=</span><span class="nv">$HOME</span>/software/Build_WRF/LIBRARIES	<span class="c1"># 请修改此条为你的 LIBRARIES 文件夹路径</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">WRF_DIR</span><span class="o">=</span><span class="nv">$HOME</span>/software/WRF-4.3.3/		<span class="c1"># 请修改此条为你解压 WRF 后文件夹的路径</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">CC</span><span class="o">=</span>gcc
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">CXX</span><span class="o">=</span>g++
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">FC</span><span class="o">=</span>gfortran
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">FCFLAGS</span><span class="o">=</span>-m64
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">F77</span><span class="o">=</span>gfortran
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">FFLAGS</span><span class="o">=</span>-m64
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">JASPERLIB</span><span class="o">=</span><span class="nv">$DIR</span>/grib2/lib
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">JASPERINC</span><span class="o">=</span><span class="nv">$DIR</span>/grib2/include
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">LDFLAGS</span><span class="o">=</span>-L<span class="nv">$DIR</span>/grib2/lib
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">CPPFLAGS</span><span class="o">=</span>-I<span class="nv">$DIR</span>/grib2/include
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$DIR</span>/mpich/bin:<span class="nv">$PATH</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$DIR</span>/netcdf/bin:<span class="nv">$PATH</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">NETCDF</span><span class="o">=</span><span class="nv">$DIR</span>/netcdf
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="mpich">mpich</h3>
+<p>mpich 是并行计算所需要的库，你可以运行以下的代码来安装：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> mpich-3.0.4								<span class="c1"># 进入解压后的 mpich-3.0.4 文件夹</span>
+</span></span><span class="line"><span class="cl">./configure --prefix<span class="o">=</span><span class="nv">$DIR</span>/mpich
+</span></span><span class="line"><span class="cl">make
+</span></span><span class="line"><span class="cl">make install
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="netcdf">netCDF</h3>
+<p>netCDF 是编译 WRF 所需要的数据格式库，你可以通过运行以下的代码来安装：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> netcdf-4.1.3								<span class="c1"># 进入解压后的 netcdf-4.1.3 文件夹</span>
+</span></span><span class="line"><span class="cl">./configure --prefix<span class="o">=</span><span class="nv">$DIR</span>/netcdf --disable-dap --disable-netcdf-4 --disable-shared
+</span></span><span class="line"><span class="cl">make
+</span></span><span class="line"><span class="cl">make install
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="zlib">zlib</h3>
+<p>编译 WPS 所需的库，你可以通过运行以下的代码来安装：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> zlib-1.2.7
+</span></span><span class="line"><span class="cl">./configure --prefix<span class="o">=</span><span class="nv">$DIR</span>/grib2
+</span></span><span class="line"><span class="cl">make
+</span></span><span class="line"><span class="cl">make install
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="libpng">libpng</h3>
+<p>编译 WPS 所需的库，你可以通过运行以下的代码来安装：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> libpng-1.2.50
+</span></span><span class="line"><span class="cl">./configure --prefix<span class="o">=</span><span class="nv">$DIR</span>/grib2
+</span></span><span class="line"><span class="cl">make
+</span></span><span class="line"><span class="cl">make install
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="jasper">Jasper</h3>
+<p>编译 WPS 所需的库，你可以通过运行以下的代码来安装：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> jasper-1.900.1
+</span></span><span class="line"><span class="cl">./configure --prefix<span class="o">=</span><span class="nv">$DIR</span>/grib2
+</span></span><span class="line"><span class="cl">make
+</span></span><span class="line"><span class="cl">make install
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>请按照上述顺序来安装以避免预料之外的错误。</p>
+<h3 id="wrf-chem">WRF-Chem</h3>
+<p>对 WRF-Chem 来说，这里还需要一些额外的步骤。对于 WRF4  以下的版本，你可能需要下载单独的 WRF-Chem 编译所需的文件，并将这些文件解压到你的 WRF 文件夹内的 chem 文件夹中。对于 WRF4 以后的版本，则不需要进行此操作。</p>
+<p>为了编译 WRF-Chem，这里需要添加一些环境变量：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">WRF_EM_CORE</span><span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">WRF_NMM_CORE</span><span class="o">=</span><span class="m">0</span>  
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">WRF_CHEM</span><span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">WRF_KPP</span><span class="o">=</span><span class="m">1</span> 
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">YACC</span><span class="o">=</span><span class="s1">&#39;/usr/bin/yacc -d&#39;</span> 
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">FLEX</span><span class="o">=</span>/usr/bin/flex
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">FLEX_LIB_DIR</span><span class="o">=</span>/usr/lib/x86_64-linux-gnu/ 
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">KPP_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/software/WRF-4.3.3/chem/KPP/kpp/kpp-2.1
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">WRF_SRC_ROOT_DIR</span><span class="o">=</span><span class="nv">$HOME</span>/software/WRF-4.3.3
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$KPP_HOME</span>/bin:<span class="nv">$PATH</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">SED</span><span class="o">=</span>/usr/bin/sed
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">WRFIO_NCD_LARGE_FILE_SUPPORT</span><span class="o">=</span><span class="m">1</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后安装两个额外的库：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt-get install yacc flex
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="编译-wrf">编译 WRF</h2>
+<hr>
+<p>进入解压好的 WRF 文件夹，然后运行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./configure
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在这里你将会看到非常多不同的编译选项，一般选择 34 即可，这表示你使用 gcc 分布式并行编译 WRF。接下来，对于 nesting，直接选择默认选项即可。</p>
+<p>接下来就可以对 WRF 进行编译，在此处你可以选择你想使用的 WRF 运行类型，有以下选项可以选择：</p>
+<ul>
+<li><code>em_real</code> (三维真实情况)</li>
+<li><code>em_quarter_ss </code>(三维理想状况)</li>
+<li><code>em_b_wave</code> (三维理想状况)</li>
+<li><code>em_les</code> (三维理想状况)</li>
+<li><code>em_heldsuarez</code> (三维理想状况)</li>
+<li><code>em_tropical_cyclone</code> (三维理想状况)</li>
+<li><code>em_hill2d_x</code> (二维理想状况)</li>
+<li><code>em_squall2d_x</code> (二维理想状况)</li>
+<li><code>em_squall2d_y</code> (二维理想状况)</li>
+<li><code>em_grav2d_x</code> (二维理想状况)</li>
+<li><code>em_seabreeze2d_x</code> (二维理想状况)</li>
+<li><code>em_scm_xy</code> (一维理想状况)</li>
+</ul>
+<p>你可以根据自己的需求来选择编译哪个选项。一般应当选择 <code>em_real</code> 进行编译，以此为例，你应当运行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./compile em_real
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>编译需要花费一段时间，对于 WRF，这可能会花费 30 分钟的时间，对于 WRF-Chem，编译可能需要 1 个小时。编译成功后，运行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ls -s main/*.exe
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>根据你编译选项的不同，你将会看到数个 <code>.exe</code> 文件。对于 <code>em_real</code> 选项，这四个文件分别是：</p>
+<ul>
+<li><code>wrf.exe</code></li>
+<li><code>real.exe</code></li>
+<li><code>ndown.exe</code></li>
+<li><code>tc.exe</code></li>
+</ul>
+<blockquote>
+<p>⚠ 如果你编译失败，需要重新开始编译，请在重新执行本步骤前执行 <code>./clean</code>。</p>
+</blockquote>
+<h2 id="编译-wps">编译 WPS</h2>
+<hr>
+<p>进入解压后的 WPS 文件夹，然后执行:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./configure
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这里你依旧会看到不同的编译选项，一般来说，此处应当选择 3 号选项。请注意，这里的编译选项应当和编译 WRF 时的选项一致，尽管序号可能有所不同。接下来就可以对 WPS 进行编译，执行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./compile
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这可能会花费一段时间，执行成功后，输入  <code>ls -s *.exe</code>，将会看到三个 <code>.exe</code> 文件，分别是：<code>geogrid.exe</code>，<code>ungrib.exe</code> 和 <code>metgrid.exe</code>。</p>
+<p>至此，所有的编译工作已经完成。如果有时间，我会考虑增加：</p>
+<ul>
+<li><i class="far fa-square fa-fw"></i> WPS 的运行</li>
+<li><i class="far fa-square fa-fw"></i> WRF 的运行</li>
+<li><i class="far fa-square fa-fw"></i> wrfout 数据的处理</li>
+</ul>
+<p>等内容。</p></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2022-05-01&#32;00:00:00>更新于 2022-05-01</span>
+      </div>
+      <div class="post-info-license"><span><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+    <div class="post-info-line">
+      <div class="post-info-md"><span><a
+  href="/%D1%8B%D1%9Ewrf/index.md"
+  
+    title="阅读原始文档"
+  
+  
+  
+  
+  
+    class="link-to-markdown"
+  
+  
+>阅读原始文档</a></span></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blathers23.netlify.app/%D1%8B%D1%9Ewrf/" data-title="浅入浅出 WRF 教程"><i class="fab fa-weibo fa-fw"></i></a>
+  <a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://blathers23.netlify.app/%D1%8B%D1%9Ewrf/" data-title="浅入浅出 WRF 教程"><i data-svg-src="/lib/simple-icons/icons/baidu.min.svg"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://blathers23.netlify.app/%D1%8B%D1%9Ewrf/" data-title="浅入浅出 WRF 教程"><i class="fab fa-evernote fa-fw"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/wrf/">WRF</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/vscode_and_msys2/" class="prev" rel="prev" title="VSCode 搭配 g&#43;&#43; 配置 Cpp 编译环境"><i class="fas fa-angle-left fa-fw"></i>VSCode 搭配 g&#43;&#43; 配置 Cpp 编译环境</a>
+      <a href="/%D1%88/" class="next" rel="next" title="杂谈毕业设计">杂谈毕业设计<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="waline" class="comment"></div><noscript>
+        Please enable JavaScript to view the comments powered by <a href="https://waline.js.org/" rel="external nofollow noopener noreffer">Waline</a>.
+      </noscript></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer" title="Hugo 0.100.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/Lruihao/FixIt" target="_blank" rel="external nofollow noopener noreffer" title="FixIt v0.2.14"><img class="fixit-icon" src="/images/fixit.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright"><i class="far fa-copyright fa-fw"></i>
+            <span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">
+              <a
+  href="/"
+  
+  
+  
+  
+  
+  
+>Blathers</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fas fa-heartbeat fa-fw animate-icon"></i>&nbsp;<span class="run-times">网站运行中 ...</span></span></div><div class="footer-line ibruce">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="far fa-user fa-fw"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin fa-fw"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="far fa-eye fa-fw"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin fa-fw"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets">
+  <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+      <i class="fas fa-arrow-up fa-fw"></i>
+    </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+      <i class="fas fa-comment fa-fw"></i>
+    </a>
+  </div><div id="mask"></div>
+</div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/waline/Waline.min.js" defer></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js" defer></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js" async defer></script><script type="text/javascript" src="/lib/sharer/sharer.min.js" async defer></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":50},"comment":{"waline":{"copyright":true,"dark":"body[theme='dark']","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/bilibili"],"highlight":true,"lang":"zh-cn","login":"enable","meta":["nick","mail","link"],"pageSize":10,"serverURL":"https://eke-sai-ting-bdlj3h1m4-blathers.vercel.app/"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":null,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"siteTime":"2022-04-19T01:19:11+08:00"};</script><script type="text/javascript" src="/js/theme.min.js" defer></script><script type="text/javascript" src="/js/_custom.min.js" defer></script></body>
+</html>

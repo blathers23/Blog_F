@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "dark.min.css",
-	"sourceRoot": "D:/Blog/Blathers_Fixit",
+	"sourceRoot": "/home/yuew/blog/Blathers_Fixit",
 	"sources": [
 		"stdin"
 	],

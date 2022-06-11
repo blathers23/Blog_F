@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>杂谈毕业设计 - Blathers&#39; Tent</title><meta name="author" content="Blathers">
+<meta name="author-link" content="">
+<meta name="description" content="简单记录下毕业设计的内容，以及解决问题的历程。" />
+<meta name="keywords" content="WRF,Python" /><meta itemprop="name" content="杂谈毕业设计">
+<meta itemprop="description" content="简单记录下毕业设计的内容，以及解决问题的历程。"><meta itemprop="datePublished" content="2022-04-20T21:38:00+08:00" />
+<meta itemprop="dateModified" content="2022-05-08T00:00:00+00:00" />
+<meta itemprop="wordCount" content="4128">
+<meta itemprop="keywords" content="WRF,Python," /><meta property="og:title" content="杂谈毕业设计" />
+<meta property="og:description" content="简单记录下毕业设计的内容，以及解决问题的历程。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blathers23.netlify.app/%E6%9D%82%E8%B0%88%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-04-20T21:38:00+08:00" />
+<meta property="article:modified_time" content="2022-05-08T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="杂谈毕业设计"/>
+<meta name="twitter:description" content="简单记录下毕业设计的内容，以及解决问题的历程。"/>
+<meta name="application-name" content="Blathers&#39; Tent">
+<meta name="apple-mobile-web-app-title" content="Blathers&#39; Tent"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="https://blathers23.netlify.app/%E6%9D%82%E8%B0%88%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" /><link rel="prev" href="https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAwrf%E6%95%99%E7%A8%8B/" /><link rel="next" href="https://blathers23.netlify.app/lc11/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "杂谈毕业设计",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blathers23.netlify.app\/%E6%9D%82%E8%B0%88%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1\/"
+    },"genre": "posts","keywords": "WRF, Python","wordcount":  4128 ,
+    "url": "https:\/\/blathers23.netlify.app\/%E6%9D%82%E8%B0%88%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1\/","datePublished": "2022-04-20T21:38:00+08:00","dateModified": "2022-05-08T00:00:00+00:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Blathers"
+      },"description": "简单记录下毕业设计的内容，以及解决问题的历程。"
+  }
+  </script></head>
+  <body header-desktop="sticky" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script><div class="wrapper"><header class="desktop" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Blathers&#39; Tent"><span class="header-title-pre">🏕️</span><span class="header-title-text">Blathers&#39; Tent</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/posts/"
+                title="全部文章"
+                
+              >Posts 📑</a></li><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/tags/"
+                title="标签"
+                
+              >Tags 🏷️</a></li><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/categories/"
+                title="分类"
+                
+              >Categories 📚</a></li><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/friends"
+                title="友情链接"
+                
+              >Friends 🎈</a></li><li
+              class="menu-item"
+              
+            >
+              <a
+                class="menu-link"
+                href="/about"
+                title="关于我"
+                
+              >About 🦉</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Blathers&#39; Tent"><span class="header-title-pre">🏕️</span><span class="header-title-text">Blathers&#39; Tent</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/posts/"
+                title="全部文章"
+                
+              >Posts 📑</a></li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/tags/"
+                title="标签"
+                
+              >Tags 🏷️</a></li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/categories/"
+                title="分类"
+                
+              >Categories 📚</a></li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/friends"
+                title="友情链接"
+                
+              >Friends 🎈</a></li><li
+              class="menu-item"
+            ><a
+                class="menu-link"
+                href="/about"
+                title="关于我"
+                
+              >About 🦉</a></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header>
+<div class="search-dropdown desktop">
+  <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+  <div id="search-dropdown-mobile"></div>
+</div>
+<main class="container" page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录 <i class="toc-icon fa-solid fa-angle-down fa-fw"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    
+  </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX">杂谈毕业设计</h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="https://gravatar.loli.net/avatar/1cc24367e7133aceb81bfd9ef41481cd?s=32&amp;d="
+    data-srcset="https://gravatar.loli.net/avatar/1cc24367e7133aceb81bfd9ef41481cd?s=32&amp;d=, https://gravatar.loli.net/avatar/1cc24367e7133aceb81bfd9ef41481cd?s=32&amp;d= 1.5x, https://gravatar.loli.net/avatar/1cc24367e7133aceb81bfd9ef41481cd?s=32&amp;d= 2x"
+    data-sizes="auto"
+    alt="Blathers"
+    title="Blathers" />&nbsp;Blathers</span></span>
+          <span class="post-category">收录于 <a href="/categories/ai/"><i class="fa-regular fa-folder fa-fw"></i>&nbsp;AI</a></span></div>
+      <div class="post-meta-line"><span title=2022-04-20&#32;21:38:00>
+            <i class="fa-regular fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-04-20" >2022-04-20</time>
+          </span>&nbsp;<i class="fa-solid fa-pencil-alt fa-fw"></i>&nbsp;约 4128 字&nbsp;
+        <i class="fa-regular fa-clock fa-fw"></i>&nbsp;预计阅读 9 分钟&nbsp;</div>
+    </div><div class="details toc" id="toc-static" kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#毕设灵感">毕设灵感</a></li>
+    <li><a href="#实验推进">实验推进</a>
+      <ul>
+        <li><a href="#模型实现">模型实现</a>
+          <ul>
+            <li><a href="#convlstm">ConvLSTM</a></li>
+            <li><a href="#convgru">ConvGRU</a></li>
+          </ul>
+        </li>
+        <li><a href="#数据分析">数据分析</a>
+          <ul>
+            <li><a href="#模拟范围">模拟范围</a></li>
+          </ul>
+        </li>
+        <li><a href="#变量选择">变量选择</a></li>
+        <li><a href="#预实验">预实验</a>
+          <ul>
+            <li><a href="#预实验--1">预实验  1</a>
+              <ul>
+                <li><a href="#方案-1">方案 1</a></li>
+                <li><a href="#方案-2">方案 2</a></li>
+              </ul>
+            </li>
+            <li><a href="#预实验-2">预实验 2</a></li>
+            <li><a href="#预实验-3">预实验 3</a></li>
+          </ul>
+        </li>
+        <li><a href="#实验">实验</a>
+          <ul>
+            <li><a href="#基准实验">基准实验</a></li>
+            <li><a href="#实验-1">实验 1</a></li>
+            <li><a href="#实验-2">实验 2</a></li>
+            <li><a href="#实验-3">实验 3</a></li>
+            <li><a href="#实验-4">实验 4</a></li>
+            <li><a href="#实验-5">实验 5</a></li>
+          </ul>
+        </li>
+        <li><a href="#总结">总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#绘图">绘图</a></li>
+    <li><a href="#工作时间线">工作时间线</a></li>
+  </ul>
+</nav></div>
+      </div><div
+      class="content"
+      id="content"
+      
+      
+    ><blockquote>
+<p>《基于人工智能的大气重点污染物浓度预测》</p>
+</blockquote>
+<h2 id="毕设灵感">毕设灵感</h2>
+<hr>
+<p>很久之前，我就有将循环神经网络用在大气污染物浓度预测上的想法，可以自由选择题目的课程设计也就成了实现这个想法最好的平台。最初的想法非常简单：随便找几个监测站的大气污染物数据，把别人写好的 LSTM、GRU 之类的模型拿来用一用，再随便拟合一下就算大功告成。</p>
+<p>考研初试结束后，我也总算有了一些时间继续做一些自己喜欢的工作。在学习的过程中，我发现了一个以前没有注意到过的领域 — <a
+  href="https://paperswithcode.com/task/video-prediction"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>视频预测(Video Prediction)</a>领域。这个方向的问题大概为：输入一个视频的前几帧，让你去预测下一帧的图像。针对这个领域的问题，非常具有代表性的一个工作就是 <a
+  href="https://proceedings.neurips.cc/paper/2015/file/07563a3fe3bbe7e3ba84431ad9d055af-Paper.pdf"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>ConvLSTM</a>，这是一篇NIPS2015的论文，讲的是利用 CNN 和 LSTM 结合，通过前几帧的卫星图像，来预测以后的卫星图像，进而对降水进行预测。我忽然意识到，如果将大气污染物的浓度分布作为原始输入，不也可以预测未来的污染物浓度分布吗？</p>
+<p>这激起了我的好奇心，检索了一下相关的工作，有一篇<a
+  href="https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CMFD&amp;filename=1021679960.nh"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>上海交大的硕士毕业论文</a>完成了这项工作，作者使用的就是原始的 ConvLSTM。事实上，从 ConvLSTM 出现至今，视频理解方向的工作已经有了很多进步，从 <a
+  href="https://paperswithcode.com/task/video-prediction"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>Papers with Code</a> 的网站上就可以看到。但是这些变化，还没有应用到大气污染物预测的领域，作为一个专业的学术易拉罐，这样的好机会我是不会放过的。</p>
+<p>就这样，毕设难度一下子顶了上去，从原本的浓度单点预测，变成了现在的浓度分度预测。</p>
+<h2 id="实验推进">实验推进</h2>
+<hr>
+<p>深度学习，模型、数据、计算资源缺一不可。</p>
+<p>模型方面，目前实现了 ConvLSTM 和 ConvGRU 两个模型，打算最后要是有时间还可以再做一下 Transformer 的结合，虽然说大概率没希望，因为数据量太少了，难以支撑起 Transformer 的效果。</p>
+<p>数据方面，我原本想要自己安装一下 WRF-Chem 来跑些训练数据出来，先是根本找不到 WRF-Chem 完整的学习资料，导致安装摸爬滚打完之后，连软件该怎么运行都搞不清楚；后是排放清单数据拿不到，最终只好搁置了这个计划。转头去找学姐发文时用的数据，终于找到了大概有 550 多条数据，数据量堪忧。</p>
+<p>计算资源方面，目前只有我寝室使用的 1050Ti。</p>
+<p>总之就是前途非常渺茫。</p>
+<h3 id="模型实现">模型实现</h3>
+<p>代码仓库：<a
+  href="https://gitee.com/Blathers/dl_-pm_-pred"
+  
+  
+    
+    
+    target="_blank"
+  
+  
+    rel="external nofollow noopener noreffer"
+  
+  
+  
+>DL_PM_Pred</a>，公式如下：</p>
+<h4 id="convlstm">ConvLSTM</h4>
+<p>$$
+I_{t} = Sigmoid(Conv(X_t, W_{xi}) + Conv(H_{t-1}, W_{hi}) + b_i) \\
+F_{t} = Sigmoid(Conv(X_t, W_{xf}) + Conv(H_{t-1}, W_{hf}) + b_f) \\
+O_{t} = Sigmoid(Conv(X_t, W_{xo}) + Conv(H_{t-1}, W_{ho}) + b_o)  \\ 
+\tilde{C_t} = Tanh(Conv(X_t, W*{xc}) + Conv(H_{t-1}, W_{hc}) + b_h) \\ 
+C_t = F_t \odot C_{t-1} + I_t \odot \tilde{C_t} \\
+H_t = O_t  \odot Tanh(C_t)\\
+Pred = ReLU(Conv(X_t, W*{xx}) + Conv(H_t, W_{xh}) + b_{p}) \\
+$$</p>
+<h4 id="convgru">ConvGRU</h4>
+<p>$$
+R_{t} = Sigmoid(Conv(X_t, W_{xr}) + Conv(H_{t-1}, W_{hr})+b_r) \\ 
+Z_{t} = Sigmoid(Conv(X_t, W_{xz}) + Conv(H_{t-1}, W_{hz})+b_z) \\ \tilde{H_t} = Tanh(Conv(X_t, W*{xh})+Conv(R_t \odot H_{t-1}, W_{rh}) + b_{h}) \\ 
+H_t = Z_t \odot H_{t-1} + (1 - Z_t) \odot \tilde{H} \\ 
+Pred = ReLU(Conv(X_t, W_{xx}) + Conv(H_t, W_{xh}) + b_{p}) \\
+$$</p>
+<h3 id="数据分析">数据分析</h3>
+<h4 id="模拟范围">模拟范围</h4>
+<p>模拟范围如图：</p>
+<p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://s3.bmp.ovh/imgs/2022/04/23/22967f3605ac175e.png"
+    data-srcset="https://s3.bmp.ovh/imgs/2022/04/23/22967f3605ac175e.png, https://s3.bmp.ovh/imgs/2022/04/23/22967f3605ac175e.png 1.5x, https://s3.bmp.ovh/imgs/2022/04/23/22967f3605ac175e.png 2x"
+    data-sizes="auto"
+    alt="https://s3.bmp.ovh/imgs/2022/04/23/22967f3605ac175e.png"
+    title="https://s3.bmp.ovh/imgs/2022/04/23/22967f3605ac175e.png" /></p>
+<h3 id="变量选择">变量选择</h3>
+<p>解包 wrfout 文件后，文件保存了 281 个变量，分别是：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">[</span><span class="s1">&#39;Times&#39;</span><span class="p">,</span> <span class="s1">&#39;XLAT&#39;</span><span class="p">,</span> <span class="s1">&#39;XLONG&#39;</span><span class="p">,</span> <span class="s1">&#39;LU_INDEX&#39;</span><span class="p">,</span> <span class="s1">&#39;ZNU&#39;</span><span class="p">,</span> <span class="s1">&#39;ZNW&#39;</span><span class="p">,</span> <span class="s1">&#39;ZS&#39;</span><span class="p">,</span> <span class="s1">&#39;DZS&#39;</span><span class="p">,</span> <span class="s1">&#39;VAR_SSO&#39;</span><span class="p">,</span> <span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;W&#39;</span><span class="p">,</span> <span class="s1">&#39;PH&#39;</span><span class="p">,</span> <span class="s1">&#39;PHB&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;HFX_FORCE&#39;</span><span class="p">,</span> <span class="s1">&#39;LH_FORCE&#39;</span><span class="p">,</span> <span class="s1">&#39;TSK_FORCE&#39;</span><span class="p">,</span> <span class="s1">&#39;HFX_FORCE_TEND&#39;</span><span class="p">,</span> <span class="s1">&#39;LH_FORCE_TEND&#39;</span><span class="p">,</span> <span class="s1">&#39;TSK_FORCE_TEND&#39;</span><span class="p">,</span> <span class="s1">&#39;MU&#39;</span><span class="p">,</span> <span class="s1">&#39;MUB&#39;</span><span class="p">,</span> <span class="s1">&#39;NEST_POS&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;PB&#39;</span><span class="p">,</span> <span class="s1">&#39;FNM&#39;</span><span class="p">,</span> <span class="s1">&#39;FNP&#39;</span><span class="p">,</span> <span class="s1">&#39;RDNW&#39;</span><span class="p">,</span> <span class="s1">&#39;RDN&#39;</span><span class="p">,</span> <span class="s1">&#39;DNW&#39;</span><span class="p">,</span> <span class="s1">&#39;DN&#39;</span><span class="p">,</span> <span class="s1">&#39;CFN&#39;</span><span class="p">,</span> <span class="s1">&#39;CFN1&#39;</span><span class="p">,</span> <span class="s1">&#39;THIS_IS_AN_IDEAL_RUN&#39;</span><span class="p">,</span> <span class="s1">&#39;P_HYD&#39;</span><span class="p">,</span> <span class="s1">&#39;Q2&#39;</span><span class="p">,</span> <span class="s1">&#39;T2&#39;</span><span class="p">,</span> <span class="s1">&#39;TH2&#39;</span><span class="p">,</span> <span class="s1">&#39;PSFC&#39;</span><span class="p">,</span> <span class="s1">&#39;U10&#39;</span><span class="p">,</span> <span class="s1">&#39;V10&#39;</span><span class="p">,</span> <span class="s1">&#39;RDX&#39;</span><span class="p">,</span> <span class="s1">&#39;RDY&#39;</span><span class="p">,</span> <span class="s1">&#39;RESM&#39;</span><span class="p">,</span> <span class="s1">&#39;ZETATOP&#39;</span><span class="p">,</span> <span class="s1">&#39;CF1&#39;</span><span class="p">,</span> <span class="s1">&#39;CF2&#39;</span><span class="p">,</span> <span class="s1">&#39;CF3&#39;</span><span class="p">,</span> <span class="s1">&#39;ITIMESTEP&#39;</span><span class="p">,</span> <span class="s1">&#39;XTIME&#39;</span><span class="p">,</span> <span class="s1">&#39;QVAPOR&#39;</span><span class="p">,</span> <span class="s1">&#39;QCLOUD&#39;</span><span class="p">,</span> <span class="s1">&#39;QRAIN&#39;</span><span class="p">,</span> <span class="s1">&#39;QICE&#39;</span><span class="p">,</span> <span class="s1">&#39;QSNOW&#39;</span><span class="p">,</span> <span class="s1">&#39;QGRAUP&#39;</span><span class="p">,</span> <span class="s1">&#39;SHDMAX&#39;</span><span class="p">,</span> <span class="s1">&#39;SHDMIN&#39;</span><span class="p">,</span> <span class="s1">&#39;SNOALB&#39;</span><span class="p">,</span> <span class="s1">&#39;TSLB&#39;</span><span class="p">,</span> <span class="s1">&#39;SMOIS&#39;</span><span class="p">,</span> <span class="s1">&#39;SH2O&#39;</span><span class="p">,</span> <span class="s1">&#39;SMCREL&#39;</span><span class="p">,</span> <span class="s1">&#39;SEAICE&#39;</span><span class="p">,</span> <span class="s1">&#39;XICEM&#39;</span><span class="p">,</span> <span class="s1">&#39;SFROFF&#39;</span><span class="p">,</span> <span class="s1">&#39;UDROFF&#39;</span><span class="p">,</span> <span class="s1">&#39;IVGTYP&#39;</span><span class="p">,</span> <span class="s1">&#39;ISLTYP&#39;</span><span class="p">,</span> <span class="s1">&#39;VEGFRA&#39;</span><span class="p">,</span> <span class="s1">&#39;GRDFLX&#39;</span><span class="p">,</span> <span class="s1">&#39;ACGRDFLX&#39;</span><span class="p">,</span> <span class="s1">&#39;ACSNOM&#39;</span><span class="p">,</span> <span class="s1">&#39;SNOW&#39;</span><span class="p">,</span> <span class="s1">&#39;SNOWH&#39;</span><span class="p">,</span> <span class="s1">&#39;CANWAT&#39;</span><span class="p">,</span> <span class="s1">&#39;SSTSK&#39;</span><span class="p">,</span> <span class="s1">&#39;COSZEN&#39;</span><span class="p">,</span> <span class="s1">&#39;LAI&#39;</span><span class="p">,</span> <span class="s1">&#39;VAR&#39;</span><span class="p">,</span> <span class="s1">&#39;MAPFAC_M&#39;</span><span class="p">,</span> <span class="s1">&#39;MAPFAC_U&#39;</span><span class="p">,</span> <span class="s1">&#39;MAPFAC_V&#39;</span><span class="p">,</span> <span class="s1">&#39;MAPFAC_MX&#39;</span><span class="p">,</span> <span class="s1">&#39;MAPFAC_MY&#39;</span><span class="p">,</span> <span class="s1">&#39;MAPFAC_UX&#39;</span><span class="p">,</span> <span class="s1">&#39;MAPFAC_UY&#39;</span><span class="p">,</span> <span class="s1">&#39;MAPFAC_VX&#39;</span><span class="p">,</span> <span class="s1">&#39;MF_VX_INV&#39;</span><span class="p">,</span> <span class="s1">&#39;MAPFAC_VY&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;SINALPHA&#39;</span><span class="p">,</span> <span class="s1">&#39;COSALPHA&#39;</span><span class="p">,</span> <span class="s1">&#39;HGT&#39;</span><span class="p">,</span> <span class="s1">&#39;TSK&#39;</span><span class="p">,</span> <span class="s1">&#39;P_TOP&#39;</span><span class="p">,</span> <span class="s1">&#39;T00&#39;</span><span class="p">,</span> <span class="s1">&#39;P00&#39;</span><span class="p">,</span> <span class="s1">&#39;TLP&#39;</span><span class="p">,</span> <span class="s1">&#39;TISO&#39;</span><span class="p">,</span> <span class="s1">&#39;TLP_STRAT&#39;</span><span class="p">,</span> <span class="s1">&#39;P_STRAT&#39;</span><span class="p">,</span> <span class="s1">&#39;MAX_MSTFX&#39;</span><span class="p">,</span> <span class="s1">&#39;MAX_MSTFY&#39;</span><span class="p">,</span> <span class="s1">&#39;RAINC&#39;</span><span class="p">,</span> <span class="s1">&#39;RAINSH&#39;</span><span class="p">,</span> <span class="s1">&#39;RAINNC&#39;</span><span class="p">,</span> <span class="s1">&#39;SNOWNC&#39;</span><span class="p">,</span> <span class="s1">&#39;GRAUPELNC&#39;</span><span class="p">,</span> <span class="s1">&#39;HAILNC&#39;</span><span class="p">,</span> <span class="s1">&#39;CLDFRA&#39;</span><span class="p">,</span> <span class="s1">&#39;SWDOWN&#39;</span><span class="p">,</span> <span class="s1">&#39;GLW&#39;</span><span class="p">,</span> <span class="s1">&#39;SWNORM&#39;</span><span class="p">,</span> <span class="s1">&#39;OLR&#39;</span><span class="p">,</span> <span class="s1">&#39;XLAT_U&#39;</span><span class="p">,</span> <span class="s1">&#39;XLONG_U&#39;</span><span class="p">,</span> <span class="s1">&#39;XLAT_V&#39;</span><span class="p">,</span> <span class="s1">&#39;XLONG_V&#39;</span><span class="p">,</span> <span class="s1">&#39;ALBEDO&#39;</span><span class="p">,</span> <span class="s1">&#39;CLAT&#39;</span><span class="p">,</span> <span class="s1">&#39;ALBBCK&#39;</span><span class="p">,</span> <span class="s1">&#39;EMISS&#39;</span><span class="p">,</span> <span class="s1">&#39;NOAHRES&#39;</span><span class="p">,</span> <span class="s1">&#39;TMN&#39;</span><span class="p">,</span> <span class="s1">&#39;XLAND&#39;</span><span class="p">,</span> <span class="s1">&#39;UST&#39;</span><span class="p">,</span> <span class="s1">&#39;PBLH&#39;</span><span class="p">,</span> <span class="s1">&#39;HFX&#39;</span><span class="p">,</span> <span class="s1">&#39;QFX&#39;</span><span class="p">,</span> <span class="s1">&#39;LH&#39;</span><span class="p">,</span> <span class="s1">&#39;ACHFX&#39;</span><span class="p">,</span> <span class="s1">&#39;ACLHF&#39;</span><span class="p">,</span> <span class="s1">&#39;SNOWC&#39;</span><span class="p">,</span> <span class="s1">&#39;SR&#39;</span><span class="p">,</span> <span class="s1">&#39;SAVE_TOPO_FROM_REAL&#39;</span><span class="p">,</span> <span class="s1">&#39;EROD&#39;</span><span class="p">,</span> <span class="s1">&#39;CLDFRA2&#39;</span><span class="p">,</span> <span class="s1">&#39;RAINPROD&#39;</span><span class="p">,</span> <span class="s1">&#39;EVAPPROD&#39;</span><span class="p">,</span> <span class="s1">&#39;UST_T&#39;</span><span class="p">,</span> <span class="s1">&#39;ROUGH_COR&#39;</span><span class="p">,</span> <span class="s1">&#39;SMOIS_COR&#39;</span><span class="p">,</span> <span class="s1">&#39;DUSTLOAD_1&#39;</span><span class="p">,</span> <span class="s1">&#39;DUSTLOAD_2&#39;</span><span class="p">,</span> <span class="s1">&#39;DUSTLOAD_3&#39;</span><span class="p">,</span> <span class="s1">&#39;DUSTLOAD_4&#39;</span><span class="p">,</span> <span class="s1">&#39;DUSTLOAD_5&#39;</span><span class="p">,</span> <span class="s1">&#39;DRYDEPVEL&#39;</span><span class="p">,</span> <span class="s1">&#39;GRASET_1&#39;</span><span class="p">,</span> <span class="s1">&#39;GRASET_2&#39;</span><span class="p">,</span> <span class="s1">&#39;GRASET_3&#39;</span><span class="p">,</span> <span class="s1">&#39;GRASET_4&#39;</span><span class="p">,</span> <span class="s1">&#39;GRASET_5&#39;</span><span class="p">,</span> <span class="s1">&#39;DRYDEP_1&#39;</span><span class="p">,</span> <span class="s1">&#39;DRYDEP_2&#39;</span><span class="p">,</span> <span class="s1">&#39;DRYDEP_3&#39;</span><span class="p">,</span> <span class="s1">&#39;DRYDEP_4&#39;</span><span class="p">,</span> <span class="s1">&#39;DRYDEP_5&#39;</span><span class="p">,</span> <span class="s1">&#39;EDUST1&#39;</span><span class="p">,</span> <span class="s1">&#39;EDUST2&#39;</span><span class="p">,</span> <span class="s1">&#39;EDUST3&#39;</span><span class="p">,</span> <span class="s1">&#39;EDUST4&#39;</span><span class="p">,</span> <span class="s1">&#39;EDUST5&#39;</span><span class="p">,</span> <span class="s1">&#39;DRY_DEP_LEN&#39;</span><span class="p">,</span> <span class="s1">&#39;DRY_DEP_FLUX&#39;</span><span class="p">,</span> <span class="s1">&#39;WET_DEP_FLUX&#39;</span><span class="p">,</span> <span class="s1">&#39;EBIO_ISO&#39;</span><span class="p">,</span> <span class="s1">&#39;EBIO_API&#39;</span><span class="p">,</span> <span class="s1">&#39;LAI_VEGMASK&#39;</span><span class="p">,</span> <span class="s1">&#39;dvel_o3&#39;</span><span class="p">,</span> <span class="s1">&#39;PM2_5_DRY&#39;</span><span class="p">,</span> <span class="s1">&#39;PM10&#39;</span><span class="p">,</span> <span class="s1">&#39;DMS_0&#39;</span><span class="p">,</span> <span class="s1">&#39;PHOTR201&#39;</span><span class="p">,</span> <span class="s1">&#39;PHOTR202&#39;</span><span class="p">,</span> <span class="s1">&#39;PHOTR203&#39;</span><span class="p">,</span> <span class="s1">&#39;so2&#39;</span><span class="p">,</span> <span class="s1">&#39;sulf&#39;</span><span class="p">,</span> <span class="s1">&#39;no2&#39;</span><span class="p">,</span> <span class="s1">&#39;no&#39;</span><span class="p">,</span> <span class="s1">&#39;o3&#39;</span><span class="p">,</span> <span class="s1">&#39;hno3&#39;</span><span class="p">,</span> <span class="s1">&#39;h2o2&#39;</span><span class="p">,</span> <span class="s1">&#39;ald&#39;</span><span class="p">,</span> <span class="s1">&#39;hcho&#39;</span><span class="p">,</span> <span class="s1">&#39;op1&#39;</span><span class="p">,</span> <span class="s1">&#39;op2&#39;</span><span class="p">,</span> <span class="s1">&#39;paa&#39;</span><span class="p">,</span> <span class="s1">&#39;ora1&#39;</span><span class="p">,</span> <span class="s1">&#39;ora2&#39;</span><span class="p">,</span> <span class="s1">&#39;nh3&#39;</span><span class="p">,</span> <span class="s1">&#39;n2o5&#39;</span><span class="p">,</span> <span class="s1">&#39;no3&#39;</span><span class="p">,</span> <span class="s1">&#39;pan&#39;</span><span class="p">,</span> <span class="s1">&#39;hc3&#39;</span><span class="p">,</span> <span class="s1">&#39;hc5&#39;</span><span class="p">,</span> <span class="s1">&#39;hc8&#39;</span><span class="p">,</span> <span class="s1">&#39;eth&#39;</span><span class="p">,</span> <span class="s1">&#39;co&#39;</span><span class="p">,</span> <span class="s1">&#39;ol2&#39;</span><span class="p">,</span> <span class="s1">&#39;olt&#39;</span><span class="p">,</span> <span class="s1">&#39;oli&#39;</span><span class="p">,</span> <span class="s1">&#39;tol&#39;</span><span class="p">,</span> <span class="s1">&#39;xyl&#39;</span><span class="p">,</span> <span class="s1">&#39;aco3&#39;</span><span class="p">,</span> <span class="s1">&#39;tpan&#39;</span><span class="p">,</span> <span class="s1">&#39;hono&#39;</span><span class="p">,</span> <span class="s1">&#39;hno4&#39;</span><span class="p">,</span> <span class="s1">&#39;ket&#39;</span><span class="p">,</span> <span class="s1">&#39;gly&#39;</span><span class="p">,</span> <span class="s1">&#39;mgly&#39;</span><span class="p">,</span> <span class="s1">&#39;dcb&#39;</span><span class="p">,</span> <span class="s1">&#39;onit&#39;</span><span class="p">,</span> <span class="s1">&#39;csl&#39;</span><span class="p">,</span> <span class="s1">&#39;iso&#39;</span><span class="p">,</span> <span class="s1">&#39;hcl&#39;</span><span class="p">,</span> <span class="s1">&#39;ho&#39;</span><span class="p">,</span> <span class="s1">&#39;ho2&#39;</span><span class="p">,</span> <span class="s1">&#39;so4aj&#39;</span><span class="p">,</span> <span class="s1">&#39;so4ai&#39;</span><span class="p">,</span> <span class="s1">&#39;nh4aj&#39;</span><span class="p">,</span> <span class="s1">&#39;nh4ai&#39;</span><span class="p">,</span> <span class="s1">&#39;no3aj&#39;</span><span class="p">,</span> <span class="s1">&#39;no3ai&#39;</span><span class="p">,</span> <span class="s1">&#39;naaj&#39;</span><span class="p">,</span> <span class="s1">&#39;naai&#39;</span><span class="p">,</span> <span class="s1">&#39;claj&#39;</span><span class="p">,</span> <span class="s1">&#39;clai&#39;</span><span class="p">,</span> <span class="s1">&#39;orgaro1j&#39;</span><span class="p">,</span> <span class="s1">&#39;orgaro1i&#39;</span><span class="p">,</span> <span class="s1">&#39;orgaro2j&#39;</span><span class="p">,</span> <span class="s1">&#39;orgaro2i&#39;</span><span class="p">,</span> <span class="s1">&#39;orgalk1j&#39;</span><span class="p">,</span> <span class="s1">&#39;orgalk1i&#39;</span><span class="p">,</span> <span class="s1">&#39;orgole1j&#39;</span><span class="p">,</span> <span class="s1">&#39;orgole1i&#39;</span><span class="p">,</span> <span class="s1">&#39;orgba1j&#39;</span><span class="p">,</span> <span class="s1">&#39;orgba1i&#39;</span><span class="p">,</span> <span class="s1">&#39;orgba2j&#39;</span><span class="p">,</span> <span class="s1">&#39;orgba2i&#39;</span><span class="p">,</span> <span class="s1">&#39;orgba3j&#39;</span><span class="p">,</span> <span class="s1">&#39;orgba3i&#39;</span><span class="p">,</span> <span class="s1">&#39;orgba4j&#39;</span><span class="p">,</span> <span class="s1">&#39;orgba4i&#39;</span><span class="p">,</span> <span class="s1">&#39;orgpaj&#39;</span><span class="p">,</span> <span class="s1">&#39;orgpai&#39;</span><span class="p">,</span> <span class="s1">&#39;ecj&#39;</span><span class="p">,</span> <span class="s1">&#39;eci&#39;</span><span class="p">,</span> <span class="s1">&#39;p25j&#39;</span><span class="p">,</span> <span class="s1">&#39;p25i&#39;</span><span class="p">,</span> <span class="s1">&#39;antha&#39;</span><span class="p">,</span> <span class="s1">&#39;seas&#39;</span><span class="p">,</span> <span class="s1">&#39;soila&#39;</span><span class="p">,</span> <span class="s1">&#39;nu0&#39;</span><span class="p">,</span> <span class="s1">&#39;ac0&#39;</span><span class="p">,</span> <span class="s1">&#39;corn&#39;</span><span class="p">,</span> <span class="s1">&#39;ISEEDARR_SPPT&#39;</span><span class="p">,</span> <span class="s1">&#39;ISEEDARR_SKEBS&#39;</span><span class="p">,</span> <span class="s1">&#39;ISEEDARR_RAND_PERTURB&#39;</span><span class="p">,</span> <span class="s1">&#39;ISEEDARRAY_SPP_CONV&#39;</span><span class="p">,</span> <span class="s1">&#39;ISEEDARRAY_SPP_PBL&#39;</span><span class="p">,</span> <span class="s1">&#39;ISEEDARRAY_SPP_LSM&#39;</span><span class="p">,</span> <span class="s1">&#39;BF&#39;</span><span class="p">,</span> <span class="s1">&#39;C1H&#39;</span><span class="p">,</span> <span class="s1">&#39;C2H&#39;</span><span class="p">,</span> <span class="s1">&#39;BH&#39;</span><span class="p">,</span> <span class="s1">&#39;C1F&#39;</span><span class="p">,</span> <span class="s1">&#39;C2F&#39;</span><span class="p">,</span> <span class="s1">&#39;C3H&#39;</span><span class="p">,</span> <span class="s1">&#39;C4H&#39;</span><span class="p">,</span> <span class="s1">&#39;C3F&#39;</span><span class="p">,</span> <span class="s1">&#39;C4F&#39;</span><span class="p">,</span> <span class="s1">&#39;PCB&#39;</span><span class="p">,</span> <span class="s1">&#39;PC&#39;</span><span class="p">,</span> <span class="s1">&#39;LANDMASK&#39;</span><span class="p">,</span> <span class="s1">&#39;LAKEMASK&#39;</span><span class="p">,</span> <span class="s1">&#39;SST&#39;</span><span class="p">,</span> <span class="s1">&#39;SST_INPUT&#39;</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>数据量相当夸张。为了减轻渣渣 1050Ti 的压力，需要从这些变量中选出主要变量。从这些变量中找出对 PM 影响较大的变量不是一件容易的事情，这里首先从数据的 <code>shape</code> 入手，将 <code>shape</code> 不是四维的数据首先排除可能，经筛选后，变量名、描述及翻译如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">变量名</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">翻译</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">U</td>
+<td style="text-align:center">x-wind component</td>
+<td style="text-align:center">x 轴风分量</td>
+</tr>
+<tr>
+<td style="text-align:center">V</td>
+<td style="text-align:center">y-wind component</td>
+<td style="text-align:center">y 轴风分量</td>
+</tr>
+<tr>
+<td style="text-align:center">W</td>
+<td style="text-align:center">z-wind component</td>
+<td style="text-align:center">z 轴风分量</td>
+</tr>
+<tr>
+<td style="text-align:center">PH</td>
+<td style="text-align:center">perturbation geopotential</td>
+<td style="text-align:center">摄动位势高度</td>
+</tr>
+<tr>
+<td style="text-align:center">PHB</td>
+<td style="text-align:center">base-state geopotential</td>
+<td style="text-align:center">基态位势高度</td>
+</tr>
+<tr>
+<td style="text-align:center">T</td>
+<td style="text-align:center">perturbation potential temperature (theta-t0)</td>
+<td style="text-align:center">摄动势温</td>
+</tr>
+<tr>
+<td style="text-align:center">P</td>
+<td style="text-align:center">perturbation pressure</td>
+<td style="text-align:center">摄动压</td>
+</tr>
+<tr>
+<td style="text-align:center">PB</td>
+<td style="text-align:center">BASE STATE PRESSURE</td>
+<td style="text-align:center">基态压力</td>
+</tr>
+<tr>
+<td style="text-align:center">P_HYD</td>
+<td style="text-align:center">hydrostatic pressure</td>
+<td style="text-align:center">流体静压</td>
+</tr>
+<tr>
+<td style="text-align:center">QVAPOR</td>
+<td style="text-align:center">Water vapor mixing ratio</td>
+<td style="text-align:center">水汽混合比</td>
+</tr>
+<tr>
+<td style="text-align:center">QCLOUD</td>
+<td style="text-align:center">Cloud water mixing ratio</td>
+<td style="text-align:center">云水混合比</td>
+</tr>
+<tr>
+<td style="text-align:center">QRAIN</td>
+<td style="text-align:center">Rain water mixing ratio</td>
+<td style="text-align:center">雨水混合比</td>
+</tr>
+<tr>
+<td style="text-align:center">QICE</td>
+<td style="text-align:center">Ice mixing ratio</td>
+<td style="text-align:center">冰混合比</td>
+</tr>
+<tr>
+<td style="text-align:center">QSNOW</td>
+<td style="text-align:center">Snow mixing ratio</td>
+<td style="text-align:center">雪混合比</td>
+</tr>
+<tr>
+<td style="text-align:center">QGRAUP</td>
+<td style="text-align:center">Graupel mixing ratio</td>
+<td style="text-align:center">霰粒混合比</td>
+</tr>
+<tr>
+<td style="text-align:center">TSLB</td>
+<td style="text-align:center">SOIL TEMPERATURE</td>
+<td style="text-align:center">土壤温度</td>
+</tr>
+<tr>
+<td style="text-align:center">SMOIS</td>
+<td style="text-align:center">SOIL MOISTURE</td>
+<td style="text-align:center">土壤湿度</td>
+</tr>
+<tr>
+<td style="text-align:center">SH2O</td>
+<td style="text-align:center">SOIL LIQUID WATER</td>
+<td style="text-align:center">土壤液态水</td>
+</tr>
+<tr>
+<td style="text-align:center">SMCREL</td>
+<td style="text-align:center">RELATIVE SOIL MOISTURE</td>
+<td style="text-align:center">相对土壤水分</td>
+</tr>
+<tr>
+<td style="text-align:center">CLDFRA</td>
+<td style="text-align:center">CLOUD FRACTION</td>
+<td style="text-align:center">云分数</td>
+</tr>
+<tr>
+<td style="text-align:center">EROD</td>
+<td style="text-align:center">fraction of erodible surface in each grid cell</td>
+<td style="text-align:center">每个网格单元中可侵蚀表面的分数</td>
+</tr>
+<tr>
+<td style="text-align:center">CLDFRA2</td>
+<td style="text-align:center">CLOUD FRACTION</td>
+<td style="text-align:center">云分数</td>
+</tr>
+<tr>
+<td style="text-align:center">RAINPROD</td>
+<td style="text-align:center">TOTAL RAIN PRODUCTION RATE</td>
+<td style="text-align:center">总降雨率</td>
+</tr>
+<tr>
+<td style="text-align:center">EVAPPROD</td>
+<td style="text-align:center">RAIN EVAPORATION RATE</td>
+<td style="text-align:center">降雨蒸发率</td>
+</tr>
+<tr>
+<td style="text-align:center">EDUST1</td>
+<td style="text-align:center">DUST emissions bin1</td>
+<td style="text-align:center">粉尘排放</td>
+</tr>
+<tr>
+<td style="text-align:center">EDUST2</td>
+<td style="text-align:center">DUST emissions bin2</td>
+<td style="text-align:center">粉尘排放</td>
+</tr>
+<tr>
+<td style="text-align:center">EDUST3</td>
+<td style="text-align:center">DUST emissions bin3</td>
+<td style="text-align:center">粉尘排放</td>
+</tr>
+<tr>
+<td style="text-align:center">EDUST4</td>
+<td style="text-align:center">DUST emissions bin4</td>
+<td style="text-align:center">粉尘排放</td>
+</tr>
+<tr>
+<td style="text-align:center">EDUST5</td>
+<td style="text-align:center">DUST emissions bin5</td>
+<td style="text-align:center">粉尘排放</td>
+</tr>
+<tr>
+<td style="text-align:center">DRY_DEP_LEN</td>
+<td style="text-align:center">dry deposition velocity</td>
+<td style="text-align:center">干沉降速率</td>
+</tr>
+<tr>
+<td style="text-align:center">DRY_DEP_FLUX</td>
+<td style="text-align:center">dry deposition flux</td>
+<td style="text-align:center">干沉降通量</td>
+</tr>
+<tr>
+<td style="text-align:center">WET_DEP_FLUX</td>
+<td style="text-align:center">column wet scavening flux</td>
+<td style="text-align:center">柱湿清除通量</td>
+</tr>
+<tr>
+<td style="text-align:center">dvel_o3</td>
+<td style="text-align:center">O3 deposition velocity</td>
+<td style="text-align:center">O$_3$ 沉积速度</td>
+</tr>
+<tr>
+<td style="text-align:center">PM2_5_DRY</td>
+<td style="text-align:center">pm2.5 aerosol dry mass</td>
+<td style="text-align:center">PM$_{2.5}$ 气溶胶干质量</td>
+</tr>
+<tr>
+<td style="text-align:center">PM10</td>
+<td style="text-align:center">pm10 dry mass</td>
+<td style="text-align:center">PM$_{10}$ 干质量</td>
+</tr>
+<tr>
+<td style="text-align:center">PHOTR201</td>
+<td style="text-align:center">cl2 photolysis rate</td>
+<td style="text-align:center">Cl$_2$ 光解率</td>
+</tr>
+<tr>
+<td style="text-align:center">PHOTR202</td>
+<td style="text-align:center">hocl photolysis rate</td>
+<td style="text-align:center">次氯酸光解率</td>
+</tr>
+<tr>
+<td style="text-align:center">PHOTR203</td>
+<td style="text-align:center">fmcl photolysis rate</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">so2</td>
+<td style="text-align:center">SO2 mixing ratio</td>
+<td style="text-align:center">SO$_2$ 混合比</td>
+</tr>
+<tr>
+<td style="text-align:center">sulf</td>
+<td style="text-align:center">SULF mixing ratio</td>
+<td style="text-align:center">硫酸盐混合比</td>
+</tr>
+<tr>
+<td style="text-align:center">no2</td>
+<td style="text-align:center">NO2 mixing ratio</td>
+<td style="text-align:center">NO$_2$ 混合比</td>
+</tr>
+<tr>
+<td style="text-align:center">no</td>
+<td style="text-align:center">NO mixing ratio</td>
+<td style="text-align:center">NO 混合比</td>
+</tr>
+<tr>
+<td style="text-align:center">o3</td>
+<td style="text-align:center">O3 mixing ratio</td>
+<td style="text-align:center">O$_3$ 混合比</td>
+</tr>
+<tr>
+<td style="text-align:center">hno3</td>
+<td style="text-align:center">HNO3 mixing ratio</td>
+<td style="text-align:center">HNO$_3$ 混合比</td>
+</tr>
+<tr>
+<td style="text-align:center">h2o2</td>
+<td style="text-align:center">H2O2 mixing ratio</td>
+<td style="text-align:center">H$_2$O$_2$ 混合比</td>
+</tr>
+<tr>
+<td style="text-align:center">ald</td>
+<td style="text-align:center">ALD mixing ratio</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">hcho</td>
+<td style="text-align:center">HCHO mixing ratio</td>
+<td style="text-align:center">HCHO 混合比</td>
+</tr>
+<tr>
+<td style="text-align:center">op1</td>
+<td style="text-align:center">OP1 mixing ratio</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">op2</td>
+<td style="text-align:center">OP2 mixing ratio</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">paa</td>
+<td style="text-align:center">PAA mixing ratio</td>
+<td style="text-align:center">过乙酸混合比</td>
+</tr>
+<tr>
+<td style="text-align:center">ora1</td>
+<td style="text-align:center">ORA1 mixing ratio</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">ora2</td>
+<td style="text-align:center">ORA2 mixing ratio</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">nh3</td>
+<td style="text-align:center">NH3 mixing ratio</td>
+<td style="text-align:center">NH$_3$ 混合比</td>
+</tr>
+<tr>
+<td style="text-align:center">n2o5</td>
+<td style="text-align:center">N2O5 mixing ratio</td>
+<td style="text-align:center">N$_2$O$_5$ 混合比</td>
+</tr>
+<tr>
+<td style="text-align:center">no3</td>
+<td style="text-align:center">NO3 mixing ratio</td>
+<td style="text-align:center">NO$_3$ 混合比</td>
+</tr>
+<tr>
+<td style="text-align:center">pan</td>
+<td style="text-align:center">PAN mixing ratio</td>
+<td style="text-align:center">过氧乙酰硝酸酯混合比</td>
+</tr>
+<tr>
+<td style="text-align:center">hc3</td>
+<td style="text-align:center">HC3 mixing ratio</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">hc5</td>
+<td style="text-align:center">HC5 mixing ratio</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">hc8</td>
+<td style="text-align:center">HC8 mixing ratio</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">eth</td>
+<td style="text-align:center">ETH mixing ratio</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">co</td>
+<td style="text-align:center">CO mixing ratio</td>
+<td style="text-align:center">CO 混合比</td>
+</tr>
+<tr>
+<td style="text-align:center">ol2</td>
+<td style="text-align:center">OL2 mixing ratio</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">olt</td>
+<td style="text-align:center">OLT mixing ratio</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">oli</td>
+<td style="text-align:center">OLI mixing ratio</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">tol</td>
+<td style="text-align:center">TOL mixing ratio</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">xyl</td>
+<td style="text-align:center">XYL mixing ratio</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">aco3</td>
+<td style="text-align:center">ACO3 mixing ratio</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">tpan</td>
+<td style="text-align:center">TPAN mixing ratio</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">hono</td>
+<td style="text-align:center">HONO mixing ratio</td>
+<td style="text-align:center">HONO 混合比</td>
+</tr>
+<tr>
+<td style="text-align:center">hno4</td>
+<td style="text-align:center">HNO4 mixing ratio</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">ket</td>
+<td style="text-align:center">KET mixing ratio</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">gly</td>
+<td style="text-align:center">GLY mixing ratio</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">mgly</td>
+<td style="text-align:center">MGLY mixing ratio</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">dcb</td>
+<td style="text-align:center">DCB mixing ratio</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">onit</td>
+<td style="text-align:center">ONIT mixing ratio</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">csl</td>
+<td style="text-align:center">CSL mixing ratio</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">iso</td>
+<td style="text-align:center">ISO mixing ratio</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">hcl</td>
+<td style="text-align:center">HCL mixing ratio</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">ho</td>
+<td style="text-align:center">HO mixing ratio</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">ho2</td>
+<td style="text-align:center">HO2 mixing ratio</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">so4aj</td>
+<td style="text-align:center">Sulfate conc. Acc. mode</td>
+<td style="text-align:center">硫酸盐浓度 Acc.</td>
+</tr>
+<tr>
+<td style="text-align:center">so4ai</td>
+<td style="text-align:center">Sulfate conc. Aitken mode</td>
+<td style="text-align:center">硫酸盐浓度 Aitken</td>
+</tr>
+<tr>
+<td style="text-align:center">nh4aj</td>
+<td style="text-align:center">Ammonium conc. Acc. mode</td>
+<td style="text-align:center">铵盐浓度 Acc.</td>
+</tr>
+<tr>
+<td style="text-align:center">nh4ai</td>
+<td style="text-align:center">Ammonium  conc. Aitken mode</td>
+<td style="text-align:center">铵盐浓度 Aitken</td>
+</tr>
+<tr>
+<td style="text-align:center">no3aj</td>
+<td style="text-align:center">Nitrate  conc. Acc. mode</td>
+<td style="text-align:center">硝酸盐浓度 Acc.</td>
+</tr>
+<tr>
+<td style="text-align:center">no3ai</td>
+<td style="text-align:center">Nitrate  conc. Aitken mode</td>
+<td style="text-align:center">硝酸盐浓度 Aitken</td>
+</tr>
+<tr>
+<td style="text-align:center">naaj</td>
+<td style="text-align:center">Sodium   conc. Acc. mode</td>
+<td style="text-align:center">钠盐浓度 Acc.</td>
+</tr>
+<tr>
+<td style="text-align:center">naai</td>
+<td style="text-align:center">Sodium   conc. Aitken mode</td>
+<td style="text-align:center">钠盐浓度 Aitken</td>
+</tr>
+<tr>
+<td style="text-align:center">claj</td>
+<td style="text-align:center">Chloride conc. Acc. mode</td>
+<td style="text-align:center">氯化物浓度 Acc.</td>
+</tr>
+<tr>
+<td style="text-align:center">clai</td>
+<td style="text-align:center">Chloride conc. Aitken mode</td>
+<td style="text-align:center">氯化物浓度 Aitken</td>
+</tr>
+<tr>
+<td style="text-align:center">orgaro1j</td>
+<td style="text-align:center">SOA Anth. org. conc. from aromatics Acc. mode</td>
+<td style="text-align:center">人为源二次有机气溶胶浓度 Acc.</td>
+</tr>
+<tr>
+<td style="text-align:center">orgaro1i</td>
+<td style="text-align:center">SOA Anth. org. conc. from aromatics Aitken mode</td>
+<td style="text-align:center">人为源二次有机气溶胶浓度 Aitken</td>
+</tr>
+<tr>
+<td style="text-align:center">orgaro2j</td>
+<td style="text-align:center">SOA Anth. org. conc. from aromatics Acc. mode</td>
+<td style="text-align:center">人为源二次有机气溶胶浓度 Acc.</td>
+</tr>
+<tr>
+<td style="text-align:center">orgaro2i</td>
+<td style="text-align:center">SOA Anth. org. conc. from aromatics Aitken mode</td>
+<td style="text-align:center">人为源二次有机气溶胶浓度 Aitken</td>
+</tr>
+<tr>
+<td style="text-align:center">orgalk1j</td>
+<td style="text-align:center">SOA Anth. org. conc. from alkanes and others except aromatics Acc. mode</td>
+<td style="text-align:center">人为源二次有机气溶胶浓度 Acc.</td>
+</tr>
+<tr>
+<td style="text-align:center">orgalk1i</td>
+<td style="text-align:center">SOA Anth. org. conc. from alkanes and others except aromatics Aitken mode</td>
+<td style="text-align:center">人为源二次有机气溶胶浓度 Aitken</td>
+</tr>
+<tr>
+<td style="text-align:center">orgole1j</td>
+<td style="text-align:center">SOA Anth. org. conc. from alkenes and others except aromatics Acc. mode</td>
+<td style="text-align:center">人为源二次有机气溶胶浓度 Acc.</td>
+</tr>
+<tr>
+<td style="text-align:center">orgole1i</td>
+<td style="text-align:center">SOA Anth. org. conc. from alkenes and others except aromatics Aitken mode</td>
+<td style="text-align:center">人为源二次有机气溶胶浓度 Aitken</td>
+</tr>
+<tr>
+<td style="text-align:center">orgba1j</td>
+<td style="text-align:center">SOA Biog. org. conc. from aromatics Acc. mode</td>
+<td style="text-align:center">生物源二次有机气溶胶浓度 Acc.</td>
+</tr>
+<tr>
+<td style="text-align:center">orgba1i</td>
+<td style="text-align:center">SOA Biog. org. conc. from aromatics Aitken mode</td>
+<td style="text-align:center">生物源二次有机气溶胶浓度 Aitken</td>
+</tr>
+<tr>
+<td style="text-align:center">orgba2j</td>
+<td style="text-align:center">SOA Biog. org. conc. from aromatics Acc. mode</td>
+<td style="text-align:center">生物源二次有机气溶胶浓度 Acc.</td>
+</tr>
+<tr>
+<td style="text-align:center">orgba2i</td>
+<td style="text-align:center">SOA Biog. org. conc. from aromatics Aitken mode</td>
+<td style="text-align:center">生物源二次有机气溶胶浓度 Aitken</td>
+</tr>
+<tr>
+<td style="text-align:center">orgba3j</td>
+<td style="text-align:center">SOA Biog. org. conc. from aromatics Acc. mode</td>
+<td style="text-align:center">生物源二次有机气溶胶浓度 Acc.</td>
+</tr>
+<tr>
+<td style="text-align:center">orgba3i</td>
+<td style="text-align:center">SOA Biog. org. conc. from aromatics Aitken mode</td>
+<td style="text-align:center">生物源二次有机气溶胶浓度 Aitken</td>
+</tr>
+<tr>
+<td style="text-align:center">orgba4j</td>
+<td style="text-align:center">SOA Biog. org. conc. from aromatics Acc. mode</td>
+<td style="text-align:center">生物源二次有机气溶胶浓度 Acc.</td>
+</tr>
+<tr>
+<td style="text-align:center">orgba4i</td>
+<td style="text-align:center">SOA Biog. org. conc. from aromatics Aitken mode</td>
+<td style="text-align:center">生物源二次有机气溶胶浓度 Aitken</td>
+</tr>
+<tr>
+<td style="text-align:center">orgpaj</td>
+<td style="text-align:center">Prim. anth. org. conc. from aromatics Acc. mode</td>
+<td style="text-align:center">人为源一次污染物 Acc.</td>
+</tr>
+<tr>
+<td style="text-align:center">orgpai</td>
+<td style="text-align:center">Prim. anth. org. conc. from aromatics Aitken mode</td>
+<td style="text-align:center">人为源一次污染物 Aitken</td>
+</tr>
+<tr>
+<td style="text-align:center">ecj</td>
+<td style="text-align:center">Elemental carbon Acc. mode</td>
+<td style="text-align:center">碳元素 Acc.</td>
+</tr>
+<tr>
+<td style="text-align:center">eci</td>
+<td style="text-align:center">Elemental carbon Aitken mode</td>
+<td style="text-align:center">碳元素 Aitken</td>
+</tr>
+<tr>
+<td style="text-align:center">p25j</td>
+<td style="text-align:center">Primary PM2.5 Acc. mode</td>
+<td style="text-align:center">一次PM$_{2.5}$ Acc.</td>
+</tr>
+<tr>
+<td style="text-align:center">p25i</td>
+<td style="text-align:center">Primary PM2.5 Aitken mode</td>
+<td style="text-align:center">一次PM$_{2.5}$ Aitken</td>
+</tr>
+<tr>
+<td style="text-align:center">antha</td>
+<td style="text-align:center">Coarse anthropogenic aerosols</td>
+<td style="text-align:center">粗粒子模人为气溶胶</td>
+</tr>
+<tr>
+<td style="text-align:center">seas</td>
+<td style="text-align:center">Coarse marine aerosols</td>
+<td style="text-align:center">粗粒子模海洋气溶胶</td>
+</tr>
+<tr>
+<td style="text-align:center">soila</td>
+<td style="text-align:center">Coarse soil-derived aerosols</td>
+<td style="text-align:center">粗粒子模土壤衍生气溶胶</td>
+</tr>
+<tr>
+<td style="text-align:center">nu0</td>
+<td style="text-align:center">Aitken mode number</td>
+<td style="text-align:center">爱根模数</td>
+</tr>
+<tr>
+<td style="text-align:center">ac0</td>
+<td style="text-align:center">Accumulation mode number</td>
+<td style="text-align:center">积聚模数</td>
+</tr>
+<tr>
+<td style="text-align:center">corn</td>
+<td style="text-align:center">Coarse mode number</td>
+<td style="text-align:center">粗粒子模数</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>补充：颗粒物的三模态。</p>
+<p>根据颗粒物的表面积和粒径分布的关系，将大气中的气溶胶粒子分为三种模结构，分别是爱根核模(Aitken nuclei mode)、积聚模(Accumulation mode)和粗粒子模(Coarse particle mode)。</p>
+</blockquote>
+<h3 id="预实验">预实验</h3>
+<p>默认实验条件如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">变量名</th>
+<th style="text-align:center">值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Model</td>
+<td style="text-align:center">ConvGRU</td>
+</tr>
+<tr>
+<td style="text-align:center">Learning Rate</td>
+<td style="text-align:center">0.0005</td>
+</tr>
+<tr>
+<td style="text-align:center">Batch Size</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:center">Kernel Size</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">Number of Epochs</td>
+<td style="text-align:center">200</td>
+</tr>
+<tr>
+<td style="text-align:center">Number of Steps</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">Number of Layers</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">Random Iter</td>
+<td style="text-align:center">True</td>
+</tr>
+<tr>
+<td style="text-align:center">Weight Decay</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+<h4 id="预实验--1">预实验  1</h4>
+<p>预实验 1 的目的是确定变量的选择。有两个方案可供选择：</p>
+<h5 id="方案-1">方案 1</h5>
+<p>变量为全部的非零变量中去重后的变量，总计 78 个变量，变量名如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">key</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;PM10&#39;</span><span class="p">,</span> <span class="s1">&#39;PM2_5_DRY&#39;</span><span class="p">,</span> <span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;QVAPOR&#39;</span><span class="p">,</span><span class="s1">&#39;CLDFRA&#39;</span><span class="p">,</span><span class="s1">&#39;QRAIN&#39;</span><span class="p">,</span><span class="s1">&#39;QICE&#39;</span><span class="p">,</span><span class="s1">&#39;QSNOW&#39;</span><span class="p">,</span><span class="s1">&#39;QGRAUP&#39;</span><span class="p">,</span><span class="s1">&#39;CLDFRA&#39;</span><span class="p">,</span><span class="s1">&#39;so2&#39;</span><span class="p">,</span><span class="s1">&#39;sulf&#39;</span><span class="p">,</span><span class="s1">&#39;no2&#39;</span><span class="p">,</span> <span class="s1">&#39;no&#39;</span><span class="p">,</span><span class="s1">&#39;o3&#39;</span><span class="p">,</span><span class="s1">&#39;hno3&#39;</span><span class="p">,</span><span class="s1">&#39;h2o2&#39;</span><span class="p">,</span><span class="s1">&#39;ald&#39;</span><span class="p">,</span><span class="s1">&#39;hcho&#39;</span><span class="p">,</span><span class="s1">&#39;op1&#39;</span><span class="p">,</span><span class="s1">&#39;op2&#39;</span><span class="p">,</span><span class="s1">&#39;paa&#39;</span><span class="p">,</span><span class="s1">&#39;ora1&#39;</span><span class="p">,</span><span class="s1">&#39;ora2&#39;</span><span class="p">,</span><span class="s1">&#39;nh3&#39;</span><span class="p">,</span><span class="s1">&#39;n2o5&#39;</span><span class="p">,</span><span class="s1">&#39;no3&#39;</span><span class="p">,</span><span class="s1">&#39;pan&#39;</span><span class="p">,</span><span class="s1">&#39;hc3&#39;</span><span class="p">,</span><span class="s1">&#39;hc5&#39;</span><span class="p">,</span><span class="s1">&#39;hc8&#39;</span><span class="p">,</span><span class="s1">&#39;eth&#39;</span><span class="p">,</span><span class="s1">&#39;co&#39;</span><span class="p">,</span><span class="s1">&#39;ol2&#39;</span><span class="p">,</span><span class="s1">&#39;olt&#39;</span><span class="p">,</span><span class="s1">&#39;oli&#39;</span><span class="p">,</span><span class="s1">&#39;tol&#39;</span><span class="p">,</span><span class="s1">&#39;xyl&#39;</span><span class="p">,</span><span class="s1">&#39;aco3&#39;</span><span class="p">,</span><span class="s1">&#39;tpan&#39;</span><span class="p">,</span><span class="s1">&#39;hono&#39;</span><span class="p">,</span><span class="s1">&#39;hno4&#39;</span><span class="p">,</span><span class="s1">&#39;ket&#39;</span><span class="p">,</span><span class="s1">&#39;gly&#39;</span><span class="p">,</span><span class="s1">&#39;mgly&#39;</span><span class="p">,</span><span class="s1">&#39;dcb&#39;</span><span class="p">,</span><span class="s1">&#39;onit&#39;</span><span class="p">,</span><span class="s1">&#39;csl&#39;</span><span class="p">,</span><span class="s1">&#39;iso&#39;</span><span class="p">,</span><span class="s1">&#39;hcl&#39;</span><span class="p">,</span><span class="s1">&#39;ho&#39;</span><span class="p">,</span><span class="s1">&#39;ho2&#39;</span><span class="p">,</span><span class="s1">&#39;so4aj&#39;</span><span class="p">,</span> <span class="s1">&#39;so4ai&#39;</span><span class="p">,</span> <span class="s1">&#39;nh4aj&#39;</span><span class="p">,</span> <span class="s1">&#39;nh4ai&#39;</span><span class="p">,</span> <span class="s1">&#39;no3aj&#39;</span><span class="p">,</span> <span class="s1">&#39;no3ai&#39;</span><span class="p">,</span> <span class="s1">&#39;naaj&#39;</span><span class="p">,</span><span class="s1">&#39;naai&#39;</span><span class="p">,</span><span class="s1">&#39;claj&#39;</span><span class="p">,</span><span class="s1">&#39;clai&#39;</span><span class="p">,</span><span class="s1">&#39;orgaro1j&#39;</span><span class="p">,</span> <span class="s1">&#39;orgaro1i&#39;</span><span class="p">,</span> <span class="s1">&#39;orgaro2j&#39;</span><span class="p">,</span> <span class="s1">&#39;orgaro2i&#39;</span><span class="p">,</span> <span class="s1">&#39;orgalk1j&#39;</span><span class="p">,</span> <span class="s1">&#39;orgalk1i&#39;</span><span class="p">,</span> <span class="s1">&#39;orgole1j&#39;</span><span class="p">,</span> <span class="s1">&#39;orgole1i&#39;</span><span class="p">,</span> <span class="s1">&#39;orgpaj&#39;</span><span class="p">,</span> <span class="s1">&#39;orgpai&#39;</span><span class="p">,</span> <span class="s1">&#39;ecj&#39;</span><span class="p">,</span> <span class="s1">&#39;eci&#39;</span><span class="p">,</span> <span class="s1">&#39;p25j&#39;</span><span class="p">,</span> <span class="s1">&#39;p25i&#39;</span><span class="p">,</span> <span class="s1">&#39;antha&#39;</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>实验结果如下：</p>
+<img src="https://s2.loli.net/2022/04/27/WTAg4ru7sLlK2et.jpg" style="zoom:150%;" />
+<h5 id="方案-2">方案 2</h5>
+<p> 变量为上述 78 个变量中按照变量描述选择的 30 个变量：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">key</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;PM10&#39;</span><span class="p">,</span> <span class="s1">&#39;PM2_5_DRY&#39;</span><span class="p">,</span> <span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;QVAPOR&#39;</span><span class="p">,</span><span class="s1">&#39;CLDFRA&#39;</span><span class="p">,</span><span class="s1">&#39;so2&#39;</span><span class="p">,</span><span class="s1">&#39;no2&#39;</span><span class="p">,</span> <span class="s1">&#39;no&#39;</span><span class="p">,</span><span class="s1">&#39;so4aj&#39;</span><span class="p">,</span> <span class="s1">&#39;so4ai&#39;</span><span class="p">,</span> <span class="s1">&#39;nh4aj&#39;</span><span class="p">,</span> <span class="s1">&#39;nh4ai&#39;</span><span class="p">,</span> <span class="s1">&#39;no3aj&#39;</span><span class="p">,</span> <span class="s1">&#39;no3ai&#39;</span><span class="p">,</span> <span class="s1">&#39;orgaro1j&#39;</span><span class="p">,</span> <span class="s1">&#39;orgaro1i&#39;</span><span class="p">,</span> <span class="s1">&#39;orgaro2j&#39;</span><span class="p">,</span> <span class="s1">&#39;orgaro2i&#39;</span><span class="p">,</span> <span class="s1">&#39;orgalk1j&#39;</span><span class="p">,</span> <span class="s1">&#39;orgalk1i&#39;</span><span class="p">,</span> <span class="s1">&#39;orgole1j&#39;</span><span class="p">,</span> <span class="s1">&#39;orgole1i&#39;</span><span class="p">,</span> <span class="s1">&#39;orgpaj&#39;</span><span class="p">,</span> <span class="s1">&#39;orgpai&#39;</span><span class="p">,</span> <span class="s1">&#39;ecj&#39;</span><span class="p">,</span> <span class="s1">&#39;eci&#39;</span><span class="p">,</span> <span class="s1">&#39;p25j&#39;</span><span class="p">,</span> <span class="s1">&#39;p25i&#39;</span><span class="p">,</span> <span class="s1">&#39;antha&#39;</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>实验结果如下：</p>
+<img src="https://s2.loli.net/2022/04/27/I6gAv1T3dhJQGlr.png" style="zoom:150%;" />
+<div class="details admonition Note open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-pencil-alt fa-fw"></i>结论<i class="details-icon fa-solid fa-angle-right fa-fw"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">可以看出所选的 30 个变量效果甚至优于 78 个变量。因此后续实验以 30 变量进行。猜测这是因为选择的 30 个变量中已经包含了预测 PM 所需的大部分信息。</div>
+    </div>
+  </div>
+<h4 id="预实验-2">预实验 2</h4>
+<p>预实验 2 讨论的问题为训练当中的两个 MSE 尖峰是如何产生的，猜测原因为数据中存在时序上不连续的数据。减少数据量，选择时序上一直连续的数据，进行实验：</p>
+<img src="https://s2.loli.net/2022/04/27/wTnzW2MRsclSFGh.png" style="zoom:150%;" />
+<p>发现不存在尖峰且效果良好，因此增加去除非时序连续数据代码，恢复数据量，重新实验：</p>
+<img src="https://s2.loli.net/2022/04/28/IBdH3npuzXQb2i9.png" style="zoom:150%;" />
+<div class="details admonition Note open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-pencil-alt fa-fw"></i>结论<i class="details-icon fa-solid fa-angle-right fa-fw"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">可以看出尖峰的出现的确与数据时序不连贯有关，但尖峰依旧存在，猜测这是因为在优化的过程中出现了训练集上的局部过拟合。解决方法一般为增加 Batch Size，但是由于硬件原因不能实现。此处尝试增加正则化手段减少过拟合。</div>
+    </div>
+  </div>
+<h4 id="预实验-3">预实验 3</h4>
+<p>预实验 3 讨论的问题为 Batch Normalization 的作用。添加 BN 层，进行试验：</p>
+<img src="https://s2.loli.net/2022/04/28/ljihNxqZdesSC8F.png" style="zoom:150%;" />
+<div class="details admonition Note open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-pencil-alt fa-fw"></i>结论<i class="details-icon fa-solid fa-angle-right fa-fw"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">效果提升显著并且不再出现 MSE 上升，证明了上述猜测。因此后续采用带有 Batch Normalization 的网络。并且本次实验结果作为实验的基准效果。</div>
+    </div>
+  </div>
+<h3 id="实验">实验</h3>
+<h4 id="基准实验">基准实验</h4>
+<p>基准实验的参数选择如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">变量名</th>
+<th style="text-align:center">值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Model</td>
+<td style="text-align:center">ConvGRU</td>
+</tr>
+<tr>
+<td style="text-align:center">Batch Size</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:center">Kernel Size</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">Number of Steps</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">Weight Decay</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+<p>实验效果：</p>
+<img src="https://s2.loli.net/2022/04/29/PTCX1Fn2qLVZgtE.png" style="zoom: 150%;" />
+<h4 id="实验-1">实验 1</h4>
+<p>实验 1 讨论的问题为 Weigth Decay 的影响。当 Weigth_Decay 为 1e-4 时：</p>
+<img src="https://s2.loli.net/2022/05/03/SIpM1wsb7q5xnzC.png" style="zoom: 50%;" />
+<p>当 Weight_Decay = 1e-5 时：</p>
+<img src="https://s2.loli.net/2022/05/03/TG5pydvW9FcPzeC.png" style="zoom:50%;" />
+<p>当 Weight_Decay = 1e-6  时：</p>
+<img src="https://s2.loli.net/2022/05/03/J4v5P2qWZc9yawg.png" style="zoom:50%;" />
+<div class="details admonition Note open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-pencil-alt fa-fw"></i>结论<i class="details-icon fa-solid fa-angle-right fa-fw"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">可以看出 Weigth_Decay 确实对过拟合有一定程度的缓和，但总体影响不大。</div>
+    </div>
+  </div>
+<h4 id="实验-2">实验 2</h4>
+<p>实验 2 主要的讨论目标为 Kernel_Size 对训练效果的影响。当降低 Kernel_Size 为 4 时：</p>
+<img src="https://s2.loli.net/2022/05/04/QUP4CSiuvMzNq3J.png" style="zoom:50%;" />
+<p>当增加 Kernel_Size 为 7 时：</p>
+<img src="https://s2.loli.net/2022/05/04/bF2foXILUB3YRKt.png" style="zoom:50%;" />
+<div class="details admonition Note open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-pencil-alt fa-fw"></i>结论<i class="details-icon fa-solid fa-angle-right fa-fw"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">可以看出，减小 Kernel_Size 后，模型泛化能力下降，增加 Kernel_Size 后，模型过拟合现象更加严重。</div>
+    </div>
+  </div>
+<h4 id="实验-3">实验 3</h4>
+<p>实验 3 主要讨论的影响因素为 Batch_Size 对训练效果的影响。当减小 Batch_Size 到 2 时：</p>
+<img src="https://s2.loli.net/2022/05/04/5bmD8ykLC6d4AGP.png" style="zoom:50%;" />
+<p>当增加 Batch_Size 到 6 时：</p>
+<img src="https://s2.loli.net/2022/05/04/ZsMT5oXzQ2NE9CB.png" style="zoom:50%;" />
+<div class="details admonition Note open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-pencil-alt fa-fw"></i>结论<i class="details-icon fa-solid fa-angle-right fa-fw"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">可以看出，增加或减小 Batch_Size 并没有明显影响。</div>
+    </div>
+  </div>
+<h4 id="实验-4">实验 4</h4>
+<p>实验 4 的目的为探究 Num_Steps 对训练效果的影响。当减小 Num_Steps 到 3 时：</p>
+<img src="https://s2.loli.net/2022/05/04/RzSpUxBjYCrP7u6.png" style="zoom:50%;" />
+<p>当增加 Num_Steps 到 7 时：</p>
+<img src="https://s2.loli.net/2022/05/04/FSXyb4tHRqsf1xj.png" style="zoom:50%;" />
+<div class="details admonition Note open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-pencil-alt fa-fw"></i>结论<i class="details-icon fa-solid fa-angle-right fa-fw"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">可以看出，增加 Num_Steps 加剧了过拟合现象，减小 Num_Steps 降低了模型的泛化能力。</div>
+    </div>
+  </div>
+<h4 id="实验-5">实验 5</h4>
+<p>实验 5 的目的为探究 ConvLSTM 的效果。当将模型切换为 ConvLSTM 后：</p>
+<img src="https://s2.loli.net/2022/05/04/nrMiCJ1tZ9s3lHG.png" style="zoom:50%;" />
+<div class="details admonition Note open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-pencil-alt fa-fw"></i>结论<i class="details-icon fa-solid fa-angle-right fa-fw"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">可以看出模型泛化能力下降。</div>
+    </div>
+  </div>
+<h3 id="总结">总结</h3>
+<p>在上述的实验中，可以得出：</p>
+<ol>
+<li><strong>Batch Size</strong> 对网络训练效果影响不大；</li>
+<li><strong>Weigth Decay</strong> 的引入可以提升网络的泛化能力；</li>
+<li><strong>Kernel Size</strong>、<strong>Num Steps</strong> 的增加会加剧网络过拟合，其减小又会引发泛化能力的下降；</li>
+<li>相较于 <strong>ConvLSTM</strong>，<strong>ConvGRU</strong> 具有更好的泛化能力。</li>
+</ol>
+<div class="details admonition question open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-question-circle fa-fw"></i>问题<i class="details-icon fa-solid fa-angle-right fa-fw"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">事实上，上述实验结果的导出十分具有局限性。因为最后实验数据仅仅整理出 166 条训练集数据及 55 条测试集数据。在深度学习领域，这样的数据量是极小的。并且值得注意的是，训练集数据并没有分布在测试数据所在的时间段上，这也是训练集效果良好，测试集效果差距较大的原因之一。</div>
+    </div>
+  </div>
+<h2 id="绘图">绘图</h2>
+<hr>
+<image src="/images/Res_Tiny.gif" style="zoom:150%;">
+<h2 id="工作时间线">工作时间线</h2>
+<hr>
+<p>2022/04/21及之前：完成了模型训练、预测的代码。</p>
+<p>2022/04/22：从实验室区筛选了带有 PM 的 WRF 数据，大概有550条。</p>
+<p>2022/04/23：确认数据，筛选合适的数据。最终数据分布在 3 个时间段上，共计 221 条。</p>
+<p>2022/04/25：训练一部分数据，训练集 MSELoss 为 12.6。</p>
+<p>2022/05/01：实验完成。</p>
+<p>2022/05/08：画个图。</p></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2022-05-08&#32;00:00:00>更新于 2022-05-08</span>
+      </div>
+      <div class="post-info-license "><span><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+    <div class="post-info-line">
+      <div class="post-info-md"><span><a
+  href="/%E6%9D%82%E8%B0%88%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/index.md"
+  
+    title="阅读原始文档"
+  
+  
+  
+  
+    class="link-to-markdown"
+  
+  
+>阅读原始文档</a></span></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blathers23.netlify.app/%E6%9D%82%E8%B0%88%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" data-title="杂谈毕业设计"><i class="fa-brands fa-weibo fa-fw"></i></a>
+  <a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://blathers23.netlify.app/%E6%9D%82%E8%B0%88%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" data-title="杂谈毕业设计"><i data-svg-src="/lib/simple-icons/icons/baidu.min.svg"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://blathers23.netlify.app/%E6%9D%82%E8%B0%88%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" data-title="杂谈毕业设计"><i class="fa-brands fa-evernote fa-fw"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw"></i>&nbsp;<a href="/tags/wrf/">WRF</a>,&nbsp;<a href="/tags/python/">Python</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAwrf%E6%95%99%E7%A8%8B/" class="prev" rel="prev" title="浅入浅出 WRF 教程"><i class="fa-solid fa-angle-left fa-fw"></i>浅入浅出 WRF 教程</a>
+      <a href="/lc11/" class="next" rel="next" title="LC11 - 盛水最多的容器">LC11 - 盛水最多的容器<i class="fa-solid fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="waline" class="comment"></div><noscript>
+        Please enable JavaScript to view the comments powered by <a href="https://waline.js.org/" rel="external nofollow noopener noreffer">Waline</a>.
+      </noscript></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer" title="Hugo 0.100.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/Lruihao/FixIt" target="_blank" rel="external nofollow noopener noreffer" title="FixIt v0.2.15-RC"><img class="fixit-icon" src="/images/fixit.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright"><i class="fa-regular fa-copyright fa-fw"></i>
+            <span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">
+              <a
+  href="/"
+  
+  
+  
+  
+  
+>Blathers</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon"></i>&nbsp;<span class="run-times">网站运行中 ...</span></span></div><div class="footer-line ibruce">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin fa-fw"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin fa-fw"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets">
+  <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+      <i class="fa-solid fa-arrow-up fa-fw"></i>
+    </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+      <i class="fa-solid fa-comment fa-fw"></i>
+    </a>
+  </div><div id="mask"></div>
+</div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/waline/Waline.min.js" defer></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js" defer></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js" async defer></script><script type="text/javascript" src="/lib/sharer/sharer.min.js" async defer></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":50},"comment":{"waline":{"copyright":true,"dark":"body[theme='dark']","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/bilibili"],"highlight":true,"lang":"zh-cn","login":"enable","meta":["nick","mail","link"],"pageSize":10,"serverURL":"https://eke-sai-ting-bdlj3h1m4-blathers.vercel.app/"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":null,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"siteTime":"2022-04-19T01:19:11+08:00"};</script><script type="text/javascript" src="/js/theme.min.js" defer></script><script type="text/javascript" src="/js/_custom.min.js" defer></script></body>
+</html>

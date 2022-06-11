@@ -42,3 +42,8 @@
 👾 GitHub 主页（不经常出没）: [@blathers23](https://github.com/blathers23)
 
 🦊 GitLab 主页（不经常出没）: [@blathers23](https://gitlab.com/blathers23)
+
+---
+
+> 作者: Blathers  
+> https://blathers23.netlify.app/about/

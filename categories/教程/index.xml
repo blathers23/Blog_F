@@ -1,0 +1,61 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>教程 - 分类 - Blathers&#39; Tent</title>
+    <link>https://blathers23.netlify.app/categories/%E6%95%99%E7%A8%8B/</link>
+    <description>教程 - 分类 - Blathers&#39; Tent</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>blathers233@outlook.com (Blathers)</managingEditor>
+      <webMaster>blathers233@outlook.com (Blathers)</webMaster><lastBuildDate>Sun, 24 Apr 2022 16:33:00 &#43;0800</lastBuildDate><atom:link href="https://blathers23.netlify.app/categories/%E6%95%99%E7%A8%8B/" rel="self" type="application/rss+xml" /><item>
+  <title>浅入浅出 Hugo 教程</title>
+  <link>https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAhugo%E6%95%99%E7%A8%8B/</link>
+  <pubDate>Sun, 24 Apr 2022 16:33:00 &#43;0800</pubDate>
+  <author>Blathers</author>
+  <guid>https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAhugo%E6%95%99%E7%A8%8B/</guid>
+  <description><![CDATA[本文旨在提供使用 Hugo + GitHub Pages or Netlify + Waline + PicGo 搭建个人博客的轻松无脑一站式体验教程。]]></description>
+</item><item>
+  <title>浅入浅出 WRF 教程</title>
+  <link>https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAwrf%E6%95%99%E7%A8%8B/</link>
+  <pubDate>Wed, 20 Apr 2022 17:09:58 &#43;0800</pubDate>
+  <author>Blathers</author>
+  <guid>https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAwrf%E6%95%99%E7%A8%8B/</guid>
+  <description><![CDATA[为了做毕设，这两天被 WRF 折磨的头疼了不少时间。网络上找到的教程往往是支离破碎，一人一个说法；WRF-Chem 官方教程又因为网络问题看不得，只能自己摸着石头过河。在此处记录一份完整的 WRF 安装教程，免得重蹈覆辙。]]></description>
+</item><item>
+  <title>VSCode 搭配 g&#43;&#43; 配置 Cpp 编译环境</title>
+  <link>https://blathers23.netlify.app/vscode_and_msys2/</link>
+  <pubDate>Sun, 14 Mar 2021 09:00:04 &#43;0000</pubDate>
+  <author>Blathers</author>
+  <guid>https://blathers23.netlify.app/vscode_and_msys2/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
+  <title>Golang - Hello World!</title>
+  <link>https://blathers23.netlify.app/golang_hello_world/</link>
+  <pubDate>Sat, 13 Feb 2021 23:44:30 &#43;0000</pubDate>
+  <author>Blathers</author>
+  <guid>https://blathers23.netlify.app/golang_hello_world/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
+  <title>记录Gitalk的一个Bug</title>
+  <link>https://blathers23.netlify.app/gitalk/</link>
+  <pubDate>Sat, 13 Feb 2021 21:48:20 &#43;0000</pubDate>
+  <author>Blathers</author>
+  <guid>https://blathers23.netlify.app/gitalk/</guid>
+  <description><![CDATA[]]></description>
+</item><item>
+  <title>Hello Gridea! - 怎样给Blog网站设置自己的域名</title>
+  <link>https://blathers23.netlify.app/hello_gridea_domain/</link>
+  <pubDate>Sat, 13 Feb 2021 14:52:22 &#43;0000</pubDate>
+  <author>Blathers</author>
+  <guid>https://blathers23.netlify.app/hello_gridea_domain/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://s2.loli.net/2022/04/26/Ik5uhlUmrVG4cFo.png" referrerpolicy="no-referrer">
+      </div>]]></description>
+</item><item>
+  <title>Hello Gridea! - 如何使用Gridea和Coding搭建自己的Blog</title>
+  <link>https://blathers23.netlify.app/hello_gridea/</link>
+  <pubDate>Fri, 12 Feb 2021 23:14:33 &#43;0000</pubDate>
+  <author>Blathers</author>
+  <guid>https://blathers23.netlify.app/hello_gridea/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://s2.loli.net/2022/04/26/Cdq54O1sMnyc2L9.png" referrerpolicy="no-referrer">
+      </div>]]></description>
+</item></channel>
+</rss>

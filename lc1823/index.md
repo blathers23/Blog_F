@@ -185,3 +185,8 @@ Update：百分号前要加双反斜杠进行转义，目前不清楚原因。
 
 {{< music url="/music/菫.mp3" name=堇 artist=坂本真绫 cover="/images/相合之物.jpg" >}}
 
+
+---
+
+> 作者: Blathers  
+> https://blathers23.netlify.app/lc1823/
