@@ -12,7 +12,7 @@
 <meta name="keywords" content="Python,RNN,LSTM,GRU" /><meta itemprop="name" content="毕业设计-基于人工智能的大气颗粒污染物扩散模拟技术的研究">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2022-05-25T13:49:00+08:00" />
 <meta itemprop="dateModified" content="2022-05-25T00:00:00+00:00" />
-<meta itemprop="wordCount" content="16630">
+<meta itemprop="wordCount" content="16634">
 <meta itemprop="keywords" content="Python,RNN,LSTM,GRU," /><meta property="og:title" content="毕业设计-基于人工智能的大气颗粒污染物扩散模拟技术的研究" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
@@ -35,7 +35,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/blathers23.netlify.app\/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E5%A4%A7%E6%B0%94%E9%A2%97%E7%B2%92%E6%B1%A1%E6%9F%93%E7%89%A9%E6%89%A9%E6%95%A3%E6%A8%A1%E6%8B%9F%E6%8A%80%E6%9C%AF%E7%9A%84%E7%A0%94%E7%A9%B6\/"
-    },"genre": "posts","keywords": "Python, RNN, LSTM, GRU","wordcount":  16630 ,
+    },"genre": "posts","keywords": "Python, RNN, LSTM, GRU","wordcount":  16634 ,
     "url": "https:\/\/blathers23.netlify.app\/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E5%A4%A7%E6%B0%94%E9%A2%97%E7%B2%92%E6%B1%A1%E6%9F%93%E7%89%A9%E6%89%A9%E6%95%A3%E6%A8%A1%E6%8B%9F%E6%8A%80%E6%9C%AF%E7%9A%84%E7%A0%94%E7%A9%B6\/","datePublished": "2022-05-25T13:49:00+08:00","dateModified": "2022-05-25T00:00:00+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -204,7 +204,7 @@
           <span class="post-category">收录于 <a href="/categories/ai/"><i class="fa-regular fa-folder fa-fw"></i>&nbsp;AI</a></span></div>
       <div class="post-meta-line"><span title=2022-05-25&#32;13:49:00>
             <i class="fa-regular fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-05-25" >2022-05-25</time>
-          </span>&nbsp;<i class="fa-solid fa-pencil-alt fa-fw"></i>&nbsp;约 16630 字&nbsp;
+          </span>&nbsp;<i class="fa-solid fa-pencil-alt fa-fw"></i>&nbsp;约 16634 字&nbsp;
         <i class="fa-regular fa-clock fa-fw"></i>&nbsp;预计阅读 34 分钟&nbsp;</div>
     </div><div class="details toc" id="toc-static" kept="false">
         <div class="details-summary toc-title">
@@ -283,7 +283,7 @@
     data-sizes="auto"
     alt="https://s2.loli.net/2022/05/25/CIWQ9kywvPXKoJS.jpg"
     title="https://s2.loli.net/2022/05/25/CIWQ9kywvPXKoJS.jpg" /></p>
-<p>WRFOut数据以网络通用数据格式<sup id="fnref:26"><a href="#fn:26" class="footnote-ref" role="doc-noteref">26</a></sup>（Network Common Data Form，NetCDF）存储，使用Python编程语言下的netcdf4-python<sup id="fnref:27"><a href="#fn:27" class="footnote-ref" role="doc-noteref">27</a></sup>库读取WRFOut数据。NetCDF格式的数据以变量（variable）为单位进行保存，每个变量都有变量描述、变量单位、变量形状、变量值等多个属性。对于WRF-Chem模拟导出的WRFOut数据，其中包含了时间（Times）、经度（XLONG）、维度（XLAT）等时空间位置描述性变量；X轴风速分量（U），雨水混合率（QRAIN）等气象数据；土壤温度（TSLB）、土壤液态水（SH2O）等地理数据；SO$_{2}$混合比（so2）、PAN混合比（pan）等污染物浓度数据以及积聚核模人为源芳香烃二次有机气溶胶浓度（orgaro1j）等污染物排放数据共计281个变量。若将变量全部用于神经网络的训练，则模型对内存的要求将大大超出可接受范围，为此，需要从变量中筛选出对大气颗粒物影响较大的变量以减少硬件压力。以变量形状、变量值以及变量描述为依据，最终选出30个变量作为神经网络训练的输入变量，详见下表。</p>
+<p>WRFOut数据以网络通用数据格式<sup id="fnref:26"><a href="#fn:26" class="footnote-ref" role="doc-noteref">26</a></sup>（Network Common Data Form，NetCDF）存储，使用Python编程语言下的netcdf4-python<sup id="fnref:27"><a href="#fn:27" class="footnote-ref" role="doc-noteref">27</a></sup>库读取WRFOut数据。NetCDF格式的数据以变量（variable）为单位进行保存，每个变量都有变量描述、变量单位、变量形状、变量值等多个属性。对于WRF-Chem模拟导出的WRFOut数据，其中包含了时间（Times）、经度（XLONG）、维度（XLAT）等时空间位置描述性变量；X轴风速分量（U），雨水混合率（QRAIN）等气象数据；土壤温度（TSLB）、土壤液态水（SH2O）等地理数据；$SO_{2}$混合比（so2）、PAN混合比（pan）等污染物浓度数据以及积聚核模人为源芳香烃二次有机气溶胶浓度（orgaro1j）等污染物排放数据共计281个变量。若将变量全部用于神经网络的训练，则模型对内存的要求将大大超出可接受范围，为此，需要从变量中筛选出对大气颗粒物影响较大的变量以减少硬件压力。以变量形状、变量值以及变量描述为依据，最终选出30个变量作为神经网络训练的输入变量，详见下表。</p>
 <table>
 <thead>
 <tr>
@@ -295,13 +295,13 @@
 <tbody>
 <tr>
 <td style="text-align:center">PM10</td>
-<td style="text-align:center">PM$_{10}$干质量</td>
-<td style="text-align:center">ug/m$^{3}$</td>
+<td style="text-align:center">$PM_{10}$干质量</td>
+<td style="text-align:center">$ug/m^{3}$</td>
 </tr>
 <tr>
 <td style="text-align:center">PM2_5_DRY</td>
-<td style="text-align:center">PM$_{2.5}$气溶胶干质量</td>
-<td style="text-align:center">ug/m$^{3}$</td>
+<td style="text-align:center">$PM_{2.5}$气溶胶干质量</td>
+<td style="text-align:center">$ug/m^{3}$</td>
 </tr>
 <tr>
 <td style="text-align:center">U</td>
@@ -325,12 +325,12 @@
 </tr>
 <tr>
 <td style="text-align:center">so2</td>
-<td style="text-align:center">SO$_{2}$混合比</td>
+<td style="text-align:center">$SO_{2}$混合比</td>
 <td style="text-align:center">ppmv</td>
 </tr>
 <tr>
 <td style="text-align:center">no2</td>
-<td style="text-align:center">NO$_{2}$混合比</td>
+<td style="text-align:center">$NO_{2}$混合比</td>
 <td style="text-align:center">ppmv</td>
 </tr>
 <tr>
@@ -430,12 +430,12 @@
 </tr>
 <tr>
 <td style="text-align:center">p25j</td>
-<td style="text-align:center">积聚核膜一次PM$_{2.5}$</td>
+<td style="text-align:center">积聚核膜一次$PM_{2.5}$</td>
 <td style="text-align:center">ug/kg干空气</td>
 </tr>
 <tr>
 <td style="text-align:center">p25i</td>
-<td style="text-align:center">爱根核模一次PM$_{2.5}$</td>
+<td style="text-align:center">爱根核模一次$PM_{2.5}$</td>
 <td style="text-align:center">ug/kg干空气</td>
 </tr>
 <tr>
@@ -714,7 +714,7 @@ $$</p>
 <p>本研究基于PyTorch库实现了深度学习模型。PyTorch是开源的机器学习库，内置了SGD、Adam等常用的模型优化算法及批标准化、权重衰减等正则化策略，便于直接调用，使得编程时可以聚焦于Conv-GRU的实现。同时，PyTorch支持使用GPU加速，大大缩短了模型优化所需要的时间。为了简化参数调整的过程，本研究在编程实现时留下了用于修改网络各个参数的接口，以便于修改网络参数。同时，本研究使用Matplotlib和Plotly库对模型实时训练效果和最终实验效果进行了可视化，可以直观感受不同参数对训练效果带来的影响。</p>
 <h2 id="结果和讨论">结果和讨论</h2>
 <h3 id="实验结果">实验结果</h3>
-<p>在构建基于深度学习的大气颗粒物污染扩散模型时，模型的超参数选择对模型最终的效果有很大的影响。为了详细比较不同模型、正则化策略和超参数对训练带来的影响，本研究以PM$_{10}$为研究对象，通过控制不同变量对模型进行优化并比较模型性能。本研究通过模型在测试集上的均方差来衡量当前参数下模型的性能。一般来说，模型在优化的过程中，模型在测试集上的均方差并不是一直在下降的，通常会保存模型优化过程中均方差最小时模型的参数。因此本研究以模型在优化过程中测试集上均方差的最小值作为模型性能比较的依据。</p>
+<p>在构建基于深度学习的大气颗粒物污染扩散模型时，模型的超参数选择对模型最终的效果有很大的影响。为了详细比较不同模型、正则化策略和超参数对训练带来的影响，本研究以$PM_{10}$为研究对象，通过控制不同变量对模型进行优化并比较模型性能。本研究通过模型在测试集上的均方差来衡量当前参数下模型的性能。一般来说，模型在优化的过程中，模型在测试集上的均方差并不是一直在下降的，通常会保存模型优化过程中均方差最小时模型的参数。因此本研究以模型在优化过程中测试集上均方差的最小值作为模型性能比较的依据。</p>
 <p>经多次超参数调整后，效果最佳的超参数组合如下表所示：</p>
 <table>
 <thead>
@@ -770,7 +770,7 @@ $$</p>
     alt="https://s2.loli.net/2022/05/25/WoyCpnLGu6lJe3N.png"
     title="https://s2.loli.net/2022/05/25/WoyCpnLGu6lJe3N.png" /></p>
 <p>在第50轮优化时，Conv-LSTM模型在测试集上的均方差达到最小值35.154，明显劣于Conv-GRU模型，性能较差同时，Conv-LSTM的优化时间和内存消耗也不及Conv-GRU模型。Conv-GRU模型的优化速度可以达到每秒3.428个样本，并且模型参数仅有6594KB，与之相比，Conv-LSTM模型的优化速度仅有每秒3.063个样本，并且模型参数达到了8778KB。并且可以看出，与Conv-GRU模型相比，Conv-LSTM模型的泛化差距始终较大，模型泛化能力较差。</p>
-<p>以同样的超参数，PM$_{2.5}$预测模型在模型优化过程中，模型在训练集和测试集上的均方差变化如下图：</p>
+<p>以同样的超参数，$PM_{2.5}$预测模型在模型优化过程中，模型在训练集和测试集上的均方差变化如下图：</p>
 <p><img
     class="lazyload"
     src="/svg/loading.min.svg"
@@ -779,7 +779,7 @@ $$</p>
     data-sizes="auto"
     alt="https://s2.loli.net/2022/05/25/e3DmCo1xt7gVGnH.png"
     title="https://s2.loli.net/2022/05/25/e3DmCo1xt7gVGnH.png" /></p>
-<p>在第120轮优化时，模型测试集均方差达到最小值24.083，经200轮优化后，模型训练集均方差达到4.061。与PM$<em>{10}$相比，PM$</em>{2.5}$模型的均方差明显更小，这是由大气中PM$<em>{2.5}$浓度小于PM$</em>{10}$导致的。</p>
+<p>在第120轮优化时，模型测试集均方差达到最小值24.083，经200轮优化后，模型训练集均方差达到4.061。与$PM_{10}$相比，$PM_{2.5}$模型的均方差明显更小，这是由大气中$PM_{2.5}$浓度小于$PM_{10}$导致的。</p>
 <h3 id="误差分析">误差分析</h3>
 <p>以WRF-Chem的输出为基准，神经网络预测产生误差的原因主要有以下2个方面：</p>
 <p>万能近似定理<sup id="fnref:38"><a href="#fn:38" class="footnote-ref" role="doc-noteref">38</a></sup>表明，一个前馈神经网络如果具有线性输出层和至少一层具有任何一种“挤压（squeeze）”性质的激活函数的隐藏层，只要给与网络足够数量的隐藏单元，它就可以以任意精度来近似任何一个从一个有限维空间到另一个有限维空间的Borel可测函数。但是这个足够数量的隐藏单元往往可能大到不可实现。以同类视频预测问题举例，在Moving MNIST数据集上，目前效果最好的深度网络模型Crevnet<sup id="fnref:39"><a href="#fn:39" class="footnote-ref" role="doc-noteref">39</a></sup>的均方差为 22.3，而其模型参数达到了195MB（本研究由于硬件限制，模型参数仅有6.5MB左右）。</p>

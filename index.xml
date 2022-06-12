@@ -4,9 +4,16 @@
     <link>https://blathers23.netlify.app/</link>
     <description>Blathers&#39; Tent</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>blathers233@outlook.com (Blathers)</managingEditor>
-      <webMaster>blathers233@outlook.com (Blathers)</webMaster><lastBuildDate>Thu, 09 Jun 2022 04:39:00 &#43;0800</lastBuildDate>
+      <webMaster>blathers233@outlook.com (Blathers)</webMaster><lastBuildDate>Fri, 10 Jun 2022 13:22:00 &#43;0800</lastBuildDate>
       <atom:link href="https://blathers23.netlify.app/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>CS:APP</title>
+  <link>https://blathers23.netlify.app/csapp/</link>
+  <pubDate>Fri, 10 Jun 2022 13:22:00 &#43;0800</pubDate>
+  <author>Blathers</author>
+  <guid>https://blathers23.netlify.app/csapp/</guid>
+  <description><![CDATA[CS:APP读书笔记及问题记录。]]></description>
+</item><item>
   <title>优雅地使用Linux之Wine的食用方式</title>
   <link>https://blathers23.netlify.app/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8linux%E4%B9%8Bwine%E7%9A%84%E9%A3%9F%E7%94%A8%E6%96%B9%E5%BC%8F/</link>
   <pubDate>Thu, 09 Jun 2022 04:39:00 &#43;0800</pubDate>
@@ -79,12 +86,5 @@
   <description><![CDATA[<div class="featured-image">
         <img src="/images/leetcode.jpg" referrerpolicy="no-referrer">
       </div>双指针是好文明!]]></description>
-</item><item>
-  <title>杂谈毕业设计</title>
-  <link>https://blathers23.netlify.app/%E6%9D%82%E8%B0%88%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/</link>
-  <pubDate>Wed, 20 Apr 2022 21:38:00 &#43;0800</pubDate>
-  <author>Blathers</author>
-  <guid>https://blathers23.netlify.app/%E6%9D%82%E8%B0%88%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/</guid>
-  <description><![CDATA[简单记录下毕业设计的内容，以及解决问题的历程。]]></description>
 </item></channel>
 </rss>

@@ -6,42 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-    <title>优雅地使用Linux之Wine的食用方式 - Blathers&#39; Tent</title><meta name="author" content="Blathers">
+    <title>CS:APP - Blathers&#39; Tent</title><meta name="author" content="Blathers">
 <meta name="author-link" content="">
-<meta name="description" content="Linux只要花点功夫配置好就会很好用？" />
-<meta name="keywords" content="Linux,Wine" /><meta itemprop="name" content="优雅地使用Linux之Wine的食用方式">
-<meta itemprop="description" content="Linux只要花点功夫配置好就会很好用？"><meta itemprop="datePublished" content="2022-06-09T04:39:00+08:00" />
-<meta itemprop="dateModified" content="2022-06-11T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1307">
-<meta itemprop="keywords" content="Linux,Wine," /><meta property="og:title" content="优雅地使用Linux之Wine的食用方式" />
-<meta property="og:description" content="Linux只要花点功夫配置好就会很好用？" />
+<meta name="description" content="CS:APP读书笔记及问题记录。" />
+<meta name="keywords" content="CS,读书笔记" /><meta itemprop="name" content="CS:APP">
+<meta itemprop="description" content="CS:APP读书笔记及问题记录。"><meta itemprop="datePublished" content="2022-06-10T13:22:00+08:00" />
+<meta itemprop="dateModified" content="2022-06-12T21:42:00+08:00" />
+<meta itemprop="wordCount" content="654">
+<meta itemprop="keywords" content="CS,读书笔记," /><meta property="og:title" content="CS:APP" />
+<meta property="og:description" content="CS:APP读书笔记及问题记录。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blathers23.netlify.app/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8linux%E4%B9%8Bwine%E7%9A%84%E9%A3%9F%E7%94%A8%E6%96%B9%E5%BC%8F/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-06-09T04:39:00+08:00" />
-<meta property="article:modified_time" content="2022-06-11T00:00:00+00:00" />
+<meta property="og:url" content="https://blathers23.netlify.app/csapp/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-06-10T13:22:00+08:00" />
+<meta property="article:modified_time" content="2022-06-12T21:42:00+08:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="优雅地使用Linux之Wine的食用方式"/>
-<meta name="twitter:description" content="Linux只要花点功夫配置好就会很好用？"/>
+<meta name="twitter:title" content="CS:APP"/>
+<meta name="twitter:description" content="CS:APP读书笔记及问题记录。"/>
 <meta name="application-name" content="Blathers&#39; Tent">
 <meta name="apple-mobile-web-app-title" content="Blathers&#39; Tent"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="https://blathers23.netlify.app/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8linux%E4%B9%8Bwine%E7%9A%84%E9%A3%9F%E7%94%A8%E6%96%B9%E5%BC%8F/" /><link rel="prev" href="https://blathers23.netlify.app/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E5%A4%A7%E6%B0%94%E9%A2%97%E7%B2%92%E6%B1%A1%E6%9F%93%E7%89%A9%E6%89%A9%E6%95%A3%E6%A8%A1%E6%8B%9F%E6%8A%80%E6%9C%AF%E7%9A%84%E7%A0%94%E7%A9%B6/" /><link rel="next" href="https://blathers23.netlify.app/csapp/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="https://blathers23.netlify.app/csapp/" /><link rel="prev" href="https://blathers23.netlify.app/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8linux%E4%B9%8Bwine%E7%9A%84%E9%A3%9F%E7%94%A8%E6%96%B9%E5%BC%8F/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "优雅地使用Linux之Wine的食用方式",
+    "headline": "CS:APP",
     "inLanguage": "zh-CN",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https:\/\/blathers23.netlify.app\/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8linux%E4%B9%8Bwine%E7%9A%84%E9%A3%9F%E7%94%A8%E6%96%B9%E5%BC%8F\/"
-    },"genre": "posts","keywords": "Linux, Wine","wordcount":  1307 ,
-    "url": "https:\/\/blathers23.netlify.app\/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8linux%E4%B9%8Bwine%E7%9A%84%E9%A3%9F%E7%94%A8%E6%96%B9%E5%BC%8F\/","datePublished": "2022-06-09T04:39:00+08:00","dateModified": "2022-06-11T00:00:00+00:00","publisher": {
+      "@id": "https:\/\/blathers23.netlify.app\/csapp\/"
+    },"genre": "posts","keywords": "CS, 读书笔记","wordcount":  654 ,
+    "url": "https:\/\/blathers23.netlify.app\/csapp\/","datePublished": "2022-06-10T13:22:00+08:00","dateModified": "2022-06-12T21:42:00+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
         "name": "Blathers"
-      },"description": "Linux只要花点功夫配置好就会很好用？"
+      },"description": "CS:APP读书笔记及问题记录。"
   }
   </script></head>
   <body header-desktop="sticky" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script><div class="wrapper"><header class="desktop" id="header-desktop">
@@ -184,14 +184,15 @@
 <div class="search-dropdown mobile">
   <div id="search-dropdown-mobile"></div>
 </div>
-<main class="container" page-style="normal"><aside class="toc" id="toc-auto"></aside>
+<main class="container" page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录 <i class="toc-icon fa-solid fa-angle-down fa-fw"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
 
   <aside class="aside-custom">
     
   </aside>
 
   <article class="page single">
-    <div class="header"><h1 class="single-title animate__animated animate__flipInX">优雅地使用Linux之Wine的食用方式</h1></div><div class="post-meta">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX">CS:APP</h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><img
     class="lazyload avatar"
     src="/svg/loading.min.svg"
@@ -200,93 +201,161 @@
     data-sizes="auto"
     alt="Blathers"
     title="Blathers" />&nbsp;Blathers</span></span>
-          <span class="post-category">收录于 <a href="/categories/linux/"><i class="fa-regular fa-folder fa-fw"></i>&nbsp;Linux</a></span></div>
-      <div class="post-meta-line"><span title=2022-06-09&#32;04:39:00>
-            <i class="fa-regular fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-06-09" >2022-06-09</time>
-          </span>&nbsp;<i class="fa-solid fa-pencil-alt fa-fw"></i>&nbsp;约 1307 字&nbsp;
-        <i class="fa-regular fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
-    </div><div
+          <span class="post-category">收录于 <a href="/categories/cs/"><i class="fa-regular fa-folder fa-fw"></i>&nbsp;CS</a></span></div>
+      <div class="post-meta-line"><span title=2022-06-10&#32;13:22:00>
+            <i class="fa-regular fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-06-10" >2022-06-10</time>
+          </span>&nbsp;<i class="fa-solid fa-pencil-alt fa-fw"></i>&nbsp;约 654 字&nbsp;
+        <i class="fa-regular fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+    </div><div class="details toc" id="toc-static" kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#chapter-1">Chapter 1</a></li>
+    <li><a href="#chapter-2">Chapter 2</a></li>
+  </ul>
+</nav></div>
+      </div><div
       class="content"
       id="content"
       
       
-    ><p>很多时候，你不得不运行一些Windows可执行程序，但是苦于手头仅有一台Linux设备，你或许想要使用虚拟机，不巧的是你又讨厌虚拟机那种令人厌烦的卡顿、不跟手的感觉，那么Wine，就是为你量身定制的！Wine全称Wine Is Not an Emulator（Wine不是一个模拟器），是一个能在Linux系统上运行Windows应用的兼容层。简单来说，只要安装了Wine，就可以简单的在Linux系统上通过双击exe文件来运行这些可执行程序！但是呢，Wine的安装与使用还有一些小坑，在这里简单记录一下这些坑以及Wine的最佳食用方式。</p>
-<p>最简单的方法莫过于apt安装，即简单的输入：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt-get install wine
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>但是这种最简单的安装方式有着一个致命的缺陷，那就是版本太老了。以本文写成的时间为例，最新版本的Wine已经更新到了7.10，然而apt还只能安装6.X版本的Wine。并且6.X版本的Wine对Direct的支持还有待提高，很多基于Direct游戏不能正常的在Linux系统上运行。那么似乎下一步就是自行编译最新版本的Wine了。在编译之前首先应当卸载当前的Wine。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt-get remove wine
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>卸载Wine之后，摸到Wine的官网，在这里提供两个下载选项，分别是稳定版的7.0版本和开发版的7.10。下载自己所需要的版本，解压后即可运行：</p>
+    ><h2 id="chapter-1">Chapter 1</h2>
+<ol>
+<li>clang中stdio.h的主要内容？include的作用?</li>
+<li>AVX512指令集到底是什么？为什么不同的指令集可以影响程序执行的速度？</li>
+<li>什么是操作系统内核(kernel)？</li>
+<li>解释性语言和编译性语言之间有什么主要区别？</li>
+</ol>
+<h2 id="chapter-2">Chapter 2</h2>
+<ol>
+<li>
+<p>汇编语言、机器语言。</p>
+<ul>
+<li>汇编语言是一种低级语言，文本。</li>
+<li>机器语言无需翻译计算机即可理解，二进制。</li>
+</ul>
+</li>
+<li>
+<p>计算机的字长？</p>
+<p>计算机的字长（word size）取决于<em><strong>数据总线</strong></em>的宽度，<em><strong>指明指针数据的标称大小（nominal size）</strong></em>，限制了虚拟地址的范围。对于总线长度为$w$的计算机，其虚拟地址的范围为$2^w - 1$。</p>
+</li>
+<li>
+<p>C数据类型的典型大小（以字节为单位）。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">有符号</th>
+<th style="text-align:center">无符号</th>
+<th style="text-align:center">32位</th>
+<th style="text-align:center">64位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">char</td>
+<td style="text-align:center">unsigned char</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">short</td>
+<td style="text-align:center">unsigned short</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">int</td>
+<td style="text-align:center">unsigned int</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:center">long</td>
+<td style="text-align:center">unsigned long</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">8</td>
+</tr>
+<tr>
+<td style="text-align:center">int32_t</td>
+<td style="text-align:center">uint32_t</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:center">int64_t</td>
+<td style="text-align:center">uint64_t</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">8</td>
+</tr>
+<tr>
+<td style="text-align:center">char *</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">8</td>
+</tr>
+<tr>
+<td style="text-align:center">float</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:center">double</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">8</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>int32_t和int64_t的出现是为了防止不同编译系统编译相同声明出现数据大小不一的情况。</p>
+</blockquote>
+</li>
+<li>
+<p>声明指针。</p>
+<p>对于任何数据类型T，声明T *p，表明p是一个指针对象，指向一个类型为T的对象。</p>
+</li>
+<li>
+<p>字节存储顺序。</p>
+<p>最低有效位字节在最前面的方式，称为小端法（little endian）；最高有效位字节在最前面的方式，称为大端法（big endian）。比较新的微处理器使用双端法（bi-endian），可以把机器配置为大端或者小端来运行。一旦选择了操作系统，字节顺序随之固定。</p>
+</li>
+<li>
+<p>为什么相同的程序在不同机器或系统上编译得到的二进制代码不同？既然不同，那为什么exe文件，deb文件，他们的工作原理又是什么？</p>
+</li>
+<li>
+<p>异或逆元（a^a = 0）:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./configure
-</span></span><span class="line"><span class="cl">make
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">inplace_swap</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="o">*</span><span class="n">y</span> <span class="o">=</span> <span class="o">*</span><span class="n">x</span> <span class="o">^</span> <span class="o">*</span><span class="n">y</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">*</span><span class="n">x</span> <span class="o">=</span> <span class="o">*</span><span class="n">x</span> <span class="o">^</span> <span class="o">*</span><span class="n">y</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">*</span><span class="n">y</span> <span class="o">=</span> <span class="o">*</span><span class="n">x</span> <span class="o">^</span> <span class="o">*</span><span class="n">y</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>来对Wine进行一个简单的安装。当然，在这个过程中会被提示缺少各种各样的依赖，但总之是可以凭借着毅力解决的！这里不再记录解决过程，因为这是一个非常麻烦并且不推荐的安装方式。事实上，当我费尽九牛二虎之力，我的垃圾笔电也编译了一个多小时之后，终于安装好Wine。自以为可以愉快体验一个游戏而洋洋得意时，大无语事件发生，游戏进去是进去了，但是完完全全就是一个黑屏，经排查除了游戏之外的一些小程序可以正常运行。事实上问题的原因我现在还没有搞清楚，当时使用的版本是稳定版7.0版本，各种无头苍蝇一样的debug方式尝试过之后，只好将最后的希望放在Wine开发版上。说来也是巧合，当我在Wine官网苦苦寻找解决办法无果，却偶然发现，就在官网上就清清楚楚的写着，Wine安装的最佳方式！以Ubuntu22.04系统举例，安装方式如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 开启32bit架构支持</span>
-</span></span><span class="line"><span class="cl">sudo dpkg --add-arrchitecture i386
-</span></span><span class="line"><span class="cl"><span class="c1"># 下载添加仓库密钥</span>
-</span></span><span class="line"><span class="cl">wget -nc https://dl.winehq.org/wine-builds/winehq.key
-</span></span><span class="line"><span class="cl">sudo mv winehq.key /usr/share/keyrings/winehq-archive.key
-</span></span><span class="line"><span class="cl"><span class="c1"># 添加仓库</span>
-</span></span><span class="line"><span class="cl">wget -nc https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/winehq-jammy.sources
-</span></span><span class="line"><span class="cl">sudo mv winehq-jammy.sources /etc/apt/sources.list.d/
-</span></span><span class="line"><span class="cl"><span class="c1"># 更新安装包</span>
-</span></span><span class="line"><span class="cl">sudo  apt-get update
-</span></span><span class="line"><span class="cl"><span class="c1"># 安装开发分支的Wine</span>
-</span></span><span class="line"><span class="cl">sudo apt install --install-recommends winehq-devel
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>就这样，轻而易举的解决了安装过程中的依赖问题和编译耗时，并且在安装了开发分支的Wine7.10之后，游戏终于运行了起来！可谓：</p>
-<blockquote>
-<p>踏破铁鞋无觅处，得来全不费功夫！</p>
-</blockquote>
-<p>后记啰啰嗦唆没用的话:</p>
-<p>毕业终于完事了，没少费功夫，最后终于是拿到了毕业证，和大家伙也天各一方。毕业离开学校的那天，头一次喝醉吐的自己浑身都是，可能我自己心里是非常喜欢大家伙的吧，我也不知道。离别总是酸楚，但是回到家乡，离开校园，还是得直面困难的。现在隔离在宾馆，天天闲的难受，这样的日子，今天也是最后一晚了。和我一样二战的家伙已经开始规律作息好好复习了，我也不能拉了胯，考前最后一次熬夜！！！再也不熬夜了！最后就是，果然还是好好的把自己心中所想表达出来能让人心情舒畅。</p></div><div class="post-footer" id="post-footer">
+</div></li>
+<li></li>
+</ol></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title=2022-06-11&#32;00:00:00>更新于 2022-06-11</span>
+        <span title=2022-06-12&#32;21:42:00>更新于 2022-06-12</span>
       </div>
       <div class="post-info-license "><span><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
     </div>
     <div class="post-info-line">
       <div class="post-info-md"><span><a
-  href="/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8linux%E4%B9%8Bwine%E7%9A%84%E9%A3%9F%E7%94%A8%E6%96%B9%E5%BC%8F/index.md"
+  href="/csapp/index.md"
   
     title="阅读原始文档"
   
@@ -298,23 +367,22 @@
   
 >阅读原始文档</a></span></div>
       <div class="post-info-share">
-        <span><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blathers23.netlify.app/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8linux%E4%B9%8Bwine%E7%9A%84%E9%A3%9F%E7%94%A8%E6%96%B9%E5%BC%8F/" data-title="优雅地使用Linux之Wine的食用方式"><i class="fa-brands fa-weibo fa-fw"></i></a>
-  <a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://blathers23.netlify.app/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8linux%E4%B9%8Bwine%E7%9A%84%E9%A3%9F%E7%94%A8%E6%96%B9%E5%BC%8F/" data-title="优雅地使用Linux之Wine的食用方式"><i data-svg-src="/lib/simple-icons/icons/baidu.min.svg"></i></a>
-  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://blathers23.netlify.app/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8linux%E4%B9%8Bwine%E7%9A%84%E9%A3%9F%E7%94%A8%E6%96%B9%E5%BC%8F/" data-title="优雅地使用Linux之Wine的食用方式"><i class="fa-brands fa-evernote fa-fw"></i></a>
+        <span><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blathers23.netlify.app/csapp/" data-title="CS:APP"><i class="fa-brands fa-weibo fa-fw"></i></a>
+  <a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://blathers23.netlify.app/csapp/" data-title="CS:APP"><i data-svg-src="/lib/simple-icons/icons/baidu.min.svg"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://blathers23.netlify.app/csapp/" data-title="CS:APP"><i class="fa-brands fa-evernote fa-fw"></i></a>
   </span>
       </div>
     </div>
   </div>
 
   <div class="post-info-more">
-    <section class="post-tags"><i class="fa-solid fa-tags fa-fw"></i>&nbsp;<a href="/tags/linux/">Linux</a>,&nbsp;<a href="/tags/wine/">Wine</a></section>
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw"></i>&nbsp;<a href="/tags/cs/">CS</a>,&nbsp;<a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>
   </div>
 
-  <div class="post-nav"><a href="/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E5%A4%A7%E6%B0%94%E9%A2%97%E7%B2%92%E6%B1%A1%E6%9F%93%E7%89%A9%E6%89%A9%E6%95%A3%E6%A8%A1%E6%8B%9F%E6%8A%80%E6%9C%AF%E7%9A%84%E7%A0%94%E7%A9%B6/" class="prev" rel="prev" title="毕业设计-基于人工智能的大气颗粒污染物扩散模拟技术的研究"><i class="fa-solid fa-angle-left fa-fw"></i>毕业设计-基于人工智能的大气颗粒污染物扩散模拟技术的研究</a>
-      <a href="/csapp/" class="next" rel="next" title="CS:APP">CS:APP<i class="fa-solid fa-angle-right fa-fw"></i></a></div>
+  <div class="post-nav"><a href="/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8linux%E4%B9%8Bwine%E7%9A%84%E9%A3%9F%E7%94%A8%E6%96%B9%E5%BC%8F/" class="prev" rel="prev" title="优雅地使用Linux之Wine的食用方式"><i class="fa-solid fa-angle-left fa-fw"></i>优雅地使用Linux之Wine的食用方式</a></div>
 </div>
 <div id="comments"><div id="waline" class="comment"></div><noscript>
         Please enable JavaScript to view the comments powered by <a href="https://waline.js.org/" rel="external nofollow noopener noreffer">Waline</a>.
