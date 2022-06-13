@@ -62,4 +62,4 @@ env LANG=zh_CN.UTF-8 wine game.exe
 ---
 
 > 作者: Blathers  
-> https://blathers23.netlify.app/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8linux%E4%B9%8Bwine%E7%9A%84%E9%A3%9F%E7%94%A8%E6%96%B9%E5%BC%8F/
+> https://blathers23.vercel.app/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8linux%E4%B9%8Bwine%E7%9A%84%E9%A3%9F%E7%94%A8%E6%96%B9%E5%BC%8F/

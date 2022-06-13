@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>Gitalk - 标签 - Blathers&#39; Tent</title>
-    <link>https://blathers23.netlify.app/tags/gitalk/</link>
+    <link>https://blathers23.vercel.app/tags/gitalk/</link>
     <description>Gitalk - 标签 - Blathers&#39; Tent</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>blathers233@outlook.com (Blathers)</managingEditor>
-      <webMaster>blathers233@outlook.com (Blathers)</webMaster><lastBuildDate>Sat, 13 Feb 2021 21:48:20 &#43;0000</lastBuildDate><atom:link href="https://blathers23.netlify.app/tags/gitalk/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>blathers233@outlook.com (Blathers)</webMaster><lastBuildDate>Sat, 13 Feb 2021 21:48:20 &#43;0000</lastBuildDate><atom:link href="https://blathers23.vercel.app/tags/gitalk/" rel="self" type="application/rss+xml" /><item>
   <title>记录Gitalk的一个Bug</title>
-  <link>https://blathers23.netlify.app/gitalk/</link>
+  <link>https://blathers23.vercel.app/gitalk/</link>
   <pubDate>Sat, 13 Feb 2021 21:48:20 &#43;0000</pubDate>
   <author>Blathers</author>
-  <guid>https://blathers23.netlify.app/gitalk/</guid>
+  <guid>https://blathers23.vercel.app/gitalk/</guid>
   <description><![CDATA[]]></description>
 </item></channel>
 </rss>

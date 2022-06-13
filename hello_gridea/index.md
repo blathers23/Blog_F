@@ -36,4 +36,4 @@ git remote set-url origin https://e.coding.net/“字段 A”/“字段 B”/“
 ---
 
 > 作者: Blathers  
-> https://blathers23.netlify.app/hello_gridea/
+> https://blathers23.vercel.app/hello_gridea/

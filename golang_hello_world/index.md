@@ -36,4 +36,4 @@ go env -w GOPROXY='https://goproxy.cn,direct'
 ---
 
 > 作者: Blathers  
-> https://blathers23.netlify.app/golang_hello_world/
+> https://blathers23.vercel.app/golang_hello_world/

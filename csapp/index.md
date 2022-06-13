@@ -61,8 +61,14 @@
 
    C语言中移位运算符的优先级小于加减法。
 
+9. 整数隐式转换。
+
+   当执行一个运算时，假设同时存在有符号数和无符号数，那么C会转换有符号数为无符号数，并且假设所有的数都是非负的。*当把short转换为unsigned时，先转换长度，后转换符号，这是C语言标准所要求的。*
+
+10. 
+
 
 ---
 
 > 作者: Blathers  
-> https://blathers23.netlify.app/csapp/
+> https://blathers23.vercel.app/csapp/

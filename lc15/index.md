@@ -239,4 +239,4 @@ class Solution:
 ---
 
 > 作者: Blathers  
-> https://blathers23.netlify.app/lc15/
+> https://blathers23.vercel.app/lc15/

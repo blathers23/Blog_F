@@ -58,4 +58,4 @@
 ---
 
 > 作者: Blathers  
-> https://blathers23.netlify.app/vscode_and_msys2/
+> https://blathers23.vercel.app/vscode_and_msys2/

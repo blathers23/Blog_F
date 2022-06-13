@@ -14,16 +14,24 @@
 
 ## Ⅱ. 自定义域名设置
 回到 Coding 中项目页面，进入*持续部署*-*静态网站*页面，点击建立的网页（例如博主的“泡面&榨菜”）
+
 ![](https://s2.loli.net/2022/04/26/17uhG8RdEzXZNTP.png)
+
 进入页面信息，注意横栏，点击*自定义域名*，注意最右边，点击*新建域名*。并填入第一步购买的域名。填写完成后我们忽略提示，复制表格中的“CNAME 指向”信息。
+
 ![](https://s2.loli.net/2022/04/26/NeS8h5UzjHbOmPD.png)
+
 前往[腾讯云控制台](https://console.cloud.tencent.com/)，搜索*域名注册*，找到购买的域名，点击*解析*。
+
 ![](https://s2.loli.net/2022/04/26/ZnPEmLcyosF2vKI.png)
+
 点击*添加记录*，*主机记录*输入 `@`，*记录类型*选择 `CNAME`，*记录值*粘贴刚才复制的信息，点击*确认*。
 
 ## Ⅲ. SSL证书的部署
 回到 Coding 页面自定义域名处，点击证书状态，注意页面右方的快速上手栏，稍作休息，等待证书签发（这里博主等待了约 30 分钟），签发完成后微信会有相关通知。
+
 ![](https://s2.loli.net/2022/04/26/VDrRbm8n4z5LqCy.png)
+
 签发完成后，我们选择*一键部署*。*部署类型*选择 **CDN**，点击确定，进入配置证书页面。选择刚购买的*域名*，*证书来源*选择**腾讯云托管证书**，*证书列表*选择刚才的证书，*回源协议*选择 **HTTPS**，点击提交。
 
 ## Ⅳ. 重新配置 Gridea
@@ -34,4 +42,4 @@
 ---
 
 > 作者: Blathers  
-> https://blathers23.netlify.app/hello_gridea_domain/
+> https://blathers23.vercel.app/hello_gridea_domain/

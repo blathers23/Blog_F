@@ -242,4 +242,4 @@ ls -s main/*.exe
 ---
 
 > 作者: Blathers  
-> https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAwrf%E6%95%99%E7%A8%8B/
+> https://blathers23.vercel.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAwrf%E6%95%99%E7%A8%8B/
