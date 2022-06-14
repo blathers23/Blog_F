@@ -36,4 +36,4 @@ proxy: '<%= commentSetting.gitalkSetting.proxy %>'
 ---
 
 > 作者: Blathers  
-> https://blathers23.vercel.app/gitalk/
+> https://blathers23.netfily.app/gitalk/

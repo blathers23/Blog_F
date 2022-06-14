@@ -142,4 +142,4 @@ class Solution:
 ---
 
 > 作者: Blathers  
-> https://blathers23.vercel.app/lc691/
+> https://blathers23.netfily.app/lc691/

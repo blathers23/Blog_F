@@ -27,4 +27,4 @@
 ---
 
 > 作者: Blathers  
-> https://blathers23.vercel.app/friends/
+> https://blathers23.netfily.app/friends/

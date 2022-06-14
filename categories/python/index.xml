@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>Python - 分类 - Blathers&#39; Tent</title>
-    <link>https://blathers23.vercel.app/categories/python/</link>
+    <link>https://blathers23.netfily.app/categories/python/</link>
     <description>Python - 分类 - Blathers&#39; Tent</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>blathers233@outlook.com (Blathers)</managingEditor>
-      <webMaster>blathers233@outlook.com (Blathers)</webMaster><lastBuildDate>Sun, 08 May 2022 02:39:00 &#43;0800</lastBuildDate><atom:link href="https://blathers23.vercel.app/categories/python/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>blathers233@outlook.com (Blathers)</webMaster><lastBuildDate>Sun, 08 May 2022 02:39:00 &#43;0800</lastBuildDate><atom:link href="https://blathers23.netfily.app/categories/python/" rel="self" type="application/rss+xml" /><item>
   <title>Python常用内置容器及方法</title>
-  <link>https://blathers23.vercel.app/python%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%AE%B9%E5%99%A8%E5%8F%8A%E6%96%B9%E6%B3%95/</link>
+  <link>https://blathers23.netfily.app/python%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%AE%B9%E5%99%A8%E5%8F%8A%E6%96%B9%E6%B3%95/</link>
   <pubDate>Sun, 08 May 2022 02:39:00 &#43;0800</pubDate>
   <author>Blathers</author>
-  <guid>https://blathers23.vercel.app/python%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%AE%B9%E5%99%A8%E5%8F%8A%E6%96%B9%E6%B3%95/</guid>
+  <guid>https://blathers23.netfily.app/python%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%AE%B9%E5%99%A8%E5%8F%8A%E6%96%B9%E6%B3%95/</guid>
   <description><![CDATA[磨刀不误砍柴功。]]></description>
 </item></channel>
 </rss>

@@ -42,4 +42,4 @@
 ---
 
 > 作者: Blathers  
-> https://blathers23.vercel.app/hello_gridea_domain/
+> https://blathers23.netfily.app/hello_gridea_domain/

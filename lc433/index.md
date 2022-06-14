@@ -121,4 +121,4 @@ class Solution:
 ---
 
 > 作者: Blathers  
-> https://blathers23.vercel.app/lc433/
+> https://blathers23.netfily.app/lc433/
