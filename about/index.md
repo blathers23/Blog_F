@@ -9,7 +9,32 @@
 
 ---
 
-😀 本人是一个跨考计算机二战的三非院校四大天坑本科待毕业生，最近正在刷 LeetCode，目标是数据结构张口就来。
+😀 本人是一个跨考计算机二战的三非院校四大天坑本科毕业生，最近正在看CSAPP。
+
+## 动态
+
+---
+
+进行中：
+
+- 通过CSAPP学习计算机组成原理及C语言编程基础。(Jun 2022 - Now)
+- 尝试性将工作环境切换到Ubuntu来学习Linux。(May 2022 - Now)
+
+搁置中：
+
+- 刷LeetCode，学学算法，提高编程技术。由于毕业到回家调整时期暂且休息。(Apr 2022 - Jun 2022)
+
+待开始：
+
+- 二战复习。(Jul 2022)
+
+已完成：
+
+- 毕业设计，基于Conv-GRU的大气颗粒物污染预测。(Apr 2022 - Jun 2022)
+
+已弃坑：
+
+- 暂时还没有捏。
 
 ## 关于本站
 
@@ -17,7 +42,7 @@
 
 ### 写 Blog 的想法
 
-就在建站的约摸两周前，一战跨考计算机最终宣告失败，最主要的因素还是准备不足。在回顾考研这一年来碰壁原因的时候，我意识到，很多知识之所以自己不能学以致用，其原因往往还是用的太少，正所谓眼高手低，又或者说 talk is cheap。**纸上得来终觉浅，绝知此事要躬行。** 建立本站，通过将思维落实成文字的方式来加强自己的理解，我认为会是一种很有效的方式。
+就在建站的约摸两周前，一战跨考计算机最终宣告失败，最主要的因素还是准备不足。在回顾考研这一年来碰壁原因的时候，我意识到，很多知识之所以自己不能学以致用，其原因往往还是用的太少，正所谓眼高手低，又或者说talk is cheap。**纸上得来终觉浅，绝知此事要躬行。** 建立本站，通过将思维落实成文字的方式来加强自己的理解，我认为会是一种很有效的方式。
 
 ### 施工时间线
 
@@ -33,15 +58,15 @@
 
 ---
 
-📫  ~~唯一指定~~邮箱: blathers233@outlook.com
+- 📫  ~~唯一指定~~邮箱: blathers233@outlook.com
 
-🐱 LeetCode 主页: [@susasasa](https://leetcode.cn/u/susasasa/)
+- 🐱 LeetCode 主页: [@susasasa](https://leetcode.cn/u/susasasa/)
 
-🤖 Gitee 主页: [@blathers](https://gitee.com/Blathers)
+- 🤖 Gitee 主页: [@blathers](https://gitee.com/Blathers)
 
-👾 GitHub 主页（不经常出没）: [@blathers23](https://github.com/blathers23)
+- 🦊 GitLab 主页: [@blathers23](https://gitlab.com/blathers23)
 
-🦊 GitLab 主页（不经常出没）: [@blathers23](https://gitlab.com/blathers23)
+- 👾 GitHub 主页（不经常出没）: [@blathers23](https://github.com/blathers23)
 
 ---
 
