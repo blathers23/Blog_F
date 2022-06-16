@@ -11,14 +11,14 @@
 <meta name="description" content="CS:APP读书笔记及问题记录。" />
 <meta name="keywords" content="CS,读书笔记" /><meta itemprop="name" content="CS:APP">
 <meta itemprop="description" content="CS:APP读书笔记及问题记录。"><meta itemprop="datePublished" content="2022-06-10T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2022-06-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1768">
+<meta itemprop="dateModified" content="2022-06-16T00:00:00+00:00" />
+<meta itemprop="wordCount" content="2229">
 <meta itemprop="keywords" content="CS,读书笔记," /><meta property="og:title" content="CS:APP" />
 <meta property="og:description" content="CS:APP读书笔记及问题记录。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blathers23.netfily.app/csapp/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-06-10T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-06-15T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-06-16T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="CS:APP"/>
@@ -35,8 +35,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/blathers23.netfily.app\/csapp\/"
-    },"genre": "posts","keywords": "CS, 读书笔记","wordcount":  1768 ,
-    "url": "https:\/\/blathers23.netfily.app\/csapp\/","datePublished": "2022-06-10T00:00:00+00:00","dateModified": "2022-06-15T00:00:00+00:00","publisher": {
+    },"genre": "posts","keywords": "CS, 读书笔记","wordcount":  2229 ,
+    "url": "https:\/\/blathers23.netfily.app\/csapp\/","datePublished": "2022-06-10T00:00:00+00:00","dateModified": "2022-06-16T00:00:00+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -204,8 +204,8 @@
           <span class="post-category">收录于 <a href="/categories/cs/"><i class="fa-regular fa-folder fa-fw"></i>&nbsp;CS</a></span></div>
       <div class="post-meta-line"><span title=2022-06-10&#32;00:00:00>
             <i class="fa-regular fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-06-10" >2022-06-10</time>
-          </span>&nbsp;<i class="fa-solid fa-pencil-alt fa-fw"></i>&nbsp;约 1768 字&nbsp;
-        <i class="fa-regular fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;</div>
+          </span>&nbsp;<i class="fa-solid fa-pencil-alt fa-fw"></i>&nbsp;约 2229 字&nbsp;
+        <i class="fa-regular fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;</div>
     </div><div class="details toc" id="toc-static" kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
@@ -216,6 +216,7 @@
     <li><a href="#chapter-1">Chapter 1</a></li>
     <li><a href="#chapter-2">Chapter 2</a></li>
     <li><a href="#chapter-3">Chapter 3</a></li>
+    <li><a href="#chapter-4">Chapter 4</a></li>
   </ul>
 </nav></div>
       </div><div
@@ -445,28 +446,20 @@
 <p>可以看到C有一个神奇的特性，就是当两个指针相减时，得到的数据类型为long，值为两地址差除以指针所指数据类型长度。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">touch test.c	<span class="c1"># 新建test.c</span>
-</span></span><span class="line"><span class="cl">nano test.c		<span class="c1"># 使用nano编辑test.c</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="cm">/* arrptr.c */</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">e</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
@@ -487,7 +480,7 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">gcc -o test.out test.c	<span class="c1"># gcc编译</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">gcc -o arrptr.out arrptr.c	<span class="c1"># gcc编译</span>
 </span></span><span class="line"><span class="cl">./test.out				<span class="c1"># 查看输出</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 输出</span>
 </span></span><span class="line"><span class="cl">&gt; e: 0x7fffef9ea770
@@ -518,12 +511,125 @@
 <p>异质的数据结构。</p>
 <p>C语言提供了两种将不同类型的对象组合到一起创建数据类型的机制：结构（structure），用关键字struct声明，将多个对象集合到一个单位中；联合（union），用关键字union声明，允许用几种不同的类型来引用一个对象。</p>
 </li>
-<li></li>
-</ol></div><div class="post-footer" id="post-footer">
+<li>
+<p>联合总的大小等于其最大字段的大小。</p>
+</li>
+<li>
+<p>计算机系统对基本数据类型的合法地址作了一些限制，要求某种类型对象的地址必须是某个值K的倍数。称为数据对齐限制。数据对齐限制简化了接口设计，提高内存系统的性能。<strong>对齐的原则是任何K字节的基本对象的地址必须是K的倍数</strong>。</p>
+</li>
+<li>
+<p>缓冲区溢出（buffer overflow）。</p>
+<p>C对于数组引用不进行任何边界检查，对越界数组的写操作会破坏存储在运行时栈中的状态信息。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="cm">/* echo.c */</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">char</span> <span class="o">*</span><span class="nf">getchars</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">char</span> <span class="o">*</span><span class="n">dest</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">while</span> <span class="p">((</span><span class="n">c</span> <span class="o">=</span> <span class="n">getchar</span><span class="p">())</span> <span class="o">!=</span> <span class="sc">&#39;\n&#39;</span> <span class="o">&amp;&amp;</span> <span class="n">c</span> <span class="o">!=</span> <span class="n">EOF</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="o">*</span><span class="n">dest</span><span class="o">++</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">c</span> <span class="o">==</span> <span class="n">EOF</span> <span class="o">&amp;&amp;</span> <span class="n">s</span> <span class="o">==</span> <span class="n">dest</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="o">*</span><span class="n">dest</span><span class="o">++</span> <span class="o">=</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">putchars</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">while</span> <span class="p">(</span><span class="o">*</span><span class="n">s</span> <span class="o">!=</span> <span class="sc">&#39;\0&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%c&#34;</span><span class="p">,</span> <span class="o">*</span><span class="n">s</span><span class="o">++</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">echo</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">char</span> <span class="n">buf</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>	<span class="cm">/* Way too small! */</span>
+</span></span><span class="line"><span class="cl">	<span class="n">getchars</span><span class="p">(</span><span class="n">buf</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">putchars</span><span class="p">(</span><span class="n">buf</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">echo</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">gcc -o echo.out echo.c
+</span></span><span class="line"><span class="cl">./echo.out
+</span></span><span class="line"><span class="cl"><span class="c1"># Input</span>
+</span></span><span class="line"><span class="cl">&gt; <span class="m">123</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Output</span>
+</span></span><span class="line"><span class="cl">&gt; <span class="m">123</span>
+</span></span><span class="line"><span class="cl">&gt; *** stack smashing detected ***: terminated
+</span></span><span class="line"><span class="cl">&gt; Aborted <span class="o">(</span>core dumped<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>补记：C语言中单双引号的区别</p>
+<ul>
+<li>单引号表示单个字符，要求字符数量只能为1，表示字符常量</li>
+<li>双引号表示0到多个字符，表示字符串常量</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p>蠕虫和病毒。</p>
+<blockquote>
+<p>蠕虫和病毒都试图在计算机中传播它们自己的代码段</p>
+<ul>
+<li>蠕虫（worm）可以自己运行，并且能够将自己的等效副本传播到其它机器</li>
+<li>病毒（vrius）能将自己添加到包括操作系统在内的其他程序中，但它不能独立运行</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+<h2 id="chapter-4">Chapter 4</h2></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title=2022-06-15&#32;00:00:00>更新于 2022-06-15</span>
+        <span title=2022-06-16&#32;00:00:00>更新于 2022-06-16</span>
       </div>
       <div class="post-info-license "><span><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
     </div>

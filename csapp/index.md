@@ -112,12 +112,8 @@
 
     可以看到C有一个神奇的特性，就是当两个指针相减时，得到的数据类型为long，值为两地址差除以指针所指数据类型长度。
 
-    ```bash
-    touch test.c	# 新建test.c
-    nano test.c		# 使用nano编辑test.c
-    ```
-
     ```C
+    /* arrptr.c */
     #include <stdio.h>
     
     void main() {
@@ -130,7 +126,7 @@
     ```
 
     ```bash
-    gcc -o test.out test.c	# gcc编译
+    gcc -o arrptr.out arrptr.c	# gcc编译
     ./test.out				# 查看输出
     # 输出
     > e: 0x7fffef9ea770
@@ -153,7 +149,71 @@
 
     C语言提供了两种将不同类型的对象组合到一起创建数据类型的机制：结构（structure），用关键字struct声明，将多个对象集合到一个单位中；联合（union），用关键字union声明，允许用几种不同的类型来引用一个对象。
 
-13. 
+13. 联合总的大小等于其最大字段的大小。
+
+14. 计算机系统对基本数据类型的合法地址作了一些限制，要求某种类型对象的地址必须是某个值K的倍数。称为数据对齐限制。数据对齐限制简化了接口设计，提高内存系统的性能。**对齐的原则是任何K字节的基本对象的地址必须是K的倍数**。
+
+15. 缓冲区溢出（buffer overflow）。
+
+    C对于数组引用不进行任何边界检查，对越界数组的写操作会破坏存储在运行时栈中的状态信息。
+
+    ```C
+    /* echo.c */
+    #include <stdio.h>
+    
+    char *getchars(char *s) {
+    	int c;
+    	char *dest = s;
+    	while ((c = getchar()) != '\n' && c != EOF)
+    		*dest++ = c;
+    	if (c == EOF && s == dest)
+    		return NULL;
+    	*dest++ = '\0';
+    	return s;
+    }
+    
+    void putchars(char *s) {
+    	while (*s != '\0')
+    		printf("%c", *s++);
+        printf("\n");
+    }
+    
+    void echo() {
+    	char buf[1];	/* Way too small! */
+    	getchars(buf);
+    	putchars(buf);
+    }
+    
+    void main() {
+    	echo();
+    }
+    ```
+
+    ```bash
+    gcc -o echo.out echo.c
+    ./echo.out
+    # Input
+    > 123
+    # Output
+    > 123
+    > *** stack smashing detected ***: terminated
+    > Aborted (core dumped)
+    ```
+
+    > 补记：C语言中单双引号的区别
+    >
+    > - 单引号表示单个字符，要求字符数量只能为1，表示字符常量
+    > - 双引号表示0到多个字符，表示字符串常量
+
+16. 蠕虫和病毒。
+
+    > 蠕虫和病毒都试图在计算机中传播它们自己的代码段
+    >
+    > - 蠕虫（worm）可以自己运行，并且能够将自己的等效副本传播到其它机器
+    > - 病毒（vrius）能将自己添加到包括操作系统在内的其他程序中，但它不能独立运行
+
+## Chapter 4
+
 
 
 ---
