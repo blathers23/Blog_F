@@ -12,7 +12,7 @@
 <meta name="keywords" content="CS,读书笔记" /><meta itemprop="name" content="CS:APP">
 <meta itemprop="description" content="CS:APP读书笔记及问题记录。"><meta itemprop="datePublished" content="2022-06-10T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-06-18T00:00:00+00:00" />
-<meta itemprop="wordCount" content="7470">
+<meta itemprop="wordCount" content="8737">
 <meta itemprop="keywords" content="CS,读书笔记," /><meta property="og:title" content="CS:APP" />
 <meta property="og:description" content="CS:APP读书笔记及问题记录。" />
 <meta property="og:type" content="article" />
@@ -35,7 +35,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/blathers23.netfily.app\/csapp\/"
-    },"genre": "posts","keywords": "CS, 读书笔记","wordcount":  7470 ,
+    },"genre": "posts","keywords": "CS, 读书笔记","wordcount":  8737 ,
     "url": "https:\/\/blathers23.netfily.app\/csapp\/","datePublished": "2022-06-10T00:00:00+00:00","dateModified": "2022-06-18T00:00:00+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -204,8 +204,8 @@
           <span class="post-category">收录于 <a href="/categories/cs/"><i class="fa-regular fa-folder fa-fw"></i>&nbsp;CS</a></span></div>
       <div class="post-meta-line"><span title=2022-06-10&#32;00:00:00>
             <i class="fa-regular fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-06-10" >2022-06-10</time>
-          </span>&nbsp;<i class="fa-solid fa-pencil-alt fa-fw"></i>&nbsp;约 7470 字&nbsp;
-        <i class="fa-regular fa-clock fa-fw"></i>&nbsp;预计阅读 15 分钟&nbsp;</div>
+          </span>&nbsp;<i class="fa-solid fa-pencil-alt fa-fw"></i>&nbsp;约 8737 字&nbsp;
+        <i class="fa-regular fa-clock fa-fw"></i>&nbsp;预计阅读 18 分钟&nbsp;</div>
     </div><div class="details toc" id="toc-static" kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
@@ -218,6 +218,7 @@
     <li><a href="#chapter-3">Chapter 3</a></li>
     <li><a href="#chapter-4">Chapter 4</a></li>
     <li><a href="#chapter5">Chapter5</a></li>
+    <li><a href="#chapter-6">Chapter 6</a></li>
   </ul>
 </nav></div>
       </div><div
@@ -1539,6 +1540,100 @@ $$
 </div>
 </div><p>除此之外，常用的剖析程序还有Intel的VTUNE和Linux系统通常都有的VALGRIND。</p>
 </li>
+</ol>
+<h2 id="chapter-6">Chapter 6</h2>
+<blockquote>
+<p>存储器系统（memory system）是一个具有不同容量、成本和访问时间的存储设备的结构层次。</p>
+</blockquote>
+<ol>
+<li>
+<p>随机访问存储器（Random-Access Memory，RAM）。RAM断电后所有的信息都会消失。</p>
+<ol>
+<li>
+<p>静态RAM（SRAM）</p>
+<p>SRAM的工作原理是将位存储在一个双稳态（bistable）的存储器单元里，由于其双稳态特性，只要通电，它就会永远保持它的值，因此被称为静态RAM。</p>
+</li>
+<li>
+<p>动态RAM（DRAM）</p>
+<p>DRAM将每个位存储为对一个电容的充电，有很多原因会导致电容的漏电，这就意味着DRAM需要周期性的刷新，因此被称为动态RAM。DRAM存储器单元对干扰十分敏感，暴露在光线下会导致电容改变，数码照相机和摄像机中传感器的本质就是DRAM单元的阵列。</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">\</th>
+<th style="text-align:center">每位晶体管数</th>
+<th style="text-align:center">相对访问时间</th>
+<th style="text-align:center">是否持续</th>
+<th style="text-align:center">是否对干扰敏感</th>
+<th style="text-align:center">相对花费</th>
+<th style="text-align:center">应用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">SRAM</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">1x</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">1000x</td>
+<td style="text-align:center">高速缓存存储器</td>
+</tr>
+<tr>
+<td style="text-align:center">DRAM</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">10x</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">1x</td>
+<td style="text-align:center">主存、帧缓冲区</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>DRAM被组织成二维阵列，主要是为了降低芯片上地址引脚的数量，缺点是必须分两步发送地址，增加了访问时间。</p>
+</li>
+<li>
+<p>非易失性存储器（nonvolatile memory），由于历史性原因，一般统称为只读存储器（Read-Only Memory，RAM）。</p>
+</li>
+<li>
+<p>固件（firmware）。</p>
+<p>存储在ROM中的程序通常被称为固件，当一个计算机系统通电以后，它会运行存储在ROM中的固件，例如PC的BIOS。</p>
+</li>
+<li>
+<p>格式化的磁盘容量。</p>
+<p>磁盘控制器必须对磁盘进行格式化，才能在磁盘上存储数据。格式化包括用标识扇区的信息填写扇区之间的空隙，标识出表面有故障的柱面而不使用它们，以及在每个区中预留出一组柱面作为备用。</p>
+</li>
+<li>
+<p>例如图形卡、监视器、鼠标、键盘和磁盘这样的I/O设备，都是通过I/O总线，例如Intel的外围设备总线（Peripheral Component Interconnect，PCI）总线连接到CPU和主存的。</p>
+</li>
+<li>
+<p>存储器结构的中心思想是，对于每一个K，位于第K层的更快更小的存储设备作为位于第K+1层的更大更慢的存储设备的缓存。在任何时刻，第K层的缓存包含第K+1层块的一个子集的副本。</p>
+</li>
+<li>
+<p>缓存写。</p>
+<ul>
+<li>写命中（write hit）
+<ul>
+<li>直写（write-through），立即将高速缓存块中的内容写进低一层中，缺点是每次写都会引起总线流量。</li>
+<li>写回（write-back），当替换算法需要驱逐块时才进行写，缺点是提高了复杂性，需要维护一个额外的修改位（dirty bit）。</li>
+</ul>
+</li>
+<li>写不命中
+<ul>
+<li>写分配（write-allocate），加载低一层的块到高速缓存中，缺点是每次不命中都会导致块更新。</li>
+<li>非写分配（not-write-allocate），直接写进低一层中。</li>
+</ul>
+</li>
+</ul>
+<p>直写高速缓存一般搭配非写分配，而写回高速缓存一般搭配写分配。</p>
+</li>
+<li>
+<p>高速缓存即保存数据，也保存指令。只保存指令的称为i-cache，只保存数据的称为d-cache，既保存数据又保存指令的称为统一的高速缓存 （unified cache）。现代处理器一般包含独立的i-cache和d-cache，这样做使得处理器能够同时读一个指令字和一个数据字；并且i-cache通常是只读的，因此比较简单，可以针对不同的访问模式来优化这两个高速缓存。</p>
+</li>
+<li></li>
 </ol></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
