@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>算法 - 标签 - Blathers&#39; Tent</title>
+    <link>https://blathers23.netlify.app/tags/%E7%AE%97%E6%B3%95/</link>
+    <description>算法 - 标签 - Blathers&#39; Tent</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>blathers233@outlook.com (Blathers)</managingEditor>
+      <webMaster>blathers233@outlook.com (Blathers)</webMaster><lastBuildDate>Mon, 11 Jul 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://blathers23.netlify.app/tags/%E7%AE%97%E6%B3%95/" rel="self" type="application/rss+xml" /><item>
+  <title>使用C语言学习算法及数据结构</title>
+  <link>https://blathers23.netlify.app/datastructurewithc/</link>
+  <pubDate>Mon, 11 Jul 2022 00:00:00 &#43;0000</pubDate>
+  <author>Blathers</author>
+  <guid>https://blathers23.netlify.app/datastructurewithc/</guid>
+  <description><![CDATA[]]></description>
+</item></channel>
+</rss>

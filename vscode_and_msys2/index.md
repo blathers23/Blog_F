@@ -54,3 +54,8 @@
 
 保存，就可以愉快的使用快捷键调试辣👏！
 
+
+---
+
+> 作者: Blathers  
+> https://blathers23.netlify.app/vscode_and_msys2/

@@ -32,3 +32,8 @@ proxy: '<%= commentSetting.gitalkSetting.proxy %>'
 
 *2022/4/26 补充上条：*
 *这是因为你多打了个 `~~`。*
+
+---
+
+> 作者: Blathers  
+> https://blathers23.netlify.app/gitalk/

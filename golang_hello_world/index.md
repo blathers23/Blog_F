@@ -32,3 +32,8 @@ go env -w GOPROXY='https://goproxy.cn,direct'
 在代码调试前，还需要在命令行中执行 `go mod init ****.go`，\*\*\*\*处为模块名称。
 
 
+
+---
+
+> 作者: Blathers  
+> https://blathers23.netlify.app/golang_hello_world/

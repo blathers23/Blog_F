@@ -117,3 +117,8 @@ class Solution:
 2. 这题还有很多解法可以扩展。这里先占个位置，等整明白了把双向 BFS、A* 等算法也补上。
 
 另外：现在是2022/5/8 2:36，刚才 LeetCode CN 好像崩了，提交没反应一直转圈。
+
+---
+
+> 作者: Blathers  
+> https://blathers23.netlify.app/lc433/

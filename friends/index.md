@@ -23,3 +23,8 @@
 
   {{< /admonition >}}
 
+
+---
+
+> 作者: Blathers  
+> https://blathers23.netlify.app/friends/
