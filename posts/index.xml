@@ -4,13 +4,13 @@
     <link>https://blathers23.netlify.app/posts/</link>
     <description>所有文章 | Blathers&#39; Tent</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>blathers233@outlook.com (Blathers)</managingEditor>
-      <webMaster>blathers233@outlook.com (Blathers)</webMaster><lastBuildDate>Mon, 11 Jul 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://blathers23.netlify.app/posts/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>blathers233@outlook.com (Blathers)</webMaster><lastBuildDate>Mon, 11 Jul 2022 00:28:00 &#43;0800</lastBuildDate><atom:link href="https://blathers23.netlify.app/posts/" rel="self" type="application/rss+xml" /><item>
   <title>使用C语言学习算法及数据结构</title>
   <link>https://blathers23.netlify.app/datastructurewithc/</link>
-  <pubDate>Mon, 11 Jul 2022 00:00:00 &#43;0000</pubDate>
+  <pubDate>Mon, 11 Jul 2022 00:28:00 &#43;0800</pubDate>
   <author>Blathers</author>
   <guid>https://blathers23.netlify.app/datastructurewithc/</guid>
-  <description><![CDATA[]]></description>
+  <description><![CDATA[通过将LeetCode中的问题与考研大纲中所考内容对照性练习，来提高编程能力。编程语言选择C语言，更为通用。]]></description>
 </item><item>
   <title>优雅地使用Linux</title>
   <link>https://blathers23.netlify.app/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8linux/</link>

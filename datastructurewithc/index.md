@@ -63,10 +63,9 @@ double myPow(double x, int n) {
 简练风格：
 
 ```C
-double myPow(double x, int m) {
-    long long n = m;
+double myPow(double x, int n) {
 
-    double Pow(double x, long long n) {
+    double Pow(double x, int n) {
         if (n != 0) {
             return  n % 2 == 0 ? Pow(x * x, n / 2) : Pow(x * x, n / 2) * x;
         } else {
@@ -74,7 +73,7 @@ double myPow(double x, int m) {
         }
     }
 
-    return n >= 0 ? Pow(x, n) : Pow(1 / x, -n);
+    return n >= 0 ? Pow(x, n) : n % 2 == 0 ? Pow(1 / (x * x), -(n / 2)) : Pow(1 / (x * x), -(n / 2)) / x;
 }
 ```
 

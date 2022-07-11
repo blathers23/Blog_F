@@ -12,7 +12,7 @@
 <meta name="keywords" content="Python,RNN,LSTM,GRU" /><meta itemprop="name" content="毕业设计-基于人工智能的大气颗粒污染物扩散模拟技术的研究">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2022-05-25T13:49:00+08:00" />
 <meta itemprop="dateModified" content="2022-05-25T00:00:00+00:00" />
-<meta itemprop="wordCount" content="16617">
+<meta itemprop="wordCount" content="16808">
 <meta itemprop="keywords" content="Python,RNN,LSTM,GRU," /><meta property="og:title" content="毕业设计-基于人工智能的大气颗粒污染物扩散模拟技术的研究" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
@@ -35,7 +35,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/blathers23.netlify.app\/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E5%A4%A7%E6%B0%94%E9%A2%97%E7%B2%92%E6%B1%A1%E6%9F%93%E7%89%A9%E6%89%A9%E6%95%A3%E6%A8%A1%E6%8B%9F%E6%8A%80%E6%9C%AF%E7%9A%84%E7%A0%94%E7%A9%B6\/"
-    },"genre": "posts","keywords": "Python, RNN, LSTM, GRU","wordcount":  16617 ,
+    },"genre": "posts","keywords": "Python, RNN, LSTM, GRU","wordcount":  16808 ,
     "url": "https:\/\/blathers23.netlify.app\/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E5%A4%A7%E6%B0%94%E9%A2%97%E7%B2%92%E6%B1%A1%E6%9F%93%E7%89%A9%E6%89%A9%E6%95%A3%E6%A8%A1%E6%8B%9F%E6%8A%80%E6%9C%AF%E7%9A%84%E7%A0%94%E7%A9%B6\/","datePublished": "2022-05-25T13:49:00+08:00","dateModified": "2022-05-25T00:00:00+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -204,7 +204,7 @@
           <span class="post-category">收录于 <a href="/categories/ai/"><i class="fa-regular fa-folder fa-fw"></i>&nbsp;AI</a></span></div>
       <div class="post-meta-line"><span title=2022-05-25&#32;13:49:00>
             <i class="fa-regular fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-05-25" >2022-05-25</time>
-          </span>&nbsp;<i class="fa-solid fa-pencil-alt fa-fw"></i>&nbsp;约 16617 字&nbsp;
+          </span>&nbsp;<i class="fa-solid fa-pencil-alt fa-fw"></i>&nbsp;约 16808 字&nbsp;
         <i class="fa-regular fa-clock fa-fw"></i>&nbsp;预计阅读 34 分钟&nbsp;</div>
     </div><div class="details toc" id="toc-static" kept="false">
         <div class="details-summary toc-title">
@@ -283,14 +283,16 @@
 <h3 id="数据准备">数据准备</h3>
 <p>数据于空气质量模型是非常重要的。对于数值模型而言，原始数据作为数值模拟的初始和边界条件，允许模型计算求解通过数学抽象污染物输送、扩散、化学转化等大气过程得到的方程组来预测大气污染物的浓度分布<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>。对于统计模型来说，建立模型本身就依赖于对原始数据的统计与分析，以统计模型中广泛应用的机器学习算法为例，机器学习算法通过从原始数据中提取模式来不断提高自身的性能<sup id="fnref:14"><a href="#fn:14" class="footnote-ref" role="doc-noteref">14</a></sup>，因此原始数据的质量与模型最终的性能密切相关。同时，深度学习算法对数据量也有着较高的需求，统计估计的一大问题就是泛化（generalization）问题，泛化指的是训练好的模型在前所未见的数据上性能的好坏，而增加数据量可以有效提高模型的泛化能力。因此，为构建基于深度学习的大气颗粒物污染浓度预测模型，大量且准确的数据是必要的。然而，真实环境下的历史数据难以取得，主要原因是真实环境下的大气污染物浓度数据多为监测站点处浓度，是时间维度上的一维变量，而为了对大气颗粒物空间浓度分布进行统计预测，需要时间维度和空间维度组合的三维变量。为此，本研究选择WRF-Chem空气质量模型输出的WRFOut数据作为深度学习模型的训练数据。</p>
 <p>本研究采用的WRFOut数据共三段，分别是2018年1月25日00:00到2018年1月27日07:00的逐小时数据55条（数据段1）、2019年1月10日00:00到2019年1月13日15:00的逐小时数据87条（数据段2）及2019年2月26日00:00到2019年3月1日08:00的逐小时数据79条（数据段3）。这三段数据的模拟范围均采用兰伯特投影坐标系，中心经纬线为北纬41.75°和东经123.53°，即以沈阳市为中心。模拟网格分辨率为27千米$\times$27千米，网格数量为90$\times$90共8100格。模拟范围见下图。</p>
-<p><img
-    class="lazyload"
-    src="/svg/loading.min.svg"
-    data-src="https://s2.loli.net/2022/05/25/CIWQ9kywvPXKoJS.jpg"
-    data-srcset="https://s2.loli.net/2022/05/25/CIWQ9kywvPXKoJS.jpg, https://s2.loli.net/2022/05/25/CIWQ9kywvPXKoJS.jpg 1.5x, https://s2.loli.net/2022/05/25/CIWQ9kywvPXKoJS.jpg 2x"
-    data-sizes="auto"
-    alt="https://s2.loli.net/2022/05/25/CIWQ9kywvPXKoJS.jpg"
-    title="https://s2.loli.net/2022/05/25/CIWQ9kywvPXKoJS.jpg" /></p>
+<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/CIWQ9kywvPXKoJS.jpg" title="https://s2.loli.net/2022/05/25/CIWQ9kywvPXKoJS.jpg" data-thumbnail="https://s2.loli.net/2022/05/25/CIWQ9kywvPXKoJS.jpg" data-sub-html="<h2>模拟范围</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://s2.loli.net/2022/05/25/CIWQ9kywvPXKoJS.jpg"
+      data-srcset="https://s2.loli.net/2022/05/25/CIWQ9kywvPXKoJS.jpg, https://s2.loli.net/2022/05/25/CIWQ9kywvPXKoJS.jpg 1.5x, https://s2.loli.net/2022/05/25/CIWQ9kywvPXKoJS.jpg 2x"
+      data-sizes="auto"
+      alt="https://s2.loli.net/2022/05/25/CIWQ9kywvPXKoJS.jpg" />
+  </a><figcaption class="image-caption">模拟范围</figcaption>
+  </figure></p>
 <p>WRFOut数据以网络通用数据格式<sup id="fnref:26"><a href="#fn:26" class="footnote-ref" role="doc-noteref">26</a></sup>（Network Common Data Form，NetCDF）存储，使用Python编程语言下的netcdf4-python<sup id="fnref:27"><a href="#fn:27" class="footnote-ref" role="doc-noteref">27</a></sup>库读取WRFOut数据。NetCDF格式的数据以变量（variable）为单位进行保存，每个变量都有变量描述、变量单位、变量形状、变量值等多个属性。对于WRF-Chem模拟导出的WRFOut数据，其中包含了时间（Times）、经度（XLONG）、维度（XLAT）等时空间位置描述性变量；X轴风速分量（U），雨水混合率（QRAIN）等气象数据；土壤温度（TSLB）、土壤液态水（SH2O）等地理数据；$SO_{2}$混合比（so2）、PAN混合比（pan）等污染物浓度数据以及积聚核模人为源芳香烃二次有机气溶胶浓度（orgaro1j）等污染物排放数据共计281个变量。若将变量全部用于神经网络的训练，则模型对内存的要求将大大超出可接受范围，为此，需要从变量中筛选出对大气颗粒物影响较大的变量以减少硬件压力。以变量形状、变量值以及变量描述为依据，最终选出30个变量作为神经网络训练的输入变量，详见下表。</p>
 <table>
 <thead>
@@ -489,14 +491,16 @@ S(i,j)=(I \ast K)(i,j)=\sum_{m=0}^{k_m} \sum_{n=0}^{k_n} I(i+m,j+n)K(m,n)
 $$
 其中，$K$被称为卷积核（Convolution Kernel），是需要通过模型优化进行学习的矩阵参数。$k_m$和$k_n$定义了2维矩阵$K$的形状，是一种称为卷积核大小（Kernel Size）的超参数（Hyperparameter）。超参数指的是在机器学习中，在模型优化前需要人为指定的参数。</p>
 <p>2维矩阵卷积计算过程如下图所示：</p>
-<p><img
-    class="lazyload"
-    src="/svg/loading.min.svg"
-    data-src="https://s2.loli.net/2022/05/25/zKmkeEou7InfBrM.png"
-    data-srcset="https://s2.loli.net/2022/05/25/zKmkeEou7InfBrM.png, https://s2.loli.net/2022/05/25/zKmkeEou7InfBrM.png 1.5x, https://s2.loli.net/2022/05/25/zKmkeEou7InfBrM.png 2x"
-    data-sizes="auto"
-    alt="https://s2.loli.net/2022/05/25/zKmkeEou7InfBrM.png"
-    title="https://s2.loli.net/2022/05/25/zKmkeEou7InfBrM.png" /></p>
+<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/zKmkeEou7InfBrM.png" title="https://s2.loli.net/2022/05/25/zKmkeEou7InfBrM.png" data-thumbnail="https://s2.loli.net/2022/05/25/zKmkeEou7InfBrM.png" data-sub-html="<h2>二维卷积计算过程</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://s2.loli.net/2022/05/25/zKmkeEou7InfBrM.png"
+      data-srcset="https://s2.loli.net/2022/05/25/zKmkeEou7InfBrM.png, https://s2.loli.net/2022/05/25/zKmkeEou7InfBrM.png 1.5x, https://s2.loli.net/2022/05/25/zKmkeEou7InfBrM.png 2x"
+      data-sizes="auto"
+      alt="https://s2.loli.net/2022/05/25/zKmkeEou7InfBrM.png" />
+  </a><figcaption class="image-caption">二维卷积计算过程</figcaption>
+  </figure></p>
 <p>该图表示了当2维矩阵$I$的大小为3$\times$3，$k_m$和$k_n$均为2时，卷积运算的步骤与结果。可以注意到，在卷积层中，参数的数量仅仅与卷积核大小，即$k_m$和$k_n$的值有关。采用较小的卷积核，会导致神经网络参数量下降，难以学习复杂的表示，而采用较大的卷积核，则会增加计算量，增加硬件负担。因此，采用卷积神经网络架构时，卷积核大小是一个非常重要的参数。</p>
 <p>为了在时空间序列预测问题上使用卷积架构，需要考虑输入矩阵和输出矩阵大小的问题。注意到在经过2$\times$2卷积核$K$的卷积计算后，输入2维矩阵的大小从3$\times$3降为了输出2维矩阵的大小2$\times$2，即，卷积计算会减少矩阵的大小，但是在时空间序列预测问题上，期望得到的预测$\mathcal{X}$的大小应当与输入矩阵的大小相同。为了解决这个问题，这里引入填充（Padding）操作。填充操作通过在输入矩阵的周围填充数据，可以使输入矩阵的大小和输出矩阵的大小保持一致，一般选择填入的数据为0。以大小为3$\times$3的输入矩阵为例，在输入矩阵四周分别填充一行0后，输入矩阵的大小变为5$\times$5，经2$\times$2的卷积核卷积计算后，输出矩阵的大小为3$\times$3，保证了卷积前后输入输出矩阵的大小一致。</p>
 <p>另外一个需要考虑的问题是输入输出维度的问题。时空间序列预测模型的期望输入和输出矩阵为3维矩阵，需要对2维卷积运算进行扩展：
@@ -515,14 +519,16 @@ $$
 y_{t} = f(h_{t};\theta_{f})
 $$
 其中，$f$和$\theta_{f}$同样表示某种网络架构及其参数。因此，循环神经网络的计算过程可以由下图表示：</p>
-<p><img
-    class="lazyload"
-    src="/svg/loading.min.svg"
-    data-src="https://s2.loli.net/2022/05/25/qUsdSOr196CJfch.png"
-    data-srcset="https://s2.loli.net/2022/05/25/qUsdSOr196CJfch.png, https://s2.loli.net/2022/05/25/qUsdSOr196CJfch.png 1.5x, https://s2.loli.net/2022/05/25/qUsdSOr196CJfch.png 2x"
-    data-sizes="auto"
-    alt="https://s2.loli.net/2022/05/25/qUsdSOr196CJfch.png"
-    title="https://s2.loli.net/2022/05/25/qUsdSOr196CJfch.png" /></p>
+<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/qUsdSOr196CJfch.png" title="https://s2.loli.net/2022/05/25/qUsdSOr196CJfch.png" data-thumbnail="https://s2.loli.net/2022/05/25/qUsdSOr196CJfch.png" data-sub-html="<h2>循环神经网络计算过程</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://s2.loli.net/2022/05/25/qUsdSOr196CJfch.png"
+      data-srcset="https://s2.loli.net/2022/05/25/qUsdSOr196CJfch.png, https://s2.loli.net/2022/05/25/qUsdSOr196CJfch.png 1.5x, https://s2.loli.net/2022/05/25/qUsdSOr196CJfch.png 2x"
+      data-sizes="auto"
+      alt="https://s2.loli.net/2022/05/25/qUsdSOr196CJfch.png" />
+  </a><figcaption class="image-caption">循环神经网络计算过程</figcaption>
+  </figure></p>
 <p>虽然在理论上，循环神经网络引入隐状态的设计可以捕获过去的信息用于与当前输入进行融合以获得当前输出，但事实上，正是因为这种设计，导致了RNN的梯度消失（Vanishing Gradient）问题<sup id="fnref:30"><a href="#fn:30" class="footnote-ref" role="doc-noteref">30</a></sup>，简单来说，梯度消失会导致神经网络难以被优化/解决这一问题最早的方法之一是1997年Hochreiter等人提出的长短期记忆模型。与一般的循环神经网络相比，除了隐状态外LSTM又额外引入了记忆元（Memory Cell），或称单元（Cell）作为状态变量用于记录附加的信息。为了控制记忆元，需要3个称为门（Gate）的组件，这三个门分别是：用于决定何时将数据读入单元的输入门（Input Gate）、从单元中输出数据的输出门（Output Gate）以及用来重置单元的遗忘门（Forget Gate）来管理。</p>
 <p>以$t$时刻某一维向量$X_{t} \in R^{1 \times d}$和前一时刻的隐状态$H_{t-1} \in R^{1 \times h}$作为输入为例，对于长短期记忆单元的计算过程，首先需要计算输入门、输出门和遗忘门，计算过程如下：
 $$
@@ -548,40 +554,46 @@ $$
 Tanh(x) = \frac{e^{x} - e^{-x}}{e^{x}+e^{-x}}
 $$
 双曲正切函数可以将一个实数映射到$(-1,1)$的区间范围内，因此候选记忆元的值在$(-1,1)$之间。LSTM中输入门、输出门、遗忘门和候选记忆元的计算过程如下图所示：</p>
-<p><img
-    class="lazyload"
-    src="/svg/loading.min.svg"
-    data-src="https://s2.loli.net/2022/05/25/a7OiKMhjNTJ6xoS.png"
-    data-srcset="https://s2.loli.net/2022/05/25/a7OiKMhjNTJ6xoS.png, https://s2.loli.net/2022/05/25/a7OiKMhjNTJ6xoS.png 1.5x, https://s2.loli.net/2022/05/25/a7OiKMhjNTJ6xoS.png 2x"
-    data-sizes="auto"
-    alt="https://s2.loli.net/2022/05/25/a7OiKMhjNTJ6xoS.png"
-    title="https://s2.loli.net/2022/05/25/a7OiKMhjNTJ6xoS.png" /></p>
+<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/a7OiKMhjNTJ6xoS.png" title="https://s2.loli.net/2022/05/25/a7OiKMhjNTJ6xoS.png" data-thumbnail="https://s2.loli.net/2022/05/25/a7OiKMhjNTJ6xoS.png" data-sub-html="<h2>LSTM计算过程第一步</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://s2.loli.net/2022/05/25/a7OiKMhjNTJ6xoS.png"
+      data-srcset="https://s2.loli.net/2022/05/25/a7OiKMhjNTJ6xoS.png, https://s2.loli.net/2022/05/25/a7OiKMhjNTJ6xoS.png 1.5x, https://s2.loli.net/2022/05/25/a7OiKMhjNTJ6xoS.png 2x"
+      data-sizes="auto"
+      alt="https://s2.loli.net/2022/05/25/a7OiKMhjNTJ6xoS.png" />
+  </a><figcaption class="image-caption">LSTM计算过程第一步</figcaption>
+  </figure></p>
 <p>在LSTM中，输入门用于控制记忆元$C_{t} \in R^{1 \times h}$中有多少数据来自于候选记忆$\tilde{C_{t}}$中的新数据，而遗忘门用于控制上个时刻的记忆元$C_{t-1}$中的数据有多少会被丢弃。因此记忆元由下列公式给出：
 $$
 C_{t} = F_{t} \odot C_{t-1} + I_{t} \odot \tilde{C_{t}}
 $$
 式中的$\odot$表示哈达玛积（Hadamard Product），即矩阵对应位置相乘。记忆元的计算过程如下图所示：</p>
-<p><img
-    class="lazyload"
-    src="/svg/loading.min.svg"
-    data-src="https://s2.loli.net/2022/05/25/EnOjX718r3McvLH.png"
-    data-srcset="https://s2.loli.net/2022/05/25/EnOjX718r3McvLH.png, https://s2.loli.net/2022/05/25/EnOjX718r3McvLH.png 1.5x, https://s2.loli.net/2022/05/25/EnOjX718r3McvLH.png 2x"
-    data-sizes="auto"
-    alt="https://s2.loli.net/2022/05/25/EnOjX718r3McvLH.png"
-    title="https://s2.loli.net/2022/05/25/EnOjX718r3McvLH.png" /></p>
+<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/EnOjX718r3McvLH.png" title="https://s2.loli.net/2022/05/25/EnOjX718r3McvLH.png" data-thumbnail="https://s2.loli.net/2022/05/25/EnOjX718r3McvLH.png" data-sub-html="<h2>LTSM计算过程第二步</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://s2.loli.net/2022/05/25/EnOjX718r3McvLH.png"
+      data-srcset="https://s2.loli.net/2022/05/25/EnOjX718r3McvLH.png, https://s2.loli.net/2022/05/25/EnOjX718r3McvLH.png 1.5x, https://s2.loli.net/2022/05/25/EnOjX718r3McvLH.png 2x"
+      data-sizes="auto"
+      alt="https://s2.loli.net/2022/05/25/EnOjX718r3McvLH.png" />
+  </a><figcaption class="image-caption">LTSM计算过程第二步</figcaption>
+  </figure></p>
 <p>最后，LSTM会读取当前记忆元$C_{t}$，并通过输出门来计算当前隐状态$H_{t}$。隐状态的计算由下式给出：
 $$
 H_{t} = O_{t} \odot Tanh(C_{t})
 $$
 在计算$H_{t}$前，先将$C_{t}$送入双曲正切函数，确保$H_{t}$的值始终在区间$(-1,1)$之间。计算过程如下：</p>
-<p><img
-    class="lazyload"
-    src="/svg/loading.min.svg"
-    data-src="https://s2.loli.net/2022/05/25/UZV6dATFgs7Ln9K.png"
-    data-srcset="https://s2.loli.net/2022/05/25/UZV6dATFgs7Ln9K.png, https://s2.loli.net/2022/05/25/UZV6dATFgs7Ln9K.png 1.5x, https://s2.loli.net/2022/05/25/UZV6dATFgs7Ln9K.png 2x"
-    data-sizes="auto"
-    alt="https://s2.loli.net/2022/05/25/UZV6dATFgs7Ln9K.png"
-    title="https://s2.loli.net/2022/05/25/UZV6dATFgs7Ln9K.png" /></p>
+<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/UZV6dATFgs7Ln9K.png" title="https://s2.loli.net/2022/05/25/UZV6dATFgs7Ln9K.png" data-thumbnail="https://s2.loli.net/2022/05/25/UZV6dATFgs7Ln9K.png" data-sub-html="<h2>LSTM计算过程第三步</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://s2.loli.net/2022/05/25/UZV6dATFgs7Ln9K.png"
+      data-srcset="https://s2.loli.net/2022/05/25/UZV6dATFgs7Ln9K.png, https://s2.loli.net/2022/05/25/UZV6dATFgs7Ln9K.png 1.5x, https://s2.loli.net/2022/05/25/UZV6dATFgs7Ln9K.png 2x"
+      data-sizes="auto"
+      alt="https://s2.loli.net/2022/05/25/UZV6dATFgs7Ln9K.png" />
+  </a><figcaption class="image-caption">LSTM计算过程第三步</figcaption>
+  </figure></p>
 <p>长短期记忆模型通过引入记忆元以及门的概念，使模型能够控制隐状态的更新，有效解决了RNN模型优化中的梯度消失问题。在LSTM提出的门控思想启发下，2014年，Kyunghyun Cho等人提出了门控循环单元<sup id="fnref:31"><a href="#fn:31" class="footnote-ref" role="doc-noteref">31</a></sup>（Gated Recurrent Unit，GRU）。与LSTM相比，GRU提供了相同的效果，并且计算速度明显更快<sup id="fnref:32"><a href="#fn:32" class="footnote-ref" role="doc-noteref">32</a></sup>。</p>
 <p>与 LSTM相似，GRU引入了重置门（Reset Gate）以及更新门（Update Gate）来控制隐状态的更新。以$t$时刻某一维向量$X_{t}$和前一时刻的隐状态$H_{t-1}$作为输入为例，重置门及更新门计算的数学表达式如下：
 $$
@@ -599,14 +611,16 @@ $$
 H_{t} = U_{t} \odot H_{t-1} + (1 - U_{t}) \odot \tilde{H_{t}}
 $$
 当更新门接近于1时，隐状态倾向于保留过去的状态，而当更新门接近于0时，隐状态倾向于接受当前时刻的信息。GRU计算流程图如下所示：</p>
-<p><img
-    class="lazyload"
-    src="/svg/loading.min.svg"
-    data-src="https://s2.loli.net/2022/05/25/kyRSjGn42eu1Zq9.png"
-    data-srcset="https://s2.loli.net/2022/05/25/kyRSjGn42eu1Zq9.png, https://s2.loli.net/2022/05/25/kyRSjGn42eu1Zq9.png 1.5x, https://s2.loli.net/2022/05/25/kyRSjGn42eu1Zq9.png 2x"
-    data-sizes="auto"
-    alt="https://s2.loli.net/2022/05/25/kyRSjGn42eu1Zq9.png"
-    title="https://s2.loli.net/2022/05/25/kyRSjGn42eu1Zq9.png" /></p>
+<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/kyRSjGn42eu1Zq9.png" title="https://s2.loli.net/2022/05/25/kyRSjGn42eu1Zq9.png" data-thumbnail="https://s2.loli.net/2022/05/25/kyRSjGn42eu1Zq9.png" data-sub-html="<h2>GRU计算过程</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://s2.loli.net/2022/05/25/kyRSjGn42eu1Zq9.png"
+      data-srcset="https://s2.loli.net/2022/05/25/kyRSjGn42eu1Zq9.png, https://s2.loli.net/2022/05/25/kyRSjGn42eu1Zq9.png 1.5x, https://s2.loli.net/2022/05/25/kyRSjGn42eu1Zq9.png 2x"
+      data-sizes="auto"
+      alt="https://s2.loli.net/2022/05/25/kyRSjGn42eu1Zq9.png" />
+  </a><figcaption class="image-caption">GRU计算过程</figcaption>
+  </figure></p>
 <p>可以看出，与LSTM相比，GRU大大简化了计算的流程，在解决梯度消失问题的同时提高了运算速度，减少了内存占用。</p>
 <h5 id="conv-gru模型">Conv-GRU模型</h5>
 <p>卷积神经网络和循环神经网络各有所长，卷积神经网络适合于处理网格数据，而循环神经网络适合处理时间序列数据，但是对于需要处理时空间序列的时空间序列预测问题，两种架构都不能直接使用。将卷积神经网络和长短期记忆网络融合在一起的卷积长短期记忆网络就是针对处理时空间序列数据而设计的神经网络架构。简单来说，就是将长短期记忆网络中的矩阵乘法运算替换为卷积运算，使得长短期记忆神经网络可以处理网格数据。Conv-LSTM的数学表达式如下：</p>
@@ -640,14 +654,16 @@ H_{t} = U_{t} \odot H_{t-1} + (1 - U_{t}) \odot \tilde{H_{t}}
 $$
 Conv-GRU继承了GRU的优点，相较于Conv-LSTM，Conv-GRU运算速度更快，内存占用更小。</p>
 <p>综上所述，本研究主要采用Conv-GRU建立大气颗粒物污染扩散模拟模型。为了提高模型的表达能力，便于在数据中学习到更为复杂的非线性关系，本研究将相同的Conv-GRU块堆叠3次，作为模型的主干。每次重叠意味着上一个Conv-GRU块的输出作为下一个Conv-GRU块的输入。在最后一个Conv-GRU块给出当前的隐状态$H_{t}$后，需要经过解码器（Decoder）计算才能得到当前的输出$Y_{t}$，即对下一时刻系统状态$\tilde{\mathcal{X_{t+1}}}$的预测。解码器本身相当于一个卷积层，其计算过程如下：首先将$t$时刻系统状态$\mathcal{X_{t}} \in R^{L \times M \times N}$和隐状态$H_{t} \in R^{h \times M \times N}$在第一个维度上进行拼接得到解码器的输入$D_{t} \in R^{(L+h) \times M \times N}$，然后将$D_{t}$与卷积核进行卷积运算，得到最终的输出。本研究构建的模型总览图如下：</p>
-<p><img
-    class="lazyload"
-    src="/svg/loading.min.svg"
-    data-src="https://s2.loli.net/2022/05/25/rYz7decEGIg2oLa.png"
-    data-srcset="https://s2.loli.net/2022/05/25/rYz7decEGIg2oLa.png, https://s2.loli.net/2022/05/25/rYz7decEGIg2oLa.png 1.5x, https://s2.loli.net/2022/05/25/rYz7decEGIg2oLa.png 2x"
-    data-sizes="auto"
-    alt="https://s2.loli.net/2022/05/25/rYz7decEGIg2oLa.png"
-    title="https://s2.loli.net/2022/05/25/rYz7decEGIg2oLa.png" /></p>
+<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/rYz7decEGIg2oLa.png" title="https://s2.loli.net/2022/05/25/rYz7decEGIg2oLa.png" data-thumbnail="https://s2.loli.net/2022/05/25/rYz7decEGIg2oLa.png" data-sub-html="<h2>模型架构</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://s2.loli.net/2022/05/25/rYz7decEGIg2oLa.png"
+      data-srcset="https://s2.loli.net/2022/05/25/rYz7decEGIg2oLa.png, https://s2.loli.net/2022/05/25/rYz7decEGIg2oLa.png 1.5x, https://s2.loli.net/2022/05/25/rYz7decEGIg2oLa.png 2x"
+      data-sizes="auto"
+      alt="https://s2.loli.net/2022/05/25/rYz7decEGIg2oLa.png" />
+  </a><figcaption class="image-caption">模型架构</figcaption>
+  </figure></p>
 <p>解码器的构建借鉴了残差连接<sup id="fnref:34"><a href="#fn:34" class="footnote-ref" role="doc-noteref">34</a></sup>（Residual Connection）的思想。残差连接由Kaiming He等人于2016年提出，通过引入残差连接，可以缓解梯度消失等问题，使模型更容易被优化。同时，为了在相同条件下比较Conv-GRU与Conv-LSTM的效果，本研究同样构建了基于Conv-LSTM的大气颗粒物污染扩散模拟模型。该模型与基于Conv-GRU的模型相比，仅仅将所有的Conv-GRU块替换为了Conv-LSTM块，以保证其他条件不变。</p>
 <h4 id="模型优化">模型优化</h4>
 <h5 id="代价函数">代价函数</h5>
@@ -657,14 +673,16 @@ L(\tilde{\mathcal{X}},\hat{\mathcal{X}}) = \frac{1}{L \times M \times N} \sum_{l
 $$</p>
 <h5 id="样本划分">样本划分</h5>
 <p>序列数据是连续的，因此需要引入RNN处理序列数据。但是在实际模型优化的过程中，序列极长导致硬件无法一次加载整个序列。因此在模型优化前需要将序列数据划分为多个样本，在优化时以样本为单位训练神经网络。划分序列时，一般按照固定长度划分，这个长度被称为时间步数（Numer of Steps）。样本划分的方式如下图所示：</p>
-<p><img
-    class="lazyload"
-    src="/svg/loading.min.svg"
-    data-src="https://s2.loli.net/2022/05/25/k7VaXpQEBsovjhO.png"
-    data-srcset="https://s2.loli.net/2022/05/25/k7VaXpQEBsovjhO.png, https://s2.loli.net/2022/05/25/k7VaXpQEBsovjhO.png 1.5x, https://s2.loli.net/2022/05/25/k7VaXpQEBsovjhO.png 2x"
-    data-sizes="auto"
-    alt="https://s2.loli.net/2022/05/25/k7VaXpQEBsovjhO.png"
-    title="https://s2.loli.net/2022/05/25/k7VaXpQEBsovjhO.png" /></p>
+<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/k7VaXpQEBsovjhO.png" title="样本划分" data-thumbnail="https://s2.loli.net/2022/05/25/k7VaXpQEBsovjhO.png" data-sub-html="<h2>样本划分</h2><p>样本划分</p>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://s2.loli.net/2022/05/25/k7VaXpQEBsovjhO.png"
+      data-srcset="https://s2.loli.net/2022/05/25/k7VaXpQEBsovjhO.png, https://s2.loli.net/2022/05/25/k7VaXpQEBsovjhO.png 1.5x, https://s2.loli.net/2022/05/25/k7VaXpQEBsovjhO.png 2x"
+      data-sizes="auto"
+      alt="https://s2.loli.net/2022/05/25/k7VaXpQEBsovjhO.png" />
+  </a><figcaption class="image-caption">样本划分</figcaption>
+  </figure></p>
 <p>该图展示了时间步数为5时的一个样本。其中蓝框内的5个时刻对应的系统状态将会依次送入模型中以计算隐状态，而当最后一个时刻的系统状态送入模型后，将会给出模型对下一个时刻的系统状态的预测。因此，为了计算损失值，还需要将红框中下一个时刻的系统状态送入损失函数以对模型进行优化。因此，当时间步数为5时，一个样本包含6个时刻的系统状态。</p>
 <h5 id="优化算法">优化算法</h5>
 <p>机器学习一般通过梯度下降（Gradient Descent）的方式来不断减小损失值达到优化模型的目的。梯度下降算法通过一次性计算全部样本的损失来优化模型，但是在数据规模大幅增长的深度学习领域，这种计算方式对硬件内存有着极高的要求。为此，几乎所有的深度学习算法都采用了梯度下降的扩展算法：随机梯度下降（Stochastic Gradient Descent，SGD）对模型进行优化。具体而言，在随机梯度下降的每一步，算法都会从训练集中抽出一小批量（Minibatch）的样本对模型进行优化。这个小批量中样本的数量称为批量大小（Batch Size）。一般而言，较小的批量大小会导致模型难以优化，而较大的批量大小又会导致硬件压力过大，因此，选择一个合适的批量大小是非常重要的。</p>
@@ -759,34 +777,40 @@ $$</p>
 </tbody>
 </table>
 <p>模型优化过程中，模型在训练集和测试集的均方差如下图：</p>
-<p><img
-    class="lazyload"
-    src="/svg/loading.min.svg"
-    data-src="https://s2.loli.net/2022/05/25/sZHpgF92zRTclS3.png"
-    data-srcset="https://s2.loli.net/2022/05/25/sZHpgF92zRTclS3.png, https://s2.loli.net/2022/05/25/sZHpgF92zRTclS3.png 1.5x, https://s2.loli.net/2022/05/25/sZHpgF92zRTclS3.png 2x"
-    data-sizes="auto"
-    alt="https://s2.loli.net/2022/05/25/sZHpgF92zRTclS3.png"
-    title="https://s2.loli.net/2022/05/25/sZHpgF92zRTclS3.png" /></p>
+<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/sZHpgF92zRTclS3.png" title="实验结果1" data-thumbnail="https://s2.loli.net/2022/05/25/sZHpgF92zRTclS3.png" data-sub-html="<h2>实验结果1</h2><p>实验结果1</p>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://s2.loli.net/2022/05/25/sZHpgF92zRTclS3.png"
+      data-srcset="https://s2.loli.net/2022/05/25/sZHpgF92zRTclS3.png, https://s2.loli.net/2022/05/25/sZHpgF92zRTclS3.png 1.5x, https://s2.loli.net/2022/05/25/sZHpgF92zRTclS3.png 2x"
+      data-sizes="auto"
+      alt="https://s2.loli.net/2022/05/25/sZHpgF92zRTclS3.png" />
+  </a><figcaption class="image-caption">实验结果1</figcaption>
+  </figure></p>
 <p>如图所示，在第60轮（Epoch）优化时，模型测试集均方差达到最小值30.047，而经200轮优化后，模型训练集均方差达到6.082。可以看出，模型在训练过程中，测试集上的均方差不断减小，训练集上的均方差则先减小后增大，两者之间的差距越来越大，这个差距便被称为泛化差距。</p>
 <p>将模型替换为Conv-LSTM模型后，模型优化过程中模型在训练集和测试集的均方差如下图：</p>
-<p><img
-    class="lazyload"
-    src="/svg/loading.min.svg"
-    data-src="https://s2.loli.net/2022/05/25/WoyCpnLGu6lJe3N.png"
-    data-srcset="https://s2.loli.net/2022/05/25/WoyCpnLGu6lJe3N.png, https://s2.loli.net/2022/05/25/WoyCpnLGu6lJe3N.png 1.5x, https://s2.loli.net/2022/05/25/WoyCpnLGu6lJe3N.png 2x"
-    data-sizes="auto"
-    alt="https://s2.loli.net/2022/05/25/WoyCpnLGu6lJe3N.png"
-    title="https://s2.loli.net/2022/05/25/WoyCpnLGu6lJe3N.png" /></p>
+<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/WoyCpnLGu6lJe3N.png" title="https://s2.loli.net/2022/05/25/WoyCpnLGu6lJe3N.png" data-thumbnail="https://s2.loli.net/2022/05/25/WoyCpnLGu6lJe3N.png" data-sub-html="<h2>实验结果2</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://s2.loli.net/2022/05/25/WoyCpnLGu6lJe3N.png"
+      data-srcset="https://s2.loli.net/2022/05/25/WoyCpnLGu6lJe3N.png, https://s2.loli.net/2022/05/25/WoyCpnLGu6lJe3N.png 1.5x, https://s2.loli.net/2022/05/25/WoyCpnLGu6lJe3N.png 2x"
+      data-sizes="auto"
+      alt="https://s2.loli.net/2022/05/25/WoyCpnLGu6lJe3N.png" />
+  </a><figcaption class="image-caption">实验结果2</figcaption>
+  </figure></p>
 <p>在第50轮优化时，Conv-LSTM模型在测试集上的均方差达到最小值35.154，明显劣于Conv-GRU模型，性能较差同时，Conv-LSTM的优化时间和内存消耗也不及Conv-GRU模型。Conv-GRU模型的优化速度可以达到每秒3.428个样本，并且模型参数仅有6594KB，与之相比，Conv-LSTM模型的优化速度仅有每秒3.063个样本，并且模型参数达到了8778KB。并且可以看出，与Conv-GRU模型相比，Conv-LSTM模型的泛化差距始终较大，模型泛化能力较差。</p>
 <p>以同样的超参数，$PM_{2.5}$预测模型在模型优化过程中，模型在训练集和测试集上的均方差变化如下图：</p>
-<p><img
-    class="lazyload"
-    src="/svg/loading.min.svg"
-    data-src="https://s2.loli.net/2022/05/25/e3DmCo1xt7gVGnH.png"
-    data-srcset="https://s2.loli.net/2022/05/25/e3DmCo1xt7gVGnH.png, https://s2.loli.net/2022/05/25/e3DmCo1xt7gVGnH.png 1.5x, https://s2.loli.net/2022/05/25/e3DmCo1xt7gVGnH.png 2x"
-    data-sizes="auto"
-    alt="https://s2.loli.net/2022/05/25/e3DmCo1xt7gVGnH.png"
-    title="https://s2.loli.net/2022/05/25/e3DmCo1xt7gVGnH.png" /></p>
+<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/e3DmCo1xt7gVGnH.png" title="https://s2.loli.net/2022/05/25/e3DmCo1xt7gVGnH.png" data-thumbnail="https://s2.loli.net/2022/05/25/e3DmCo1xt7gVGnH.png" data-sub-html="<h2>实验结果3</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://s2.loli.net/2022/05/25/e3DmCo1xt7gVGnH.png"
+      data-srcset="https://s2.loli.net/2022/05/25/e3DmCo1xt7gVGnH.png, https://s2.loli.net/2022/05/25/e3DmCo1xt7gVGnH.png 1.5x, https://s2.loli.net/2022/05/25/e3DmCo1xt7gVGnH.png 2x"
+      data-sizes="auto"
+      alt="https://s2.loli.net/2022/05/25/e3DmCo1xt7gVGnH.png" />
+  </a><figcaption class="image-caption">实验结果3</figcaption>
+  </figure></p>
 <p>在第120轮优化时，模型测试集均方差达到最小值24.083，经200轮优化后，模型训练集均方差达到4.061。与$PM_{10}$相比，$PM_{2.5}$模型的均方差明显更小，这是由大气中$PM_{2.5}$浓度小于$PM_{10}$导致的。</p>
 <h3 id="误差分析">误差分析</h3>
 <p>以WRF-Chem的输出为基准，神经网络预测产生误差的原因主要有以下2个方面：</p>
