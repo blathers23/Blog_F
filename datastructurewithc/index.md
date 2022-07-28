@@ -14,7 +14,7 @@
 
 ---
 
-#### [LC50 Pow(x, n)](https://leetcode.cn/problems/powx-n/)
+#### [LC 50. Pow(x, n)](https://leetcode.cn/problems/powx-n/)
 
 一个比较笨的写法，但是思想上是没有什么大问题的：
 
@@ -77,7 +77,7 @@ double myPow(double x, int n) {
 
 {{</admonition>}}
 
-#### [剑指 Offer 65](https://leetcode.cn/problems/bu-yong-jia-jian-cheng-chu-zuo-jia-fa-lcof/)
+#### [剑指 Offer 65. 不用加减乘除做加法](https://leetcode.cn/problems/bu-yong-jia-jian-cheng-chu-zuo-jia-fa-lcof/)
 
 代码：
 
@@ -205,7 +205,7 @@ int findKthLargest(int* nums, int numsSize, int k){
 
 归并排序表现不佳，用时12ms。
 
-C语言内置函数qsort可以快速排序列表，声明如下：
+C语言内置函数**qsort**可以快速排序列表，声明如下：
 
 ```C
 void qsort(void *base, size_t nitems, size_t size, int (*compar)(const void *, const void*))
@@ -233,43 +233,415 @@ int findKthLargest(int* nums, int numsSize, int k){
 
 耗时为8ms。仍有提升空间。
 
-#### 计算右侧小于当前元素的个数
+堆排序解法：
 
-#### 翻转对
+```C
+void maxHeapify(int* a, int i, int heapSize) {
+    int l = i * 2 + 1, r = i * 2 + 2, largest = i;
+    if (l < heapSize && a[l] > a[largest]) {
+        largest = l;
+    } 
+    if (r < heapSize && a[r] > a[largest]) {
+        largest = r;
+    }
+    if (largest != i) {
+        int t = a[i];
+        a[i] = a[largest], a[largest] = t;
+        maxHeapify(a, largest, heapSize);
+    }
+}
 
-#### 最大子序和
+void buildMaxHeap(int* a, int heapSize) {
+    for (int i = heapSize / 2; i >= 0; --i) {
+        maxHeapify(a, i, heapSize);
+    }
+}
 
-#### 合并两个有序数组
+int findKthLargest(int* nums, int numsSize, int k) {
+    int heapSize = numsSize;
+    buildMaxHeap(nums, heapSize);
+    for (int i = numsSize - 1; i >= numsSize - k + 1; --i) {
+        int t = nums[0];
+        nums[0] = nums[i], nums[i] = t;
+        --heapSize;
+        maxHeapify(nums, 0, heapSize);
+    }
+    return nums[0];
+}
+```
 
-#### 反转链表
+耗时为0ms。
 
-#### 移除链表元素
+手写快速排序解法：
 
-#### 两两交换链表中的节点
+```C
+inline int partition(int* a, int l, int r) {
+    int x = a[r], i = l - 1;
+    for (int j = l; j < r; ++j) {
+        if (a[j] <= x) {
+            int temp = a[++i];
+            a[i] = a[j];
+            a[j] = temp;
+        }
+    }
+    int temp = a[i + 1];
+    a[i + 1] = a[r];
+    a[r] = temp;
+    return i + 1;
+}
 
-#### 重排链表
+inline int randomPartition(int* a, int l, int r) {
+    int i = rand() % (r - l + 1) + l;
+    int temp = a[i];
+    a[i] = a[r];
+    a[r] = temp;
+    return partition(a, l, r);
+}
 
-#### 反转链表II
+int quickSelect(int* a, int l, int r, int index) {
+    int q = randomPartition(a, l, r);
+    if (q == index) {
+        return a[q];
+    } else {
+        return q < index ? quickSelect(a, q + 1, r, index)
+            			 : quickSelect(a, l, q - 1, index);
+    }
+}
 
-#### 从前序与中序遍历序列构造
+int findKthLargest(int* nums, int numsSize, int k) {
+    srand(time(0));		// 初始化随机种子
+    return quickSelect(nums, 0, numsSize - 1, numsSize - k);
+}
+```
 
-#### 从中序与后序遍历序列构造
+耗时为4ms。
 
-#### 将有序数组转换为二叉搜索树
+#### [LC 315. 计算右侧小于当前元素的个数](https://leetcode.cn/problems/count-of-smaller-numbers-after-self/)
 
-#### 验证二叉搜索树
+思路：
 
-#### 二叉树的最大深度
+- 倒置输入整数数组名为I，新建排序数组名为S和结果数组R。进入循环。
+	- 若输入数组I被取尽，则退出循环
+	- 每次循环从输入数组I中取出一个数
+	- 使用二分查找查询应当插入S的位置，插入的位置即为右侧小于当前元素的个数，保存至R。
+	- 将数字插入S。
+- 返回R。
 
-#### 平衡二叉树
+这样可以控制时间复杂度在$\mathcal{O}(nlogn)$。
 
-#### 二叉树中的最大路径和
+代码：
 
-#### 二叉树的右视图
+```C
+int binarySearch(int* nums, int l, int r, int target) {
+    if (l < r) {
+        int m = (l + r) / 2;
+        if (nums[m] == target) {
+            while(nums[m - 1] == target && m > l){
+                m -= 1;
+            }
+            return m;
+        } else if (nums[m] > target) {
+            return binarySearch(nums, l, m, target);
+        } else {
+            return binarySearch(nums, m + 1, r, target);
+        }
+    } else {
+        return l;
+    }
+}
 
-#### 正则表达式匹配
+int insert(int* nums, int l, int index) {
+    int i, num = nums[l];
+    for (i = l; i < l + index; i++) {
+        nums[i] = nums[i + 1];
+    };
+    nums[i] = num;
+    return 0;
+}
 
-#### 外观数列
+int* countSmaller(int* nums, int numsSize, int* returnSize){
+    int* res = malloc(sizeof(int) * numsSize), index;
+    *returnSize = numsSize;
+    res[numsSize - 1] = 0;
+
+    for (int i = numsSize - 1; i > 0; i--) {
+        if (i != numsSize - 1 && nums[i] == nums[i + 1]) {
+            index = res[i];
+        } else {
+            index = binarySearch(nums, i, numsSize, nums[i - 1]);
+        }
+        insert(nums, i - 1, index - i);
+        res[i - 1] = index - i;
+    } 
+
+    // for (int i = 0; i < numsSize; i++) {
+    //     printf("%d,", nums[i]);
+    // }
+
+    return res;
+}
+```
+
+理论上应该是可以的，但是顶不住常数大。最后TLE，麻了。
+
+**题太难先摸了罢。**
+
+#### [LC 493. 翻转对](https://leetcode.cn/problems/reverse-pairs/)
+
+Hard润了
+
+#### [LC 53. 最大子数组和](https://leetcode.cn/problems/maximum-subarray/)
+
+代码：
+
+```C
+int maxSubArray(int* nums, int numsSize){
+    int max = nums[0], start = nums[0], cur = nums[0], i = 1;
+
+    while (i < numsSize) {
+        cur += nums[i];
+        if (start < 0 && nums[i] > start) {	// 逐i去掉负贡献数字
+            cur = nums[i];
+            start = nums[i];
+        } else if (cur < start && cur < 1 && i + 1 < numsSize) { // 逐组去掉负贡献数字
+            cur = nums[i + 1];
+            start = nums[i + 1];
+            i += 1;
+        }
+        if (cur > max) {
+            max = cur;
+        }
+        i += 1;
+    }
+    return max;
+}
+```
+
+{{<admonition warning>}}
+
+不知道我是怎么想的😀
+
+{{</admonition>}}
+
+代码简化：
+
+```C
+int maxSubArray(int* nums, int numsSize){
+    int subsum = 0, max = nums[0];
+    for (int i = 0; i < numsSize; i++) {
+        subsum = fmax(subsum + nums[i], nums[i]);
+        max = fmax(max, subsum);
+    }
+    return max;
+}
+```
+
+#### [LC 88. 合并两个有序数组](https://leetcode.cn/problems/merge-sorted-array/)
+
+简单的一道二路归并。代码：
+
+```C
+void merge(int* nums1, int nums1Size, int m, int* nums2, int nums2Size, int n){
+    int* nums0 = malloc(sizeof(int) * m);
+    for (int i = 0; i < m; i++) {
+        nums0[i] = nums1[i];
+    }
+    int i = 0, j = 0;
+
+    while (i < m && j < n) {
+        if (nums0[i] <= nums2[j]) {
+            nums1[i + j] = nums0[i];
+            i += 1;
+        } else {
+            nums1[i + j] = nums2[j];
+            j += 1;
+        }
+    }
+
+    if (i == m) {
+        for (; j < n; j++) {
+            nums1[i + j] = nums2[j];
+        }
+    } else {
+        for (; i < m; i++) {
+            nums1[i + j] = nums0[i];
+        }
+    }
+}
+```
+
+#### [剑指 Offer 24. 反转链表](https://leetcode.cn/problems/fan-zhuan-lian-biao-lcof/)
+
+代码：
+
+```C
+struct ListNode* reverseList(struct ListNode* head) {
+    struct ListNode* prev = NULL;
+    struct ListNode* curr = head;
+    while (curr) {
+        struct ListNode* next = curr -> next;
+        curr -> next = prev;
+        prev = curr;
+        curr = next;
+    }
+    return prev;
+}
+```
+
+递归代码：
+
+```C
+struct ListNode* reverseList(struct ListNode* head) {
+    if (head == NULL || head -> next == NULL) {
+        return head;
+    }
+    struct ListNode* newHead = reverseList(head -> next);
+    head -> next -> next = head;
+    head -> next = NULL;
+    return newHead;
+}
+```
+
+#### [LC 203. 移除链表元素](https://leetcode.cn/problems/remove-linked-list-elements/)
+
+代码：
+
+```C
+struct ListNode* removeElements(struct ListNode* head, int val){
+    struct ListNode* res = malloc(sizeof(struct ListNode));
+    res -> next = head;
+    struct ListNode* curr = res;
+    struct ListNode* next = curr -> next;
+    
+    while(next) {
+        if (next -> val == val) {
+            next = next -> next;
+            curr -> next = next;
+        } else {
+            curr = curr -> next;
+            next = curr -> next;
+        }
+    }
+    return res -> next;
+}
+```
+
+递归代码：
+
+```C
+struct ListNode* removeElements(struct ListNode* head, int val){
+    if (head == NULL) {
+        return head;
+    }
+    
+    head -> next = removeElements(head -> next, val);
+    return head -> val == val ? head -> next : head;
+}
+```
+
+#### [LC 24. 两两交换链表中的节点](https://leetcode.cn/problems/swap-nodes-in-pairs/)
+
+递归代码：
+
+```C
+struct ListNode* swapPairs(struct ListNode* head){
+    if (head == NULL || head -> next == NULL) {
+        return head;
+    }
+
+    struct ListNode* next = head -> next;
+    head -> next = swapPairs(next -> next);
+    next -> next = head;
+    return next;
+}
+```
+
+{{<admonition success>}}
+
+递归也太好用了
+
+{{</admonition>}}
+
+#### [剑指 Offer II 026. 重排链表](https://leetcode.cn/problems/LGjMqU/)
+
+代码：
+
+```C
+struct ListNode* findMid(struct ListNode* head) {
+    struct ListNode* f = head;
+    struct ListNode* s = head;
+    while (f && f -> next) {
+        f = f -> next -> next;
+        s = s -> next;
+    }
+    return s;
+}
+
+struct ListNode* reverseList(struct ListNode* curr) {
+    struct ListNode* next;
+    struct ListNode* prev = NULL;
+
+    while (curr) {
+        next = curr -> next;
+        curr -> next = prev;
+        prev = curr;
+        curr = next;
+    }
+    return prev;
+}
+
+void merge(struct ListNode* l1, struct ListNode* l2) {
+    struct ListNode* l1_next;
+    struct ListNode* l2_next;
+
+    while (l2) {
+        l1_next = l1 -> next;
+        l2_next = l2 -> next;
+
+        l1 -> next = l2;
+        l1 = l1_next;
+
+        l2 -> next = l1; 
+        l2 = l2_next;
+    }
+}
+
+void reorderList(struct ListNode* head){
+    // 寻找中间节点
+    struct ListNode* mid = findMid(head);
+    struct ListNode* l1 = head;
+    struct ListNode* l2 = mid -> next;
+    mid -> next = NULL;
+    // 反转链表
+    l2 = reverseList(l2);
+    // 合并链表
+    merge(l1, l2);
+}
+```
+
+#### [LC 92. 反转链表 II](https://leetcode.cn/problems/reverse-linked-list-ii/)
+
+#### [LC 105. 从前序与中序遍历序列构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
+
+#### [LC 106. 从中序与后序遍历序列构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)
+
+#### [LC 108. 将有序数组转换为二叉搜索树](https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree/)
+
+#### [LC 98. 验证二叉搜索树](https://leetcode.cn/problems/validate-binary-search-tree/)
+
+#### [剑指 Offer 55 - I. 二叉树的深度](https://leetcode.cn/problems/er-cha-shu-de-shen-du-lcof/)
+
+#### [剑指 Offer 55 - II. 平衡二叉树](https://leetcode.cn/problems/ping-heng-er-cha-shu-lcof/)
+
+#### [剑指 Offer 34. 二叉树中和为某一值的路径](https://leetcode.cn/problems/er-cha-shu-zhong-he-wei-mou-yi-zhi-de-lu-jing-lcof/)
+
+#### [剑指 Offer II 046. 二叉树的右侧视图](https://leetcode.cn/problems/WNC0Lk/)
+
+#### [剑指 Offer 19. 正则表达式匹配](https://leetcode.cn/problems/zheng-ze-biao-da-shi-pi-pei-lcof/)
+
+Hard动态规划，开摆。
+
+#### [LC 38. 外观数列](https://leetcode.cn/problems/count-and-say/)
 
 ### 1.2 分治策略
 
@@ -319,14 +691,55 @@ int findKthLargest(int* nums, int numsSize, int k){
 
 ### 2.7 堆排序
 
+代码：
 
+```C
+void maxHeapify(int* nums, int i, int heapSize) {
+    int l = i * 2 + 1, r = i * 2 + 2, largest = i;
+    if (l < heapSize && nums[l] > nums[largest]) {
+        largest = l;
+    }
+    if (r < heapSize && nums[r] > nums[largest]) {
+        largest = r;
+    }
+    if (largest != i) {
+        int temp = nums[i];
+        nums[i] = nums[largest];
+        nums[largest] = temp;
+    }
+}
+
+void buildMaxHeap(int* nums, int heapSize) {
+    for (i = heapSize / 2; i >= 0; --i) {
+        maxHeapify(nums, i, heapSize);
+    }
+}
+
+void Sort(int* nums, int numsSize) {
+    int temp, heapSize = numsSize;
+    for (i = numsSize; i > 0; --i) {
+        temp = nums[0];
+    	nums[0] = nums[temp];
+    	nums[heapSize - 1] = temp;
+    	heapSize -= 1;
+        
+		maxHeapify(nums, 0, heapSize - 1);   
+    }
+}
+```
+
+时间复杂度：$\mathcal{O}(nlogn)$
+
+空间复杂度：递归实现$\mathcal{O}(logn)$、非递归实现$\mathcal{O}(1)$
+
+稳定性：不稳定
 
 ### 2.8 二路归并排序
 
 代码：
 
 ```C
-void mergeSort_(int l, int r, int *nums, int *tmp) {
+void mergeSort(int l, int r, int *nums, int *tmp) {
     if (l >= r) {
         return;
     }
@@ -351,9 +764,9 @@ void mergeSort_(int l, int r, int *nums, int *tmp) {
     }
 }
 
-void mergeSort(int *nums, int numsSize) {
+void Sort(int *nums, int numsSize) {
     int *tmp = malloc(sizeof(int) * numsSize);
-    mergeSort_(0, numsSize - 1, nums, tmp);
+    mergeSort(0, numsSize - 1, nums, tmp);
 }
 ```
 
@@ -365,9 +778,88 @@ void mergeSort(int *nums, int numsSize) {
 
 ### 2.9 基数排序
 
-
-
 ### 2.10 各种内部排序算法的分析和比较
+
+### 2.11 内部排序算法及应用
+
+## 3 查找
+
+### 3.1 查找的基本概念
+
+### 3.2 顺序查找及其性能分析
+
+### 3.3 折半查找及其性能分析
+
+### 3.4 二叉排序树及其性能分析
+
+### 3.5 平衡二叉树定义及其转换方法
+
+### 3.6 B-树及其基本操作、B+树的基本概念
+
+### 3.7 散列（hash）表构造及其查找方法
+
+### 3.8 常用查找算法的分析及应用
+
+## 4 图
+
+### 4.1 图的基本概念和术语
+
+### 4.2 图的存储结构和基本操作
+
+### 4.3 图的遍历
+
+### 4.4 图的基本应用
+
+## 5 树与二叉树
+
+### 5.1 树的概念
+
+### 5.2 二叉树
+
+### 5.3 树、森林
+
+## 6 数组与广义表
+
+### 6.1 多维数组的存储及数组元素的地址计算方法
+
+### 6.2 特殊矩阵（三角矩阵、对称矩阵、多对角矩阵等）的压缩存储方法
+
+### 6.3 稀疏矩阵概念及存储方法
+
+### 6.4 广义表定义及存储方法
+
+## 7 栈、队列
+
+### 7.1 栈和队列的基本概念
+
+### 7.2 栈和队列的顺序存储结构及操作实现
+
+### 7.3 栈和队列的链式存储结构及操作实现
+
+### 7.4 栈和队列的应用及其算法性能分析
+
+## 8 线性表
+
+### 8.1 线性表的定义和基本操作
+
+### 8.2 线性表的实现
+
+## 9 绪论
+
+- 数据结构的基本概念
+- 数据结构的分类
+- 数据类型和抽象数据类型
+- 逻辑结构、物理结构的概念
+- 算法的定义和特性
+- 算法的设计目标
+- 算法的时间、空间复杂度的概念
+- 算法的时间、空间复杂的分析方法
+
+
+
+
+
+
 
  
 
