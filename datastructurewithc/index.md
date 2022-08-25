@@ -388,7 +388,7 @@ int* countSmaller(int* nums, int numsSize, int* returnSize){
 
 #### [LC 493. 翻转对](https://leetcode.cn/problems/reverse-pairs/)
 
-Hard润了
+**Hard题，开摆**
 
 #### [LC 53. 最大子数组和](https://leetcode.cn/problems/maximum-subarray/)
 
@@ -621,27 +621,364 @@ void reorderList(struct ListNode* head){
 
 #### [LC 92. 反转链表 II](https://leetcode.cn/problems/reverse-linked-list-ii/)
 
+第一思路组合拳，先把需要反转的部分拆出，反转后再装回。代码：
+
+```C
+struct ListNode* reverseListNode(struct ListNode* curr) {
+    struct ListNode* next;
+    struct ListNode* prev = NULL;
+
+    while(curr) {
+        next = curr -> next;
+        curr -> next = prev;
+        prev = curr;
+        curr = next;
+    }
+
+    return prev;
+}
+
+struct ListNode* reverseBetween(struct ListNode* head, int left, int right){
+    if (left == right) {
+        return head;
+    }
+
+    struct ListNode *start, *end = head, *prev, *next;
+    for (int i = 1; i < right; i++) {
+        if (i == left - 1) {
+            prev = end;
+        }
+        end = end -> next;
+    }
+    next = end -> next, end -> next = NULL;
+
+    if (left == 1) {
+        start = reverseListNode(head);
+        head = start;
+    } else {
+        start = prev -> next, prev -> next = NULL;
+        start = reverseListNode(start);
+        prev -> next = start;
+    }
+
+    struct ListNode* curr = start;
+    while (curr -> next) {
+        curr = curr -> next;
+    }
+    curr -> next = next;
+
+    return head;
+}
+```
+
+第二思路连续拳，走到需要反转的地方就进行反转。代码：
+
+```C
+struct ListNode* reverseBetween(struct ListNode* head, int left, int right){
+    struct ListNode *dummy = malloc(sizeof(struct ListNode));
+    dummy -> next = head;
+
+    struct ListNode *pre = dummy;
+    int i = 1;
+    for (; i < left; i++) {
+        pre = pre -> next;
+    }
+
+    struct ListNode *cur = pre -> next;
+    struct ListNode *next;
+
+    for (; i < right; i++) {
+        next = cur -> next;
+        cur -> next = next -> next;
+        next -> next = pre -> next;
+        pre -> next = next;
+    }
+
+    return dummy -> next;
+}
+```
+
 #### [LC 105. 从前序与中序遍历序列构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
+
+前闭后闭注意退出条件简单递归即可。
+
+```C
+struct TreeNode* buildSubTree(int* preorder, int prel, int prer, int* inorder, int inl, int inr) {
+    if (prel > prer || inl > inr) {
+        return NULL;
+    }
+
+    struct TreeNode* root = malloc(sizeof(struct TreeNode));
+    root -> val = preorder[prel];
+
+    if (prel < prer) {
+        int NodeSize = 0;
+        for (int i = inl; preorder[prel] != inorder[i]; i++) {
+            NodeSize++;
+        }
+
+        root -> left = buildSubTree(preorder, prel + 1, prel + NodeSize, inorder, inl, inl + NodeSize - 1);
+        root -> right = buildSubTree(preorder, prel + 1 + NodeSize, prer, inorder, inl + 1 + NodeSize, inr);
+    } else {
+        root -> left = NULL;
+        root -> right = NULL;
+    }
+
+    return root;
+}
+
+struct TreeNode* buildTree(int* preorder, int preorderSize, int* inorder, int inorderSize){
+    struct TreeNode* root = buildSubTree(preorder, 0, preorderSize - 1, inorder, 0, inorderSize - 1);
+    return root;
+}
+```
 
 #### [LC 106. 从中序与后序遍历序列构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)
 
+故技重施，顺带做了一些微不足道的简化。
+
+```C
+struct TreeNode* buildSubTree(int* inorder, int inl, int inr, int* postorder, int postl, int postr) {
+    if (inl > inr || postl > postr) {
+        return NULL;
+    }
+
+    struct TreeNode* root = malloc(sizeof(struct TreeNode));
+    root -> val = postorder[postr];
+
+    int NodeSize = 0;
+    for (; inorder[inl + NodeSize] != postorder[postr]; NodeSize++);
+
+    root -> left = buildSubTree(inorder, inl, inl + NodeSize - 1, postorder, postl, postl + NodeSize - 1);
+    root -> right = buildSubTree(inorder, inl + NodeSize + 1, inr, postorder, postl + NodeSize, postr - 1);
+
+    return root;
+}
+
+struct TreeNode* buildTree(int* inorder, int inorderSize, int* postorder, int postorderSize){
+    struct TreeNode* root = buildSubTree(inorder, 0, inorderSize - 1, postorder, 0, postorderSize - 1);
+    return root;
+}
+```
+
 #### [LC 108. 将有序数组转换为二叉搜索树](https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree/)
+
+没啥好说的，都在代码里。
+
+```C
+struct TreeNode* A2B(int * nums, int left, int right) {
+    if (left > right) return NULL;
+
+    int mid = (left + right) / 2;
+
+    struct TreeNode* node = malloc(sizeof(struct TreeNode));
+    node -> val = nums[mid];
+    node -> left = A2B(nums, left, mid - 1);
+    node -> right = A2B(nums, mid + 1, right);
+    return node;
+}
+
+struct TreeNode* sortedArrayToBST(int* nums, int numsSize){
+    return help(nums, 0, numsSize-1);
+}
+```
 
 #### [LC 98. 验证二叉搜索树](https://leetcode.cn/problems/validate-binary-search-tree/)
 
+中序遍历即可。
+
+```C
+bool isValidBST(struct TreeNode* root) {
+    
+    long long pre = LLONG_MIN;
+
+    bool walk(struct TreeNode* root) {
+        bool l, r;
+        if (root) {
+            l = walk(root -> left);
+            if (pre < root -> val) {
+                pre = root -> val;
+            } else {
+                return false;
+            }
+            r = walk(root -> right);
+            return l && r;
+        } else {
+            return true;
+    }
+}
+
+    return walk(root);
+}
+```
+
 #### [剑指 Offer 55 - I. 二叉树的深度](https://leetcode.cn/problems/er-cha-shu-de-shen-du-lcof/)
+
+二叉树的遍历，依旧没什么好说的。
+
+```C
+int maxDepth(struct TreeNode* root){
+    int max = 0;
+    void walk(struct TreeNode* root, int depth) {
+        if (root) {
+            walk(root -> right, depth + 1);
+            walk(root -> left, depth + 1);
+        } else {
+            if (depth > max) {
+                max = depth;
+            }
+        }
+    }
+    walk(root, 0);
+    return max;
+}
+```
 
 #### [剑指 Offer 55 - II. 平衡二叉树](https://leetcode.cn/problems/ping-heng-er-cha-shu-lcof/)
 
+对于本题，递归时我们需要两种信息，一种是当前节点的高度，第二种是该节点是否平横。这对于只能返回一个值的C语言来讲相当不友好。但是注意到，如果某节点不平衡，那么节点的高度便没有计算下去的必要，只需要递归返回将节点不平衡的信息return即可，同时节点的高度一定是非负数。因此可以使用负数来表示节点不平衡的状态。
+
+代码如下：
+
+```C
+int height(struct TreeNode* root) {
+    if (root == NULL) {
+        return 0;
+    }
+
+    int leftheight = height(root -> left);
+    int rightheight = height(root -> right);
+    if (leftheight == -1 || rightheight == -1 || fabs(leftheight - rightheight) > 1) {
+        return -1;
+    } else {
+        return fmax(leftheight, rightheight) + 1;
+    }
+}
+
+bool isBalanced(struct TreeNode* root){
+    return height(root) >= 0;
+}
+```
+
 #### [剑指 Offer 34. 二叉树中和为某一值的路径](https://leetcode.cn/problems/er-cha-shu-zhong-he-wei-mou-yi-zhi-de-lu-jing-lcof/)
 
+深度优先搜索回溯算法。
+
+```C
+int** ret;				// 当前所有的可行路径
+int retSize;			// 当前所有可行路径的数量
+int* retColSize;		// 当前所有可行路径每个路径的大小
+int* path;				// 当前路径值的数组
+int pathSize;			// 当前路径值数组的大小
+int tar;				// 当前路径值数组和与target的差距
+
+void dfs(struct TreeNode* root) {
+    if (root == NULL) {
+        return;			// 结束条件
+    }
+
+    path[pathSize++] = root -> val;		// 将当前节点值串在当前路径数组后
+    tar -= root -> val;					// tar减去当前节点值
+
+    if (root -> left == NULL && root -> right == NULL && tar == 0) {	// 若满足所寻路径条件
+        int* tmp = malloc(sizeof(int) * pathSize);		// 分配临时数组
+        memcpy(tmp, path, sizeof(int) * pathSize);		// 内存复制
+        ret[retSize] = tmp;								// 将路径保存到ret
+        retColSize[retSize++] = pathSize;				// 将路径大小保存到retColSize
+    }
+
+    dfs(root -> right);	// 继续搜索
+    dfs(root -> left);
+    pathSize--;			// 子树搜索完毕，返回前退回pathSize和tar
+    tar += root -> val;
+}
+
+int** pathSum(struct TreeNode* root, int target, int* returnSize, int** returnColumnSizes){
+    ret = malloc(sizeof(int*) * 1000);	// 初始换全部变量
+    retColSize = malloc(sizeof(int) * 1000);
+    path = malloc(sizeof(int) * 1000);
+    tar = target;
+    pathSize = 0;
+    retSize = 0;
+    dfs(root);			// 深度优先搜索
+    *returnSize = retSize;
+    *returnColumnSizes = retColSize;
+
+    return ret;
+}
+```
+
 #### [剑指 Offer II 046. 二叉树的右侧视图](https://leetcode.cn/problems/WNC0Lk/)
+
+一眼深度优先搜索
+
+```C
+int* rightSideView(struct TreeNode* root, int* returnSize){
+    int* res = malloc(sizeof(int) * 100);
+    int size = 0;
+
+    void walk(struct TreeNode* root, int depth) {
+        if (root == NULL) {
+            return;
+        }
+
+        if (depth == size) {
+            res[size++] = root -> val;
+        }
+        walk(root -> right, depth + 1);
+        walk(root -> left, depth + 1);
+    }
+
+    walk(root, 0);
+    *returnSize = size;
+    return res;
+}
+```
 
 #### [剑指 Offer 19. 正则表达式匹配](https://leetcode.cn/problems/zheng-ze-biao-da-shi-pi-pei-lcof/)
 
 Hard动态规划，开摆。
 
 #### [LC 38. 外观数列](https://leetcode.cn/problems/count-and-say/)
+
+还行，就是字符串数组有点卡。
+
+```C
+void CAS(char* res) {
+    char* tmp = malloc(sizeof(char) * 10000);
+    char pre = res[0];
+    int count = 1;
+    int size = 0;
+
+    for (int i = 1; res[i] != '\0'; i++) {
+        if (pre == res[i]) {
+            count++;
+        } else {
+            tmp[size++] = count + '0';
+            tmp[size++] = pre;
+            pre = res[i];
+            count = 1;
+        }
+    }
+    tmp[size++] = count + '0';
+    tmp[size++] = pre;
+    tmp[size] = '\0';
+
+    memcpy(res, tmp, sizeof(char) * (size + 1));
+}
+
+char* countAndSay(int n) {
+    char* res = malloc(sizeof(char) * 10000);
+    res[0] = '1';
+    res[1] = '\0';
+
+    for (int i = 1; i < n; i++) {
+        CAS(res);
+    }
+
+    return res;
+}
+```
 
 ### 1.2 分治策略
 
