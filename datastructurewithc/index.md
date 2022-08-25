@@ -937,7 +937,7 @@ int* rightSideView(struct TreeNode* root, int* returnSize){
 
 #### [剑指 Offer 19. 正则表达式匹配](https://leetcode.cn/problems/zheng-ze-biao-da-shi-pi-pei-lcof/)
 
-Hard动态规划，开摆。
+**Hard动态规划，开摆！**
 
 #### [LC 38. 外观数列](https://leetcode.cn/problems/count-and-say/)
 
@@ -1205,4 +1205,5 @@ void Sort(int *nums, int numsSize) {
 ---
 
 > 作者: Blathers  
-> https://blathers23.netlify.app/datastructurewithc/
+> URL: https://blathers23.netlify.app/datastructurewithc/  
+

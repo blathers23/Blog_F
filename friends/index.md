@@ -27,4 +27,5 @@
 ---
 
 > 作者: Blathers  
-> https://blathers23.netlify.app/friends/
+> URL: https://blathers23.netlify.app/friends/  
+

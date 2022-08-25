@@ -38,4 +38,5 @@ sudo apt command -o Acquire::http::proxy="http://192.168.0.0:8080/"
 ---
 
 > 作者: Blathers  
-> https://blathers23.netlify.app/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8linux/
+> URL: https://blathers23.netlify.app/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8linux/  
+

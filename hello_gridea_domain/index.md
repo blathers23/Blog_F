@@ -42,4 +42,5 @@
 ---
 
 > 作者: Blathers  
-> https://blathers23.netlify.app/hello_gridea_domain/
+> URL: https://blathers23.netlify.app/hello_gridea_domain/  
+
