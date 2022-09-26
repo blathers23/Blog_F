@@ -16,7 +16,7 @@
 
 ### 与我联系
 
-- 📫  邮箱: blathers233@outlook.com
+- 📫  邮箱: blathers23@outlook.com
 - 🐱 LeetCode 主页: [@susasasa](https://leetcode.cn/u/susasasa/)
 - 👾 GitHub 主页: [@blathers23](https://github.com/blathers23)
 - 🦊 GitLab 主页: [@blathers23](https://gitlab.com/blathers23)
@@ -35,10 +35,6 @@
 
 - 刷LeetCode，学学算法，提高编程技术；考研复习期间暂且搁置。(Apr 2022 - Jun 2022)
 - 浅读CSAPP，学习计算机组成原理及C语言编程基础；好多地方看不懂怎么说怎么说。(Jun 2022 - Jul 2022)
-
-### 待开始：
-
-- ArchLinux好像比Ubuntu好玩，择日再战日常使用Linux。(Aug 2022)
 
 ### 已完成：
 

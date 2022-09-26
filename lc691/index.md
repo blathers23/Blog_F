@@ -125,12 +125,6 @@ class Solution:
 >
 >内存消耗: **15 MB**，超过了 **97%** 的 **Python3** 提交记录。
 
-{{<admonition bug " 溜大了">}}
-
-芜湖 芜湖 真的好满足！
-
-{{</admonition>}}
-
 ## 伪 · 结尾碎碎念
 
 ---

@@ -226,6 +226,8 @@ enableLaTeX: False
 
 今天（2022.9.26）发现Waline部署依赖的Vercel已经在神秘力量的影响下不能登陆了，也就是评论区已经不能加载评论，可能需要转移。
 
+今天（2022.9.26）晚上更换了Waline的服务端，部署到了[Date](https://www.deta.sh/)上，访问速度非常舒适。具体操作参考[Waline官方文档](https://waline.js.org/guide/server/railway.html)。唯一需要注意的是，提示Project不存在是需要到Date的Dashborad里设置一下项目的意思。
+
 {{< /admonition >}}
 
 评论区很多不同的选择，在这里介绍 **Waline** 评论系统。对于主题 Diary 来说，已经内置了 Waline 评论系统，只需要在 `config.toml` 中添加：
