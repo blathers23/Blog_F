@@ -275,15 +275,15 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">WineHQ</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="nx">name</span><span class="p">=</span><span class="nx">WineHQ</span> <span class="nx">packages</span>
-</span></span><span class="line"><span class="cl"><span class="nx">type</span><span class="p">=</span><span class="nx">rpm-md</span>
-</span></span><span class="line"><span class="cl"><span class="nx">baseurl</span><span class="p">=</span><span class="nx">https</span><span class="err">://</span><span class="nx">dl</span><span class="p">.</span><span class="nx">winehq</span><span class="p">.</span><span class="nx">org</span><span class="err">/</span><span class="nx">wine-builds</span><span class="err">/</span><span class="nx">fedora</span><span class="err">/</span><span class="mi">36</span>
-</span></span><span class="line"><span class="cl"><span class="nx">gpgcheck</span><span class="p">=</span><span class="mi">1</span>
-</span></span><span class="line"><span class="cl"><span class="nx">gpgkey</span><span class="p">=</span><span class="nx">https</span><span class="err">://</span><span class="nx">dl</span><span class="p">.</span><span class="nx">winehq</span><span class="p">.</span><span class="nx">org</span><span class="err">/</span><span class="nx">wine-builds</span><span class="err">/</span><span class="nx">winehq</span><span class="p">.</span><span class="nx">key</span>
-</span></span><span class="line"><span class="cl"><span class="nx">enabled</span><span class="p">=</span><span class="mi">1</span>
-</span></span><span class="line"><span class="cl"><span class="nx">proxy</span><span class="p">=</span><span class="nx">http</span><span class="err">://</span><span class="mf">192.168</span><span class="p">.</span><span class="mf">0.0</span><span class="err">:</span><span class="mi">8080</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="p">[</span><span class="l">WineHQ]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">name=WineHQ packages</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">type=rpm-md</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">baseurl=https://dl.winehq.org/wine-builds/fedora/36</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">gpgcheck=1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">gpgkey=https://dl.winehq.org/wine-builds/winehq.key</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">enabled=1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">proxy=http://192.168.0.0:8080</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>在更新及下载软件包时即可使用代理加速下载，对于其它软件包也是同理。</p>
 <h2 id="系统相关">系统相关</h2>

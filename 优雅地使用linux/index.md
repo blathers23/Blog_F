@@ -45,7 +45,7 @@ sudo vim /etc/yum.repos.d/winehq.repo
 
 在最后一行添加代理信息，例如：
 
-```toml
+```yaml
 [WineHQ]
 name=WineHQ packages
 type=rpm-md
