@@ -7,16 +7,16 @@
     <meta name="robots" content="noodp" />
     <title>优雅地使用Linux - Blathers&#39; Tent</title><meta name="author" content="Blathers">
 <meta name="author-link" content="">
-<meta name="description" content="Linux只要花点功夫配置好就会很好用？" /><meta name="keywords" content='Linux, apt' /><meta itemprop="name" content="优雅地使用Linux">
+<meta name="description" content="Linux只要花点功夫配置好就会很好用？" /><meta name="keywords" content='Linux' /><meta itemprop="name" content="优雅地使用Linux">
 <meta itemprop="description" content="Linux只要花点功夫配置好就会很好用？"><meta itemprop="datePublished" content="2022-06-18T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2022-07-11T00:00:00+00:00" />
-<meta itemprop="wordCount" content="333">
-<meta itemprop="keywords" content="Linux,apt," /><meta property="og:title" content="优雅地使用Linux" />
+<meta itemprop="dateModified" content="2022-09-26T00:00:00+00:00" />
+<meta itemprop="wordCount" content="867">
+<meta itemprop="keywords" content="Linux," /><meta property="og:title" content="优雅地使用Linux" />
 <meta property="og:description" content="Linux只要花点功夫配置好就会很好用？" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blathers23.netlify.app/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8linux/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-06-18T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-07-11T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-09-26T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="优雅地使用Linux"/>
@@ -33,8 +33,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/blathers23.netlify.app\/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8linux\/"
-    },"genre": "posts","keywords": "Linux, apt","wordcount":  333 ,
-    "url": "https:\/\/blathers23.netlify.app\/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8linux\/","datePublished": "2022-06-18T00:00:00+00:00","dateModified": "2022-07-11T00:00:00+00:00","publisher": {
+    },"genre": "posts","keywords": "Linux","wordcount":  867 ,
+    "url": "https:\/\/blathers23.netlify.app\/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8linux\/","datePublished": "2022-06-18T00:00:00+00:00","dateModified": "2022-09-26T00:00:00+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -185,7 +185,7 @@
     alt="Blathers"
     title="Blathers"/>&nbsp;Blathers</span></span>
           <span class="post-category">收录于 <a href="/categories/linux/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Linux</a></span></div>
-      <div class="post-meta-line"><span title=2022-06-18&#32;00:00:00><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-06-18">2022-06-18</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 333 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 1 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title=2022-06-18&#32;00:00:00><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-06-18">2022-06-18</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 867 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 2 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
@@ -196,11 +196,13 @@
     <li><a href="#软件包安装相关">软件包安装相关</a>
       <ul>
         <li><a href="#apt代理">APT代理</a></li>
+        <li><a href="#dnf代理">DNF代理</a></li>
       </ul>
     </li>
     <li><a href="#系统相关">系统相关</a>
       <ul>
-        <li><a href="#wine">Wine</a></li>
+        <li><a href="#windows系统模拟wine">windows系统模拟：Wine</a></li>
+        <li><a href="#gnome桌面main-manu编辑alacarte">GNOME桌面Main Manu编辑：Alacarte</a></li>
       </ul>
     </li>
   </ul>
@@ -215,13 +217,17 @@
       <i class="icon fa-solid fa-lightbulb fa-fw" aria-hidden="true"></i>简介<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
     </div>
     <div class="details-content">
-      <div class="admonition-content"><p>最近觉得Linux中的好多小点值得一记，但是为此单开一帖体量不足又不值得。因此打算将简单零碎的点记载到这篇文章中。操作系统为Ubuntu22.04，不知道对于其它版本的Linux是否通用，可能需要测试。</p>
+      <div class="admonition-content"><p>最近觉得Linux中的好多小点值得一记，但是为此单开一帖体量不足又不值得。因此打算将简单零碎的点记载到这篇文章中。操作系统为Ubuntu22.04，不知道对于其它版本的Linux是否通用。</p>
 <p>Jul 11 更新：历史性和Windows达成和解，日常使用Linux还是不方便，如有需求可以使用WSL。</p>
+<p>Sep 26 更新：学不进去折腾了Fedora36，使用体验和Ubuntu差距还是蛮大的，更新一些在Fedora36上使用的小技巧，同时会在每个技巧前标注系统。</p>
 </div>
     </div>
   </div>
 <h2 id="软件包安装相关">软件包安装相关</h2>
 <h3 id="apt代理">APT代理</h3>
+<blockquote>
+<p><em>Ubuntu22.04</em></p>
+</blockquote>
 <p>Linux的代理十分简单，对于Ubuntu系统来说，可以在网络设置里打开手动代理并填写代理地址，这实际上就是设置了环境变量：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -243,13 +249,76 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>来设置相应的代理。</p>
+<h3 id="dnf代理">DNF代理</h3>
+<blockquote>
+<p><em>Fedora36</em></p>
+</blockquote>
+<p>对于DNF的软件包，很多源在国内都有镜像，可以达到不错的下载速度。最近（2022.9.26）在下载安装wine时，使用官方源下载经常失败，而TUNA也没有提供镜像，只好使用代理的方式解决。修改位于<code>/etc/yum.repos.d/</code>下的winehq.repo：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo vim /etc/yum.repos.d/winehq.repo 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在最后一行添加代理信息，例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">WineHQ</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">name</span><span class="p">=</span><span class="nx">WineHQ</span> <span class="nx">packages</span>
+</span></span><span class="line"><span class="cl"><span class="nx">type</span><span class="p">=</span><span class="nx">rpm-md</span>
+</span></span><span class="line"><span class="cl"><span class="nx">baseurl</span><span class="p">=</span><span class="nx">https</span><span class="err">://</span><span class="nx">dl</span><span class="p">.</span><span class="nx">winehq</span><span class="p">.</span><span class="nx">org</span><span class="err">/</span><span class="nx">wine-builds</span><span class="err">/</span><span class="nx">fedora</span><span class="err">/</span><span class="mi">36</span>
+</span></span><span class="line"><span class="cl"><span class="nx">gpgcheck</span><span class="p">=</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="nx">gpgkey</span><span class="p">=</span><span class="nx">https</span><span class="err">://</span><span class="nx">dl</span><span class="p">.</span><span class="nx">winehq</span><span class="p">.</span><span class="nx">org</span><span class="err">/</span><span class="nx">wine-builds</span><span class="err">/</span><span class="nx">winehq</span><span class="p">.</span><span class="nx">key</span>
+</span></span><span class="line"><span class="cl"><span class="nx">enabled</span><span class="p">=</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="nx">proxy</span><span class="p">=</span><span class="nx">http</span><span class="err">://</span><span class="mf">192.168</span><span class="p">.</span><span class="mf">0.0</span><span class="err">:</span><span class="mi">8080</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在更新及下载软件包时即可使用代理加速下载，对于其它软件包也是同理。</p>
 <h2 id="系统相关">系统相关</h2>
-<h3 id="wine">Wine</h3>
-<p>参考<a href="../%e4%bc%98%e9%9b%85%e5%9c%b0%e4%bd%bf%e7%94%a8linux%e4%b9%8bwine%e7%9a%84%e9%a3%9f%e7%94%a8%e6%96%b9%e5%bc%8f/">Wine的食用方式</a>。</p></div><div class="post-footer" id="post-footer">
+<h3 id="windows系统模拟wine">windows系统模拟：Wine</h3>
+<p>参考：<a href="../%e4%bc%98%e9%9b%85%e5%9c%b0%e4%bd%bf%e7%94%a8linux%e4%b9%8bwine%e7%9a%84%e9%a3%9f%e7%94%a8%e6%96%b9%e5%bc%8f/">Wine的食用方式</a>。</p>
+<h3 id="gnome桌面main-manu编辑alacarte">GNOME桌面Main Manu编辑：Alacarte</h3>
+<blockquote>
+<p><em>Fedora36</em></p>
+</blockquote>
+<p>最近在Fedora系统上配置Aria2和AriaNG时发现使用非常不方便，一方面我需要在terminal中启动aria2，另一方面又需要使用Chrome启动Aria2NG，步骤繁杂不能做到一键启动。由此我想到了创建一个主菜单启动图标的方法。</p>
+<p>首先编写一个启动Aria2和AriaNG的脚本：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">gnome-terminal -- aria2c --enable-rpc --rpc-allow-origin-all
+</span></span><span class="line"><span class="cl">google-chrome /Your_AriaNg_Path/index.html
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后安装主菜单编辑器Alacarte：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo dnf install alacarte
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>最后在编辑器中添加启动脚本，并设置图标及名称，就可以方便的在主菜单启动Aira2。</p></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title=2022-07-11&#32;00:00:00>更新于 2022-07-11&nbsp;</span>
+        <span title=2022-09-26&#32;00:00:00>更新于 2022-09-26&nbsp;</span>
       </div><div class="post-info-license">
           <span><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
         </div></div>
@@ -265,7 +334,7 @@
   </div>
 
   <div class="post-info-more">
-    <section class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/linux/">Linux</a>,&nbsp;<a href="/tags/apt/">apt</a></section>
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/linux/">Linux</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>
@@ -287,5 +356,5 @@
         </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
     <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
   </noscript>
-</div><link rel="stylesheet" href="/lib/waline/waline.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/waline/waline.js" defer></script><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":50},"comment":{"enable":true,"waline":{"copyright":true,"dark":"body[data-theme='dark']","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/bilibili"],"highlighter":false,"imageUploader":false,"lang":"zh-cn","login":"enable","meta":["nick","mail","link"],"pageSize":10,"search":false,"serverURL":"https://eke-sai-ting-bdlj3h1m4-blathers.vercel.app/","texRenderer":false}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"siteTime":"2022-04-19T01:19:11+08:00"};</script><script src="/js/theme.min.js" defer></script></body>
+</div><link rel="stylesheet" href="/lib/waline/waline.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/waline/waline.js" defer></script><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":50},"comment":{"enable":true,"waline":{"copyright":true,"dark":"body[data-theme='dark']","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/bilibili"],"highlighter":false,"imageUploader":false,"lang":"zh-cn","login":"enable","meta":["nick","mail","link"],"pageSize":10,"search":false,"serverURL":"https://eke-sai-ting.vercel.app/","texRenderer":false}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"siteTime":"2022-04-19T01:19:11+08:00"};</script><script src="/js/theme.min.js" defer></script></body>
 </html>

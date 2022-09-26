@@ -9,14 +9,14 @@
 <meta name="author-link" content="">
 <meta name="description" content="Linux只要花点功夫配置好就会很好用？" /><meta name="keywords" content='Linux, Wine, 编码' /><meta itemprop="name" content="优雅地使用Linux之Wine的食用方式">
 <meta itemprop="description" content="Linux只要花点功夫配置好就会很好用？"><meta itemprop="datePublished" content="2022-06-09T04:39:00+08:00" />
-<meta itemprop="dateModified" content="2022-06-11T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1634">
+<meta itemprop="dateModified" content="2022-09-26T00:00:00+00:00" />
+<meta itemprop="wordCount" content="2380">
 <meta itemprop="keywords" content="Linux,Wine,编码," /><meta property="og:title" content="优雅地使用Linux之Wine的食用方式" />
 <meta property="og:description" content="Linux只要花点功夫配置好就会很好用？" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blathers23.netlify.app/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8linux%E4%B9%8Bwine%E7%9A%84%E9%A3%9F%E7%94%A8%E6%96%B9%E5%BC%8F/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-06-09T04:39:00+08:00" />
-<meta property="article:modified_time" content="2022-06-11T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-09-26T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="优雅地使用Linux之Wine的食用方式"/>
@@ -33,8 +33,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/blathers23.netlify.app\/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8linux%E4%B9%8Bwine%E7%9A%84%E9%A3%9F%E7%94%A8%E6%96%B9%E5%BC%8F\/"
-    },"genre": "posts","keywords": "Linux, Wine, 编码","wordcount":  1634 ,
-    "url": "https:\/\/blathers23.netlify.app\/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8linux%E4%B9%8Bwine%E7%9A%84%E9%A3%9F%E7%94%A8%E6%96%B9%E5%BC%8F\/","datePublished": "2022-06-09T04:39:00+08:00","dateModified": "2022-06-11T00:00:00+00:00","publisher": {
+    },"genre": "posts","keywords": "Linux, Wine, 编码","wordcount":  2380 ,
+    "url": "https:\/\/blathers23.netlify.app\/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8linux%E4%B9%8Bwine%E7%9A%84%E9%A3%9F%E7%94%A8%E6%96%B9%E5%BC%8F\/","datePublished": "2022-06-09T04:39:00+08:00","dateModified": "2022-09-26T00:00:00+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -184,20 +184,26 @@
     alt="Blathers"
     title="Blathers"/>&nbsp;Blathers</span></span>
           <span class="post-category">收录于 <a href="/categories/linux/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Linux</a></span></div>
-      <div class="post-meta-line"><span title=2022-06-09&#32;04:39:00><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-06-09">2022-06-09</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 1634 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 4 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title=2022-06-09&#32;04:39:00><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-06-09">2022-06-09</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 2380 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 5 分钟</span>&nbsp;</div>
     </div><div
       class="content"
       id="content"
       
       
-    ><div class="details admonition note open">
-      <div class="details-summary admonition-title">
-        <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
-      </div>
-      <div class="details-content">
-        <div class="admonition-content">本文最后更新于 2022-06-11，文中内容可能已过时。</div>
-      </div>
-    </div><p>很多时候，你不得不运行一些Windows可执行程序，但是苦于手头仅有一台Linux设备，你或许想要使用虚拟机，不巧的是你又讨厌虚拟机那种令人厌烦的卡顿、不跟手的感觉，那么Wine，就是为你量身定制的！Wine全称Wine Is Not an Emulator（Wine不是一个模拟器），是一个能在Linux系统上运行Windows应用的兼容层。简单来说，只要安装了Wine，就可以简单的在Linux系统上通过双击exe文件来运行这些可执行程序！但是呢，Wine的安装与使用还有一些小坑，在这里简单记录一下这些坑以及Wine的最佳食用方式。</p>
+    ><div class="details admonition tip open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-lightbulb fa-fw" aria-hidden="true"></i>补记<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content"><p>最近（2022.9.26）安装了Feodra系统，发现这篇文章实在是没什么用处；对于不同的操作系统，wine的安装方式直接参考<a href="https://wiki.winehq.org/Download"target="_blank" rel="external nofollow noopener noreferrer">winehq的wiki</a>即可。对于Ubuntu、Debian系统来说，还可以配置<a href="https://mirrors-i.tuna.tsinghua.edu.cn/help/wine-builds/"target="_blank" rel="external nofollow noopener noreferrer">TUNA的镜像</a>，加速安装。对于Fedora用户，很遗憾只能自行配置代理；具体操作为修改<code>/etc/yum.repos.d/winehq.repo</code>，在最后一行添加<code>proxy=&quot;XXXXXX&quot;</code>之后再运行<code>dnf makecache</code>等命令。</p>
+<p>wine在首次运行程序之前，需要先运行<code>winecfg</code>命令来生成配置文件。</p>
+<p>解决安装问题之后，如果使用中文环境，那么还可能会遇到中文全部方框的问题。这是因为没有安装中文字体导致的。比较方便的解决方式有两种，一是使用winetricks安装字体，受制于网络的限制，这种方式常常面临着失败；另一种较为快捷的方式就是打开安装了中文的Windows系统，并将<code>C:\windows\Fonts</code>目录下的字体复制到<code>~/.wine/drive_c/windows/Fonts</code>文件夹下，通常可以解决文字方框的问题。</p>
+<p>对于wine的中文乱码问题，如正文所说是字符集的问题。如果我们的操作系统设置的语言为英文，那么在运行<code>wine cmd</code>之后使用<code>chcp</code>命令检查会得到437，即英文环境；而当我们使用<code>env LC_ALL=zh_CN.UTF-8 wine cmd</code>，即设置环境为中文环境并启动cmd，此时检查<code>chcp</code>得到的代码为65001，也就是使用了UTF-8编码，在这种情况下，基本可以解决所有的乱码问题。</p>
+<p>还有一类导致无法运行程序的错误是系统缺少某些驱动，然而缺少驱动的报错信息在双击运行exe的报错中是没有的，这时最好的方式应该是使用<code>wine xxx.exe</code>来启动程序，在命令行中检查即可发现缺少的驱动报报错等信息。</p>
+</div>
+    </div>
+  </div>
+<p>很多时候，你不得不运行一些Windows可执行程序，但是苦于手头仅有一台Linux设备，你或许想要使用虚拟机，不巧的是你又讨厌虚拟机那种令人厌烦的卡顿、不跟手的感觉，那么Wine，就是为你量身定制的！Wine全称Wine Is Not an Emulator（Wine不是一个模拟器），是一个能在Linux系统上运行Windows应用的兼容层。简单来说，只要安装了Wine，就可以简单的在Linux系统上通过双击exe文件来运行这些可执行程序！但是呢，Wine的安装与使用还有一些小坑，在这里简单记录一下这些坑以及Wine的最佳食用方式。</p>
 <p>最简单的方法莫过于apt安装，即简单的输入：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -227,7 +233,7 @@
 </span></span><span class="line"><span class="cl">make
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>来对Wine进行一个简单的安装。当然，在这个过程中会被提示缺少各种各样的依赖，但总之是可以凭借着毅力解决的！这里不再记录解决过程，因为这是一个非常麻烦并且不推荐的安装方式。事实上，当我费尽九牛二虎之力，我的垃圾笔电也编译了一个多小时之后，终于安装好Wine。自以为可以愉快体验一个Windows游戏而洋洋得意时，大无语事件发生，游戏进去是进去了，但是完完全全就是一个黑屏，经排查除了游戏之外的一些小程序可以正常运行。事实上问题的原因我现在还没有搞清楚，当时使用的版本是稳定版7.0版本，各种无头苍蝇一样的debug方式尝试过之后，只好将最后的希望放在Wine开发版上。说来也是巧合，当我在Wine官网苦苦寻找解决办法无果，却偶然发现，就在官网上就清清楚楚的写着，Wine安装的最佳方式！以Ubuntu22.04系统举例，安装方式如下：</p>
+</div><p>来对Wine进行一个简单的安装。当然，在这个过程中会被提示缺少各种各样的依赖，但总之是可以凭借着毅力解决的！这里不再记录解决过程，因为这是一个非常麻烦并且不推荐的安装方式。事实上，当我费尽九牛二虎之力，我的垃圾笔电也编译了一个多小时之后，终于安装好Wine。自以为可以愉快体验一个Windows游戏而洋洋得意时，很讨厌的是，游戏进去是进去了，但是完完全全就是一个黑屏，经排查除了游戏之外的一些小程序可以正常运行。事实上问题的原因我现在还没有搞清楚，当时使用的版本是稳定版7.0版本，各种无头苍蝇一样的debug方式尝试过之后，只好将最后的希望放在Wine开发版上。说来也是巧合，当我在Wine官网苦苦寻找解决办法无果，却偶然发现，就在官网上就清清楚楚的写着，Wine安装的最佳方式！以Ubuntu22.04系统举例，安装方式如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -271,14 +277,14 @@
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">env <span class="nv">LANG</span><span class="o">=</span>zh_CN.UTF-8 wine game.exe
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>发现成功读取了游戏文件夹，确定为编码问题。修改编码问题最简单的方式为在<code>~/.bashrc</code>中添加<code>export LANG=zh_CN.UTF_8</code>，这样，当以当前用户使用Terminal启动游戏时，游戏可以正常显示中文。但是当双击游戏文件启动时，依旧不能正常显示中文。为了解决这个问题，经搜索，需要修改默认的环境配置，配置文件夹位于<code>/etc/profile</code>，需要在最后一样添加<code>LANG=zh_CN.UTF_8</code>即可修改默认编码为中文的UTF-8编码，方便滴很呐！</p>
+</div><p>发现成功读取了游戏文件夹，确定为编码问题。修改编码问题最简单的方式为在<code>~/.bashrc</code>中添加<code>export LANG=zh_CN.UTF_8</code>，这样，当以当前用户使用Terminal启动游戏时，游戏可以正常显示中文。但是当双击游戏文件启动时，依旧不能正常显示中文。为了解决这个问题，经搜索，需要修改默认的环境配置，配置文件夹位于<code>/etc/profile</code>，需要在最后一样添加<code>LANG=zh_CN.UTF_8</code>即可修改默认编码为中文的UTF-8编码，十分的方便。</p>
 <hr>
 <p>后记：啰啰嗦唆没用的话</p>
 <p>毕业终于完事了，没少费功夫，最后终于是拿到了毕业证，和大家伙也天各一方。毕业离开学校的那天，头一次喝醉吐的自己浑身都是，可能我自己心里是非常喜欢大家伙的吧，我也不知道。离别总是酸楚，但是回到家乡，离开校园，还是得直面困难的。现在隔离在宾馆，天天闲的难受，这样的日子，今天也是最后一晚了。和我一样二战的家伙已经开始规律作息好好复习了，我也不能拉了胯，考前最后一次熬夜！！！再也不熬夜了！最后就是，果然还是好好的把自己心中所想表达出来能让人心情舒畅。</p></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title=2022-06-11&#32;00:00:00>更新于 2022-06-11&nbsp;</span>
+        <span title=2022-09-26&#32;00:00:00>更新于 2022-09-26&nbsp;</span>
       </div><div class="post-info-license">
           <span><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
         </div></div>
@@ -316,5 +322,5 @@
         </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
     <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
   </noscript>
-</div><link rel="stylesheet" href="/lib/waline/waline.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/waline/waline.js" defer></script><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":50},"comment":{"enable":true,"waline":{"copyright":true,"dark":"body[data-theme='dark']","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/bilibili"],"highlighter":false,"imageUploader":false,"lang":"zh-cn","login":"enable","meta":["nick","mail","link"],"pageSize":10,"search":false,"serverURL":"https://eke-sai-ting-bdlj3h1m4-blathers.vercel.app/","texRenderer":false}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"siteTime":"2022-04-19T01:19:11+08:00"};</script><script src="/js/theme.min.js" defer></script></body>
+</div><link rel="stylesheet" href="/lib/waline/waline.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/waline/waline.js" defer></script><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":50},"comment":{"enable":true,"waline":{"copyright":true,"dark":"body[data-theme='dark']","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/bilibili"],"highlighter":false,"imageUploader":false,"lang":"zh-cn","login":"enable","meta":["nick","mail","link"],"pageSize":10,"search":false,"serverURL":"https://eke-sai-ting.vercel.app/","texRenderer":false}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"siteTime":"2022-04-19T01:19:11+08:00"};</script><script src="/js/theme.min.js" defer></script></body>
 </html>

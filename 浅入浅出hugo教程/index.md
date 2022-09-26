@@ -222,6 +222,12 @@ enableLaTeX: False
 
 ---
 
+{{< admonition danger >}}
+
+今天（2022.9.26）发现Waline部署依赖的Vercel已经在神秘力量的影响下不能登陆了，也就是评论区已经不能加载评论，可能需要转移。
+
+{{< /admonition >}}
+
 评论区很多不同的选择，在这里介绍 **Waline** 评论系统。对于主题 Diary 来说，已经内置了 Waline 评论系统，只需要在 `config.toml` 中添加：
 
 ```toml
