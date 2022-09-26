@@ -13,7 +13,8 @@
   <description><![CDATA[<div class="featured-image">
         <img src="/images/leetcode.jpg" referrerpolicy="no-referrer">
       </div>简单记录：BFS or DFS?]]></description>
-</item><item>
+</item>
+<item>
   <title>LC433 - 最小基因变化</title>
   <link>https://blathers23.netlify.app/lc433/</link>
   <pubDate>Sun, 08 May 2022 00:09:00 &#43;0800</pubDate>
@@ -22,5 +23,6 @@
   <description><![CDATA[<div class="featured-image">
         <img src="/images/leetcode.jpg" referrerpolicy="no-referrer">
       </div>简单记录：做题应当由浅入深。]]></description>
-</item></channel>
+</item>
+</channel>
 </rss>

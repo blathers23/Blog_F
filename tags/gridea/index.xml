@@ -11,7 +11,8 @@
   <author>Blathers</author>
   <guid>https://blathers23.netlify.app/gitalk/</guid>
   <description><![CDATA[]]></description>
-</item><item>
+</item>
+<item>
   <title>Hello Gridea! - 怎样给Blog网站设置自己的域名</title>
   <link>https://blathers23.netlify.app/hello_gridea_domain/</link>
   <pubDate>Sat, 13 Feb 2021 14:52:22 &#43;0000</pubDate>
@@ -20,7 +21,8 @@
   <description><![CDATA[<div class="featured-image">
         <img src="https://s2.loli.net/2022/04/26/Ik5uhlUmrVG4cFo.png" referrerpolicy="no-referrer">
       </div>]]></description>
-</item><item>
+</item>
+<item>
   <title>Hello Gridea! - 如何使用Gridea和Coding搭建自己的Blog</title>
   <link>https://blathers23.netlify.app/hello_gridea/</link>
   <pubDate>Fri, 12 Feb 2021 23:14:33 &#43;0000</pubDate>
@@ -29,5 +31,6 @@
   <description><![CDATA[<div class="featured-image">
         <img src="https://s2.loli.net/2022/04/26/Cdq54O1sMnyc2L9.png" referrerpolicy="no-referrer">
       </div>]]></description>
-</item></channel>
+</item>
+</channel>
 </rss>

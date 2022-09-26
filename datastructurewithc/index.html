@@ -1,33 +1,30 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
   <head>
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <title>使用C语言学习算法及数据结构 - Blathers&#39; Tent</title><meta name="author" content="Blathers">
 <meta name="author-link" content="">
 <meta name="description" content="通过将LeetCode中的问题与考研大纲中所考内容对照性练习，来提高编程能力。编程语言选择C语言，更为通用。" /><meta name="keywords" content='C, 数据结构, 算法' /><meta itemprop="name" content="使用C语言学习算法及数据结构">
 <meta itemprop="description" content="通过将LeetCode中的问题与考研大纲中所考内容对照性练习，来提高编程能力。编程语言选择C语言，更为通用。"><meta itemprop="datePublished" content="2022-07-11T00:28:00+08:00" />
 <meta itemprop="dateModified" content="2022-08-26T00:00:00+00:00" />
-<meta itemprop="wordCount" content="6393"><meta itemprop="image" content="https://blathers23.netlify.app/logo.png"/>
+<meta itemprop="wordCount" content="6784">
 <meta itemprop="keywords" content="C,数据结构,算法," /><meta property="og:title" content="使用C语言学习算法及数据结构" />
 <meta property="og:description" content="通过将LeetCode中的问题与考研大纲中所考内容对照性练习，来提高编程能力。编程语言选择C语言，更为通用。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blathers23.netlify.app/datastructurewithc/" /><meta property="og:image" content="https://blathers23.netlify.app/logo.png"/><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://blathers23.netlify.app/datastructurewithc/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-07-11T00:28:00+08:00" />
 <meta property="article:modified_time" content="2022-08-26T00:00:00+00:00" />
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://blathers23.netlify.app/logo.png"/>
-
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="使用C语言学习算法及数据结构"/>
 <meta name="twitter:description" content="通过将LeetCode中的问题与考研大纲中所考内容对照性练习，来提高编程能力。编程语言选择C语言，更为通用。"/>
 <meta name="application-name" content="FixIt">
-<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#252627"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blathers23.netlify.app/datastructurewithc/" /><link rel="prev" href="https://blathers23.netlify.app/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8linux/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://blathers23.netlify.app/datastructurewithc/" /><link rel="prev" href="https://blathers23.netlify.app/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8linux/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
@@ -36,7 +33,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/blathers23.netlify.app\/datastructurewithc\/"
-    },"genre": "posts","keywords": "C, 数据结构, 算法","wordcount":  6393 ,
+    },"genre": "posts","keywords": "C, 数据结构, 算法","wordcount":  6784 ,
     "url": "https:\/\/blathers23.netlify.app\/datastructurewithc\/","datePublished": "2022-07-11T00:28:00+08:00","dateModified": "2022-08-26T00:00:00+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -45,51 +42,36 @@
       },"description": "通过将LeetCode中的问题与考研大纲中所考内容对照性练习，来提高编程能力。编程语言选择C语言，更为通用。"
   }
   </script></head>
-  <body header-desktop="sticky" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script><div class="wrapper"><header class="desktop" id="header-desktop">
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
   <div class="header-wrapper">
     <div class="header-title">
       <a href="/" title="Blathers&#39; Tent"><span class="header-title-pre">🏕️</span><span class="header-title-text">Blathers&#39; Tent</span></a><span class="header-subtitle"></span></div>
     <nav>
-      <ul class="menu"><li
-              class="menu-item"
-              
-            >
+      <ul class="menu"><li class="menu-item">
               <a
                 class="menu-link"
                 href="/posts/"
                 title="全部文章"
                 
-              >Posts 📑</a></li><li
-              class="menu-item"
-              
-            >
+              >Posts 📑</a></li><li class="menu-item">
               <a
                 class="menu-link"
                 href="/tags/"
                 title="标签"
                 
-              >Tags 🏷️</a></li><li
-              class="menu-item"
-              
-            >
+              >Tags 🏷️</a></li><li class="menu-item">
               <a
                 class="menu-link"
                 href="/categories/"
                 title="分类"
                 
-              >Categories 📚</a></li><li
-              class="menu-item"
-              
-            >
+              >Categories 📚</a></li><li class="menu-item">
               <a
                 class="menu-link"
                 href="/friends"
                 title="友情链接"
                 
-              >Friends 🎈</a></li><li
-              class="menu-item"
-              
-            >
+              >Friends 🎈</a></li><li class="menu-item">
               <a
                 class="menu-link"
                 href="/about"
@@ -98,21 +80,21 @@
               >About 🦉</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
             <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-desktop">
             <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
-              <i class="fa-solid fa-search fa-fw"></i>
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
             </a>
             <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
-              <i class="fa-solid fa-times-circle fa-fw"></i>
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
             </a>
             <span class="search-button search-loading" id="search-loading-desktop">
-              <i class="fa-solid fa-spinner fa-fw fa-spin"></i>
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
             </span>
           </li><li class="menu-item theme-switch" title="切换主题">
-          <i class="fa-solid fa-adjust fa-fw"></i>
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
         </li>
       </ul>
     </nav>
   </div>
-</header><header class="mobile" id="header-mobile">
+</header><header class="mobile animate__faster" id="header-mobile">
   <div class="header-container">
     <div class="header-wrapper">
       <div class="header-title">
@@ -126,13 +108,13 @@
             <div class="search mobile" id="search-mobile">
               <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-mobile">
               <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
-                <i class="fa-solid fa-search fa-fw"></i>
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
               </a>
               <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
-                <i class="fa-solid fa-times-circle fa-fw"></i>
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
               </a>
               <span class="search-button search-loading" id="search-loading-mobile">
-                <i class="fa-solid fa-spinner fa-fw fa-spin"></i>
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
               </span>
             </div>
             <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
@@ -141,51 +123,49 @@
           </li><li
               class="menu-item"
             ><a
-                class="menu-link"
-                href="/posts/"
-                title="全部文章"
-                
-              >Posts 📑</a></li><li
+                  class="menu-link"
+                  href="/posts/"
+                  title="全部文章"
+                  
+                >Posts 📑</a></li><li
               class="menu-item"
             ><a
-                class="menu-link"
-                href="/tags/"
-                title="标签"
-                
-              >Tags 🏷️</a></li><li
+                  class="menu-link"
+                  href="/tags/"
+                  title="标签"
+                  
+                >Tags 🏷️</a></li><li
               class="menu-item"
             ><a
-                class="menu-link"
-                href="/categories/"
-                title="分类"
-                
-              >Categories 📚</a></li><li
+                  class="menu-link"
+                  href="/categories/"
+                  title="分类"
+                  
+                >Categories 📚</a></li><li
               class="menu-item"
             ><a
-                class="menu-link"
-                href="/friends"
-                title="友情链接"
-                
-              >Friends 🎈</a></li><li
+                  class="menu-link"
+                  href="/friends"
+                  title="友情链接"
+                  
+                >Friends 🎈</a></li><li
               class="menu-item"
             ><a
-                class="menu-link"
-                href="/about"
-                title="关于我"
-                
-              >About 🦉</a></li><li class="menu-item theme-switch" title="切换主题">
-          <i class="fa-solid fa-adjust fa-fw"></i>
+                  class="menu-link"
+                  href="/about"
+                  title="关于我"
+                  
+                >About 🦉</a></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
         </li></ul>
     </nav>
   </div>
-</header>
-<div class="search-dropdown desktop">
-  <div id="search-dropdown-desktop"></div>
-</div>
-<div class="search-dropdown mobile">
-  <div id="search-dropdown-mobile"></div>
-</div>
-<main class="container" page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录 <i class="toc-icon fa-solid fa-angle-down fa-fw"></i></h2>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
       <div class="toc-content" id="toc-content-auto"></div></aside>
 
   <aside class="aside-custom">
@@ -203,16 +183,13 @@
     data-srcset="https://gravatar.loli.net/avatar/1cc24367e7133aceb81bfd9ef41481cd?s=32&amp;d=, https://gravatar.loli.net/avatar/1cc24367e7133aceb81bfd9ef41481cd?s=32&amp;d= 1.5x, https://gravatar.loli.net/avatar/1cc24367e7133aceb81bfd9ef41481cd?s=32&amp;d= 2x"
     data-sizes="auto"
     alt="Blathers"
-    title="Blathers" />&nbsp;Blathers</span></span>
-          <span class="post-category">收录于 <a href="/categories/c/"><i class="fa-regular fa-folder fa-fw"></i>&nbsp;C</a></span></div>
-      <div class="post-meta-line"><span title=2022-07-11&#32;00:28:00>
-            <i class="fa-regular fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-07-11" >2022-07-11</time>
-          </span>&nbsp;<i class="fa-solid fa-pencil-alt fa-fw"></i>&nbsp;约 6393 字&nbsp;
-        <i class="fa-regular fa-clock fa-fw"></i>&nbsp;预计阅读 13 分钟&nbsp;</div>
-    </div><div class="details toc" id="toc-static" kept="false">
+    title="Blathers"/>&nbsp;Blathers</span></span>
+          <span class="post-category">收录于 <a href="/categories/c/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> C</a></span></div>
+      <div class="post-meta-line"><span title=2022-07-11&#32;00:28:00><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-07-11">2022-07-11</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 6784 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 14 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
-          <span><i class="details-icon fa-solid fa-angle-right"></i></span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
         </div>
         <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
@@ -248,7 +225,11 @@
         </li>
         <li><a href="#12-分治策略">1.2 分治策略</a></li>
         <li><a href="#13-贪心算法">1.3 贪心算法</a></li>
-        <li><a href="#14-动态规划">1.4 动态规划</a></li>
+        <li><a href="#14-动态规划">1.4 动态规划</a>
+          <ul>
+            <li><a href="#剑指-offer-ii-101-分割等和子集httpsleetcodecnproblemsnupfpr"><a href="https://leetcode.cn/problems/NUPfPr/">剑指 Offer II 101. 分割等和子集</a></a></li>
+          </ul>
+        </li>
         <li><a href="#15-线性规划">1.5 线性规划</a></li>
         <li><a href="#16-网络流">1.6 网络流</a></li>
       </ul>
@@ -327,7 +308,7 @@
       
     ><div class="details admonition tip open">
     <div class="details-summary admonition-title">
-      <i class="icon fa-solid fa-lightbulb fa-fw"></i>技巧<i class="details-icon fa-solid fa-angle-right fa-fw"></i>
+      <i class="icon fa-solid fa-lightbulb fa-fw" aria-hidden="true"></i>技巧<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
     </div>
     <div class="details-content">
       <div class="admonition-content">按照去年考研翻车的经验，编程能力的欠缺是非常严重的问题。期望通过将LeetCode中的问题与考研大纲中所考内容对照性练习，来提高编程能力。编程语言选择C语言，更为通用。</div>
@@ -336,20 +317,7 @@
 <h2 id="1-算法设计部分">1. 算法设计部分</h2>
 <h3 id="11-递归">1.1 递归</h3>
 <hr>
-<h4 id="lc-50-powx-nhttpsleetcodecnproblemspowx-n"><a
-  href="https://leetcode.cn/problems/powx-n/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->LC 50. Pow(x, n)</a></h4>
+<h4 id="lc-50-powx-nhttpsleetcodecnproblemspowx-n"><a href="https://leetcode.cn/problems/powx-n/"target="_blank" rel="external nofollow noopener noreferrer">LC 50. Pow(x, n)</a></h4>
 <p>一个比较笨的写法，但是思想上是没有什么大问题的：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -448,7 +416,7 @@
 </div>
 </div><div class="details admonition warning open">
     <div class="details-summary admonition-title">
-      <i class="icon fa-solid fa-exclamation-triangle fa-fw"></i>警告<i class="details-icon fa-solid fa-angle-right fa-fw"></i>
+      <i class="icon fa-solid fa-exclamation-triangle fa-fw" aria-hidden="true"></i>警告<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
     </div>
     <div class="details-content">
       <div class="admonition-content"><p>今日吃瘪：</p>
@@ -460,20 +428,7 @@
 </div>
     </div>
   </div>
-<h4 id="剑指-offer-65-不用加减乘除做加法httpsleetcodecnproblemsbu-yong-jia-jian-cheng-chu-zuo-jia-fa-lcof"><a
-  href="https://leetcode.cn/problems/bu-yong-jia-jian-cheng-chu-zuo-jia-fa-lcof/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->剑指 Offer 65. 不用加减乘除做加法</a></h4>
+<h4 id="剑指-offer-65-不用加减乘除做加法httpsleetcodecnproblemsbu-yong-jia-jian-cheng-chu-zuo-jia-fa-lcof"><a href="https://leetcode.cn/problems/bu-yong-jia-jian-cheng-chu-zuo-jia-fa-lcof/"target="_blank" rel="external nofollow noopener noreferrer">剑指 Offer 65. 不用加减乘除做加法</a></h4>
 <p>代码：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -521,26 +476,13 @@
 <p>对二进制而言，无进位和即为XOR得到的值，即相同为0，相异为1；进位值为AND，即仅当两数均为1时，发生进位，因此二进制加法可以表示为：<strong>a + b = (a ^ b) + ((a &amp; b) &laquo; 1)</strong>。注意第二项((a &amp; b) &laquo; 1)，由于是AND和左移运算，因此该项从最低位到第一个非零位的长度必然大于b。因此如果下一步令a = (a ^ b)，b = ((a &amp; b) &laquo; 1)，并重复此过程，那么在有限步数内b终将等于0，此时a + b的值即等于a。</p>
 <div class="details admonition warning open">
     <div class="details-summary admonition-title">
-      <i class="icon fa-solid fa-exclamation-triangle fa-fw"></i>警告<i class="details-icon fa-solid fa-angle-right fa-fw"></i>
+      <i class="icon fa-solid fa-exclamation-triangle fa-fw" aria-hidden="true"></i>警告<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
     </div>
     <div class="details-content">
       <div class="admonition-content">今日吃瘪：C对int类型的左移会有数据范围的限制，当超出int数据表示的范围会报错显示，这时需要考虑unsigned int类型（闭嘴给我算就是了！）。</div>
     </div>
   </div>
-<h4 id="面试题-0805-递归乘法httpsleetcodecnproblemsrecursive-mulitply-lcci"><a
-  href="https://leetcode.cn/problems/recursive-mulitply-lcci/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->面试题 08.05. 递归乘法</a></h4>
+<h4 id="面试题-0805-递归乘法httpsleetcodecnproblemsrecursive-mulitply-lcci"><a href="https://leetcode.cn/problems/recursive-mulitply-lcci/"target="_blank" rel="external nofollow noopener noreferrer">面试题 08.05. 递归乘法</a></h4>
 <p>代码：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -554,20 +496,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="剑指-offer-51-数组中的逆序对httpsleetcodecnproblemsshu-zu-zhong-de-ni-xu-dui-lcof"><a
-  href="https://leetcode.cn/problems/shu-zu-zhong-de-ni-xu-dui-lcof/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->剑指 Offer 51. 数组中的逆序对</a></h4>
+</div><h4 id="剑指-offer-51-数组中的逆序对httpsleetcodecnproblemsshu-zu-zhong-de-ni-xu-dui-lcof"><a href="https://leetcode.cn/problems/shu-zu-zhong-de-ni-xu-dui-lcof/"target="_blank" rel="external nofollow noopener noreferrer">剑指 Offer 51. 数组中的逆序对</a></h4>
 <p>注意到数组长度最长为50000，考虑到这是一道hard题，暴力解$\mathcal{O}(n^2)$八成会TLE。</p>
 <p><strong>归并排序</strong>解题代码：</p>
 <div class="highlight"><div class="chroma">
@@ -640,20 +569,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="剑指-offer-ii-076-数组中的第-k-大的数字httpsleetcodecnproblemsxx4gt2"><a
-  href="https://leetcode.cn/problems/xx4gT2/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->剑指 Offer II 076. 数组中的第 k 大的数字</a></h4>
+</div><h4 id="剑指-offer-ii-076-数组中的第-k-大的数字httpsleetcodecnproblemsxx4gt2"><a href="https://leetcode.cn/problems/xx4gT2/"target="_blank" rel="external nofollow noopener noreferrer">剑指 Offer II 076. 数组中的第 k 大的数字</a></h4>
 <p>归并排序代码：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -916,20 +832,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>耗时为4ms。</p>
-<h4 id="lc-315-计算右侧小于当前元素的个数httpsleetcodecnproblemscount-of-smaller-numbers-after-self"><a
-  href="https://leetcode.cn/problems/count-of-smaller-numbers-after-self/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->LC 315. 计算右侧小于当前元素的个数</a></h4>
+<h4 id="lc-315-计算右侧小于当前元素的个数httpsleetcodecnproblemscount-of-smaller-numbers-after-self"><a href="https://leetcode.cn/problems/count-of-smaller-numbers-after-self/"target="_blank" rel="external nofollow noopener noreferrer">LC 315. 计算右侧小于当前元素的个数</a></h4>
 <p>思路：</p>
 <ul>
 <li>倒置输入整数数组名为I，新建排序数组名为S和结果数组R。进入循环。
@@ -1048,35 +951,9 @@
 </div>
 </div><p>理论上应该是可以的，但是顶不住常数大。最后TLE，麻了。</p>
 <p><strong>题太难先摸了罢。</strong></p>
-<h4 id="lc-493-翻转对httpsleetcodecnproblemsreverse-pairs"><a
-  href="https://leetcode.cn/problems/reverse-pairs/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->LC 493. 翻转对</a></h4>
+<h4 id="lc-493-翻转对httpsleetcodecnproblemsreverse-pairs"><a href="https://leetcode.cn/problems/reverse-pairs/"target="_blank" rel="external nofollow noopener noreferrer">LC 493. 翻转对</a></h4>
 <p><strong>Hard题，开摆</strong></p>
-<h4 id="lc-53-最大子数组和httpsleetcodecnproblemsmaximum-subarray"><a
-  href="https://leetcode.cn/problems/maximum-subarray/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->LC 53. 最大子数组和</a></h4>
+<h4 id="lc-53-最大子数组和httpsleetcodecnproblemsmaximum-subarray"><a href="https://leetcode.cn/problems/maximum-subarray/"target="_blank" rel="external nofollow noopener noreferrer">LC 53. 最大子数组和</a></h4>
 <p>代码：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1126,7 +1003,7 @@
 </div>
 </div><div class="details admonition warning open">
     <div class="details-summary admonition-title">
-      <i class="icon fa-solid fa-exclamation-triangle fa-fw"></i>警告<i class="details-icon fa-solid fa-angle-right fa-fw"></i>
+      <i class="icon fa-solid fa-exclamation-triangle fa-fw" aria-hidden="true"></i>警告<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
     </div>
     <div class="details-content">
       <div class="admonition-content">不知道我是怎么想的😀</div>
@@ -1155,20 +1032,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="lc-88-合并两个有序数组httpsleetcodecnproblemsmerge-sorted-array"><a
-  href="https://leetcode.cn/problems/merge-sorted-array/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->LC 88. 合并两个有序数组</a></h4>
+</div><h4 id="lc-88-合并两个有序数组httpsleetcodecnproblemsmerge-sorted-array"><a href="https://leetcode.cn/problems/merge-sorted-array/"target="_blank" rel="external nofollow noopener noreferrer">LC 88. 合并两个有序数组</a></h4>
 <p>简单的一道二路归并。代码：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1230,20 +1094,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="剑指-offer-24-反转链表httpsleetcodecnproblemsfan-zhuan-lian-biao-lcof"><a
-  href="https://leetcode.cn/problems/fan-zhuan-lian-biao-lcof/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->剑指 Offer 24. 反转链表</a></h4>
+</div><h4 id="剑指-offer-24-反转链表httpsleetcodecnproblemsfan-zhuan-lian-biao-lcof"><a href="https://leetcode.cn/problems/fan-zhuan-lian-biao-lcof/"target="_blank" rel="external nofollow noopener noreferrer">剑指 Offer 24. 反转链表</a></h4>
 <p>代码：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1298,20 +1149,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="lc-203-移除链表元素httpsleetcodecnproblemsremove-linked-list-elements"><a
-  href="https://leetcode.cn/problems/remove-linked-list-elements/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->LC 203. 移除链表元素</a></h4>
+</div><h4 id="lc-203-移除链表元素httpsleetcodecnproblemsremove-linked-list-elements"><a href="https://leetcode.cn/problems/remove-linked-list-elements/"target="_blank" rel="external nofollow noopener noreferrer">LC 203. 移除链表元素</a></h4>
 <p>代码：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1376,20 +1214,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="lc-24-两两交换链表中的节点httpsleetcodecnproblemsswap-nodes-in-pairs"><a
-  href="https://leetcode.cn/problems/swap-nodes-in-pairs/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->LC 24. 两两交换链表中的节点</a></h4>
+</div><h4 id="lc-24-两两交换链表中的节点httpsleetcodecnproblemsswap-nodes-in-pairs"><a href="https://leetcode.cn/problems/swap-nodes-in-pairs/"target="_blank" rel="external nofollow noopener noreferrer">LC 24. 两两交换链表中的节点</a></h4>
 <p>递归代码：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1419,26 +1244,13 @@
 </div>
 </div><div class="details admonition success open">
     <div class="details-summary admonition-title">
-      <i class="icon fa-solid fa-check-circle fa-fw"></i>成功<i class="details-icon fa-solid fa-angle-right fa-fw"></i>
+      <i class="icon fa-solid fa-check-circle fa-fw" aria-hidden="true"></i>成功<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
     </div>
     <div class="details-content">
       <div class="admonition-content">递归也太好用了</div>
     </div>
   </div>
-<h4 id="剑指-offer-ii-026-重排链表httpsleetcodecnproblemslgjmqu"><a
-  href="https://leetcode.cn/problems/LGjMqU/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->剑指 Offer II 026. 重排链表</a></h4>
+<h4 id="剑指-offer-ii-026-重排链表httpsleetcodecnproblemslgjmqu"><a href="https://leetcode.cn/problems/LGjMqU/"target="_blank" rel="external nofollow noopener noreferrer">剑指 Offer II 026. 重排链表</a></h4>
 <p>代码：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1546,20 +1358,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="lc-92-反转链表-iihttpsleetcodecnproblemsreverse-linked-list-ii"><a
-  href="https://leetcode.cn/problems/reverse-linked-list-ii/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->LC 92. 反转链表 II</a></h4>
+</div><h4 id="lc-92-反转链表-iihttpsleetcodecnproblemsreverse-linked-list-ii"><a href="https://leetcode.cn/problems/reverse-linked-list-ii/"target="_blank" rel="external nofollow noopener noreferrer">LC 92. 反转链表 II</a></h4>
 <p>第一思路组合拳，先把需要反转的部分拆出，反转后再装回。代码：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1708,20 +1507,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="lc-105-从前序与中序遍历序列构造二叉树httpsleetcodecnproblemsconstruct-binary-tree-from-preorder-and-inorder-traversal"><a
-  href="https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->LC 105. 从前序与中序遍历序列构造二叉树</a></h4>
+</div><h4 id="lc-105-从前序与中序遍历序列构造二叉树httpsleetcodecnproblemsconstruct-binary-tree-from-preorder-and-inorder-traversal"><a href="https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/"target="_blank" rel="external nofollow noopener noreferrer">LC 105. 从前序与中序遍历序列构造二叉树</a></h4>
 <p>前闭后闭注意退出条件简单递归即可。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1785,20 +1571,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="lc-106-从中序与后序遍历序列构造二叉树httpsleetcodecnproblemsconstruct-binary-tree-from-inorder-and-postorder-traversal"><a
-  href="https://leetcode.cn/problems/construct-binary-tree-from-inorder-and-postorder-traversal/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->LC 106. 从中序与后序遍历序列构造二叉树</a></h4>
+</div><h4 id="lc-106-从中序与后序遍历序列构造二叉树httpsleetcodecnproblemsconstruct-binary-tree-from-inorder-and-postorder-traversal"><a href="https://leetcode.cn/problems/construct-binary-tree-from-inorder-and-postorder-traversal/"target="_blank" rel="external nofollow noopener noreferrer">LC 106. 从中序与后序遍历序列构造二叉树</a></h4>
 <p>故技重施，顺带做了一些微不足道的简化。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1848,20 +1621,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="lc-108-将有序数组转换为二叉搜索树httpsleetcodecnproblemsconvert-sorted-array-to-binary-search-tree"><a
-  href="https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->LC 108. 将有序数组转换为二叉搜索树</a></h4>
+</div><h4 id="lc-108-将有序数组转换为二叉搜索树httpsleetcodecnproblemsconvert-sorted-array-to-binary-search-tree"><a href="https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree/"target="_blank" rel="external nofollow noopener noreferrer">LC 108. 将有序数组转换为二叉搜索树</a></h4>
 <p>没啥好说的，都在代码里。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1899,20 +1659,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="lc-98-验证二叉搜索树httpsleetcodecnproblemsvalidate-binary-search-tree"><a
-  href="https://leetcode.cn/problems/validate-binary-search-tree/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->LC 98. 验证二叉搜索树</a></h4>
+</div><h4 id="lc-98-验证二叉搜索树httpsleetcodecnproblemsvalidate-binary-search-tree"><a href="https://leetcode.cn/problems/validate-binary-search-tree/"target="_blank" rel="external nofollow noopener noreferrer">LC 98. 验证二叉搜索树</a></h4>
 <p>中序遍历即可。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1964,20 +1711,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="剑指-offer-55---i-二叉树的深度httpsleetcodecnproblemser-cha-shu-de-shen-du-lcof"><a
-  href="https://leetcode.cn/problems/er-cha-shu-de-shen-du-lcof/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->剑指 Offer 55 - I. 二叉树的深度</a></h4>
+</div><h4 id="剑指-offer-55---i-二叉树的深度httpsleetcodecnproblemser-cha-shu-de-shen-du-lcof"><a href="https://leetcode.cn/problems/er-cha-shu-de-shen-du-lcof/"target="_blank" rel="external nofollow noopener noreferrer">剑指 Offer 55 - I. 二叉树的深度</a></h4>
 <p>二叉树的遍历，依旧没什么好说的。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2015,20 +1749,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="剑指-offer-55---ii-平衡二叉树httpsleetcodecnproblemsping-heng-er-cha-shu-lcof"><a
-  href="https://leetcode.cn/problems/ping-heng-er-cha-shu-lcof/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->剑指 Offer 55 - II. 平衡二叉树</a></h4>
+</div><h4 id="剑指-offer-55---ii-平衡二叉树httpsleetcodecnproblemsping-heng-er-cha-shu-lcof"><a href="https://leetcode.cn/problems/ping-heng-er-cha-shu-lcof/"target="_blank" rel="external nofollow noopener noreferrer">剑指 Offer 55 - II. 平衡二叉树</a></h4>
 <p>对于本题，递归时我们需要两种信息，一种是当前节点的高度，第二种是该节点是否平横。这对于只能返回一个值的C语言来讲相当不友好。但是注意到，如果某节点不平衡，那么节点的高度便没有计算下去的必要，只需要递归返回将节点不平衡的信息return即可，同时节点的高度一定是非负数。因此可以使用负数来表示节点不平衡的状态。</p>
 <p>代码如下：</p>
 <div class="highlight"><div class="chroma">
@@ -2071,20 +1792,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="剑指-offer-34-二叉树中和为某一值的路径httpsleetcodecnproblemser-cha-shu-zhong-he-wei-mou-yi-zhi-de-lu-jing-lcof"><a
-  href="https://leetcode.cn/problems/er-cha-shu-zhong-he-wei-mou-yi-zhi-de-lu-jing-lcof/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->剑指 Offer 34. 二叉树中和为某一值的路径</a></h4>
+</div><h4 id="剑指-offer-34-二叉树中和为某一值的路径httpsleetcodecnproblemser-cha-shu-zhong-he-wei-mou-yi-zhi-de-lu-jing-lcof"><a href="https://leetcode.cn/problems/er-cha-shu-zhong-he-wei-mou-yi-zhi-de-lu-jing-lcof/"target="_blank" rel="external nofollow noopener noreferrer">剑指 Offer 34. 二叉树中和为某一值的路径</a></h4>
 <p>深度优先搜索回溯算法。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2174,20 +1882,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="剑指-offer-ii-046-二叉树的右侧视图httpsleetcodecnproblemswnc0lk"><a
-  href="https://leetcode.cn/problems/WNC0Lk/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->剑指 Offer II 046. 二叉树的右侧视图</a></h4>
+</div><h4 id="剑指-offer-ii-046-二叉树的右侧视图httpsleetcodecnproblemswnc0lk"><a href="https://leetcode.cn/problems/WNC0Lk/"target="_blank" rel="external nofollow noopener noreferrer">剑指 Offer II 046. 二叉树的右侧视图</a></h4>
 <p>一眼深度优先搜索</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2235,35 +1930,9 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="剑指-offer-19-正则表达式匹配httpsleetcodecnproblemszheng-ze-biao-da-shi-pi-pei-lcof"><a
-  href="https://leetcode.cn/problems/zheng-ze-biao-da-shi-pi-pei-lcof/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->剑指 Offer 19. 正则表达式匹配</a></h4>
+</div><h4 id="剑指-offer-19-正则表达式匹配httpsleetcodecnproblemszheng-ze-biao-da-shi-pi-pei-lcof"><a href="https://leetcode.cn/problems/zheng-ze-biao-da-shi-pi-pei-lcof/"target="_blank" rel="external nofollow noopener noreferrer">剑指 Offer 19. 正则表达式匹配</a></h4>
 <p><strong>Hard动态规划，开摆！</strong></p>
-<h4 id="lc-38-外观数列httpsleetcodecnproblemscount-and-say"><a
-  href="https://leetcode.cn/problems/count-and-say/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->LC 38. 外观数列</a></h4>
+<h4 id="lc-38-外观数列httpsleetcodecnproblemscount-and-say"><a href="https://leetcode.cn/problems/count-and-say/"target="_blank" rel="external nofollow noopener noreferrer">LC 38. 外观数列</a></h4>
 <p>还行，就是字符串数组有点卡。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2304,7 +1973,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">CAS</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">res</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">char</span><span class="o">*</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10000</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span><span class="o">*</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4500</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">pre</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -2327,7 +1996,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kt">char</span><span class="o">*</span> <span class="nf">countAndSay</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">char</span><span class="o">*</span> <span class="n">res</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10000</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span><span class="o">*</span> <span class="n">res</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4500</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;1&#39;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="n">res</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
@@ -2340,9 +2009,148 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="12-分治策略">1.2 分治策略</h3>
+<p>典型实列：二分搜索、归并排序、快速排序。</p>
 <h3 id="13-贪心算法">1.3 贪心算法</h3>
 <h3 id="14-动态规划">1.4 动态规划</h3>
-<h3 id="15-线性规划">1.5 线性规划</h3>
+<h4 id="剑指-offer-ii-101-分割等和子集httpsleetcodecnproblemsnupfpr"><a href="https://leetcode.cn/problems/NUPfPr/"target="_blank" rel="external nofollow noopener noreferrer">剑指 Offer II 101. 分割等和子集</a></h4>
+<p>NP完全问题，动态规划求解。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="nf">canPartition</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">nums</span><span class="p">,</span> <span class="kt">int</span> <span class="n">numsSize</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">numsSize</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">maxNum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numsSize</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">sum</span> <span class="o">+=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="n">maxNum</span> <span class="o">=</span> <span class="n">fmax</span><span class="p">(</span><span class="n">maxNum</span><span class="p">,</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">sum</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">target</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">maxNum</span> <span class="o">&gt;</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">dp</span><span class="p">[</span><span class="n">numsSize</span><span class="p">][</span><span class="n">target</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="n">memset</span><span class="p">(</span><span class="n">dp</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">dp</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numsSize</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numsSize</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">target</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">&gt;=</span> <span class="n">num</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">|</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="n">num</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">numsSize</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">target</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>事实上注意到状态转移方程当前行只与上一行有关，因此可以原地dp。</p>
+<p>代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="nf">canPartition</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">nums</span><span class="p">,</span> <span class="kt">int</span> <span class="n">numsSize</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">numsSize</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">maxNum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numsSize</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">sum</span> <span class="o">+=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="n">maxNum</span> <span class="o">=</span> <span class="n">fmax</span><span class="p">(</span><span class="n">maxNum</span><span class="p">,</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">sum</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">target</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">maxNum</span> <span class="o">&gt;</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">dp</span><span class="p">[</span><span class="n">target</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="n">memset</span><span class="p">(</span><span class="n">dp</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">dp</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numsSize</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">target</span><span class="p">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="n">num</span><span class="p">;</span> <span class="o">--</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">|=</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="n">num</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">target</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="15-线性规划">1.5 线性规划</h3>
 <h3 id="16-网络流">1.6 网络流</h3>
 <h2 id="2-内部排序">2 内部排序</h2>
 <h3 id="21-排序的基本概念">2.1 排序的基本概念</h3>
@@ -2387,6 +2195,7 @@
 </span><span class="lnt">30
 </span><span class="lnt">31
 </span><span class="lnt">32
+</span><span class="lnt">33
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">maxHeapify</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">nums</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">heapSize</span><span class="p">)</span> <span class="p">{</span>
@@ -2401,6 +2210,7 @@
 </span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
 </span></span><span class="line"><span class="cl">        <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">largest</span><span class="p">];</span>
 </span></span><span class="line"><span class="cl">        <span class="n">nums</span><span class="p">[</span><span class="n">largest</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">maxHeapify</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">largest</span><span class="p">,</span> <span class="n">heapSize</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
@@ -2543,63 +2353,42 @@
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title=2022-08-26&#32;00:00:00>更新于 2022-08-26</span>
+        <span title=2022-08-26&#32;00:00:00>更新于 2022-08-26&nbsp;</span>
       </div><div class="post-info-license">
           <span><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
         </div></div>
     <div class="post-info-line">
-      <div class="post-info-md"><span><a
-  href="/datastructurewithc/index.md"
-  
-    title="阅读原始文档"
-  
-  
-  
-  
-    class="link-to-markdown"
-  
-  
->阅读原始文档</a></span></div>
+      <div class="post-info-md"><span><a href="/datastructurewithc/index.md" title="阅读原始文档" class="link-to-markdown">阅读原始文档</a></span></div>
       <div class="post-info-share">
-        <span><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blathers23.netlify.app/datastructurewithc/" data-title="使用C语言学习算法及数据结构"><i class="fa-brands fa-weibo fa-fw"></i></a>
-  <a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://blathers23.netlify.app/datastructurewithc/" data-title="使用C语言学习算法及数据结构"><i data-svg-src="/lib/simple-icons/icons/baidu.min.svg"></i></a>
-  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://blathers23.netlify.app/datastructurewithc/" data-title="使用C语言学习算法及数据结构"><i class="fa-brands fa-evernote fa-fw"></i></a>
+        <span><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blathers23.netlify.app/datastructurewithc/" data-title="使用C语言学习算法及数据结构"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://blathers23.netlify.app/datastructurewithc/" data-title="使用C语言学习算法及数据结构"><i data-svg-src="/lib/simple-icons/icons/baidu.min.svg" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://blathers23.netlify.app/datastructurewithc/" data-title="使用C语言学习算法及数据结构"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
   </span>
       </div>
     </div>
   </div>
 
   <div class="post-info-more">
-    <section class="post-tags"><i class="fa-solid fa-tags fa-fw"></i>&nbsp;<a href="/tags/c/">C</a>,&nbsp;<a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>,&nbsp;<a href="/tags/%E7%AE%97%E6%B3%95/">算法</a></section>
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/c/">C</a>,&nbsp;<a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>,&nbsp;<a href="/tags/%E7%AE%97%E6%B3%95/">算法</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>
   </div>
 
-  <div class="post-nav"><a href="/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8linux/" class="prev" rel="prev" title="优雅地使用Linux"><i class="fa-solid fa-angle-left fa-fw"></i>优雅地使用Linux</a></div>
+  <div class="post-nav"><a href="/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8linux/" class="prev" rel="prev" title="优雅地使用Linux"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>优雅地使用Linux</a></div>
 </div>
 <div id="comments"><div id="waline" class="comment"></div><noscript>
         Please enable JavaScript to view the comments powered by <a href="https://waline.js.org/" rel="external nofollow noopener noreferrer">Waline</a>.
       </noscript></div></article></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.97.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external nofollow noopener noreferrer" title="FixIt v0.2.16-RC"><img class="fixit-icon" src="/images/fixit.svg" alt="FixIt logo" />&nbsp;FixIt</a>
-        </div><div class="footer-line copyright"><i class="fa-regular fa-copyright fa-fw"></i>
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.104.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.16"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">
-              <a
-  href="/"
-  
-  
-  
-  
-  
->Blathers</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon"></i>&nbsp;<span class="run-times">网站运行中 ...</span></span></div><div class="footer-line ibruce">
-          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin fa-fw"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin fa-fw"></i></span></span>
+              <a href="/">Blathers</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i>&nbsp;<span class="run-times">网站运行中 ...</span></span></div><div class="footer-line ibruce">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
         </div></div>
-  </footer></div><div class="widgets">
-  <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
-      <i class="fa-solid fa-arrow-up fa-fw"></i>
-    </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
-      <i class="fa-solid fa-comment fa-fw"></i>
-    </a>
-  </div><div id="mask"></div>
-</div><link rel="stylesheet" href="/lib/waline/waline.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/waline/waline.js" defer></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js" defer></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js" async defer></script><script type="text/javascript" src="/lib/sharer/sharer.min.js" async defer></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":50},"comment":{"waline":{"copyright":true,"dark":"body[theme='dark']","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/bilibili"],"highlighter":false,"imageUploader":false,"lang":"zh-cn","login":"enable","meta":["nick","mail","link"],"pageSize":10,"serverURL":"https://eke-sai-ting-bdlj3h1m4-blathers.vercel.app/"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"siteTime":"2022-04-19T01:19:11+08:00"};</script><script type="text/javascript" src="/js/theme.min.js" defer></script><script type="text/javascript" src="/js/_custom.min.js" defer></script></body>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/waline/waline.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/waline/waline.js" defer></script><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":50},"comment":{"enable":true,"waline":{"copyright":true,"dark":"body[data-theme='dark']","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/bilibili"],"highlighter":false,"imageUploader":false,"lang":"zh-cn","login":"enable","meta":["nick","mail","link"],"pageSize":10,"search":false,"serverURL":"https://eke-sai-ting-bdlj3h1m4-blathers.vercel.app/","texRenderer":false}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"siteTime":"2022-04-19T01:19:11+08:00"};</script><script src="/js/theme.min.js" defer></script></body>
 </html>

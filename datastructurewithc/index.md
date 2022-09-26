@@ -945,7 +945,7 @@ int* rightSideView(struct TreeNode* root, int* returnSize){
 
 ```C
 void CAS(char* res) {
-    char* tmp = malloc(sizeof(char) * 10000);
+    char* tmp = malloc(sizeof(char) * 4500);
     char pre = res[0];
     int count = 1;
     int size = 0;
@@ -968,7 +968,7 @@ void CAS(char* res) {
 }
 
 char* countAndSay(int n) {
-    char* res = malloc(sizeof(char) * 10000);
+    char* res = malloc(sizeof(char) * 4500);
     res[0] = '1';
     res[1] = '\0';
 
@@ -982,7 +982,7 @@ char* countAndSay(int n) {
 
 ### 1.2 分治策略
 
-
+典型实列：二分搜索、归并排序、快速排序。
 
 ### 1.3 贪心算法
 
@@ -990,7 +990,80 @@ char* countAndSay(int n) {
 
 ### 1.4 动态规划
 
+#### [剑指 Offer II 101. 分割等和子集](https://leetcode.cn/problems/NUPfPr/)
 
+NP完全问题，动态规划求解。
+
+```C
+bool canPartition(int* nums, int numsSize) {
+    if (numsSize < 2) {
+        return false;
+    }
+    int sum = 0, maxNum = 0;
+    for (int i = 0; i < numsSize; ++i) {
+        sum += nums[i];
+        maxNum = fmax(maxNum, nums[i]);
+    }
+    if (sum & 1) {
+        return false;
+    }
+    int target = sum / 2;
+    if (maxNum > target) {
+        return false;
+    }
+    int dp[numsSize][target + 1];
+    memset(dp, 0, sizeof(dp));
+    for (int i = 0; i < numsSize; i++) {
+        dp[i][0] = true;
+    }
+    dp[0][nums[0]] = true;
+    for (int i = 1; i < numsSize; i++) {
+        int num = nums[i];
+        for (int j = 1; j <= target; j++) {
+            if (j >= num) {
+                dp[i][j] = dp[i - 1][j] | dp[i - 1][j - num];
+            } else {
+                dp[i][j] = dp[i - 1][j];
+            }
+        }
+    }
+    return dp[numsSize - 1][target];
+}
+```
+
+事实上注意到状态转移方程当前行只与上一行有关，因此可以原地dp。
+
+代码：
+
+```C
+bool canPartition(int* nums, int numsSize) {
+    if (numsSize < 2) {
+        return false;
+    }
+    int sum = 0, maxNum = 0;
+    for (int i = 0; i < numsSize; ++i) {
+        sum += nums[i];
+        maxNum = fmax(maxNum, nums[i]);
+    }
+    if (sum & 1) {
+        return false;
+    }
+    int target = sum / 2;
+    if (maxNum > target) {
+        return false;
+    }
+    int dp[target + 1];
+    memset(dp, 0, sizeof(dp));
+    dp[0] = true;
+    for (int i = 0; i < numsSize; i++) {
+        int num = nums[i];
+        for (int j = target; j >= num; --j) {
+            dp[j] |= dp[j - num];
+        }
+    }
+    return dp[target];
+}
+```
 
 ### 1.5 线性规划
 
@@ -1043,6 +1116,7 @@ void maxHeapify(int* nums, int i, int heapSize) {
         int temp = nums[i];
         nums[i] = nums[largest];
         nums[largest] = temp;
+        maxHeapify(a, largest, heapSize);
     }
 }
 

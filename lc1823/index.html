@@ -1,33 +1,30 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
   <head>
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <title>LC1823 - 找出游戏的获胜者 - Blathers&#39; Tent</title><meta name="author" content="Blathers">
 <meta name="author-link" content="">
 <meta name="description" content="找出隐藏在模拟之下的数学规律是巧解本题的关键。" /><meta name="keywords" content='Python, 模拟, 递归, 迭代, 约瑟夫环' /><meta itemprop="name" content="LC1823 - 找出游戏的获胜者">
 <meta itemprop="description" content="找出隐藏在模拟之下的数学规律是巧解本题的关键。"><meta itemprop="datePublished" content="2022-05-05T01:54:00+08:00" />
 <meta itemprop="dateModified" content="2022-05-05T00:00:00+00:00" />
-<meta itemprop="wordCount" content="3352"><meta itemprop="image" content="https://blathers23.netlify.app/logo.png"/>
+<meta itemprop="wordCount" content="3352">
 <meta itemprop="keywords" content="Python,模拟,递归,迭代,约瑟夫环," /><meta property="og:title" content="LC1823 - 找出游戏的获胜者" />
 <meta property="og:description" content="找出隐藏在模拟之下的数学规律是巧解本题的关键。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blathers23.netlify.app/lc1823/" /><meta property="og:image" content="https://blathers23.netlify.app/logo.png"/><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://blathers23.netlify.app/lc1823/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-05-05T01:54:00+08:00" />
 <meta property="article:modified_time" content="2022-05-05T00:00:00+00:00" />
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://blathers23.netlify.app/logo.png"/>
-
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="LC1823 - 找出游戏的获胜者"/>
 <meta name="twitter:description" content="找出隐藏在模拟之下的数学规律是巧解本题的关键。"/>
 <meta name="application-name" content="FixIt">
-<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#252627"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blathers23.netlify.app/lc1823/" /><link rel="prev" href="https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAhugo%E6%95%99%E7%A8%8B/" /><link rel="next" href="https://blathers23.netlify.app/lc433/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://blathers23.netlify.app/lc1823/" /><link rel="prev" href="https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAhugo%E6%95%99%E7%A8%8B/" /><link rel="next" href="https://blathers23.netlify.app/lc433/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
@@ -45,51 +42,36 @@
       },"description": "找出隐藏在模拟之下的数学规律是巧解本题的关键。"
   }
   </script></head>
-  <body header-desktop="sticky" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script><div class="wrapper"><header class="desktop" id="header-desktop">
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
   <div class="header-wrapper">
     <div class="header-title">
       <a href="/" title="Blathers&#39; Tent"><span class="header-title-pre">🏕️</span><span class="header-title-text">Blathers&#39; Tent</span></a><span class="header-subtitle"></span></div>
     <nav>
-      <ul class="menu"><li
-              class="menu-item"
-              
-            >
+      <ul class="menu"><li class="menu-item">
               <a
                 class="menu-link"
                 href="/posts/"
                 title="全部文章"
                 
-              >Posts 📑</a></li><li
-              class="menu-item"
-              
-            >
+              >Posts 📑</a></li><li class="menu-item">
               <a
                 class="menu-link"
                 href="/tags/"
                 title="标签"
                 
-              >Tags 🏷️</a></li><li
-              class="menu-item"
-              
-            >
+              >Tags 🏷️</a></li><li class="menu-item">
               <a
                 class="menu-link"
                 href="/categories/"
                 title="分类"
                 
-              >Categories 📚</a></li><li
-              class="menu-item"
-              
-            >
+              >Categories 📚</a></li><li class="menu-item">
               <a
                 class="menu-link"
                 href="/friends"
                 title="友情链接"
                 
-              >Friends 🎈</a></li><li
-              class="menu-item"
-              
-            >
+              >Friends 🎈</a></li><li class="menu-item">
               <a
                 class="menu-link"
                 href="/about"
@@ -98,21 +80,21 @@
               >About 🦉</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
             <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-desktop">
             <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
-              <i class="fa-solid fa-search fa-fw"></i>
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
             </a>
             <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
-              <i class="fa-solid fa-times-circle fa-fw"></i>
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
             </a>
             <span class="search-button search-loading" id="search-loading-desktop">
-              <i class="fa-solid fa-spinner fa-fw fa-spin"></i>
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
             </span>
           </li><li class="menu-item theme-switch" title="切换主题">
-          <i class="fa-solid fa-adjust fa-fw"></i>
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
         </li>
       </ul>
     </nav>
   </div>
-</header><header class="mobile" id="header-mobile">
+</header><header class="mobile animate__faster" id="header-mobile">
   <div class="header-container">
     <div class="header-wrapper">
       <div class="header-title">
@@ -126,13 +108,13 @@
             <div class="search mobile" id="search-mobile">
               <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-mobile">
               <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
-                <i class="fa-solid fa-search fa-fw"></i>
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
               </a>
               <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
-                <i class="fa-solid fa-times-circle fa-fw"></i>
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
               </a>
               <span class="search-button search-loading" id="search-loading-mobile">
-                <i class="fa-solid fa-spinner fa-fw fa-spin"></i>
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
               </span>
             </div>
             <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
@@ -141,51 +123,49 @@
           </li><li
               class="menu-item"
             ><a
-                class="menu-link"
-                href="/posts/"
-                title="全部文章"
-                
-              >Posts 📑</a></li><li
+                  class="menu-link"
+                  href="/posts/"
+                  title="全部文章"
+                  
+                >Posts 📑</a></li><li
               class="menu-item"
             ><a
-                class="menu-link"
-                href="/tags/"
-                title="标签"
-                
-              >Tags 🏷️</a></li><li
+                  class="menu-link"
+                  href="/tags/"
+                  title="标签"
+                  
+                >Tags 🏷️</a></li><li
               class="menu-item"
             ><a
-                class="menu-link"
-                href="/categories/"
-                title="分类"
-                
-              >Categories 📚</a></li><li
+                  class="menu-link"
+                  href="/categories/"
+                  title="分类"
+                  
+                >Categories 📚</a></li><li
               class="menu-item"
             ><a
-                class="menu-link"
-                href="/friends"
-                title="友情链接"
-                
-              >Friends 🎈</a></li><li
+                  class="menu-link"
+                  href="/friends"
+                  title="友情链接"
+                  
+                >Friends 🎈</a></li><li
               class="menu-item"
             ><a
-                class="menu-link"
-                href="/about"
-                title="关于我"
-                
-              >About 🦉</a></li><li class="menu-item theme-switch" title="切换主题">
-          <i class="fa-solid fa-adjust fa-fw"></i>
+                  class="menu-link"
+                  href="/about"
+                  title="关于我"
+                  
+                >About 🦉</a></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
         </li></ul>
     </nav>
   </div>
-</header>
-<div class="search-dropdown desktop">
-  <div id="search-dropdown-desktop"></div>
-</div>
-<div class="search-dropdown mobile">
-  <div id="search-dropdown-mobile"></div>
-</div>
-<main class="container" page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录 <i class="toc-icon fa-solid fa-angle-down fa-fw"></i></h2>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
       <div class="toc-content" id="toc-content-auto"></div></aside>
 
   <aside class="aside-custom">
@@ -203,12 +183,9 @@
     data-srcset="https://gravatar.loli.net/avatar/1cc24367e7133aceb81bfd9ef41481cd?s=32&amp;d=, https://gravatar.loli.net/avatar/1cc24367e7133aceb81bfd9ef41481cd?s=32&amp;d= 1.5x, https://gravatar.loli.net/avatar/1cc24367e7133aceb81bfd9ef41481cd?s=32&amp;d= 2x"
     data-sizes="auto"
     alt="Blathers"
-    title="Blathers" />&nbsp;Blathers</span></span>
-          <span class="post-category">收录于 <a href="/categories/leetcode/"><i class="fa-regular fa-folder fa-fw"></i>&nbsp;leetcode</a></span></div>
-      <div class="post-meta-line"><span title=2022-05-05&#32;01:54:00>
-            <i class="fa-regular fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-05-05" >2022-05-05</time>
-          </span>&nbsp;<i class="fa-solid fa-pencil-alt fa-fw"></i>&nbsp;约 3352 字&nbsp;
-        <i class="fa-regular fa-clock fa-fw"></i>&nbsp;预计阅读 7 分钟&nbsp;</div>
+    title="Blathers"/>&nbsp;Blathers</span></span>
+          <span class="post-category">收录于 <a href="/categories/leetcode/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> leetcode</a></span></div>
+      <div class="post-meta-line"><span title=2022-05-05&#32;01:54:00><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-05-05">2022-05-05</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 3352 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 7 分钟</span>&nbsp;</div>
     </div><div class="featured-image"><img
     class="lazyload"
     src="/svg/loading.min.svg"
@@ -216,10 +193,10 @@
     data-srcset="/images/leetcode.jpg, /images/leetcode.jpg 1.5x, /images/leetcode.jpg 2x"
     data-sizes="auto"
     alt="/images/leetcode.jpg"
-    title="找出隐藏在模拟之下的数学规律是巧解本题的关键。" /></div><div class="details toc" id="toc-static" kept="false">
+    title="找出隐藏在模拟之下的数学规律是巧解本题的关键。"/></div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
-          <span><i class="details-icon fa-solid fa-angle-right"></i></span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
         </div>
         <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
@@ -238,26 +215,13 @@
       
     ><div class="details admonition note open">
       <div class="details-summary admonition-title">
-        <i class="icon fa-solid fa-pencil-alt fa-fw"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw"></i>
+        <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
       </div>
       <div class="details-content">
         <div class="admonition-content">本文最后更新于 2022-05-05，文中内容可能已过时。</div>
       </div>
     </div><blockquote>
-<p>问题链接：<a
-  href="https://leetcode.cn/problems/find-the-winner-of-the-circular-game/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->找出游戏的获胜者</a></p>
+<p>问题链接：<a href="https://leetcode.cn/problems/find-the-winner-of-the-circular-game/"target="_blank" rel="external nofollow noopener noreferrer">找出游戏的获胜者</a></p>
 </blockquote>
 <h2 id="思考">思考</h2>
 <hr>
@@ -329,7 +293,7 @@
 <p>假设 $k = 3$ 那么我们将要淘汰的数字为环中第 $3$ 个数，也就是 $2$。可以看到，图中两环虽然 $n$ 不相同，但是所淘汰的数是相同的。</p>
 <div class="details admonition note open">
     <div class="details-summary admonition-title">
-      <i class="icon fa-solid fa-pencil-alt fa-fw"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw"></i>
+      <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
     </div>
     <div class="details-content">
       <div class="admonition-content">我们大可以一直不停的淘汰下去，但是这样解决不了任何问题。因为一直淘汰下去又会使问题回归到模拟，现在我们应当试图寻找一些<strong>规律</strong>。</div>
@@ -353,7 +317,7 @@
 <p>至此，我们找到了一种上下对应的关系。换句话说：<strong>如果我们已知</strong> $n=8,k=3$ <strong>时何数的去留，我们便能通过数学关系</strong> $(x+k) \% n$ <strong>得知</strong> $n=9,k=3$ <strong>时何数的去留</strong>。这是因为由上图可知，<strong>去留关系应该是一一对应的</strong>。</p>
 <div class="details admonition note open">
     <div class="details-summary admonition-title">
-      <i class="icon fa-solid fa-pencil-alt fa-fw"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw"></i>
+      <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
     </div>
     <div class="details-content">
       <div class="admonition-content">我们考虑的问题为约瑟夫环，这个环是首尾相接的，对上图而言，两环的差距，仅仅在<strong>标上的数字不相同</strong>。而由约瑟夫环的特性我们可以知道，对于一个约瑟夫环，只要起点相同，$n$ 和 $k$ 相同，那么对应位置的数字最终存活与否肯定是相同的。现在我们通过一个数学转换找到了数字之间的对应关系。</div>
@@ -385,7 +349,7 @@ $$
 </div><p>将多行代码优化至一行！数学，很神奇吧！</p>
 <div class="details admonition tip open">
     <div class="details-summary admonition-title">
-      <i class="icon fa-solid fa-lightbulb fa-fw"></i>提示<i class="details-icon fa-solid fa-angle-right fa-fw"></i>
+      <i class="icon fa-solid fa-lightbulb fa-fw" aria-hidden="true"></i>提示<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
     </div>
     <div class="details-content">
       <div class="admonition-content">你可能已经注意到本题与约瑟夫环的不同，那就是约瑟夫环起始数为 $0$ 而本题起始数为 $1$。这也不难解决，只需要在输出结果后使结果 $+1$ 并在进行约瑟夫环递归计算前将其减去即可。</div>
@@ -436,64 +400,43 @@ $$
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title=2022-05-05&#32;00:00:00>更新于 2022-05-05</span>
+        <span title=2022-05-05&#32;00:00:00>更新于 2022-05-05&nbsp;</span>
       </div><div class="post-info-license">
           <span><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
         </div></div>
     <div class="post-info-line">
-      <div class="post-info-md"><span><a
-  href="/lc1823/index.md"
-  
-    title="阅读原始文档"
-  
-  
-  
-  
-    class="link-to-markdown"
-  
-  
->阅读原始文档</a></span></div>
+      <div class="post-info-md"><span><a href="/lc1823/index.md" title="阅读原始文档" class="link-to-markdown">阅读原始文档</a></span></div>
       <div class="post-info-share">
-        <span><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blathers23.netlify.app/lc1823/" data-title="LC1823 - 找出游戏的获胜者" data-image="/images/leetcode.jpg"><i class="fa-brands fa-weibo fa-fw"></i></a>
-  <a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://blathers23.netlify.app/lc1823/" data-title="LC1823 - 找出游戏的获胜者"><i data-svg-src="/lib/simple-icons/icons/baidu.min.svg"></i></a>
-  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://blathers23.netlify.app/lc1823/" data-title="LC1823 - 找出游戏的获胜者"><i class="fa-brands fa-evernote fa-fw"></i></a>
+        <span><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blathers23.netlify.app/lc1823/" data-title="LC1823 - 找出游戏的获胜者" data-image="/images/leetcode.jpg"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://blathers23.netlify.app/lc1823/" data-title="LC1823 - 找出游戏的获胜者"><i data-svg-src="/lib/simple-icons/icons/baidu.min.svg" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://blathers23.netlify.app/lc1823/" data-title="LC1823 - 找出游戏的获胜者"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
   </span>
       </div>
     </div>
   </div>
 
   <div class="post-info-more">
-    <section class="post-tags"><i class="fa-solid fa-tags fa-fw"></i>&nbsp;<a href="/tags/python/">Python</a>,&nbsp;<a href="/tags/%E6%A8%A1%E6%8B%9F/">模拟</a>,&nbsp;<a href="/tags/%E9%80%92%E5%BD%92/">递归</a>,&nbsp;<a href="/tags/%E8%BF%AD%E4%BB%A3/">迭代</a>,&nbsp;<a href="/tags/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/">约瑟夫环</a></section>
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/python/">Python</a>,&nbsp;<a href="/tags/%E6%A8%A1%E6%8B%9F/">模拟</a>,&nbsp;<a href="/tags/%E9%80%92%E5%BD%92/">递归</a>,&nbsp;<a href="/tags/%E8%BF%AD%E4%BB%A3/">迭代</a>,&nbsp;<a href="/tags/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/">约瑟夫环</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>
   </div>
 
-  <div class="post-nav"><a href="/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAhugo%E6%95%99%E7%A8%8B/" class="prev" rel="prev" title="浅入浅出 Hugo 教程"><i class="fa-solid fa-angle-left fa-fw"></i>浅入浅出 Hugo 教程</a>
-      <a href="/lc433/" class="next" rel="next" title="LC433 - 最小基因变化">LC433 - 最小基因变化<i class="fa-solid fa-angle-right fa-fw"></i></a></div>
+  <div class="post-nav"><a href="/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAhugo%E6%95%99%E7%A8%8B/" class="prev" rel="prev" title="浅入浅出 Hugo 教程"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>浅入浅出 Hugo 教程</a>
+      <a href="/lc433/" class="next" rel="next" title="LC433 - 最小基因变化">LC433 - 最小基因变化<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="waline" class="comment"></div><noscript>
         Please enable JavaScript to view the comments powered by <a href="https://waline.js.org/" rel="external nofollow noopener noreferrer">Waline</a>.
       </noscript></div></article></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.97.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external nofollow noopener noreferrer" title="FixIt v0.2.16-RC"><img class="fixit-icon" src="/images/fixit.svg" alt="FixIt logo" />&nbsp;FixIt</a>
-        </div><div class="footer-line copyright"><i class="fa-regular fa-copyright fa-fw"></i>
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.104.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.16"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">
-              <a
-  href="/"
-  
-  
-  
-  
-  
->Blathers</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon"></i>&nbsp;<span class="run-times">网站运行中 ...</span></span></div><div class="footer-line ibruce">
-          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin fa-fw"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin fa-fw"></i></span></span>
+              <a href="/">Blathers</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i>&nbsp;<span class="run-times">网站运行中 ...</span></span></div><div class="footer-line ibruce">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
         </div></div>
-  </footer></div><div class="widgets">
-  <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
-      <i class="fa-solid fa-arrow-up fa-fw"></i>
-    </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
-      <i class="fa-solid fa-comment fa-fw"></i>
-    </a>
-  </div><div id="mask"></div>
-</div><link rel="stylesheet" href="/lib/waline/waline.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/aplayer/APlayer.min.css"><link rel="stylesheet" href="/lib/aplayer/dark.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/waline/waline.js" defer></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js" defer></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js" async defer></script><script type="text/javascript" src="/lib/sharer/sharer.min.js" async defer></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/lib/aplayer/APlayer.min.js" defer></script><script type="text/javascript" src="/lib/meting/Meting.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":50},"comment":{"waline":{"copyright":true,"dark":"body[theme='dark']","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/bilibili"],"highlighter":false,"imageUploader":false,"lang":"zh-cn","login":"enable","meta":["nick","mail","link"],"pageSize":10,"serverURL":"https://eke-sai-ting-bdlj3h1m4-blathers.vercel.app/"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"siteTime":"2022-04-19T01:19:11+08:00"};</script><script type="text/javascript" src="/js/theme.min.js" defer></script><script type="text/javascript" src="/js/_custom.min.js" defer></script></body>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/waline/waline.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/aplayer/APlayer.min.css"><link rel="stylesheet" href="/lib/aplayer/dark.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/waline/waline.js" defer></script><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/aplayer/APlayer.min.js" defer></script><script src="/lib/meting/Meting.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":50},"comment":{"enable":true,"waline":{"copyright":true,"dark":"body[data-theme='dark']","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/bilibili"],"highlighter":false,"imageUploader":false,"lang":"zh-cn","login":"enable","meta":["nick","mail","link"],"pageSize":10,"search":false,"serverURL":"https://eke-sai-ting-bdlj3h1m4-blathers.vercel.app/","texRenderer":false}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"siteTime":"2022-04-19T01:19:11+08:00"};</script><script src="/js/theme.min.js" defer></script></body>
 </html>

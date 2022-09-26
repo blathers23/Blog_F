@@ -1,33 +1,30 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
   <head>
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <title>毕业设计-基于人工智能的大气颗粒污染物扩散模拟技术的研究 - Blathers&#39; Tent</title><meta name="author" content="Blathers">
 <meta name="author-link" content="">
-<meta name="description" content="This is My New Hugo Site" /><meta name="keywords" content='Python, RNN, LSTM, GRU' /><meta itemprop="name" content="毕业设计-基于人工智能的大气颗粒污染物扩散模拟技术的研究">
+<meta name="description" content="This is my new Hugo FixIt site" /><meta name="keywords" content='Python, RNN, LSTM, GRU' /><meta itemprop="name" content="毕业设计-基于人工智能的大气颗粒污染物扩散模拟技术的研究">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2022-05-25T13:49:00+08:00" />
 <meta itemprop="dateModified" content="2022-05-25T00:00:00+00:00" />
-<meta itemprop="wordCount" content="16808"><meta itemprop="image" content="https://blathers23.netlify.app/logo.png"/>
+<meta itemprop="wordCount" content="16670">
 <meta itemprop="keywords" content="Python,RNN,LSTM,GRU," /><meta property="og:title" content="毕业设计-基于人工智能的大气颗粒污染物扩散模拟技术的研究" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blathers23.netlify.app/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E5%A4%A7%E6%B0%94%E9%A2%97%E7%B2%92%E6%B1%A1%E6%9F%93%E7%89%A9%E6%89%A9%E6%95%A3%E6%A8%A1%E6%8B%9F%E6%8A%80%E6%9C%AF%E7%9A%84%E7%A0%94%E7%A9%B6/" /><meta property="og:image" content="https://blathers23.netlify.app/logo.png"/><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://blathers23.netlify.app/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E5%A4%A7%E6%B0%94%E9%A2%97%E7%B2%92%E6%B1%A1%E6%9F%93%E7%89%A9%E6%89%A9%E6%95%A3%E6%A8%A1%E6%8B%9F%E6%8A%80%E6%9C%AF%E7%9A%84%E7%A0%94%E7%A9%B6/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-05-25T13:49:00+08:00" />
 <meta property="article:modified_time" content="2022-05-25T00:00:00+00:00" />
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://blathers23.netlify.app/logo.png"/>
-
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="毕业设计-基于人工智能的大气颗粒污染物扩散模拟技术的研究"/>
 <meta name="twitter:description" content=""/>
 <meta name="application-name" content="FixIt">
-<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#252627"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blathers23.netlify.app/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E5%A4%A7%E6%B0%94%E9%A2%97%E7%B2%92%E6%B1%A1%E6%9F%93%E7%89%A9%E6%89%A9%E6%95%A3%E6%A8%A1%E6%8B%9F%E6%8A%80%E6%9C%AF%E7%9A%84%E7%A0%94%E7%A9%B6/" /><link rel="prev" href="https://blathers23.netlify.app/lc691/" /><link rel="next" href="https://blathers23.netlify.app/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8linux%E4%B9%8Bwine%E7%9A%84%E9%A3%9F%E7%94%A8%E6%96%B9%E5%BC%8F/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://blathers23.netlify.app/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E5%A4%A7%E6%B0%94%E9%A2%97%E7%B2%92%E6%B1%A1%E6%9F%93%E7%89%A9%E6%89%A9%E6%95%A3%E6%A8%A1%E6%8B%9F%E6%8A%80%E6%9C%AF%E7%9A%84%E7%A0%94%E7%A9%B6/" /><link rel="prev" href="https://blathers23.netlify.app/lc691/" /><link rel="next" href="https://blathers23.netlify.app/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8linux%E4%B9%8Bwine%E7%9A%84%E9%A3%9F%E7%94%A8%E6%96%B9%E5%BC%8F/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
@@ -36,7 +33,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/blathers23.netlify.app\/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E5%A4%A7%E6%B0%94%E9%A2%97%E7%B2%92%E6%B1%A1%E6%9F%93%E7%89%A9%E6%89%A9%E6%95%A3%E6%A8%A1%E6%8B%9F%E6%8A%80%E6%9C%AF%E7%9A%84%E7%A0%94%E7%A9%B6\/"
-    },"genre": "posts","keywords": "Python, RNN, LSTM, GRU","wordcount":  16808 ,
+    },"genre": "posts","keywords": "Python, RNN, LSTM, GRU","wordcount":  16670 ,
     "url": "https:\/\/blathers23.netlify.app\/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E5%A4%A7%E6%B0%94%E9%A2%97%E7%B2%92%E6%B1%A1%E6%9F%93%E7%89%A9%E6%89%A9%E6%95%A3%E6%A8%A1%E6%8B%9F%E6%8A%80%E6%9C%AF%E7%9A%84%E7%A0%94%E7%A9%B6\/","datePublished": "2022-05-25T13:49:00+08:00","dateModified": "2022-05-25T00:00:00+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -45,51 +42,36 @@
       },"description": ""
   }
   </script></head>
-  <body header-desktop="sticky" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script><div class="wrapper"><header class="desktop" id="header-desktop">
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
   <div class="header-wrapper">
     <div class="header-title">
       <a href="/" title="Blathers&#39; Tent"><span class="header-title-pre">🏕️</span><span class="header-title-text">Blathers&#39; Tent</span></a><span class="header-subtitle"></span></div>
     <nav>
-      <ul class="menu"><li
-              class="menu-item"
-              
-            >
+      <ul class="menu"><li class="menu-item">
               <a
                 class="menu-link"
                 href="/posts/"
                 title="全部文章"
                 
-              >Posts 📑</a></li><li
-              class="menu-item"
-              
-            >
+              >Posts 📑</a></li><li class="menu-item">
               <a
                 class="menu-link"
                 href="/tags/"
                 title="标签"
                 
-              >Tags 🏷️</a></li><li
-              class="menu-item"
-              
-            >
+              >Tags 🏷️</a></li><li class="menu-item">
               <a
                 class="menu-link"
                 href="/categories/"
                 title="分类"
                 
-              >Categories 📚</a></li><li
-              class="menu-item"
-              
-            >
+              >Categories 📚</a></li><li class="menu-item">
               <a
                 class="menu-link"
                 href="/friends"
                 title="友情链接"
                 
-              >Friends 🎈</a></li><li
-              class="menu-item"
-              
-            >
+              >Friends 🎈</a></li><li class="menu-item">
               <a
                 class="menu-link"
                 href="/about"
@@ -98,21 +80,21 @@
               >About 🦉</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
             <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-desktop">
             <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
-              <i class="fa-solid fa-search fa-fw"></i>
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
             </a>
             <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
-              <i class="fa-solid fa-times-circle fa-fw"></i>
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
             </a>
             <span class="search-button search-loading" id="search-loading-desktop">
-              <i class="fa-solid fa-spinner fa-fw fa-spin"></i>
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
             </span>
           </li><li class="menu-item theme-switch" title="切换主题">
-          <i class="fa-solid fa-adjust fa-fw"></i>
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
         </li>
       </ul>
     </nav>
   </div>
-</header><header class="mobile" id="header-mobile">
+</header><header class="mobile animate__faster" id="header-mobile">
   <div class="header-container">
     <div class="header-wrapper">
       <div class="header-title">
@@ -126,13 +108,13 @@
             <div class="search mobile" id="search-mobile">
               <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-mobile">
               <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
-                <i class="fa-solid fa-search fa-fw"></i>
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
               </a>
               <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
-                <i class="fa-solid fa-times-circle fa-fw"></i>
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
               </a>
               <span class="search-button search-loading" id="search-loading-mobile">
-                <i class="fa-solid fa-spinner fa-fw fa-spin"></i>
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
               </span>
             </div>
             <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
@@ -141,51 +123,49 @@
           </li><li
               class="menu-item"
             ><a
-                class="menu-link"
-                href="/posts/"
-                title="全部文章"
-                
-              >Posts 📑</a></li><li
+                  class="menu-link"
+                  href="/posts/"
+                  title="全部文章"
+                  
+                >Posts 📑</a></li><li
               class="menu-item"
             ><a
-                class="menu-link"
-                href="/tags/"
-                title="标签"
-                
-              >Tags 🏷️</a></li><li
+                  class="menu-link"
+                  href="/tags/"
+                  title="标签"
+                  
+                >Tags 🏷️</a></li><li
               class="menu-item"
             ><a
-                class="menu-link"
-                href="/categories/"
-                title="分类"
-                
-              >Categories 📚</a></li><li
+                  class="menu-link"
+                  href="/categories/"
+                  title="分类"
+                  
+                >Categories 📚</a></li><li
               class="menu-item"
             ><a
-                class="menu-link"
-                href="/friends"
-                title="友情链接"
-                
-              >Friends 🎈</a></li><li
+                  class="menu-link"
+                  href="/friends"
+                  title="友情链接"
+                  
+                >Friends 🎈</a></li><li
               class="menu-item"
             ><a
-                class="menu-link"
-                href="/about"
-                title="关于我"
-                
-              >About 🦉</a></li><li class="menu-item theme-switch" title="切换主题">
-          <i class="fa-solid fa-adjust fa-fw"></i>
+                  class="menu-link"
+                  href="/about"
+                  title="关于我"
+                  
+                >About 🦉</a></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
         </li></ul>
     </nav>
   </div>
-</header>
-<div class="search-dropdown desktop">
-  <div id="search-dropdown-desktop"></div>
-</div>
-<div class="search-dropdown mobile">
-  <div id="search-dropdown-mobile"></div>
-</div>
-<main class="container" page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录 <i class="toc-icon fa-solid fa-angle-down fa-fw"></i></h2>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
       <div class="toc-content" id="toc-content-auto"></div></aside>
 
   <aside class="aside-custom">
@@ -203,16 +183,13 @@
     data-srcset="https://gravatar.loli.net/avatar/1cc24367e7133aceb81bfd9ef41481cd?s=32&amp;d=, https://gravatar.loli.net/avatar/1cc24367e7133aceb81bfd9ef41481cd?s=32&amp;d= 1.5x, https://gravatar.loli.net/avatar/1cc24367e7133aceb81bfd9ef41481cd?s=32&amp;d= 2x"
     data-sizes="auto"
     alt="Blathers"
-    title="Blathers" />&nbsp;Blathers</span></span>
-          <span class="post-category">收录于 <a href="/categories/ai/"><i class="fa-regular fa-folder fa-fw"></i>&nbsp;AI</a></span></div>
-      <div class="post-meta-line"><span title=2022-05-25&#32;13:49:00>
-            <i class="fa-regular fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-05-25" >2022-05-25</time>
-          </span>&nbsp;<i class="fa-solid fa-pencil-alt fa-fw"></i>&nbsp;约 16808 字&nbsp;
-        <i class="fa-regular fa-clock fa-fw"></i>&nbsp;预计阅读 34 分钟&nbsp;</div>
-    </div><div class="details toc" id="toc-static" kept="false">
+    title="Blathers"/>&nbsp;Blathers</span></span>
+          <span class="post-category">收录于 <a href="/categories/ai/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> AI</a></span></div>
+      <div class="post-meta-line"><span title=2022-05-25&#32;13:49:00><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-05-25">2022-05-25</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 16670 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 34 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
-          <span><i class="details-icon fa-solid fa-angle-right"></i></span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
         </div>
         <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
@@ -265,14 +242,14 @@
       
     ><div class="details admonition note open">
       <div class="details-summary admonition-title">
-        <i class="icon fa-solid fa-pencil-alt fa-fw"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw"></i>
+        <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
       </div>
       <div class="details-content">
         <div class="admonition-content">本文最后更新于 2022-05-25，文中内容可能已过时。</div>
       </div>
     </div><div class="details admonition note open">
     <div class="details-summary admonition-title">
-      <i class="icon fa-solid fa-pencil-alt fa-fw"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw"></i>
+      <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
     </div>
     <div class="details-content">
       <div class="admonition-content">论文初稿，主要阐述了研究方向、技术路线及研究结果。</div>
@@ -285,23 +262,24 @@
 <p>在众多大气环境污染问题之中，以颗粒物（$PM_{2.5}$ 、$PM_{10}$）污染是现阶段我国面临的最主要大气环境污染问题。《2020年中国生态环境状况公报》<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>显示，全国337个地级及以上城市中，以$PM_{2.5}$为首要污染物的超标天数（空气质量指数（AQI）大于100的天数）占到了总超标天数的51.0%。大气颗粒污染物对人体健康、大气能见度及气候变化都有着重要的影响，已经受到了公众的广泛关注，并且成为了近年来学术界的研究热点。相关研究表明，$PM_{2.5}$与死亡率以及心肺疾病住院率密切相关<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>；以$PM_{2.5}$为主的户外空气污染，导致全世界每年330万（95%的置信区间）人的过早死亡<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>。为确保我国经济的可持续发展，坚决打赢蓝天保卫战，大气颗粒物污染的治理是重中之重。</p>
 <p>为了减少大气颗粒物污染对生态环境、人类健康和社会经济带来的危害，制定合理有效的污染防治策略，有必要把握空气中颗粒物形成和扩散的动态过程，并对颗粒物浓度空间分布做出相对准确的预测。空气质量预报模型可以预估大气污染变化趋势，同时对大气污染过程、污染物来源解析以及区域输送过程进行及时分析，从而提高城市预报预警能力以及污染物溯源能力。短期的空气质量预测可以协助公众及时响应高污染事件，做好相应的防护措施<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>；长期的空气质量预测则可以为相关部门大气污染联防联控提供准确及时的大气污染信息，提高污染管控能力，减少社会经济损失<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>。了解大气污染过程以及大气污染状况，建立准确的空气质量预报模型，可以向大气颗粒物污染治理提供更加合理的决策支持。</p>
 <p>空气质量模型，按照机理划分，可以分为数值模型和统计模型两种。空气质量数值模型通过对污染物在空气中发生的物理化学过程（如传输、扩散、化学反应等）进行数学抽象而建立<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>，根据大气的实际情况，在一定的初值和边界条件下对大气污染的物理化学过程进行仿真，从而预测未来一段时间内大气污染物的浓度分布情况。常用的空气质量模型如：CALPUFF<sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup>、WRF-Chem<sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup>、CMAQ<sup id="fnref:10"><a href="#fn:10" class="footnote-ref" role="doc-noteref">10</a></sup>等模型都属于数值模型。数值模型可解释性强，但是存在3个主要问题：（1）大气边界层模拟引起的不确定性；（2）大气污染物排放源引起的不确定性；（3）大气物理化学过程引起的不确定性。这3个主要问题大大限制了空气质量模型的模拟精度<sup id="fnref:11"><a href="#fn:11" class="footnote-ref" role="doc-noteref">11</a></sup>。</p>
-<p>统计模型以现有的大量数据为基础，通过对数据进行统计分析，建立空气质量模型<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>。以$PM_{10}$预测统计模型为为例，常用的建模算法有：人工神经网络（Artificial Neural Networks， ANN）、多变量线性回归（Multi-variate Linear Regression，MLR）、多层感知机（Multi Layer Perceptron，MLP）、支持向量机（Support Vector Machines，SVM）等<sup id="fnref:12"><a href="#fn:12" class="footnote-ref" role="doc-noteref">12</a></sup>，这些建模算法都隶属于机器学习（Machine Learning，ML）的范畴。机器学习是一类强大的可以从经验中学习的技术，通常采用观测数据或与环境交互的方式，机器学习算法会积累更多的经验，其性能也会逐步提高<sup id="fnref:13"><a href="#fn:13" class="footnote-ref" role="doc-noteref">13</a></sup>。在数值模型的3个主要问题中，问题（1）和问题（3）主要由当前对大气物理化学过程理解不充分而导致的建模不准确引起<sup id="fnref:11"><a href="#fn:11" class="footnote-ref" role="doc-noteref">11</a></sup>。统计模型的建立依赖于观测得到的数据，而并不依赖于大气物理化学理论的进展，因此统计模型可以有效地弥补数值模型的缺陷。</p>
+<p>统计模型以现有的大量数据为基础，通过对数据进行统计分析，建立空气质量模型<sup id="fnref1:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>。以$PM_{10}$预测统计模型为为例，常用的建模算法有：人工神经网络（Artificial Neural Networks， ANN）、多变量线性回归（Multi-variate Linear Regression，MLR）、多层感知机（Multi Layer Perceptron，MLP）、支持向量机（Support Vector Machines，SVM）等<sup id="fnref:12"><a href="#fn:12" class="footnote-ref" role="doc-noteref">12</a></sup>，这些建模算法都隶属于机器学习（Machine Learning，ML）的范畴。机器学习是一类强大的可以从经验中学习的技术，通常采用观测数据或与环境交互的方式，机器学习算法会积累更多的经验，其性能也会逐步提高<sup id="fnref:13"><a href="#fn:13" class="footnote-ref" role="doc-noteref">13</a></sup>。在数值模型的3个主要问题中，问题（1）和问题（3）主要由当前对大气物理化学过程理解不充分而导致的建模不准确引起<sup id="fnref1:11"><a href="#fn:11" class="footnote-ref" role="doc-noteref">11</a></sup>。统计模型的建立依赖于观测得到的数据，而并不依赖于大气物理化学理论的进展，因此统计模型可以有效地弥补数值模型的缺陷。</p>
 <p>深度学习（Deep Learning，DL）是机器学习的一个分支，通过层次化，使计算机构建较为简单的概念，并将简单概念组合来学习复杂概念。自深度学习这个术语在2006年被正式提出后，在最近10多年得到了巨大发展，它使人工智能（Artificial Intelligence，AI）产生了革命性的突破<sup id="fnref:14"><a href="#fn:14" class="footnote-ref" role="doc-noteref">14</a></sup>，也大大推进了空气质量统计模型的发展，相关工作层出不穷。2015年，尹文君等将深度置信网络<sup id="fnref:15"><a href="#fn:15" class="footnote-ref" role="doc-noteref">15</a></sup>（Deep Belief Network，DBN）运用到了空气质量预测上，将过去一天空气污染情况、过去一天和预报的污染物扩散条件作为神经网络的输入来预测预报污染物的浓度，相较经典的机器学习预报模型，DBN模型性能更好<sup id="fnref:16"><a href="#fn:16" class="footnote-ref" role="doc-noteref">16</a></sup>。其弊端也显而易见：对于统计模型来说，空气质量预测问题作为一种典型的时空序列预测问题，强烈依赖于历史数据所提供时间和空间上的信息，而该模型不仅没有考虑空间内大气物理化学因素的影响，在时间上也只能处理过去一天的平均污染物浓度而忽略了时间序列上的其它信息。2017年，Xiang Li等人利用长短期记忆<sup id="fnref:17"><a href="#fn:17" class="footnote-ref" role="doc-noteref">17</a></sup>（Long Short-Term Memory，LSTM）神经网络，提出了一种基于历史大气污染浓度和气象数据建立的$PM_{2.5}$浓度预测模型<sup id="fnref:18"><a href="#fn:18" class="footnote-ref" role="doc-noteref">18</a></sup>。该模型能对具有长时间依赖性的时间序列进行建模，充分考虑了时间序列上的信息，但空间内信息依旧考虑不足。2021年，黄伟建等提出了时间序列记忆网络（Time Series Memory Network，TSMN）模型。该模型使用门控循环单元<sup id="fnref:19"><a href="#fn:19" class="footnote-ref" role="doc-noteref">19</a></sup>（Gated Recurrent Unit，GRU）和卷积神经网络<sup id="fnref:20"><a href="#fn:20" class="footnote-ref" role="doc-noteref">20</a></sup>（Convolutional Neural Network，CNN），构建了处理时间信息的本地记忆组件和处理空间信息的邻域组件，并结合通过全连接层（Fully Connected Layer，FC）整合两组件提取到的时空特征，获得目标站点未来24小时的$PM_{2.5}$ 浓度预测值。尽管TSMN模型整合了时间信息和空间信息，但该模型仅能给出目标站点处$PM_{2.5}$的预测浓度，与可以给出污染物空间浓度分布预测的WRF-Chem、CMAQ等数值模型相比仍有差距。</p>
 <p>在深度学习领域，将预测给定视频帧的未来帧的任务称为视频预测<sup id="fnref:21"><a href="#fn:21" class="footnote-ref" role="doc-noteref">21</a></sup>（Video Prediction）任务，早在2015年，视频预测这个概念就已经被提出<sup id="fnref:22"><a href="#fn:22" class="footnote-ref" role="doc-noteref">22</a></sup>。通过将雷达图视为视频帧，Xingjian Shi等提出了卷积长短期记忆（Convolutional Long Short-Term Memory，Conv-LSTM）模型用于预测降水强度<sup id="fnref:23"><a href="#fn:23" class="footnote-ref" role="doc-noteref">23</a></sup>。Conv-LSTM模型兼顾了CNN在提取空间信息上的优势和LSTM在提取时间信息上的优势，以过去数帧雷达回波图作为输入，预测未来的雷达回波图，从而推断出空间范围内的降水强度。2020年，张迪等通过运行WRF气象模型和CMAQ空气质量数值模型得到的中国地区细颗粒物空间浓度分布数据作为Conv-LSTM模型的训练数据，构建了基于深度学习的大气细颗粒物时空预报模型<sup id="fnref:24"><a href="#fn:24" class="footnote-ref" role="doc-noteref">24</a></sup>。与其它基于深度学习的空气质量预报模型相比，Conv-LSTM模型可以给出污染物浓度的空间分布，而与CMAQ等数值模型相比，Conv-LSTM模型又有着预测速度快，资源消耗少的优点。近年来深度学习发展迅速，距Conv-LSTM提出至今7年以来，针对视频预测任务的深度学习模型不断更新，预测精度与预测速度等多方面都有所显著改善<sup id="fnref:25"><a href="#fn:25" class="footnote-ref" role="doc-noteref">25</a></sup>。将更有效的模型运用到大气颗粒物污染浓度预测模型的构建上势在必得。</p>
 <p>本文综合考虑我国大气污染问题和空气质量模型研究领域现状，有针对性地展开研究。本研究以辽宁省及其周边区域为研究区域，以大气颗粒物为研究对象，引入深度学习模型，使用数值模型WRF-Chem的输出数据作为训练数据，尝试使模型捕获模型内部的大气物理化学过程模式来构建基于人工智能的大气颗粒污染物扩散模拟模型。</p>
 <h2 id="研究方法">研究方法</h2>
 <h3 id="数据准备">数据准备</h3>
-<p>数据于空气质量模型是非常重要的。对于数值模型而言，原始数据作为数值模拟的初始和边界条件，允许模型计算求解通过数学抽象污染物输送、扩散、化学转化等大气过程得到的方程组来预测大气污染物的浓度分布<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>。对于统计模型来说，建立模型本身就依赖于对原始数据的统计与分析，以统计模型中广泛应用的机器学习算法为例，机器学习算法通过从原始数据中提取模式来不断提高自身的性能<sup id="fnref:14"><a href="#fn:14" class="footnote-ref" role="doc-noteref">14</a></sup>，因此原始数据的质量与模型最终的性能密切相关。同时，深度学习算法对数据量也有着较高的需求，统计估计的一大问题就是泛化（generalization）问题，泛化指的是训练好的模型在前所未见的数据上性能的好坏，而增加数据量可以有效提高模型的泛化能力。因此，为构建基于深度学习的大气颗粒物污染浓度预测模型，大量且准确的数据是必要的。然而，真实环境下的历史数据难以取得，主要原因是真实环境下的大气污染物浓度数据多为监测站点处浓度，是时间维度上的一维变量，而为了对大气颗粒物空间浓度分布进行统计预测，需要时间维度和空间维度组合的三维变量。为此，本研究选择WRF-Chem空气质量模型输出的WRFOut数据作为深度学习模型的训练数据。</p>
+<p>数据于空气质量模型是非常重要的。对于数值模型而言，原始数据作为数值模拟的初始和边界条件，允许模型计算求解通过数学抽象污染物输送、扩散、化学转化等大气过程得到的方程组来预测大气污染物的浓度分布<sup id="fnref2:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>。对于统计模型来说，建立模型本身就依赖于对原始数据的统计与分析，以统计模型中广泛应用的机器学习算法为例，机器学习算法通过从原始数据中提取模式来不断提高自身的性能<sup id="fnref1:14"><a href="#fn:14" class="footnote-ref" role="doc-noteref">14</a></sup>，因此原始数据的质量与模型最终的性能密切相关。同时，深度学习算法对数据量也有着较高的需求，统计估计的一大问题就是泛化（generalization）问题，泛化指的是训练好的模型在前所未见的数据上性能的好坏，而增加数据量可以有效提高模型的泛化能力。因此，为构建基于深度学习的大气颗粒物污染浓度预测模型，大量且准确的数据是必要的。然而，真实环境下的历史数据难以取得，主要原因是真实环境下的大气污染物浓度数据多为监测站点处浓度，是时间维度上的一维变量，而为了对大气颗粒物空间浓度分布进行统计预测，需要时间维度和空间维度组合的三维变量。为此，本研究选择WRF-Chem空气质量模型输出的WRFOut数据作为深度学习模型的训练数据。</p>
 <p>本研究采用的WRFOut数据共三段，分别是2018年1月25日00:00到2018年1月27日07:00的逐小时数据55条（数据段1）、2019年1月10日00:00到2019年1月13日15:00的逐小时数据87条（数据段2）及2019年2月26日00:00到2019年3月1日08:00的逐小时数据79条（数据段3）。这三段数据的模拟范围均采用兰伯特投影坐标系，中心经纬线为北纬41.75°和东经123.53°，即以沈阳市为中心。模拟网格分辨率为27千米$\times$27千米，网格数量为90$\times$90共8100格。模拟范围见下图。</p>
-<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/CIWQ9kywvPXKoJS.jpg" title="https://s2.loli.net/2022/05/25/CIWQ9kywvPXKoJS.jpg" data-thumbnail="https://s2.loli.net/2022/05/25/CIWQ9kywvPXKoJS.jpg" data-sub-html="<h2>模拟范围</h2>">
+<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/CIWQ9kywvPXKoJS.jpg" data-thumbnail="https://s2.loli.net/2022/05/25/CIWQ9kywvPXKoJS.jpg" data-sub-html="<h2>https://s2.loli.net/2022/05/25/CIWQ9kywvPXKoJS.jpg</h2><p>模拟范围</p>">
     <img
       class="lazyload"
       src="/svg/loading.min.svg"
       data-src="https://s2.loli.net/2022/05/25/CIWQ9kywvPXKoJS.jpg"
       data-srcset="https://s2.loli.net/2022/05/25/CIWQ9kywvPXKoJS.jpg, https://s2.loli.net/2022/05/25/CIWQ9kywvPXKoJS.jpg 1.5x, https://s2.loli.net/2022/05/25/CIWQ9kywvPXKoJS.jpg 2x"
       data-sizes="auto"
-      alt="https://s2.loli.net/2022/05/25/CIWQ9kywvPXKoJS.jpg" />
-  </a><figcaption class="image-caption">模拟范围</figcaption>
+      alt="https://s2.loli.net/2022/05/25/CIWQ9kywvPXKoJS.jpg"
+      title="模拟范围"/>
+  </a><figcaption class="image-caption"></figcaption>
   </figure></p>
 <p>WRFOut数据以网络通用数据格式<sup id="fnref:26"><a href="#fn:26" class="footnote-ref" role="doc-noteref">26</a></sup>（Network Common Data Form，NetCDF）存储，使用Python编程语言下的netcdf4-python<sup id="fnref:27"><a href="#fn:27" class="footnote-ref" role="doc-noteref">27</a></sup>库读取WRFOut数据。NetCDF格式的数据以变量（variable）为单位进行保存，每个变量都有变量描述、变量单位、变量形状、变量值等多个属性。对于WRF-Chem模拟导出的WRFOut数据，其中包含了时间（Times）、经度（XLONG）、维度（XLAT）等时空间位置描述性变量；X轴风速分量（U），雨水混合率（QRAIN）等气象数据；土壤温度（TSLB）、土壤液态水（SH2O）等地理数据；$SO_{2}$混合比（so2）、PAN混合比（pan）等污染物浓度数据以及积聚核模人为源芳香烃二次有机气溶胶浓度（orgaro1j）等污染物排放数据共计281个变量。若将变量全部用于神经网络的训练，则模型对内存的要求将大大超出可接受范围，为此，需要从变量中筛选出对大气颗粒物影响较大的变量以减少硬件压力。以变量形状、变量值以及变量描述为依据，最终选出30个变量作为神经网络训练的输入变量，详见下表。</p>
 <table>
@@ -501,15 +479,16 @@ S(i,j)=(I \ast K)(i,j)=\sum_{m=0}^{k_m} \sum_{n=0}^{k_n} I(i+m,j+n)K(m,n)
 $$
 其中，$K$被称为卷积核（Convolution Kernel），是需要通过模型优化进行学习的矩阵参数。$k_m$和$k_n$定义了2维矩阵$K$的形状，是一种称为卷积核大小（Kernel Size）的超参数（Hyperparameter）。超参数指的是在机器学习中，在模型优化前需要人为指定的参数。</p>
 <p>2维矩阵卷积计算过程如下图所示：</p>
-<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/zKmkeEou7InfBrM.png" title="https://s2.loli.net/2022/05/25/zKmkeEou7InfBrM.png" data-thumbnail="https://s2.loli.net/2022/05/25/zKmkeEou7InfBrM.png" data-sub-html="<h2>二维卷积计算过程</h2>">
+<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/zKmkeEou7InfBrM.png" data-thumbnail="https://s2.loli.net/2022/05/25/zKmkeEou7InfBrM.png" data-sub-html="<h2>https://s2.loli.net/2022/05/25/zKmkeEou7InfBrM.png</h2><p>二维卷积计算过程</p>">
     <img
       class="lazyload"
       src="/svg/loading.min.svg"
       data-src="https://s2.loli.net/2022/05/25/zKmkeEou7InfBrM.png"
       data-srcset="https://s2.loli.net/2022/05/25/zKmkeEou7InfBrM.png, https://s2.loli.net/2022/05/25/zKmkeEou7InfBrM.png 1.5x, https://s2.loli.net/2022/05/25/zKmkeEou7InfBrM.png 2x"
       data-sizes="auto"
-      alt="https://s2.loli.net/2022/05/25/zKmkeEou7InfBrM.png" />
-  </a><figcaption class="image-caption">二维卷积计算过程</figcaption>
+      alt="https://s2.loli.net/2022/05/25/zKmkeEou7InfBrM.png"
+      title="二维卷积计算过程"/>
+  </a><figcaption class="image-caption"></figcaption>
   </figure></p>
 <p>该图表示了当2维矩阵$I$的大小为3$\times$3，$k_m$和$k_n$均为2时，卷积运算的步骤与结果。可以注意到，在卷积层中，参数的数量仅仅与卷积核大小，即$k_m$和$k_n$的值有关。采用较小的卷积核，会导致神经网络参数量下降，难以学习复杂的表示，而采用较大的卷积核，则会增加计算量，增加硬件负担。因此，采用卷积神经网络架构时，卷积核大小是一个非常重要的参数。</p>
 <p>为了在时空间序列预测问题上使用卷积架构，需要考虑输入矩阵和输出矩阵大小的问题。注意到在经过2$\times$2卷积核$K$的卷积计算后，输入2维矩阵的大小从3$\times$3降为了输出2维矩阵的大小2$\times$2，即，卷积计算会减少矩阵的大小，但是在时空间序列预测问题上，期望得到的预测$\mathcal{X}$的大小应当与输入矩阵的大小相同。为了解决这个问题，这里引入填充（Padding）操作。填充操作通过在输入矩阵的周围填充数据，可以使输入矩阵的大小和输出矩阵的大小保持一致，一般选择填入的数据为0。以大小为3$\times$3的输入矩阵为例，在输入矩阵四周分别填充一行0后，输入矩阵的大小变为5$\times$5，经2$\times$2的卷积核卷积计算后，输出矩阵的大小为3$\times$3，保证了卷积前后输入输出矩阵的大小一致。</p>
@@ -529,15 +508,16 @@ $$
 y_{t} = f(h_{t};\theta_{f})
 $$
 其中，$f$和$\theta_{f}$同样表示某种网络架构及其参数。因此，循环神经网络的计算过程可以由下图表示：</p>
-<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/qUsdSOr196CJfch.png" title="https://s2.loli.net/2022/05/25/qUsdSOr196CJfch.png" data-thumbnail="https://s2.loli.net/2022/05/25/qUsdSOr196CJfch.png" data-sub-html="<h2>循环神经网络计算过程</h2>">
+<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/qUsdSOr196CJfch.png" data-thumbnail="https://s2.loli.net/2022/05/25/qUsdSOr196CJfch.png" data-sub-html="<h2>https://s2.loli.net/2022/05/25/qUsdSOr196CJfch.png</h2><p>循环神经网络计算过程</p>">
     <img
       class="lazyload"
       src="/svg/loading.min.svg"
       data-src="https://s2.loli.net/2022/05/25/qUsdSOr196CJfch.png"
       data-srcset="https://s2.loli.net/2022/05/25/qUsdSOr196CJfch.png, https://s2.loli.net/2022/05/25/qUsdSOr196CJfch.png 1.5x, https://s2.loli.net/2022/05/25/qUsdSOr196CJfch.png 2x"
       data-sizes="auto"
-      alt="https://s2.loli.net/2022/05/25/qUsdSOr196CJfch.png" />
-  </a><figcaption class="image-caption">循环神经网络计算过程</figcaption>
+      alt="https://s2.loli.net/2022/05/25/qUsdSOr196CJfch.png"
+      title="循环神经网络计算过程"/>
+  </a><figcaption class="image-caption"></figcaption>
   </figure></p>
 <p>虽然在理论上，循环神经网络引入隐状态的设计可以捕获过去的信息用于与当前输入进行融合以获得当前输出，但事实上，正是因为这种设计，导致了RNN的梯度消失（Vanishing Gradient）问题<sup id="fnref:30"><a href="#fn:30" class="footnote-ref" role="doc-noteref">30</a></sup>，简单来说，梯度消失会导致神经网络难以被优化/解决这一问题最早的方法之一是1997年Hochreiter等人提出的长短期记忆模型。与一般的循环神经网络相比，除了隐状态外LSTM又额外引入了记忆元（Memory Cell），或称单元（Cell）作为状态变量用于记录附加的信息。为了控制记忆元，需要3个称为门（Gate）的组件，这三个门分别是：用于决定何时将数据读入单元的输入门（Input Gate）、从单元中输出数据的输出门（Output Gate）以及用来重置单元的遗忘门（Forget Gate）来管理。</p>
 <p>以$t$时刻某一维向量$X_{t} \in R^{1 \times d}$和前一时刻的隐状态$H_{t-1} \in R^{1 \times h}$作为输入为例，对于长短期记忆单元的计算过程，首先需要计算输入门、输出门和遗忘门，计算过程如下：
@@ -564,45 +544,48 @@ $$
 Tanh(x) = \frac{e^{x} - e^{-x}}{e^{x}+e^{-x}}
 $$
 双曲正切函数可以将一个实数映射到$(-1,1)$的区间范围内，因此候选记忆元的值在$(-1,1)$之间。LSTM中输入门、输出门、遗忘门和候选记忆元的计算过程如下图所示：</p>
-<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/a7OiKMhjNTJ6xoS.png" title="https://s2.loli.net/2022/05/25/a7OiKMhjNTJ6xoS.png" data-thumbnail="https://s2.loli.net/2022/05/25/a7OiKMhjNTJ6xoS.png" data-sub-html="<h2>LSTM计算过程第一步</h2>">
+<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/a7OiKMhjNTJ6xoS.png" data-thumbnail="https://s2.loli.net/2022/05/25/a7OiKMhjNTJ6xoS.png" data-sub-html="<h2>https://s2.loli.net/2022/05/25/a7OiKMhjNTJ6xoS.png</h2><p>LSTM计算过程第一步</p>">
     <img
       class="lazyload"
       src="/svg/loading.min.svg"
       data-src="https://s2.loli.net/2022/05/25/a7OiKMhjNTJ6xoS.png"
       data-srcset="https://s2.loli.net/2022/05/25/a7OiKMhjNTJ6xoS.png, https://s2.loli.net/2022/05/25/a7OiKMhjNTJ6xoS.png 1.5x, https://s2.loli.net/2022/05/25/a7OiKMhjNTJ6xoS.png 2x"
       data-sizes="auto"
-      alt="https://s2.loli.net/2022/05/25/a7OiKMhjNTJ6xoS.png" />
-  </a><figcaption class="image-caption">LSTM计算过程第一步</figcaption>
+      alt="https://s2.loli.net/2022/05/25/a7OiKMhjNTJ6xoS.png"
+      title="LSTM计算过程第一步"/>
+  </a><figcaption class="image-caption"></figcaption>
   </figure></p>
 <p>在LSTM中，输入门用于控制记忆元$C_{t} \in R^{1 \times h}$中有多少数据来自于候选记忆$\tilde{C_{t}}$中的新数据，而遗忘门用于控制上个时刻的记忆元$C_{t-1}$中的数据有多少会被丢弃。因此记忆元由下列公式给出：
 $$
 C_{t} = F_{t} \odot C_{t-1} + I_{t} \odot \tilde{C_{t}}
 $$
 式中的$\odot$表示哈达玛积（Hadamard Product），即矩阵对应位置相乘。记忆元的计算过程如下图所示：</p>
-<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/EnOjX718r3McvLH.png" title="https://s2.loli.net/2022/05/25/EnOjX718r3McvLH.png" data-thumbnail="https://s2.loli.net/2022/05/25/EnOjX718r3McvLH.png" data-sub-html="<h2>LTSM计算过程第二步</h2>">
+<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/EnOjX718r3McvLH.png" data-thumbnail="https://s2.loli.net/2022/05/25/EnOjX718r3McvLH.png" data-sub-html="<h2>https://s2.loli.net/2022/05/25/EnOjX718r3McvLH.png</h2><p>LTSM计算过程第二步</p>">
     <img
       class="lazyload"
       src="/svg/loading.min.svg"
       data-src="https://s2.loli.net/2022/05/25/EnOjX718r3McvLH.png"
       data-srcset="https://s2.loli.net/2022/05/25/EnOjX718r3McvLH.png, https://s2.loli.net/2022/05/25/EnOjX718r3McvLH.png 1.5x, https://s2.loli.net/2022/05/25/EnOjX718r3McvLH.png 2x"
       data-sizes="auto"
-      alt="https://s2.loli.net/2022/05/25/EnOjX718r3McvLH.png" />
-  </a><figcaption class="image-caption">LTSM计算过程第二步</figcaption>
+      alt="https://s2.loli.net/2022/05/25/EnOjX718r3McvLH.png"
+      title="LTSM计算过程第二步"/>
+  </a><figcaption class="image-caption"></figcaption>
   </figure></p>
 <p>最后，LSTM会读取当前记忆元$C_{t}$，并通过输出门来计算当前隐状态$H_{t}$。隐状态的计算由下式给出：
 $$
 H_{t} = O_{t} \odot Tanh(C_{t})
 $$
 在计算$H_{t}$前，先将$C_{t}$送入双曲正切函数，确保$H_{t}$的值始终在区间$(-1,1)$之间。计算过程如下：</p>
-<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/UZV6dATFgs7Ln9K.png" title="https://s2.loli.net/2022/05/25/UZV6dATFgs7Ln9K.png" data-thumbnail="https://s2.loli.net/2022/05/25/UZV6dATFgs7Ln9K.png" data-sub-html="<h2>LSTM计算过程第三步</h2>">
+<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/UZV6dATFgs7Ln9K.png" data-thumbnail="https://s2.loli.net/2022/05/25/UZV6dATFgs7Ln9K.png" data-sub-html="<h2>https://s2.loli.net/2022/05/25/UZV6dATFgs7Ln9K.png</h2><p>LSTM计算过程第三步</p>">
     <img
       class="lazyload"
       src="/svg/loading.min.svg"
       data-src="https://s2.loli.net/2022/05/25/UZV6dATFgs7Ln9K.png"
       data-srcset="https://s2.loli.net/2022/05/25/UZV6dATFgs7Ln9K.png, https://s2.loli.net/2022/05/25/UZV6dATFgs7Ln9K.png 1.5x, https://s2.loli.net/2022/05/25/UZV6dATFgs7Ln9K.png 2x"
       data-sizes="auto"
-      alt="https://s2.loli.net/2022/05/25/UZV6dATFgs7Ln9K.png" />
-  </a><figcaption class="image-caption">LSTM计算过程第三步</figcaption>
+      alt="https://s2.loli.net/2022/05/25/UZV6dATFgs7Ln9K.png"
+      title="LSTM计算过程第三步"/>
+  </a><figcaption class="image-caption"></figcaption>
   </figure></p>
 <p>长短期记忆模型通过引入记忆元以及门的概念，使模型能够控制隐状态的更新，有效解决了RNN模型优化中的梯度消失问题。在LSTM提出的门控思想启发下，2014年，Kyunghyun Cho等人提出了门控循环单元<sup id="fnref:31"><a href="#fn:31" class="footnote-ref" role="doc-noteref">31</a></sup>（Gated Recurrent Unit，GRU）。与LSTM相比，GRU提供了相同的效果，并且计算速度明显更快<sup id="fnref:32"><a href="#fn:32" class="footnote-ref" role="doc-noteref">32</a></sup>。</p>
 <p>与 LSTM相似，GRU引入了重置门（Reset Gate）以及更新门（Update Gate）来控制隐状态的更新。以$t$时刻某一维向量$X_{t}$和前一时刻的隐状态$H_{t-1}$作为输入为例，重置门及更新门计算的数学表达式如下：
@@ -621,15 +604,16 @@ $$
 H_{t} = U_{t} \odot H_{t-1} + (1 - U_{t}) \odot \tilde{H_{t}}
 $$
 当更新门接近于1时，隐状态倾向于保留过去的状态，而当更新门接近于0时，隐状态倾向于接受当前时刻的信息。GRU计算流程图如下所示：</p>
-<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/kyRSjGn42eu1Zq9.png" title="https://s2.loli.net/2022/05/25/kyRSjGn42eu1Zq9.png" data-thumbnail="https://s2.loli.net/2022/05/25/kyRSjGn42eu1Zq9.png" data-sub-html="<h2>GRU计算过程</h2>">
+<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/kyRSjGn42eu1Zq9.png" data-thumbnail="https://s2.loli.net/2022/05/25/kyRSjGn42eu1Zq9.png" data-sub-html="<h2>https://s2.loli.net/2022/05/25/kyRSjGn42eu1Zq9.png</h2><p>GRU计算过程</p>">
     <img
       class="lazyload"
       src="/svg/loading.min.svg"
       data-src="https://s2.loli.net/2022/05/25/kyRSjGn42eu1Zq9.png"
       data-srcset="https://s2.loli.net/2022/05/25/kyRSjGn42eu1Zq9.png, https://s2.loli.net/2022/05/25/kyRSjGn42eu1Zq9.png 1.5x, https://s2.loli.net/2022/05/25/kyRSjGn42eu1Zq9.png 2x"
       data-sizes="auto"
-      alt="https://s2.loli.net/2022/05/25/kyRSjGn42eu1Zq9.png" />
-  </a><figcaption class="image-caption">GRU计算过程</figcaption>
+      alt="https://s2.loli.net/2022/05/25/kyRSjGn42eu1Zq9.png"
+      title="GRU计算过程"/>
+  </a><figcaption class="image-caption"></figcaption>
   </figure></p>
 <p>可以看出，与LSTM相比，GRU大大简化了计算的流程，在解决梯度消失问题的同时提高了运算速度，减少了内存占用。</p>
 <h5 id="conv-gru模型">Conv-GRU模型</h5>
@@ -664,15 +648,16 @@ H_{t} = U_{t} \odot H_{t-1} + (1 - U_{t}) \odot \tilde{H_{t}}
 $$
 Conv-GRU继承了GRU的优点，相较于Conv-LSTM，Conv-GRU运算速度更快，内存占用更小。</p>
 <p>综上所述，本研究主要采用Conv-GRU建立大气颗粒物污染扩散模拟模型。为了提高模型的表达能力，便于在数据中学习到更为复杂的非线性关系，本研究将相同的Conv-GRU块堆叠3次，作为模型的主干。每次重叠意味着上一个Conv-GRU块的输出作为下一个Conv-GRU块的输入。在最后一个Conv-GRU块给出当前的隐状态$H_{t}$后，需要经过解码器（Decoder）计算才能得到当前的输出$Y_{t}$，即对下一时刻系统状态$\tilde{\mathcal{X_{t+1}}}$的预测。解码器本身相当于一个卷积层，其计算过程如下：首先将$t$时刻系统状态$\mathcal{X_{t}} \in R^{L \times M \times N}$和隐状态$H_{t} \in R^{h \times M \times N}$在第一个维度上进行拼接得到解码器的输入$D_{t} \in R^{(L+h) \times M \times N}$，然后将$D_{t}$与卷积核进行卷积运算，得到最终的输出。本研究构建的模型总览图如下：</p>
-<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/rYz7decEGIg2oLa.png" title="https://s2.loli.net/2022/05/25/rYz7decEGIg2oLa.png" data-thumbnail="https://s2.loli.net/2022/05/25/rYz7decEGIg2oLa.png" data-sub-html="<h2>模型架构</h2>">
+<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/rYz7decEGIg2oLa.png" data-thumbnail="https://s2.loli.net/2022/05/25/rYz7decEGIg2oLa.png" data-sub-html="<h2>https://s2.loli.net/2022/05/25/rYz7decEGIg2oLa.png</h2><p>模型架构</p>">
     <img
       class="lazyload"
       src="/svg/loading.min.svg"
       data-src="https://s2.loli.net/2022/05/25/rYz7decEGIg2oLa.png"
       data-srcset="https://s2.loli.net/2022/05/25/rYz7decEGIg2oLa.png, https://s2.loli.net/2022/05/25/rYz7decEGIg2oLa.png 1.5x, https://s2.loli.net/2022/05/25/rYz7decEGIg2oLa.png 2x"
       data-sizes="auto"
-      alt="https://s2.loli.net/2022/05/25/rYz7decEGIg2oLa.png" />
-  </a><figcaption class="image-caption">模型架构</figcaption>
+      alt="https://s2.loli.net/2022/05/25/rYz7decEGIg2oLa.png"
+      title="模型架构"/>
+  </a><figcaption class="image-caption"></figcaption>
   </figure></p>
 <p>解码器的构建借鉴了残差连接<sup id="fnref:34"><a href="#fn:34" class="footnote-ref" role="doc-noteref">34</a></sup>（Residual Connection）的思想。残差连接由Kaiming He等人于2016年提出，通过引入残差连接，可以缓解梯度消失等问题，使模型更容易被优化。同时，为了在相同条件下比较Conv-GRU与Conv-LSTM的效果，本研究同样构建了基于Conv-LSTM的大气颗粒物污染扩散模拟模型。该模型与基于Conv-GRU的模型相比，仅仅将所有的Conv-GRU块替换为了Conv-LSTM块，以保证其他条件不变。</p>
 <h4 id="模型优化">模型优化</h4>
@@ -683,14 +668,15 @@ L(\tilde{\mathcal{X}},\hat{\mathcal{X}}) = \frac{1}{L \times M \times N} \sum_{l
 $$</p>
 <h5 id="样本划分">样本划分</h5>
 <p>序列数据是连续的，因此需要引入RNN处理序列数据。但是在实际模型优化的过程中，序列极长导致硬件无法一次加载整个序列。因此在模型优化前需要将序列数据划分为多个样本，在优化时以样本为单位训练神经网络。划分序列时，一般按照固定长度划分，这个长度被称为时间步数（Numer of Steps）。样本划分的方式如下图所示：</p>
-<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/k7VaXpQEBsovjhO.png" title="样本划分" data-thumbnail="https://s2.loli.net/2022/05/25/k7VaXpQEBsovjhO.png" data-sub-html="<h2>样本划分</h2><p>样本划分</p>">
+<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/k7VaXpQEBsovjhO.png" data-thumbnail="https://s2.loli.net/2022/05/25/k7VaXpQEBsovjhO.png" data-sub-html="<h2>样本划分</h2><p>样本划分</p>">
     <img
       class="lazyload"
       src="/svg/loading.min.svg"
       data-src="https://s2.loli.net/2022/05/25/k7VaXpQEBsovjhO.png"
       data-srcset="https://s2.loli.net/2022/05/25/k7VaXpQEBsovjhO.png, https://s2.loli.net/2022/05/25/k7VaXpQEBsovjhO.png 1.5x, https://s2.loli.net/2022/05/25/k7VaXpQEBsovjhO.png 2x"
       data-sizes="auto"
-      alt="https://s2.loli.net/2022/05/25/k7VaXpQEBsovjhO.png" />
+      alt="样本划分"
+      title="样本划分"/>
   </a><figcaption class="image-caption">样本划分</figcaption>
   </figure></p>
 <p>该图展示了时间步数为5时的一个样本。其中蓝框内的5个时刻对应的系统状态将会依次送入模型中以计算隐状态，而当最后一个时刻的系统状态送入模型后，将会给出模型对下一个时刻的系统状态的预测。因此，为了计算损失值，还需要将红框中下一个时刻的系统状态送入损失函数以对模型进行优化。因此，当时间步数为5时，一个样本包含6个时刻的系统状态。</p>
@@ -700,7 +686,7 @@ $$</p>
 <h4 id="模型泛化">模型泛化</h4>
 <p>机器学习的一个核心问题时设计不仅在训练集上表现良好，而且能在测试集上泛化好的算法。在机器学习中，许多策略被显式地设计用以减小测试误差，这些策略统称为正则化（Regularization）。为了提高模型预测效果，本研究采用了批标准化和权重衰减两种正则化策略。</p>
 <h5 id="批标准化">批标准化</h5>
-<p>批标准化<sup id="fnref:36"><a href="#fn:36" class="footnote-ref" role="doc-noteref">36</a></sup>（Batch Normalization）于2015年由Sergey Ioffe等人提出。批标准化能使优化平面更加平滑，从而更快地进行训练<sup id="fnref:37"><a href="#fn:37" class="footnote-ref" role="doc-noteref">37</a></sup>。同时，批量标准化在计算过程中会随机添加一些噪声（Noise），这通常会加速训练并提高模型泛化能力<sup id="fnref:13"><a href="#fn:13" class="footnote-ref" role="doc-noteref">13</a></sup>。</p>
+<p>批标准化<sup id="fnref:36"><a href="#fn:36" class="footnote-ref" role="doc-noteref">36</a></sup>（Batch Normalization）于2015年由Sergey Ioffe等人提出。批标准化能使优化平面更加平滑，从而更快地进行训练<sup id="fnref:37"><a href="#fn:37" class="footnote-ref" role="doc-noteref">37</a></sup>。同时，批量标准化在计算过程中会随机添加一些噪声（Noise），这通常会加速训练并提高模型泛化能力<sup id="fnref1:13"><a href="#fn:13" class="footnote-ref" role="doc-noteref">13</a></sup>。</p>
 <h5 id="权重衰减">权重衰减</h5>
 <p>奥卡姆剃刀（Occam&rsquo;s Razor）原则指出，在同样能够解释已知观测现象的假设当中，应该挑选最简单的那一个，权重衰减（Weight Decay）即是一项体现了奥卡姆剃刀原则的正则化技术。权重衰减通过添加一个惩罚项来限制模型的学习能力，即期望模型能学习到更加简单的表示来增加模型的泛化能力。本研究中通过添加批标准化和权重衰减的正则化策略，期望增强模型泛化能力，进而提高模型性能。</p>
 <h3 id="编程实现">编程实现</h3>
@@ -787,39 +773,42 @@ $$</p>
 </tbody>
 </table>
 <p>模型优化过程中，模型在训练集和测试集的均方差如下图：</p>
-<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/sZHpgF92zRTclS3.png" title="实验结果1" data-thumbnail="https://s2.loli.net/2022/05/25/sZHpgF92zRTclS3.png" data-sub-html="<h2>实验结果1</h2><p>实验结果1</p>">
+<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/sZHpgF92zRTclS3.png" data-thumbnail="https://s2.loli.net/2022/05/25/sZHpgF92zRTclS3.png" data-sub-html="<h2>实验结果1</h2><p>实验结果1</p>">
     <img
       class="lazyload"
       src="/svg/loading.min.svg"
       data-src="https://s2.loli.net/2022/05/25/sZHpgF92zRTclS3.png"
       data-srcset="https://s2.loli.net/2022/05/25/sZHpgF92zRTclS3.png, https://s2.loli.net/2022/05/25/sZHpgF92zRTclS3.png 1.5x, https://s2.loli.net/2022/05/25/sZHpgF92zRTclS3.png 2x"
       data-sizes="auto"
-      alt="https://s2.loli.net/2022/05/25/sZHpgF92zRTclS3.png" />
+      alt="实验结果1"
+      title="实验结果1"/>
   </a><figcaption class="image-caption">实验结果1</figcaption>
   </figure></p>
 <p>如图所示，在第60轮（Epoch）优化时，模型测试集均方差达到最小值30.047，而经200轮优化后，模型训练集均方差达到6.082。可以看出，模型在训练过程中，测试集上的均方差不断减小，训练集上的均方差则先减小后增大，两者之间的差距越来越大，这个差距便被称为泛化差距。</p>
 <p>将模型替换为Conv-LSTM模型后，模型优化过程中模型在训练集和测试集的均方差如下图：</p>
-<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/WoyCpnLGu6lJe3N.png" title="https://s2.loli.net/2022/05/25/WoyCpnLGu6lJe3N.png" data-thumbnail="https://s2.loli.net/2022/05/25/WoyCpnLGu6lJe3N.png" data-sub-html="<h2>实验结果2</h2>">
+<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/WoyCpnLGu6lJe3N.png" data-thumbnail="https://s2.loli.net/2022/05/25/WoyCpnLGu6lJe3N.png" data-sub-html="<h2>https://s2.loli.net/2022/05/25/WoyCpnLGu6lJe3N.png</h2><p>实验结果2</p>">
     <img
       class="lazyload"
       src="/svg/loading.min.svg"
       data-src="https://s2.loli.net/2022/05/25/WoyCpnLGu6lJe3N.png"
       data-srcset="https://s2.loli.net/2022/05/25/WoyCpnLGu6lJe3N.png, https://s2.loli.net/2022/05/25/WoyCpnLGu6lJe3N.png 1.5x, https://s2.loli.net/2022/05/25/WoyCpnLGu6lJe3N.png 2x"
       data-sizes="auto"
-      alt="https://s2.loli.net/2022/05/25/WoyCpnLGu6lJe3N.png" />
-  </a><figcaption class="image-caption">实验结果2</figcaption>
+      alt="https://s2.loli.net/2022/05/25/WoyCpnLGu6lJe3N.png"
+      title="实验结果2"/>
+  </a><figcaption class="image-caption"></figcaption>
   </figure></p>
 <p>在第50轮优化时，Conv-LSTM模型在测试集上的均方差达到最小值35.154，明显劣于Conv-GRU模型，性能较差同时，Conv-LSTM的优化时间和内存消耗也不及Conv-GRU模型。Conv-GRU模型的优化速度可以达到每秒3.428个样本，并且模型参数仅有6594KB，与之相比，Conv-LSTM模型的优化速度仅有每秒3.063个样本，并且模型参数达到了8778KB。并且可以看出，与Conv-GRU模型相比，Conv-LSTM模型的泛化差距始终较大，模型泛化能力较差。</p>
 <p>以同样的超参数，$PM_{2.5}$预测模型在模型优化过程中，模型在训练集和测试集上的均方差变化如下图：</p>
-<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/e3DmCo1xt7gVGnH.png" title="https://s2.loli.net/2022/05/25/e3DmCo1xt7gVGnH.png" data-thumbnail="https://s2.loli.net/2022/05/25/e3DmCo1xt7gVGnH.png" data-sub-html="<h2>实验结果3</h2>">
+<p><figure><a class="lightgallery" href="https://s2.loli.net/2022/05/25/e3DmCo1xt7gVGnH.png" data-thumbnail="https://s2.loli.net/2022/05/25/e3DmCo1xt7gVGnH.png" data-sub-html="<h2>https://s2.loli.net/2022/05/25/e3DmCo1xt7gVGnH.png</h2><p>实验结果3</p>">
     <img
       class="lazyload"
       src="/svg/loading.min.svg"
       data-src="https://s2.loli.net/2022/05/25/e3DmCo1xt7gVGnH.png"
       data-srcset="https://s2.loli.net/2022/05/25/e3DmCo1xt7gVGnH.png, https://s2.loli.net/2022/05/25/e3DmCo1xt7gVGnH.png 1.5x, https://s2.loli.net/2022/05/25/e3DmCo1xt7gVGnH.png 2x"
       data-sizes="auto"
-      alt="https://s2.loli.net/2022/05/25/e3DmCo1xt7gVGnH.png" />
-  </a><figcaption class="image-caption">实验结果3</figcaption>
+      alt="https://s2.loli.net/2022/05/25/e3DmCo1xt7gVGnH.png"
+      title="实验结果3"/>
+  </a><figcaption class="image-caption"></figcaption>
   </figure></p>
 <p>在第120轮优化时，模型测试集均方差达到最小值24.083，经200轮优化后，模型训练集均方差达到4.061。与$PM_{10}$相比，$PM_{2.5}$模型的均方差明显更小，这是由大气中$PM_{2.5}$浓度小于$PM_{10}$导致的。</p>
 <h3 id="误差分析">误差分析</h3>
@@ -833,684 +822,168 @@ $$</p>
 <p>（2）模型问题。由于存在硬件限制，本研究仅实现了Conv-GRU一种模型并对该模型进行了优化。事实上，在深度学习时空间预测问题领域还有很多效果优秀的模型值得借鉴，优秀的模型有着更高的精度，更快运行速度以及更小的泛化差距，其它模型在大气颗粒物扩散模拟问题上的效果是下一步值得探讨的问题。</p>
 <p>（3）优化问题。尽管本研究采用了一些正则化策略来减小泛化差距，但在本研究中较大的泛化差距依旧是影响模型性能最严重的问题。如何进一步减小泛化差距是提高基于深度学习的大气颗粒物污染扩散模型性能的关键问题，有待进一步研究。</p>
 <h2 id="参考资料">参考资料</h2>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
-<p><a
-  href="http://www.gov.cn/zhengce/2021-11/07/content_5649656.htm"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->中共中央 国务院关于深入打好污染防治攻坚战的意见 中央有关文件 中国政府网</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:1">
+<p><a href="http://www.gov.cn/zhengce/2021-11/07/content_5649656.htm"target="_blank" rel="external nofollow noopener noreferrer">中共中央 国务院关于深入打好污染防治攻坚战的意见 中央有关文件 中国政府网</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
-<p><a
-  href="https://www.mee.gov.cn/hjzl/sthjzk/zghjzkgb/202105/P020210526572756184785.pdf"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->2020年中国生态环境状况公报</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:2">
+<p><a href="https://www.mee.gov.cn/hjzl/sthjzk/zghjzkgb/202105/P020210526572756184785.pdf"target="_blank" rel="external nofollow noopener noreferrer">2020年中国生态环境状况公报</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3" role="doc-endnote">
-<p><a
-  href="https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CDFD&amp;dbname=CDFDLAST2018&amp;filename=1018073474.nh&amp;uniplatform=NZKPT&amp;v=-BH-IhyGE-EZuVAFazqt5wobiT5ktF4JS_LclVGEMvHjaIWBtYDmUb6RXWdnshLQ"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->室内外大气颗粒物和典型有机污染物的环境行为及人体呼吸暴露风险</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:3">
+<p><a href="https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CDFD&amp;dbname=CDFDLAST2018&amp;filename=1018073474.nh&amp;uniplatform=NZKPT&amp;v=-BH-IhyGE-EZuVAFazqt5wobiT5ktF4JS_LclVGEMvHjaIWBtYDmUb6RXWdnshLQ"target="_blank" rel="external nofollow noopener noreferrer">室内外大气颗粒物和典型有机污染物的环境行为及人体呼吸暴露风险</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:4" role="doc-endnote">
-<p><a
-  href="https://www.nature.com/articles/nature15371"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->The contribution of outdoor air pollution sources to premature mortality on a global scale</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:4">
+<p><a href="https://www.nature.com/articles/nature15371"target="_blank" rel="external nofollow noopener noreferrer">The contribution of outdoor air pollution sources to premature mortality on a global scale</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:5" role="doc-endnote">
-<p><a
-  href=""
-  
-  
-  
-  
-  
->Application of bias adjustment techniques to improve air quality forecasts</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:5">
+<p><a href="">Application of bias adjustment techniques to improve air quality forecasts</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:6" role="doc-endnote">
-<p><a
-  href=""
-  
-  
-  
-  
-  
->Urban air quality and regional haze weather forecast for Yangtze River Delta region</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:6">
+<p><a href="">Urban air quality and regional haze weather forecast for Yangtze River Delta region</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:7" role="doc-endnote">
-<p><a
-  href="https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&amp;dbname=CJFD2013&amp;filename=HJKD201303006&amp;uniplatform=NZKPT&amp;v=f_bZin98q_qMwR_UrNP9EmHcGlJqIXp4A87eVNu4VYll9YyCy1xbI7ldTllPyUUt"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->国内外空气质量模型研究进展</a>&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:7">
+<p><a href="https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&amp;dbname=CJFD2013&amp;filename=HJKD201303006&amp;uniplatform=NZKPT&amp;v=f_bZin98q_qMwR_UrNP9EmHcGlJqIXp4A87eVNu4VYll9YyCy1xbI7ldTllPyUUt"target="_blank" rel="external nofollow noopener noreferrer">国内外空气质量模型研究进展</a>&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref2:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:8" role="doc-endnote">
-<p><a
-  href="http://www.src.com/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->CALPUFF Modeling System</a>&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:8">
+<p><a href="http://www.src.com/"target="_blank" rel="external nofollow noopener noreferrer">CALPUFF Modeling System</a>&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:9" role="doc-endnote">
-<p><a
-  href="https://www2.acom.ucar.edu/wrf-chem"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->WRF-CHEM</a>&#160;<a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:9">
+<p><a href="https://www2.acom.ucar.edu/wrf-chem"target="_blank" rel="external nofollow noopener noreferrer">WRF-CHEM</a>&#160;<a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:10" role="doc-endnote">
-<p><a
-  href="https://www.epa.gov/cmaq"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->The Community Multiscale Air Quality Modeling System</a>&#160;<a href="#fnref:10" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:10">
+<p><a href="https://www.epa.gov/cmaq"target="_blank" rel="external nofollow noopener noreferrer">The Community Multiscale Air Quality Modeling System</a>&#160;<a href="#fnref:10" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:11" role="doc-endnote">
-<p><a
-  href="http://www.hjjkyyj.com/hjjkyyj_en/ch/reader/view_abstract.aspx?file_no=A20140831001&amp;flag=1"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->Progress on the Development and Application of Air Quality Models</a>&#160;<a href="#fnref:11" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:11">
+<p><a href="http://www.hjjkyyj.com/hjjkyyj_en/ch/reader/view_abstract.aspx?file_no=A20140831001&amp;flag=1"target="_blank" rel="external nofollow noopener noreferrer">Progress on the Development and Application of Air Quality Models</a>&#160;<a href="#fnref:11" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:11" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:12" role="doc-endnote">
-<p><a
-  href="https://www.researchgate.net/publication/292072964_Statistical_Modeling_Approaches_for_PM10_Prediction_in_Urban_Areas_A_Review_of_21st-Century_Studies"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->Statistical Modeling Approaches for PM10 Predictionin Urban Areas; A Review of 21st-Century Studies</a>&#160;<a href="#fnref:12" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:12">
+<p><a href="https://www.researchgate.net/publication/292072964_Statistical_Modeling_Approaches_for_PM10_Prediction_in_Urban_Areas_A_Review_of_21st-Century_Studies"target="_blank" rel="external nofollow noopener noreferrer">Statistical Modeling Approaches for PM10 Predictionin Urban Areas; A Review of 21st-Century Studies</a>&#160;<a href="#fnref:12" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:13" role="doc-endnote">
-<p><a
-  href="https://d2l.ai/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->Dive into Deep Learning</a>&#160;<a href="#fnref:13" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:13">
+<p><a href="https://d2l.ai/"target="_blank" rel="external nofollow noopener noreferrer">Dive into Deep Learning</a>&#160;<a href="#fnref:13" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:13" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:14" role="doc-endnote">
-<p><a
-  href="https://www.deeplearningbook.org/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->Deep Learning</a>&#160;<a href="#fnref:14" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:14">
+<p><a href="https://www.deeplearningbook.org/"target="_blank" rel="external nofollow noopener noreferrer">Deep Learning</a>&#160;<a href="#fnref:14" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:14" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:15" role="doc-endnote">
-<p><a
-  href="https://pubmed.ncbi.nlm.nih.gov/16873662/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->Reducing the Dimensionality of Data with Neural Networks</a>&#160;<a href="#fnref:15" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:15">
+<p><a href="https://pubmed.ncbi.nlm.nih.gov/16873662/"target="_blank" rel="external nofollow noopener noreferrer">Reducing the Dimensionality of Data with Neural Networks</a>&#160;<a href="#fnref:15" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:16" role="doc-endnote">
-<p><a
-  href="https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&amp;dbname=CJFDLAST2016&amp;filename=ZHGL201506013&amp;uniplatform=NZKPT&amp;v=ac3fyeKJ2wb0zZ0Rq84x49Am5z8DTb4ou0xNviU_vBznzMl7sG0KIdw0JyRcYHqU"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->基于深度学习的大数据空气污染预报</a>&#160;<a href="#fnref:16" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:16">
+<p><a href="https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&amp;dbname=CJFDLAST2016&amp;filename=ZHGL201506013&amp;uniplatform=NZKPT&amp;v=ac3fyeKJ2wb0zZ0Rq84x49Am5z8DTb4ou0xNviU_vBznzMl7sG0KIdw0JyRcYHqU"target="_blank" rel="external nofollow noopener noreferrer">基于深度学习的大数据空气污染预报</a>&#160;<a href="#fnref:16" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:17" role="doc-endnote">
-<p><a
-  href="https://www.researchgate.net/publication/13853244_Long_Short-term_Memory"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->Long Short-term Memory</a>&#160;<a href="#fnref:17" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:17">
+<p><a href="https://www.researchgate.net/publication/13853244_Long_Short-term_Memory"target="_blank" rel="external nofollow noopener noreferrer">Long Short-term Memory</a>&#160;<a href="#fnref:17" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:18" role="doc-endnote">
-<p><a
-  href="https://www.researchgate.net/publication/319714176_Long_short-term_memory_neural_network_for_air_pollutant_concentration_predictions_Method_development_and_evaluation"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->Long short-term memory neural network for air pollutant concentration predictions: Method development and evaluation</a>&#160;<a href="#fnref:18" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:18">
+<p><a href="https://www.researchgate.net/publication/319714176_Long_short-term_memory_neural_network_for_air_pollutant_concentration_predictions_Method_development_and_evaluation"target="_blank" rel="external nofollow noopener noreferrer">Long short-term memory neural network for air pollutant concentration predictions: Method development and evaluation</a>&#160;<a href="#fnref:18" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:19" role="doc-endnote">
-<p><a
-  href="http://cn.arxiv.org/abs/1406.1078"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation</a>&#160;<a href="#fnref:19" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:19">
+<p><a href="http://cn.arxiv.org/abs/1406.1078"target="_blank" rel="external nofollow noopener noreferrer">Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation</a>&#160;<a href="#fnref:19" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:20" role="doc-endnote">
-<p><a
-  href="https://ieeexplore.ieee.org/document/6795724"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->Backpropagation Applied to Handwritten Zip Code Recognition</a>&#160;<a href="#fnref:20" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:20">
+<p><a href="https://ieeexplore.ieee.org/document/6795724"target="_blank" rel="external nofollow noopener noreferrer">Backpropagation Applied to Handwritten Zip Code Recognition</a>&#160;<a href="#fnref:20" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:21" role="doc-endnote">
-<p><a
-  href="https://arxiv.org/abs/2003.08635"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->Photo-Realistic Video Prediction on Natural Videos of Largely Changing Frames</a>&#160;<a href="#fnref:21" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:21">
+<p><a href="https://arxiv.org/abs/2003.08635"target="_blank" rel="external nofollow noopener noreferrer">Photo-Realistic Video Prediction on Natural Videos of Largely Changing Frames</a>&#160;<a href="#fnref:21" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:22" role="doc-endnote">
-<p><a
-  href="https://arxiv.org/abs/1502.04681v3"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->Unsupervised Learning of Video Representations using LSTMs</a>&#160;<a href="#fnref:22" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:22">
+<p><a href="https://arxiv.org/abs/1502.04681v3"target="_blank" rel="external nofollow noopener noreferrer">Unsupervised Learning of Video Representations using LSTMs</a>&#160;<a href="#fnref:22" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:23" role="doc-endnote">
-<p><a
-  href="https://arxiv.org/abs/1506.04214v2"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->Convolutional LSTM Network: A Machine Learning Approach for Precipitation Nowcasting</a>&#160;<a href="#fnref:23" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:23">
+<p><a href="https://arxiv.org/abs/1506.04214v2"target="_blank" rel="external nofollow noopener noreferrer">Convolutional LSTM Network: A Machine Learning Approach for Precipitation Nowcasting</a>&#160;<a href="#fnref:23" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:24" role="doc-endnote">
-<p><a
-  href="https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CMFD&amp;dbname=CMFD202201&amp;filename=1021679960.nh&amp;uniplatform=NZKPT&amp;v=2jaQGsvXotQ08OsWU1Mdsu14nRD33qb__5K-MNp9acXjQXWhtJjskmB3bbvcIJUq"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->基于深度学习的大气细颗粒物污染时空预报研究</a>&#160;<a href="#fnref:24" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:24">
+<p><a href="https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CMFD&amp;dbname=CMFD202201&amp;filename=1021679960.nh&amp;uniplatform=NZKPT&amp;v=2jaQGsvXotQ08OsWU1Mdsu14nRD33qb__5K-MNp9acXjQXWhtJjskmB3bbvcIJUq"target="_blank" rel="external nofollow noopener noreferrer">基于深度学习的大气细颗粒物污染时空预报研究</a>&#160;<a href="#fnref:24" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:25" role="doc-endnote">
-<p><a
-  href="https://paperswithcode.com/task/video-prediction"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->Video Prediction</a>&#160;<a href="#fnref:25" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:25">
+<p><a href="https://paperswithcode.com/task/video-prediction"target="_blank" rel="external nofollow noopener noreferrer">Video Prediction</a>&#160;<a href="#fnref:25" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:26" role="doc-endnote">
-<p><a
-  href="https://www.unidata.ucar.edu/software/netcdf/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->Network Common Data Form (NetCDF)</a>&#160;<a href="#fnref:26" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:26">
+<p><a href="https://www.unidata.ucar.edu/software/netcdf/"target="_blank" rel="external nofollow noopener noreferrer">Network Common Data Form (NetCDF)</a>&#160;<a href="#fnref:26" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:27" role="doc-endnote">
-<p><a
-  href="http://unidata.github.io/netcdf4-python/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->netcdf4-python</a>&#160;<a href="#fnref:27" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:27">
+<p><a href="http://unidata.github.io/netcdf4-python/"target="_blank" rel="external nofollow noopener noreferrer">netcdf4-python</a>&#160;<a href="#fnref:27" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:28" role="doc-endnote">
-<p><a
-  href="https://numpy.org/"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->NumPy</a>&#160;<a href="#fnref:28" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:28">
+<p><a href="https://numpy.org/"target="_blank" rel="external nofollow noopener noreferrer">NumPy</a>&#160;<a href="#fnref:28" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:29" role="doc-endnote">
-<p><a
-  href="https://www.nature.com/articles/323533a0"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->Learning representations by back-propagating errors</a>&#160;<a href="#fnref:29" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:29">
+<p><a href="https://www.nature.com/articles/323533a0"target="_blank" rel="external nofollow noopener noreferrer">Learning representations by back-propagating errors</a>&#160;<a href="#fnref:29" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:30" role="doc-endnote">
-<p><a
-  href="https://ieeexplore.ieee.org/document/279181"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->Learning long-term dependencies with gradient descent is difficult</a>&#160;<a href="#fnref:30" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:30">
+<p><a href="https://ieeexplore.ieee.org/document/279181"target="_blank" rel="external nofollow noopener noreferrer">Learning long-term dependencies with gradient descent is difficult</a>&#160;<a href="#fnref:30" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:31" role="doc-endnote">
-<p><a
-  href="https://arxiv.org/abs/1409.1259"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->On the Properties of Neural Machine Translation: Encoder-Decoder Approaches</a>&#160;<a href="#fnref:31" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:31">
+<p><a href="https://arxiv.org/abs/1409.1259"target="_blank" rel="external nofollow noopener noreferrer">On the Properties of Neural Machine Translation: Encoder-Decoder Approaches</a>&#160;<a href="#fnref:31" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:32" role="doc-endnote">
-<p><a
-  href="https://arxiv.org/abs/1706.03458"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->Deep Learning for Precipitation Nowcasting: A Benchmark and A New Model</a>&#160;<a href="#fnref:32" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:32">
+<p><a href="https://arxiv.org/abs/1706.03458"target="_blank" rel="external nofollow noopener noreferrer">Deep Learning for Precipitation Nowcasting: A Benchmark and A New Model</a>&#160;<a href="#fnref:32" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:33" role="doc-endnote">
-<p><a
-  href="https://arxiv.org/abs/1412.3555"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling</a>&#160;<a href="#fnref:33" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:33">
+<p><a href="https://arxiv.org/abs/1412.3555"target="_blank" rel="external nofollow noopener noreferrer">Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling</a>&#160;<a href="#fnref:33" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:34" role="doc-endnote">
-<p><a
-  href="https://ieeexplore.ieee.org/document/7780459/figures#figures"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->Deep Residual Learning for Image Recognition</a>&#160;<a href="#fnref:34" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:34">
+<p><a href="https://ieeexplore.ieee.org/document/7780459/figures#figures"target="_blank" rel="external nofollow noopener noreferrer">Deep Residual Learning for Image Recognition</a>&#160;<a href="#fnref:34" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:35" role="doc-endnote">
-<p><a
-  href="https://www.researchgate.net/publication/269935079_Adam_A_Method_for_Stochastic_Optimization#:~:text=We%20introduce%20Adam%2C%20an%20algorithm%20for%20first-order%20gradient-based,adaptive%20estimates%20of%20lower-order%20moments%20of%20the%20gradients."
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->Adam: A Method for Stochastic Optimization</a>&#160;<a href="#fnref:35" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:35">
+<p><a href="https://www.researchgate.net/publication/269935079_Adam_A_Method_for_Stochastic_Optimization#:~:text=We%20introduce%20Adam%2C%20an%20algorithm%20for%20first-order%20gradient-based,adaptive%20estimates%20of%20lower-order%20moments%20of%20the%20gradients."target="_blank" rel="external nofollow noopener noreferrer">Adam: A Method for Stochastic Optimization</a>&#160;<a href="#fnref:35" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:36" role="doc-endnote">
-<p><a
-  href="https://arxiv.org/abs/1502.03167"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift</a>&#160;<a href="#fnref:36" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:36">
+<p><a href="https://arxiv.org/abs/1502.03167"target="_blank" rel="external nofollow noopener noreferrer">Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift</a>&#160;<a href="#fnref:36" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:37" role="doc-endnote">
-<p><a
-  href="https://arxiv.org/abs/1805.11604"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->How Does Batch Normalization Help Optimization?</a>&#160;<a href="#fnref:37" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:37">
+<p><a href="https://arxiv.org/abs/1805.11604"target="_blank" rel="external nofollow noopener noreferrer">How Does Batch Normalization Help Optimization?</a>&#160;<a href="#fnref:37" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:38" role="doc-endnote">
-<p><a
-  href="https://www.sciencedirect.com/science/article/abs/pii/0893608089900208"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->Multilayer feedforward networks are universal approximators</a>&#160;<a href="#fnref:38" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:38">
+<p><a href="https://www.sciencedirect.com/science/article/abs/pii/0893608089900208"target="_blank" rel="external nofollow noopener noreferrer">Multilayer feedforward networks are universal approximators</a>&#160;<a href="#fnref:38" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:39" role="doc-endnote">
-<p><a
-  href="https://arxiv.org/abs/1910.11577"
-  
-  
-    
-    
-    target="_blank"
-  
-  
-    rel="external nofollow noopener noreferrer"
-  
-  
-  
->CrevNet: Conditionally Reversible Video Prediction</a>&#160;<a href="#fnref:39" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:39">
+<p><a href="https://arxiv.org/abs/1910.11577"target="_blank" rel="external nofollow noopener noreferrer">CrevNet: Conditionally Reversible Video Prediction</a>&#160;<a href="#fnref:39" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section></div><div class="post-footer" id="post-footer">
+</div></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title=2022-05-25&#32;00:00:00>更新于 2022-05-25</span>
+        <span title=2022-05-25&#32;00:00:00>更新于 2022-05-25&nbsp;</span>
       </div><div class="post-info-license">
           <span><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
         </div></div>
     <div class="post-info-line">
-      <div class="post-info-md"><span><a
-  href="/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E5%A4%A7%E6%B0%94%E9%A2%97%E7%B2%92%E6%B1%A1%E6%9F%93%E7%89%A9%E6%89%A9%E6%95%A3%E6%A8%A1%E6%8B%9F%E6%8A%80%E6%9C%AF%E7%9A%84%E7%A0%94%E7%A9%B6/index.md"
-  
-    title="阅读原始文档"
-  
-  
-  
-  
-    class="link-to-markdown"
-  
-  
->阅读原始文档</a></span></div>
+      <div class="post-info-md"><span><a href="/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E5%A4%A7%E6%B0%94%E9%A2%97%E7%B2%92%E6%B1%A1%E6%9F%93%E7%89%A9%E6%89%A9%E6%95%A3%E6%A8%A1%E6%8B%9F%E6%8A%80%E6%9C%AF%E7%9A%84%E7%A0%94%E7%A9%B6/index.md" title="阅读原始文档" class="link-to-markdown">阅读原始文档</a></span></div>
       <div class="post-info-share">
-        <span><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blathers23.netlify.app/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E5%A4%A7%E6%B0%94%E9%A2%97%E7%B2%92%E6%B1%A1%E6%9F%93%E7%89%A9%E6%89%A9%E6%95%A3%E6%A8%A1%E6%8B%9F%E6%8A%80%E6%9C%AF%E7%9A%84%E7%A0%94%E7%A9%B6/" data-title="毕业设计-基于人工智能的大气颗粒污染物扩散模拟技术的研究"><i class="fa-brands fa-weibo fa-fw"></i></a>
-  <a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://blathers23.netlify.app/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E5%A4%A7%E6%B0%94%E9%A2%97%E7%B2%92%E6%B1%A1%E6%9F%93%E7%89%A9%E6%89%A9%E6%95%A3%E6%A8%A1%E6%8B%9F%E6%8A%80%E6%9C%AF%E7%9A%84%E7%A0%94%E7%A9%B6/" data-title="毕业设计-基于人工智能的大气颗粒污染物扩散模拟技术的研究"><i data-svg-src="/lib/simple-icons/icons/baidu.min.svg"></i></a>
-  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://blathers23.netlify.app/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E5%A4%A7%E6%B0%94%E9%A2%97%E7%B2%92%E6%B1%A1%E6%9F%93%E7%89%A9%E6%89%A9%E6%95%A3%E6%A8%A1%E6%8B%9F%E6%8A%80%E6%9C%AF%E7%9A%84%E7%A0%94%E7%A9%B6/" data-title="毕业设计-基于人工智能的大气颗粒污染物扩散模拟技术的研究"><i class="fa-brands fa-evernote fa-fw"></i></a>
+        <span><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blathers23.netlify.app/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E5%A4%A7%E6%B0%94%E9%A2%97%E7%B2%92%E6%B1%A1%E6%9F%93%E7%89%A9%E6%89%A9%E6%95%A3%E6%A8%A1%E6%8B%9F%E6%8A%80%E6%9C%AF%E7%9A%84%E7%A0%94%E7%A9%B6/" data-title="毕业设计-基于人工智能的大气颗粒污染物扩散模拟技术的研究"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://blathers23.netlify.app/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E5%A4%A7%E6%B0%94%E9%A2%97%E7%B2%92%E6%B1%A1%E6%9F%93%E7%89%A9%E6%89%A9%E6%95%A3%E6%A8%A1%E6%8B%9F%E6%8A%80%E6%9C%AF%E7%9A%84%E7%A0%94%E7%A9%B6/" data-title="毕业设计-基于人工智能的大气颗粒污染物扩散模拟技术的研究"><i data-svg-src="/lib/simple-icons/icons/baidu.min.svg" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://blathers23.netlify.app/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E5%A4%A7%E6%B0%94%E9%A2%97%E7%B2%92%E6%B1%A1%E6%9F%93%E7%89%A9%E6%89%A9%E6%95%A3%E6%A8%A1%E6%8B%9F%E6%8A%80%E6%9C%AF%E7%9A%84%E7%A0%94%E7%A9%B6/" data-title="毕业设计-基于人工智能的大气颗粒污染物扩散模拟技术的研究"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
   </span>
       </div>
     </div>
   </div>
 
   <div class="post-info-more">
-    <section class="post-tags"><i class="fa-solid fa-tags fa-fw"></i>&nbsp;<a href="/tags/python/">Python</a>,&nbsp;<a href="/tags/rnn/">RNN</a>,&nbsp;<a href="/tags/lstm/">LSTM</a>,&nbsp;<a href="/tags/gru/">GRU</a></section>
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/python/">Python</a>,&nbsp;<a href="/tags/rnn/">RNN</a>,&nbsp;<a href="/tags/lstm/">LSTM</a>,&nbsp;<a href="/tags/gru/">GRU</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>
   </div>
 
-  <div class="post-nav"><a href="/lc691/" class="prev" rel="prev" title="LC691 - 贴纸拼词"><i class="fa-solid fa-angle-left fa-fw"></i>LC691 - 贴纸拼词</a>
-      <a href="/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8linux%E4%B9%8Bwine%E7%9A%84%E9%A3%9F%E7%94%A8%E6%96%B9%E5%BC%8F/" class="next" rel="next" title="优雅地使用Linux之Wine的食用方式">优雅地使用Linux之Wine的食用方式<i class="fa-solid fa-angle-right fa-fw"></i></a></div>
+  <div class="post-nav"><a href="/lc691/" class="prev" rel="prev" title="LC691 - 贴纸拼词"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>LC691 - 贴纸拼词</a>
+      <a href="/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8linux%E4%B9%8Bwine%E7%9A%84%E9%A3%9F%E7%94%A8%E6%96%B9%E5%BC%8F/" class="next" rel="next" title="优雅地使用Linux之Wine的食用方式">优雅地使用Linux之Wine的食用方式<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="waline" class="comment"></div><noscript>
         Please enable JavaScript to view the comments powered by <a href="https://waline.js.org/" rel="external nofollow noopener noreferrer">Waline</a>.
       </noscript></div></article></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.97.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external nofollow noopener noreferrer" title="FixIt v0.2.16-RC"><img class="fixit-icon" src="/images/fixit.svg" alt="FixIt logo" />&nbsp;FixIt</a>
-        </div><div class="footer-line copyright"><i class="fa-regular fa-copyright fa-fw"></i>
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.104.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.16"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">
-              <a
-  href="/"
-  
-  
-  
-  
-  
->Blathers</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon"></i>&nbsp;<span class="run-times">网站运行中 ...</span></span></div><div class="footer-line ibruce">
-          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin fa-fw"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin fa-fw"></i></span></span>
+              <a href="/">Blathers</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i>&nbsp;<span class="run-times">网站运行中 ...</span></span></div><div class="footer-line ibruce">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
         </div></div>
-  </footer></div><div class="widgets">
-  <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
-      <i class="fa-solid fa-arrow-up fa-fw"></i>
-    </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
-      <i class="fa-solid fa-comment fa-fw"></i>
-    </a>
-  </div><div id="mask"></div>
-</div><link rel="stylesheet" href="/lib/waline/waline.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/waline/waline.js" defer></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js" defer></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js" async defer></script><script type="text/javascript" src="/lib/sharer/sharer.min.js" async defer></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":50},"comment":{"waline":{"copyright":true,"dark":"body[theme='dark']","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/bilibili"],"highlighter":false,"imageUploader":false,"lang":"zh-cn","login":"enable","meta":["nick","mail","link"],"pageSize":10,"serverURL":"https://eke-sai-ting-bdlj3h1m4-blathers.vercel.app/"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"siteTime":"2022-04-19T01:19:11+08:00"};</script><script type="text/javascript" src="/js/theme.min.js" defer></script><script type="text/javascript" src="/js/_custom.min.js" defer></script></body>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/waline/waline.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/waline/waline.js" defer></script><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":50},"comment":{"enable":true,"waline":{"copyright":true,"dark":"body[data-theme='dark']","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/bilibili"],"highlighter":false,"imageUploader":false,"lang":"zh-cn","login":"enable","meta":["nick","mail","link"],"pageSize":10,"search":false,"serverURL":"https://eke-sai-ting-bdlj3h1m4-blathers.vercel.app/","texRenderer":false}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"siteTime":"2022-04-19T01:19:11+08:00"};</script><script src="/js/theme.min.js" defer></script></body>
 </html>

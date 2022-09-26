@@ -13,7 +13,8 @@
   <description><![CDATA[<div class="featured-image">
         <img src="/images/leetcode.jpg" referrerpolicy="no-referrer">
       </div>简单记录：BFS or DFS?]]></description>
-</item><item>
+</item>
+<item>
   <title>LC433 - 最小基因变化</title>
   <link>https://blathers23.netlify.app/lc433/</link>
   <pubDate>Sun, 08 May 2022 00:09:00 &#43;0800</pubDate>
@@ -22,7 +23,8 @@
   <description><![CDATA[<div class="featured-image">
         <img src="/images/leetcode.jpg" referrerpolicy="no-referrer">
       </div>简单记录：做题应当由浅入深。]]></description>
-</item><item>
+</item>
+<item>
   <title>LC1823 - 找出游戏的获胜者</title>
   <link>https://blathers23.netlify.app/lc1823/</link>
   <pubDate>Thu, 05 May 2022 01:54:00 &#43;0800</pubDate>
@@ -31,7 +33,8 @@
   <description><![CDATA[<div class="featured-image">
         <img src="/images/leetcode.jpg" referrerpolicy="no-referrer">
       </div>找出隐藏在模拟之下的数学规律是巧解本题的关键。]]></description>
-</item><item>
+</item>
+<item>
   <title>LC15 - 三数之和</title>
   <link>https://blathers23.netlify.app/lc15/</link>
   <pubDate>Sun, 24 Apr 2022 14:40:00 &#43;0800</pubDate>
@@ -40,7 +43,8 @@
   <description><![CDATA[<div class="featured-image">
         <img src="/images/leetcode.jpg" referrerpolicy="no-referrer">
       </div>双指针真是太棒啦 -> 二分查找也是。]]></description>
-</item><item>
+</item>
+<item>
   <title>LC11 - 盛水最多的容器</title>
   <link>https://blathers23.netlify.app/lc11/</link>
   <pubDate>Wed, 20 Apr 2022 21:49:00 &#43;0800</pubDate>
@@ -49,5 +53,6 @@
   <description><![CDATA[<div class="featured-image">
         <img src="/images/leetcode.jpg" referrerpolicy="no-referrer">
       </div>双指针是好文明!]]></description>
-</item></channel>
+</item>
+</channel>
 </rss>
