@@ -9,14 +9,14 @@
 <meta name="author-link" content="">
 <meta name="description" content="本文旨在提供使用 Hugo &#43; GitHub Pages or Netlify &#43; Waline &#43; PicGo 搭建个人博客的轻松无脑一站式体验教程。" /><meta name="keywords" content='Hugo, Blog' /><meta itemprop="name" content="浅入浅出 Hugo 教程">
 <meta itemprop="description" content="本文旨在提供使用 Hugo &#43; GitHub Pages or Netlify &#43; Waline &#43; PicGo 搭建个人博客的轻松无脑一站式体验教程。"><meta itemprop="datePublished" content="2022-04-24T16:33:00+08:00" />
-<meta itemprop="dateModified" content="2022-09-26T00:00:00+00:00" />
-<meta itemprop="wordCount" content="3571">
+<meta itemprop="dateModified" content="2022-09-27T00:00:00+00:00" />
+<meta itemprop="wordCount" content="3941">
 <meta itemprop="keywords" content="Hugo,Blog," /><meta property="og:title" content="浅入浅出 Hugo 教程" />
 <meta property="og:description" content="本文旨在提供使用 Hugo &#43; GitHub Pages or Netlify &#43; Waline &#43; PicGo 搭建个人博客的轻松无脑一站式体验教程。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blathers23.netlify.app/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAhugo%E6%95%99%E7%A8%8B/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-04-24T16:33:00+08:00" />
-<meta property="article:modified_time" content="2022-09-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-09-27T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="浅入浅出 Hugo 教程"/>
@@ -33,8 +33,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/blathers23.netlify.app\/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAhugo%E6%95%99%E7%A8%8B\/"
-    },"genre": "posts","keywords": "Hugo, Blog","wordcount":  3571 ,
-    "url": "https:\/\/blathers23.netlify.app\/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAhugo%E6%95%99%E7%A8%8B\/","datePublished": "2022-04-24T16:33:00+08:00","dateModified": "2022-09-26T00:00:00+00:00","publisher": {
+    },"genre": "posts","keywords": "Hugo, Blog","wordcount":  3941 ,
+    "url": "https:\/\/blathers23.netlify.app\/%E6%B5%85%E5%85%A5%E6%B5%85%E5%87%BAhugo%E6%95%99%E7%A8%8B\/","datePublished": "2022-04-24T16:33:00+08:00","dateModified": "2022-09-27T00:00:00+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -185,7 +185,7 @@
     alt="Blathers"
     title="Blathers"/>&nbsp;Blathers</span></span>
           <span class="post-category">收录于 <a href="/categories/%E6%95%99%E7%A8%8B/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 教程</a></span></div>
-      <div class="post-meta-line"><span title=2022-04-24&#32;16:33:00><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-04-24">2022-04-24</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 3571 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 8 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title=2022-04-24&#32;16:33:00><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-04-24">2022-04-24</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 3941 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 8 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
@@ -500,7 +500,54 @@
     </div>
     <div class="details-content">
       <div class="admonition-content"><p>今天（2022.9.26）发现Waline部署依赖的Vercel已经在神秘力量的影响下不能登陆了，也就是评论区已经不能加载评论，可能需要转移。</p>
-<p>今天（2022.9.26）晚上更换了Waline的服务端，部署到了<a href="https://www.deta.sh/"target="_blank" rel="external nofollow noopener noreferrer">Date</a>上，访问速度非常舒适。具体操作参考<a href="https://waline.js.org/guide/server/railway.html"target="_blank" rel="external nofollow noopener noreferrer">Waline官方文档</a>。唯一需要注意的是，提示Project不存在是需要到Date的Dashborad里设置一下项目的意思。</p>
+<p>今天（2022.9.26）晚上更换了Waline的服务端，部署到了<a href="https://www.deta.sh/"target="_blank" rel="external nofollow noopener noreferrer">Deta</a>上，访问速度非常舒适。具体操作参考<a href="https://waline.js.org/guide/server/railway.html"target="_blank" rel="external nofollow noopener noreferrer">Waline官方文档</a>。唯一需要注意的是，提示Project不存在是需要到Deta的Dashborad里设置一下项目的意思。</p>
+<p>除此之外，Deta部署会出现评论区IP属地错误，这是Deta的<a href="https://github.com/orgs/deta/discussions/282"target="_blank" rel="external nofollow noopener noreferrer">问题</a>，目前没有好的解决方式。另一条选择是解决问题本身，即阻止Deta获得评论IP，从而使评论中不显示IP属地。参考这条<a href="https://github.com/walinejs/waline/discussions/1315"target="_blank" rel="external nofollow noopener noreferrer">discussions</a>，在Deta中的操作具体如下：</p>
+<ol>
+<li>
+<p>进入你项目的Dashboard-Overview选项卡，根据你的操作系统选择安装对应的命令行工具，例如Linux操作系统的安装方式为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">curl -fsSL https://get.deta.dev/cli.sh <span class="p">|</span> sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>进入Dashboard-Micros-&ldquo;你的项目名&rdquo;-Setting选项卡，根据提示执行clone命令，将项目clone到本地。</p>
+</li>
+<li>
+<p>在本地打开项目文件夹下的<code>index.js</code>，修改<code>const callback</code>中的内容如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">Waline</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@waline/vercel&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">callback</span> <span class="o">=</span> <span class="nx">Waline</span><span class="p">({</span> 
+</span></span><span class="line"><span class="cl">  <span class="nx">env</span><span class="o">:</span> <span class="s1">&#39;deta&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">preSave</span><span class="p">(</span><span class="nx">comment</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">delete</span> <span class="nx">comment</span><span class="p">.</span><span class="nx">ip</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>保存后，在命令行中运行<code>deta deploy</code>即可将更新部署。</p>
+</li>
+</ol>
 </div>
     </div>
   </div>
@@ -576,7 +623,7 @@
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title=2022-09-26&#32;00:00:00>更新于 2022-09-26&nbsp;</span>
+        <span title=2022-09-27&#32;00:00:00>更新于 2022-09-27&nbsp;</span>
       </div><div class="post-info-license">
           <span><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
         </div></div>

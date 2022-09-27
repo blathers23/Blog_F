@@ -226,7 +226,33 @@ enableLaTeX: False
 
 今天（2022.9.26）发现Waline部署依赖的Vercel已经在神秘力量的影响下不能登陆了，也就是评论区已经不能加载评论，可能需要转移。
 
-今天（2022.9.26）晚上更换了Waline的服务端，部署到了[Date](https://www.deta.sh/)上，访问速度非常舒适。具体操作参考[Waline官方文档](https://waline.js.org/guide/server/railway.html)。唯一需要注意的是，提示Project不存在是需要到Date的Dashborad里设置一下项目的意思。
+今天（2022.9.26）晚上更换了Waline的服务端，部署到了[Deta](https://www.deta.sh/)上，访问速度非常舒适。具体操作参考[Waline官方文档](https://waline.js.org/guide/server/railway.html)。唯一需要注意的是，提示Project不存在是需要到Deta的Dashborad里设置一下项目的意思。
+
+除此之外，Deta部署会出现评论区IP属地错误，这是Deta的[问题](https://github.com/orgs/deta/discussions/282)，目前没有好的解决方式。另一条选择是解决问题本身，即阻止Deta获得评论IP，从而使评论中不显示IP属地。参考这条[discussions](https://github.com/walinejs/waline/discussions/1315)，在Deta中的操作具体如下：
+
+1. 进入你项目的Dashboard-Overview选项卡，根据你的操作系统选择安装对应的命令行工具，例如Linux操作系统的安装方式为：
+
+   ```sh
+   curl -fsSL https://get.deta.dev/cli.sh | sh
+   ```
+
+2. 进入Dashboard-Micros-"你的项目名"-Setting选项卡，根据提示执行clone命令，将项目clone到本地。
+
+3. 在本地打开项目文件夹下的`index.js`，修改`const callback`中的内容如下：
+
+   ```js
+   const express = require('express');
+   const Waline = require('@waline/vercel');
+   const app = express();
+   const callback = Waline({ 
+     env: 'deta',
+     preSave(comment) {
+       delete comment.ip; 
+       },
+   });
+   ```
+
+4. 保存后，在命令行中运行`deta deploy`即可将更新部署。
 
 {{< /admonition >}}
 
