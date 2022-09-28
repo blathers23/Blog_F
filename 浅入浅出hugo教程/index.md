@@ -7,7 +7,7 @@
 
 {{< admonition tip "提示">}}
 
-如有问题欢迎[与我联系](/about/##与我联系)😀。
+如有问题欢迎[与我联系](/about/#与我联系)😀。
 
 {{< /admonition >}}
 
@@ -228,7 +228,7 @@ enableLaTeX: False
 
 今天（2022.9.26）晚上更换了Waline的服务端，部署到了[Deta](https://www.deta.sh/)上，访问速度非常舒适。具体操作参考[Waline官方文档](https://waline.js.org/guide/server/railway.html)。唯一需要注意的是，提示Project不存在是需要到Deta的Dashborad里设置一下项目的意思。
 
-除此之外，Deta部署会出现评论区IP属地错误，这是Deta的[问题](https://github.com/orgs/deta/discussions/282)，目前没有好的解决方式。另一条选择是解决问题本身，即阻止Deta获得评论IP，从而使评论中不显示IP属地。参考这条[discussions](https://github.com/walinejs/waline/discussions/1315)，在Deta中的操作具体如下：
+除此之外，Deta部署会出现评论区IP属地错误，这是Deta的[问题](https://github.com/orgs/deta/discussions/282)，目前没有好的解决方式。另一条选择是解决问题本身，即阻止Deta获得评论IP，从而使评论中不显示IP属地。参考这条[discussion](https://github.com/walinejs/waline/discussions/1315)，在Deta中的操作具体如下：
 
 1. 进入你项目的Dashboard-Overview选项卡，根据你的操作系统选择安装对应的命令行工具，例如Linux操作系统的安装方式为：
 

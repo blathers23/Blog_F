@@ -16,10 +16,13 @@
 
 ### 与我联系
 
-- 📫  邮箱: blathers23@outlook.com
-- 🐱 LeetCode 主页: [@susasasa](https://leetcode.cn/u/susasasa/)
-- 👾 GitHub 主页: [@blathers23](https://github.com/blathers23)
-- 🦊 GitLab 主页: [@blathers23](https://gitlab.com/blathers23)
+📫  邮箱: blathers23@outlook.com
+
+🐱 LeetCode 主页: [@susasasa](https://leetcode.cn/u/susasasa/)
+
+👾 GitHub 主页: [@blathers23](https://github.com/blathers23)
+
+🦊 GitLab 主页: [@blathers23](https://gitlab.com/blathers23)
 
 
 ## 动态
@@ -57,13 +60,17 @@
 
 ### 施工时间线
 
+😎  2022/04/19: Hello Hugo!
 
- - 😎  2022/04/19 Hello Hugo!
- - 🥱  2022/04/22 页面施工基本完毕，等待上线。
- - 😛  2022/04/22 正式上线 GitHub Pages!
- - ✈️  2022/04/25 迁移至 netlify!
- - 🦊  2022/05/05 代码仓库迁移至 GitLab!
- - 🐢 2022/09/26 评论区服务端迁移至Deta。
+🥱  2022/04/22: 页面施工基本完毕，等待上线。
+
+😛  2022/04/22: 正式上线 GitHub Pages!
+
+✈️  2022/04/25: 迁移至 Netlify!
+
+🦊  2022/05/05: 代码仓库迁移至 GitLab!
+
+🐢 2022/09/26: 评论区服务端迁移至Deta。
 
 
 ---
