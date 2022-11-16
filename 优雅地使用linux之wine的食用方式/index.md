@@ -66,6 +66,12 @@ env LANG=zh_CN.UTF-8 wine game.exe
 
 发现成功读取了游戏文件夹，确定为编码问题。修改编码问题最简单的方式为在`~/.bashrc`中添加`export LANG=zh_CN.UTF_8`，这样，当以当前用户使用Terminal启动游戏时，游戏可以正常显示中文。但是当双击游戏文件启动时，依旧不能正常显示中文。为了解决这个问题，经搜索，需要修改默认的环境配置，配置文件夹位于`/etc/profile`，需要在最后一样添加`LANG=zh_CN.UTF_8`即可修改默认编码为中文的UTF-8编码，十分的方便。
 
+{{<admonition tip "补记">}}
+
+上述编码设置在不同系统中可能出现不同的表现，导致中英文混合出现，最佳的方式应该是仅仅引入UTF编码集，因此建议改为在`/etc/environment`中添加`LC_CTYPE="zh_CN.UTF-8"`。(Nov 16 2022)
+
+{{</admonition>}}
+
 ---
 
 后记：啰啰嗦唆没用的话
