@@ -1097,7 +1097,38 @@ bool canPartition(int* nums, int numsSize) {
 
 ### 2.6 快速排序
 
+代码：
 
+```c
+int partition(int* nums, int i, int j) {
+    int key = nums[i];
+    while (i < j) {
+        while (i < j && nums[j] <= key) j--;
+        nums[i] = nums[j];
+        while (i < j && nums[i] >= key) i++;
+        nums[j] = nums[i]; 
+    }
+    nums[i] = key;
+    return i;
+}
+
+void quickSort(int* nums, int l, int r) {
+    if (l >= r) return;
+    int m = partition(nums, l, r);
+    quickSort(nums, l, m - 1);
+    quickSort(nums, m + 1, r);
+}
+
+void Sort(int* nums, int numsSize) {
+    quickSort(nums, 0, numsSize - 1);
+}
+```
+
+时间复杂度：$\mathcal{O}(nlogn)$
+
+空间复杂度：$\mathcal{O}(logn)$
+
+稳定性：不稳定
 
 ### 2.7 堆排序
 
@@ -1128,20 +1159,13 @@ void buildMaxHeap(int* nums, int heapSize) {
 
 void Sort(int* nums, int numsSize) {
     int temp, heapSize = numsSize;
-    for (i = numsSize; i > 0; --i) {
-        temp = nums[0];
-    	nums[0] = nums[temp];
-    	nums[heapSize - 1] = temp;
-    	heapSize -= 1;
-        
-		maxHeapify(nums, 0, heapSize - 1);   
-    }
+    buildMaxHeap(nums, heapSize);
 }
 ```
 
 时间复杂度：$\mathcal{O}(nlogn)$
 
-空间复杂度：递归实现$\mathcal{O}(logn)$、非递归实现$\mathcal{O}(1)$
+空间复杂度：递归实现$\mathcal{O}(logn)$、非递归实现$\mathcal{O}(1)$*（847非递归实现）*
 
 稳定性：不稳定
 
@@ -1219,6 +1243,8 @@ void Sort(int *nums, int numsSize) {
 
 ### 4.3 图的遍历
 
+
+
 ### 4.4 图的基本应用
 
 ## 5 树与二叉树
@@ -1226,6 +1252,300 @@ void Sort(int *nums, int numsSize) {
 ### 5.1 树的概念
 
 ### 5.2 二叉树
+
+#### 二叉树的层次遍历-迭代算法
+
+代码：
+
+```C
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     struct TreeNode *left;
+ *     struct TreeNode *right;
+ * };
+ */
+
+/**
+ * Return an array of arrays of size *returnSize.
+ * The sizes of the arrays are returned as *returnColumnSizes array.
+ * Note: Both returned array and *columnSizes array must be malloced, assume caller calls free().
+ */
+int** levelOrder(struct TreeNode* root, int* returnSize, int** returnColumnSizes){
+    *returnSize = 0;
+    if (root == NULL) {
+        return NULL;
+    }
+    
+    *returnColumnSizes = (int *)malloc(sizeof(int) * 1000);	// 二叉树的最大深度
+    int** ans = (int **)malloc(sizeof(int *) * 1000);		// 二叉树的最大深度
+    struct TreeNode *queue[2000], *curNode;					// 二叉树的节点数量
+    int head = 0, tail = 0, curLevelTail, curLevelNodeNum;
+    
+    queue[tail++] = root;
+    
+    while (head != tail) {
+        curLevelTail = tail;
+        curLevelNodeNum = 0;
+        ans[*returnSize] = (int *)malloc(sizeof(int) * (tail - head));
+        
+        while(head != curLevelTail) {
+            curNode = queue[head++];
+            ans[*returnSize][curLevelNodeNum++] = curNode -> val;
+            
+            if (curNode -> left) {
+                queue[tail++] = curNode -> left;
+            }
+            if (curNode -> right) {
+                queue[tail++] = curNode -> right;
+            }
+        }
+        (*returnColumnSizes)[(*returnSize)++] = curLevelNodeNum;
+    }
+    
+    return ans;
+}
+```
+
+#### 二叉树前序遍历-递归算法
+
+代码：
+
+```C
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     struct TreeNode *left;
+ *     struct TreeNode *right;
+ * };
+ */
+
+/**
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+int* preorderTraversal(struct TreeNode* root, int* returnSize){
+    int *ans = malloc(sizeof(int) * 100);
+    *returnSize = 0;
+    
+    void preOrder(struct TreeNode* node) {
+        if (node) {
+            ans[(*returnSize)++] = node -> val;
+            preOrder(node -> left);
+            preOrder(node -> right);
+        }
+    }
+    
+    preOrder(root);
+    return ans;
+}
+```
+
+#### 二叉树前序遍历-迭代算法
+
+代码：
+
+```C
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     struct TreeNode *left;
+ *     struct TreeNode *right;
+ * };
+ */
+
+/**
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+int* preorderTraversal(struct TreeNode* root, int* returnSize){
+    int *ans = malloc(sizeof(int) * 100);
+    *returnSize = 0;
+    if (!root) {
+        return NULL;
+    }
+
+    struct TreeNode** stack = malloc(sizeof(struct TreeNode*) * 100);
+    // struct TreeNode* stack[100];
+    int stackTop = 0;
+
+    while (stackTop > 0 || root != NULL) {
+        while (root != NULL) {
+            ans[(*returnSize)++] = root -> val;
+            stack[stackTop++] = root;
+            root = root -> left;
+        }
+        root = stack[--stackTop];
+        root = root -> right;
+    }
+
+    return ans;
+}
+```
+
+#### 二叉树的中序遍历-递归算法
+
+代码：
+
+```C
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     struct TreeNode *left;
+ *     struct TreeNode *right;
+ * };
+ */
+
+/**
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+int* inorderTraversal(struct TreeNode* root, int* returnSize){
+    int *ans = malloc(sizeof(int) * 100);
+    *returnSize = 0;
+
+    void inOrder(struct TreeNode* node) {
+        if (node) {
+            inOrder(node -> left);
+            ans[(*returnSize)++] = node -> val;
+            inOrder(node -> right);
+        }
+    }
+
+    inOrder(root);
+    return ans;
+}
+```
+
+#### 二叉树的中序遍历-迭代算法
+
+代码：
+
+```C
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     struct TreeNode *left;
+ *     struct TreeNode *right;
+ * };
+ */
+
+/**
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+int* inorderTraversal(struct TreeNode* root, int* returnSize){
+    int *ans = malloc(sizeof(int) * 100);
+    *returnSize = 0;
+
+    if (!root) {
+        return NULL;
+    }
+
+    struct TreeNode** stack = malloc(sizeof(struct TreeNode *) * 100);
+    int stackTop = 0;
+
+    while (stackTop > 0 || root != NULL) {
+        while (root != NULL) {
+            stack[stackTop++] = root;
+            root = root -> left;
+        }
+        root = stack[--stackTop];
+        ans[(*returnSize)++] = root -> val;
+        root = root -> right;
+    }
+
+    return ans;
+}
+```
+
+#### 二叉树后序遍历-递归算法
+
+代码：
+
+```C
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     struct TreeNode *left;
+ *     struct TreeNode *right;
+ * };
+ */
+
+/**
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+int* postorderTraversal(struct TreeNode* root, int* returnSize){
+    int* ans = malloc(sizeof(int) * 100);
+    *returnSize = 0;
+
+    void postOrder(struct TreeNode* node) {
+        if (node) {
+            postOrder(node -> left);
+            postOrder(node -> right);
+            ans[(*returnSize)++] = node -> val;
+        }
+    }
+
+    postOrder(root);
+    return ans;
+}
+```
+
+#### 二叉树后序遍历-迭代算法
+
+代码：
+
+```c
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     struct TreeNode *left;
+ *     struct TreeNode *right;
+ * };
+ */
+
+/**
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+int* postorderTraversal(struct TreeNode* root, int* returnSize){
+    int* ans = malloc(sizeof(int) * 100);
+    *returnSize = 0;
+
+    if (!root) {
+        return NULL;
+    }
+
+    struct TreeNode** stack = malloc(sizeof(struct TreeNode *) * 100);
+    struct TreeNode* prev = NULL;
+    int stackTop = 0;
+
+    while (stackTop > 0 || root != NULL) {
+        while (root != NULL) {
+            stack[stackTop++] = root;
+            root = root -> left;
+        }
+
+        root = stack[--stackTop];
+
+        if (root -> right == NULL || root -> right == prev) {	// 如果节点无右孩子或者右孩子已经被输出，则输出该节点
+            ans[(*returnSize)++] = root -> val;
+            prev = root;
+            root = NULL;
+        } else {	// 将节点重新加入栈，并访问节点的右孩子
+            stack[stackTop++] = root;
+            root = root -> right;
+        }
+    }
+
+    return ans;
+}
+```
+
+
 
 ### 5.3 树、森林
 
