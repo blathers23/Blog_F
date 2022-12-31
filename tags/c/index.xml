@@ -10,7 +10,14 @@
   <pubDate>Mon, 11 Jul 2022 00:28:00 &#43;0800</pubDate>
   <author>Blathers</author>
   <guid>https://blathers23.netlify.app/datastructurewithc/</guid>
-  <description><![CDATA[通过将LeetCode中的问题与考研大纲中所考内容对照性练习，来提高编程能力。编程语言选择C语言，更为通用。]]></description>
+  <description><![CDATA[<div class="details admonition tip open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-lightbulb fa-fw" aria-hidden="true"></i>技巧<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">编程能力的欠缺是非常严重的问题。期望通过将LeetCode中的问题与考研大纲中所考内容对照性练习，来提高编程能力。编程语言选择C语言，更为通用。</div>
+    </div>
+  </div>]]></description>
 </item>
 <item>
   <title>LC11 - 盛水最多的容器</title>

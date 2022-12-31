@@ -2,6 +2,14 @@
 
 <!--more-->
 
+{{<admonition tip "补补记">}}
+
+本文章介绍的winehq安装方式是添加了winehq官方的软件源，然而该软件源裸连网速感人，经常更新失败。事实上，Fedora官方的updates软件源也提供了wine包。
+
+最初我使用添加winehq官方软件源安装wine的原因是当时使用的Ubuntu系统的软件源提供的wine版本过低，然而这个问题在Fedora上是不存在的，因此对于Fedora用户来说，可以直接使用`sudo dnf install wine`来安装最新版本的wine，而对于Ubuntu或者其他wine更新速度较慢的发行版用户，可以自行添加winehq官方软件源来使用最新版本的wine。(Dec/31/2022)
+
+{{</admonition>}}
+
 {{<admonition tip "补记">}}
 
 最近（2022.9.26）安装了Feodra系统，发现这篇文章实在是没什么用处；对于不同的操作系统，wine的安装方式直接参考[winehq的wiki](https://wiki.winehq.org/Download)即可。对于Ubuntu、Debian系统来说，还可以配置[TUNA的镜像](https://mirrors-i.tuna.tsinghua.edu.cn/help/wine-builds/)，加速安装。对于Fedora用户，很遗憾只能自行配置代理；具体操作为修改`/etc/yum.repos.d/winehq.repo`，在最后一行添加`proxy="XXXXXX"`之后再运行`dnf makecache`等命令。
@@ -68,15 +76,9 @@ env LANG=zh_CN.UTF-8 wine game.exe
 
 {{<admonition tip "补记">}}
 
-上述编码设置在不同系统中可能出现不同的表现，导致中英文混合出现，最佳的方式应该是仅仅引入UTF编码集，因此建议改为在`/etc/environment`中添加`LC_CTYPE="zh_CN.UTF-8"`。(Nov 16 2022)
+上述编码设置在不同系统中可能出现不同的表现，导致中英文混合出现，最佳的方式应该是仅仅引入UTF编码集，因此建议改为在`/etc/environment`中添加`LC_CTYPE="zh_CN.UTF-8"`。(Nov/16/2022)
 
 {{</admonition>}}
-
----
-
-后记：啰啰嗦唆没用的话
-
-毕业终于完事了，没少费功夫，最后终于是拿到了毕业证，和大家伙也天各一方。毕业离开学校的那天，头一次喝醉吐的自己浑身都是，可能我自己心里是非常喜欢大家伙的吧，我也不知道。离别总是酸楚，但是回到家乡，离开校园，还是得直面困难的。现在隔离在宾馆，天天闲的难受，这样的日子，今天也是最后一晚了。和我一样二战的家伙已经开始规律作息好好复习了，我也不能拉了胯，考前最后一次熬夜！！！再也不熬夜了！最后就是，果然还是好好的把自己心中所想表达出来能让人心情舒畅。
 
 
 ---

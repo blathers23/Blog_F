@@ -12,7 +12,7 @@
 
 {{</admonition>}}
 
-## 软件包安装相关
+## 软件包相关
 
 ### APT代理
 
@@ -84,6 +84,14 @@ sudo dnf install alacarte
 ```
 
 最后在编辑器中添加启动脚本，并设置图标及名称，就可以方便的在主菜单启动Aira2。
+
+### GNOME Shell Extensions
+
+> *Fedora37*
+
+GNOME拓展是第三方开发者编写的小段代码，可以类比为Chrome的扩展，为系统增加一些便捷的功能。只需要在系统中安装`gnome-extensions`软件包，就可以访问[拓展应用市场](https://extensions.gnome.org/)，选择或搜索自己喜欢的拓展并安装到系统上。
+
+这里推荐**Net Speed**和**Bluetooth Quick Connect**两个拓展，一个可以在panel中显示实时网速，一个可以在control panel中选择已经配对过的蓝牙设备快速连接。
 
 ---
 
