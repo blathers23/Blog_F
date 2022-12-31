@@ -2,7 +2,7 @@
 
 <!--more-->
 
-{{<admonition tip "补补记">}}
+{{<admonition type = tip title = "补补记">}}
 
 本文章介绍的winehq安装方式是添加了winehq官方的软件源，然而该软件源裸连网速感人，经常更新失败。事实上，Fedora官方的updates软件源也提供了wine包。
 
@@ -10,7 +10,7 @@
 
 {{</admonition>}}
 
-{{<admonition tip "补记">}}
+{{<admonition type = tip title = "补记">}}
 
 最近（2022.9.26）安装了Feodra系统，发现这篇文章实在是没什么用处；对于不同的操作系统，wine的安装方式直接参考[winehq的wiki](https://wiki.winehq.org/Download)即可。对于Ubuntu、Debian系统来说，还可以配置[TUNA的镜像](https://mirrors-i.tuna.tsinghua.edu.cn/help/wine-builds/)，加速安装。对于Fedora用户，很遗憾只能自行配置代理；具体操作为修改`/etc/yum.repos.d/winehq.repo`，在最后一行添加`proxy="XXXXXX"`之后再运行`dnf makecache`等命令。
 
@@ -21,6 +21,12 @@ wine在首次运行程序之前，需要先运行`winecfg`命令来生成配置�
 对于wine的中文乱码问题，如正文所说是字符集的问题。如果我们的操作系统设置的语言为英文，那么在运行`wine cmd`之后使用`chcp`命令检查会得到437，即英文环境；而当我们使用`env LC_ALL=zh_CN.UTF-8 wine cmd`，即设置环境为中文环境并启动cmd，此时检查`chcp`得到的代码为65001，也就是使用了UTF-8编码，在这种情况下，基本可以解决所有的乱码问题。
 
 还有一类导致无法运行程序的错误是系统缺少某些驱动，然而缺少驱动的报错信息在双击运行exe的报错中是没有的，这时最好的方式应该是使用`wine xxx.exe`来启动程序，在命令行中检查即可发现缺少的驱动报报错等信息。 
+
+{{<admonition tip>}}
+
+上述编码设置在不同系统中可能出现不同的表现，导致中英文混合出现，最佳的方式应该是仅仅引入UTF编码集，因此建议改为在`/etc/environment`中添加`LC_CTYPE="zh_CN.UTF-8"`。(Nov/16/2022)
+
+{{</admonition>}}
 
 {{</admonition>}}
 
@@ -73,12 +79,6 @@ env LANG=zh_CN.UTF-8 wine game.exe
 ```
 
 发现成功读取了游戏文件夹，确定为编码问题。修改编码问题最简单的方式为在`~/.bashrc`中添加`export LANG=zh_CN.UTF_8`，这样，当以当前用户使用Terminal启动游戏时，游戏可以正常显示中文。但是当双击游戏文件启动时，依旧不能正常显示中文。为了解决这个问题，经搜索，需要修改默认的环境配置，配置文件夹位于`/etc/profile`，需要在最后一样添加`LANG=zh_CN.UTF_8`即可修改默认编码为中文的UTF-8编码，十分的方便。
-
-{{<admonition tip "补记">}}
-
-上述编码设置在不同系统中可能出现不同的表现，导致中英文混合出现，最佳的方式应该是仅仅引入UTF编码集，因此建议改为在`/etc/environment`中添加`LC_CTYPE="zh_CN.UTF-8"`。(Nov/16/2022)
-
-{{</admonition>}}
 
 
 ---

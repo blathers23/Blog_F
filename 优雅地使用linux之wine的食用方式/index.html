@@ -191,6 +191,14 @@
 <p>解决安装问题之后，如果使用中文环境，那么还可能会遇到中文全部方框的问题。这是因为没有安装中文字体导致的。比较方便的解决方式有两种，一是使用winetricks安装字体，受制于网络的限制，这种方式常常面临着失败；另一种较为快捷的方式就是打开安装了中文的Windows系统，并将<code>C:\windows\Fonts</code>目录下的字体复制到<code>~/.wine/drive_c/windows/Fonts</code>文件夹下，通常可以解决文字方框的问题。</p>
 <p>对于wine的中文乱码问题，如正文所说是字符集的问题。如果我们的操作系统设置的语言为英文，那么在运行<code>wine cmd</code>之后使用<code>chcp</code>命令检查会得到437，即英文环境；而当我们使用<code>env LC_ALL=zh_CN.UTF-8 wine cmd</code>，即设置环境为中文环境并启动cmd，此时检查<code>chcp</code>得到的代码为65001，也就是使用了UTF-8编码，在这种情况下，基本可以解决所有的乱码问题。</p>
 <p>还有一类导致无法运行程序的错误是系统缺少某些驱动，然而缺少驱动的报错信息在双击运行exe的报错中是没有的，这时最好的方式应该是使用<code>wine xxx.exe</code>来启动程序，在命令行中检查即可发现缺少的驱动报报错等信息。</p>
+<div class="details admonition tip open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-lightbulb fa-fw" aria-hidden="true"></i>技巧<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">上述编码设置在不同系统中可能出现不同的表现，导致中英文混合出现，最佳的方式应该是仅仅引入UTF编码集，因此建议改为在<code>/etc/environment</code>中添加<code>LC_CTYPE=&quot;zh_CN.UTF-8&quot;</code>。(Nov/16/2022)</div>
+    </div>
+  </div>
 </div>
     </div>
   </div>
@@ -268,15 +276,7 @@
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">env <span class="nv">LANG</span><span class="o">=</span>zh_CN.UTF-8 wine game.exe
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>发现成功读取了游戏文件夹，确定为编码问题。修改编码问题最简单的方式为在<code>~/.bashrc</code>中添加<code>export LANG=zh_CN.UTF_8</code>，这样，当以当前用户使用Terminal启动游戏时，游戏可以正常显示中文。但是当双击游戏文件启动时，依旧不能正常显示中文。为了解决这个问题，经搜索，需要修改默认的环境配置，配置文件夹位于<code>/etc/profile</code>，需要在最后一样添加<code>LANG=zh_CN.UTF_8</code>即可修改默认编码为中文的UTF-8编码，十分的方便。</p>
-<div class="details admonition tip open">
-    <div class="details-summary admonition-title">
-      <i class="icon fa-solid fa-lightbulb fa-fw" aria-hidden="true"></i>补记<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
-    </div>
-    <div class="details-content">
-      <div class="admonition-content">上述编码设置在不同系统中可能出现不同的表现，导致中英文混合出现，最佳的方式应该是仅仅引入UTF编码集，因此建议改为在<code>/etc/environment</code>中添加<code>LC_CTYPE=&quot;zh_CN.UTF-8&quot;</code>。(Nov/16/2022)</div>
-    </div>
-  </div></div><div class="post-footer" id="post-footer">
+</div><p>发现成功读取了游戏文件夹，确定为编码问题。修改编码问题最简单的方式为在<code>~/.bashrc</code>中添加<code>export LANG=zh_CN.UTF_8</code>，这样，当以当前用户使用Terminal启动游戏时，游戏可以正常显示中文。但是当双击游戏文件启动时，依旧不能正常显示中文。为了解决这个问题，经搜索，需要修改默认的环境配置，配置文件夹位于<code>/etc/profile</code>，需要在最后一样添加<code>LANG=zh_CN.UTF_8</code>即可修改默认编码为中文的UTF-8编码，十分的方便。</p></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
