@@ -227,7 +227,7 @@ int* inorderTraversal(struct TreeNode* root, int* returnSize){
 }
 ```
 
-### 二叉树后序遍历-递归算法
+### 1.6 二叉树后序遍历-递归算法
 
 代码：
 
@@ -351,7 +351,7 @@ void Sort(int* nums, int numsSize) {
 
 稳定性：不稳定
 
-### 堆排序
+### 2.2 堆排序
 
 代码：
 

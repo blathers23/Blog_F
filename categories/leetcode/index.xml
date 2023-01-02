@@ -4,7 +4,17 @@
     <link>https://blathers23.netlify.app/categories/leetcode/</link>
     <description>leetcode - 分类 - Blathers&#39; Tent</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>blathers233@outlook.com (Blathers)</managingEditor>
-      <webMaster>blathers233@outlook.com (Blathers)</webMaster><lastBuildDate>Mon, 16 May 2022 00:52:00 &#43;0800</lastBuildDate><atom:link href="https://blathers23.netlify.app/categories/leetcode/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>blathers233@outlook.com (Blathers)</webMaster><lastBuildDate>Mon, 02 Jan 2023 18:20:00 &#43;0800</lastBuildDate><atom:link href="https://blathers23.netlify.app/categories/leetcode/" rel="self" type="application/rss+xml" /><item>
+  <title>LC239 - 滑动窗口的最大值</title>
+  <link>https://blathers23.netlify.app/lc239/</link>
+  <pubDate>Mon, 02 Jan 2023 18:20:00 &#43;0800</pubDate>
+  <author>Blathers</author>
+  <guid>https://blathers23.netlify.app/lc239/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="/images/leetcode.jpg" referrerpolicy="no-referrer">
+      </div>通过抽象手法简化问题]]></description>
+</item>
+<item>
   <title>LC691 - 贴纸拼词</title>
   <link>https://blathers23.netlify.app/lc691/</link>
   <pubDate>Mon, 16 May 2022 00:52:00 &#43;0800</pubDate>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>LC239 - 滑动窗口的最大值 - Blathers&#39; Tent</title><meta name="author" content="Blathers">
+<meta name="author-link" content="">
+<meta name="description" content="通过抽象手法简化问题" /><meta name="keywords" content='C, 滑动窗口, 单调队列' /><meta itemprop="name" content="LC239 - 滑动窗口的最大值">
+<meta itemprop="description" content="通过抽象手法简化问题"><meta itemprop="datePublished" content="2023-01-02T18:20:00+08:00" />
+<meta itemprop="dateModified" content="2023-01-02T00:00:00+00:00" />
+<meta itemprop="wordCount" content="2699">
+<meta itemprop="keywords" content="C,滑动窗口,单调队列," /><meta property="og:title" content="LC239 - 滑动窗口的最大值" />
+<meta property="og:description" content="通过抽象手法简化问题" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blathers23.netlify.app/lc239/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-01-02T18:20:00+08:00" />
+<meta property="article:modified_time" content="2023-01-02T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="LC239 - 滑动窗口的最大值"/>
+<meta name="twitter:description" content="通过抽象手法简化问题"/>
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://blathers23.netlify.app/lc239/" /><link rel="prev" href="https://blathers23.netlify.app/datastructurewithc/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "LC239 - 滑动窗口的最大值",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blathers23.netlify.app\/lc239\/"
+    },"genre": "posts","keywords": "C, 滑动窗口, 单调队列","wordcount":  2699 ,
+    "url": "https:\/\/blathers23.netlify.app\/lc239\/","datePublished": "2023-01-02T18:20:00+08:00","dateModified": "2023-01-02T00:00:00+00:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Blathers"
+      },"description": "通过抽象手法简化问题"
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Blathers&#39; Tent"><span class="header-title-pre">🏕️</span><span class="header-title-text">Blathers&#39; Tent</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                title="全部文章"
+                
+              >Posts 📑</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                title="标签"
+                
+              >Tags 🏷️</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                title="分类"
+                
+              >Categories 📚</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/friends"
+                title="友情链接"
+                
+              >Friends 🎈</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Blathers&#39; Tent"><span class="header-title-pre">🏕️</span><span class="header-title-text">Blathers&#39; Tent</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  title="全部文章"
+                  
+                >Posts 📑</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  title="标签"
+                  
+                >Tags 🏷️</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  title="分类"
+                  
+                >Categories 📚</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/friends"
+                  title="友情链接"
+                  
+                >Friends 🎈</a></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX">
+        <span>LC239 - 滑动窗口的最大值</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="https://gravatar.loli.net/avatar/1cc24367e7133aceb81bfd9ef41481cd?s=32&amp;d="
+    data-srcset="https://gravatar.loli.net/avatar/1cc24367e7133aceb81bfd9ef41481cd?s=32&amp;d=, https://gravatar.loli.net/avatar/1cc24367e7133aceb81bfd9ef41481cd?s=32&amp;d= 1.5x, https://gravatar.loli.net/avatar/1cc24367e7133aceb81bfd9ef41481cd?s=32&amp;d= 2x"
+    data-sizes="auto"
+    alt="Blathers"
+    title="Blathers"/>&nbsp;Blathers</span></span>
+          <span class="post-category">收录于 <a href="/categories/leetcode/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> leetcode</a></span></div>
+      <div class="post-meta-line"><span title=2023-01-02&#32;18:20:00><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-02">2023-01-02</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 2699 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 6 分钟</span>&nbsp;</div>
+    </div><div class="featured-image"><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="/images/leetcode.jpg"
+    data-srcset="/images/leetcode.jpg, /images/leetcode.jpg 1.5x, /images/leetcode.jpg 2x"
+    data-sizes="auto"
+    alt="/images/leetcode.jpg"
+    title="通过抽象手法简化问题"/></div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#思考">思考</a></li>
+    <li><a href="#单调队列">单调队列</a></li>
+    <li><a href="#代码">代码</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><blockquote>
+<p>问题链接：<a href="https://leetcode.cn/problems/sliding-window-maximum/"target="_blank" rel="external nofollow noopener noreferrer">LC239 - 滑动窗口的最大值</a></p>
+</blockquote>
+<h2 id="思考">思考</h2>
+<hr>
+<p>在一个长为$n$的列表中有一个长为$k$的窗口，每次查找当前窗口中所有数的最大值，然后移动到下一个窗口。由于窗口中的数无序，因此查找的时间复杂度为$\mathcal{O}(k)$，因此用直接查找的方式解决该问题时间复杂度为$\mathcal{O}(nk)$。对于一个Hard题来说，明显会超时。</p>
+<p>那么应当如何降低时间复杂度呢？注意到每次查找中都会有$k-1$个数重复，因此我们可以维护一个容器，容器中包含从窗口最左端到窗口最右端的所有数。每次我们从容器中选出值最大的数字作为滑动窗口的输出，将窗口最右端外的一个数加入容器，最后将窗口最左端的数字从容器中排除。只要不断重复这三个操作，即可解决问题。根据第一段的描述，我们已经知道，直接搜索时，重复一次这些操作的时间复杂度为$\mathcal{O}(k)$，而重复次数$n$是难以改变的。因此，为了降低时间复杂度，我们应当将这三个操作加起来的时间复杂度将至低于$\mathcal{O}(k)$。</p>
+<p>有一个非常适合这种始终维护一个容器最大值的数据结构——大根堆。虽然大根堆建堆时间复杂度为$\mathcal{O}(klogk)$，但是在整个问题解决的周期中，只需要建堆一次。接下来考虑容器中的三个操作：从大根堆中取出最大值的时间复杂度为$\mathcal{O}(1)$，将一个新的数加入到大根堆的时间复杂度为$\mathcal{O}(logk)$，都小于$\mathcal{O}(k)$。然而，将一个特定的数从大根堆中排除是一个比较复杂的问题，但是这里我们可以采用一个以空间换取时间的手段：只需要在大根堆每一个节点中同时记录数和该数所在的位置即可。在从大根堆中取出最大值之前，需要检查以下该数所在的位置是否合法（在窗口的大小以内），若合法 ，则直接输出该数，若不合法，则需要排除该数并重新最大堆化。只要某个数不是容器中的最大值，就算不排除该数也不会对最终结果产生影响。这样该问题的时间复杂度就来到了$\mathcal{O}(nlogk)$。</p>
+<h2 id="单调队列">单调队列</h2>
+<hr>
+<p>通过大根堆容器，我们已经做到了降低时间复杂度。时间复杂度可以进一步降低吗？观察大根堆我们可以注意到，在大根堆中存在一些数，这些数只会占据大根堆中的空间，也不会输出到大根堆之外，如果能排除这些数，可以进一步提高程序运行的效率。这些不会被输出的数是如何产生的呢？</p>
+<p>考虑这样一个实际问题，输入列表为$[1, 3, -1, -3, 5, 3]$，$k=3$。在重复了多次操作后，窗口右端即将离开数字3，窗口左端即将接纳数字5，也就是我们需要将5输入到容器中：</p>
+<figure><a class="lightgallery" href="https://s2.loli.net/2023/01/02/OlAwBsFcgUQW81y.png" data-thumbnail="https://s2.loli.net/2023/01/02/OlAwBsFcgUQW81y.png" data-sub-html="<h2>示意图</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://s2.loli.net/2023/01/02/OlAwBsFcgUQW81y.png"
+      data-srcset="https://s2.loli.net/2023/01/02/OlAwBsFcgUQW81y.png, https://s2.loli.net/2023/01/02/OlAwBsFcgUQW81y.png 1.5x, https://s2.loli.net/2023/01/02/OlAwBsFcgUQW81y.png 2x"
+      data-sizes="auto"
+      alt="https://s2.loli.net/2023/01/02/OlAwBsFcgUQW81y.png"
+      title="https://s2.loli.net/2023/01/02/OlAwBsFcgUQW81y.png" width="492" height="243" data-w data-h/>
+  </a><figcaption class="image-caption">示意图</figcaption>
+  </figure>
+<p>此时，我们不去在意容器内部的细节，单单考虑那些数即使删除也不会对结果造成干扰？可以注意到一个关键的问题：将5输入到容器中之后，容器中的其它所有数都可以删除而不影响最终结果。换句话说，此时我们可以将大根堆直接抛弃然后重建，同样可以得到正确的结果。</p>
+<p>其背后的原因是什么？我们注意到，5是大根堆里最大的数字，而且是滑动窗口中年纪最小的后辈。也就是说，5在容器中存活的时间，是要比目前容器中的其他数字都要长的。也就是说，在5的整个生命周期中，其他的数字都会因为5的存在而导致不能作为滑动窗口中的最大值输出。更一般的，我们可以发现，如果我们将某一个数$x$加入到容器中，则容器中小于$x$的所有数都不能作为滑动窗口中的最大值输出。</p>
+<p>事实上，到目前为止我们已经发现了足够有趣的东西，而这个发现的作用已经被大根堆容器限制住了，因此我们回到抽象容器来继续讨论这个发现的作用。现在假设我们有这样一个容器，这个容器可以将容器中所有比给定的数字更小的数字删除，也可以输出容器中最大的数字，怎样实现这个容器最简单呢？是的，答案是一个单调的双端队列。让我们来考虑以下一个单调的双端队列可以达到怎样的时间复杂度。在单调队列中取出最大值的时间复杂度为$\mathcal{O}(1)$，在这样一个单调队列中添加一个数字同时删除比该数字小的所有数字的时间复杂度最差情况下为$\mathcal{O}(k)$。在这样的队列中因超出滑动窗口范围而删除一个数字又是怎样的时间复杂度呢？我们考虑在什么情况下我们需要因滑动窗口超出范围而删除数字：为简化问题，假设某个数字在其生命周期中始终作为最大值，也就是一直占据队列最左端且不会因为右侧存在比其更大的数字而被出队，则其出队一定是因为超出了滑动窗口的位置，即滑动窗口右端点位置等于双端队列左端点数的位置。出队时，只需要将双端队列左端点位置$+1$即可。事实上，一个不会因为右侧存在比其更大数字而出队的次大值在最大值于队列左端出队而成为最大值后，接下来同样会因为滑动窗口右端点位置等于双端队列左端点位置而出队。至此所有的出队可能性均已讨论，也就是说，考虑因超出滑动端口范围而出队，我们只需要检查双端队列左端点值的位置和滑动窗口右端点的位置是否相同即可。</p>
+<p>然而，你可能已经注意到了问题所在：尽管我们通过在双端队列中引入插入数字前删除较小值的机制，大大缩短了很多不必要的时间，但向队列中添加一个数在最坏情况下时间复杂度依旧为$\mathcal{O}(k)$！这是当新插入数字比队列中所有数都大时，需要依次清空整个队列导致的。而这也意味着该容器使问题整体复杂度又回到了直接搜索的程度。事实上并非如此，直觉上来说，当某次插入一个很大的数导致多次删除操作时，同样减少了未来所有操作的复杂度。从另一个角度考虑，每一个数都至多入队和出队一次，且出队和入队都是时间复杂度$\mathcal{O}(1)$的操作，因此该方法的时间复杂度应当为为$\mathcal{O}(n)$！</p>
+<h2 id="代码">代码</h2>
+<hr>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Note: The returned array must be malloced, assume caller calls free().
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span><span class="o">*</span> <span class="nf">maxSlidingWindow</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">nums</span><span class="p">,</span> <span class="kt">int</span> <span class="n">numsSize</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">returnSize</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">numsSize</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>	<span class="c1">// 列表为空直接返回NULL
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	
+</span></span><span class="line"><span class="cl">    <span class="c1">// 申请双端队列的空间，双端队列保存的不是列表内数的值而是列表内数的位置，便于编程。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span><span class="o">*</span> <span class="n">deque</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="o">*</span> <span class="n">numsSize</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">headPtr</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">tailPtr</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>	<span class="c1">// 双端队列的队首和队尾指针
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>	<span class="c1">// 滑动窗口的左端和右端
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">while</span> <span class="p">(</span><span class="n">j</span> <span class="o">&lt;</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>	<span class="c1">// 形成窗口阶段
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// 若队列不为空且新加入队列中的数字比队尾数字更小
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">while</span> <span class="p">(</span><span class="n">tailPtr</span> <span class="o">&gt;</span> <span class="n">headPtr</span> <span class="o">&amp;&amp;</span> <span class="n">nums</span><span class="p">[</span><span class="n">deque</span><span class="p">[</span><span class="n">tailPtr</span><span class="p">]]</span> <span class="o">&lt;=</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">tailPtr</span><span class="o">--</span><span class="p">;</span>	<span class="c1">// 队尾数字出队
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 数字入队。由于形成窗口阶段，因此只延伸滑动窗口左端点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">deque</span><span class="p">[</span><span class="o">++</span><span class="n">tailPtr</span><span class="p">]</span> <span class="o">=</span> <span class="n">j</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="o">*</span><span class="n">returnSize</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span><span class="o">*</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">numsSize</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ret</span><span class="p">[(</span><span class="o">*</span><span class="n">returnSize</span><span class="p">)</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">deque</span><span class="p">[</span><span class="n">headPtr</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="n">j</span> <span class="o">&lt;</span> <span class="n">numsSize</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 如果队头数字为滑动窗口右端点数字
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">deque</span><span class="p">[</span><span class="n">headPtr</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">headPtr</span><span class="o">++</span><span class="p">;</span>	<span class="c1">// 队头数字出队
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">		
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="p">(</span><span class="n">tailPtr</span> <span class="o">&gt;</span> <span class="n">headPtr</span> <span class="o">&amp;&amp;</span> <span class="n">nums</span><span class="p">[</span><span class="n">deque</span><span class="p">[</span><span class="n">tailPtr</span><span class="p">]]</span> <span class="o">&lt;=</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">tailPtr</span><span class="o">--</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">deque</span><span class="p">[</span><span class="o">++</span><span class="n">tailPtr</span><span class="p">]</span> <span class="o">=</span> <span class="n">j</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">i</span><span class="o">++</span><span class="p">;</span>	<span class="c1">// 缩减滑动窗口左端点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="n">ret</span><span class="p">[(</span><span class="o">*</span><span class="n">returnSize</span><span class="p">)</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">deque</span><span class="p">[</span><span class="n">headPtr</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]];</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>执行用时: <strong>660 ms</strong>，超过了99%的C提交记录。</p>
+<p>内存消耗: <strong>87.1 MB</strong>，超过了38%的C提交记录。</p>
+</blockquote></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2023-01-02&#32;00:00:00>更新于 2023-01-02&nbsp;</span>
+      </div><div class="post-info-license">
+          <span><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"><span><a href="/lc239/index.md" title="阅读原始文档" class="link-to-markdown">阅读原始文档</a></span></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blathers23.netlify.app/lc239/" data-title="LC239 - 滑动窗口的最大值" data-image="/images/leetcode.jpg"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://blathers23.netlify.app/lc239/" data-title="LC239 - 滑动窗口的最大值"><i data-svg-src="/lib/simple-icons/icons/baidu.min.svg" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://blathers23.netlify.app/lc239/" data-title="LC239 - 滑动窗口的最大值"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/c/">C</a>,&nbsp;<a href="/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/">滑动窗口</a>,&nbsp;<a href="/tags/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/">单调队列</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/datastructurewithc/" class="post-nav-item" rel="prev" title="使用C语言学习算法及数据结构"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>使用C语言学习算法及数据结构</a></div>
+</div>
+<div id="comments"><div id="waline" class="comment"></div><noscript>
+        Please enable JavaScript to view the comments powered by <a href="https://waline.js.org/" rel="external nofollow noopener noreferrer">Waline</a>.
+      </noscript></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.104.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.17-RC"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">Blathers</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i>&nbsp;<span class="run-times">网站运行中 ...</span></span></div><div class="footer-line ibruce">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/waline/waline.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/waline/waline.js" defer></script><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":50},"comment":{"enable":true,"expired":false,"waline":{"copyright":true,"dark":"body[data-theme='dark']","el":"#waline","highlighter":false,"imageUploader":false,"lang":"zh-cn","login":"enable","meta":["nick","mail","link"],"pageSize":10,"search":false,"serverURL":"https://i143vg.deta.dev/","texRenderer":false}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"siteTime":"2022-04-19T01:19:11+08:00"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>
