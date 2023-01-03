@@ -14,7 +14,7 @@
 
 {{</admonition>}}
 
-{{<image src = "https://s2.loli.net/2022/12/31/GLeryt29PuNAxFI.png" caption = "LC年度总结" title = "LC年度总结" height = "353" width = "490">}}
+{{<image src = "https://s2.loli.net/2022/12/31/GLeryt29PuNAxFI.png" caption = "LC年度总结" title = "LC年度总结" height = "50%" width = "50%">}}
 
 ## 1.二叉树
 

@@ -9,15 +9,14 @@
 <meta name="author-link" content="">
 <meta name="description" content="通过抽象手法简化问题" /><meta name="keywords" content='C, 滑动窗口, 单调队列' /><meta itemprop="name" content="LC239 - 滑动窗口的最大值">
 <meta itemprop="description" content="通过抽象手法简化问题"><meta itemprop="datePublished" content="2023-01-02T18:20:00+08:00" />
-<meta itemprop="dateModified" content="2023-01-02T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2023-01-03T00:00:00+00:00" />
 <meta itemprop="wordCount" content="2699">
 <meta itemprop="keywords" content="C,滑动窗口,单调队列," /><meta property="og:title" content="LC239 - 滑动窗口的最大值" />
 <meta property="og:description" content="通过抽象手法简化问题" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blathers23.netlify.app/lc239/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-01-02T18:20:00+08:00" />
-<meta property="article:modified_time" content="2023-01-02T00:00:00+00:00" />
-
+<meta property="article:modified_time" content="2023-01-03T00:00:00+00:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="LC239 - 滑动窗口的最大值"/>
 <meta name="twitter:description" content="通过抽象手法简化问题"/>
@@ -34,7 +33,7 @@
       "@type": "WebPage",
       "@id": "https:\/\/blathers23.netlify.app\/lc239\/"
     },"genre": "posts","keywords": "C, 滑动窗口, 单调队列","wordcount":  2699 ,
-    "url": "https:\/\/blathers23.netlify.app\/lc239\/","datePublished": "2023-01-02T18:20:00+08:00","dateModified": "2023-01-02T00:00:00+00:00","publisher": {
+    "url": "https:\/\/blathers23.netlify.app\/lc239\/","datePublished": "2023-01-02T18:20:00+08:00","dateModified": "2023-01-03T00:00:00+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -71,7 +70,13 @@
                 href="/friends"
                 title="友情链接"
                 
-              >Friends 🎈</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+              >Friends 🎈</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about"
+                title="关于"
+                
+              >About 🦉</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
             <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-desktop">
             <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
               <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
@@ -142,7 +147,14 @@
                   href="/friends"
                   title="友情链接"
                   
-                >Friends 🎈</a></li><li class="menu-item theme-switch" title="切换主题">
+                >Friends 🎈</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about"
+                  title="关于"
+                  
+                >About 🦉</a></li><li class="menu-item theme-switch" title="切换主题">
           <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
         </li></ul>
     </nav>
@@ -211,7 +223,7 @@
       data-srcset="https://s2.loli.net/2023/01/02/OlAwBsFcgUQW81y.png, https://s2.loli.net/2023/01/02/OlAwBsFcgUQW81y.png 1.5x, https://s2.loli.net/2023/01/02/OlAwBsFcgUQW81y.png 2x"
       data-sizes="auto"
       alt="https://s2.loli.net/2023/01/02/OlAwBsFcgUQW81y.png"
-      title="https://s2.loli.net/2023/01/02/OlAwBsFcgUQW81y.png" width="492" height="243" data-w data-h/>
+      title="https://s2.loli.net/2023/01/02/OlAwBsFcgUQW81y.png" width="60%" height="60%" data-w data-h/>
   </a><figcaption class="image-caption">示意图</figcaption>
   </figure>
 <p>此时，我们不去在意容器内部的细节，单单考虑那些数即使删除也不会对结果造成干扰？可以注意到一个关键的问题：将5输入到容器中之后，容器中的其它所有数都可以删除而不影响最终结果。换句话说，此时我们可以将大根堆直接抛弃然后重建，同样可以得到正确的结果。</p>
@@ -276,7 +288,7 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>	<span class="c1">// 列表为空直接返回NULL
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>	
 </span></span><span class="line"><span class="cl">    <span class="c1">// 申请双端队列的空间，双端队列保存的不是列表内数的值而是列表内数的位置，便于编程。
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span><span class="o">*</span> <span class="n">deque</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="o">*</span> <span class="n">numsSize</span><span class="p">);</span>
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span><span class="o">*</span> <span class="n">deque</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="o">*</span> <span class="n">numsSize</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">headPtr</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">tailPtr</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>	<span class="c1">// 双端队列的队首和队尾指针
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>	<span class="c1">// 滑动窗口的左端和右端
@@ -290,7 +302,7 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="o">*</span><span class="n">returnSize</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span><span class="o">*</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">numsSize</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span><span class="o">*</span> <span class="n">ret</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">numsSize</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">));</span>
 </span></span><span class="line"><span class="cl">    <span class="n">ret</span><span class="p">[(</span><span class="o">*</span><span class="n">returnSize</span><span class="p">)</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">deque</span><span class="p">[</span><span class="n">headPtr</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]];</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="n">j</span> <span class="o">&lt;</span> <span class="n">numsSize</span><span class="p">)</span> <span class="p">{</span>
@@ -319,7 +331,7 @@
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title=2023-01-02&#32;00:00:00>更新于 2023-01-02&nbsp;</span>
+        <span title=2023-01-03&#32;00:00:00>更新于 2023-01-03&nbsp;</span>
       </div><div class="post-info-license">
           <span><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
         </div></div>
@@ -346,7 +358,7 @@
 <div id="comments"><div id="waline" class="comment"></div><noscript>
         Please enable JavaScript to view the comments powered by <a href="https://waline.js.org/" rel="external nofollow noopener noreferrer">Waline</a>.
       </noscript></div></article></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.104.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.17-RC"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.109.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.17-RC"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
         </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">
               <a href="/">Blathers</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i>&nbsp;<span class="run-times">网站运行中 ...</span></span></div><div class="footer-line ibruce">
