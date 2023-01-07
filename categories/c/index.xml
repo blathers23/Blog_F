@@ -4,7 +4,17 @@
     <link>https://blathers23.netlify.app/categories/c/</link>
     <description>C - 分类 - Blathers&#39; Tent</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>blathers233@outlook.com (Blathers)</managingEditor>
-      <webMaster>blathers233@outlook.com (Blathers)</webMaster><lastBuildDate>Mon, 11 Jul 2022 00:28:00 &#43;0800</lastBuildDate><atom:link href="https://blathers23.netlify.app/categories/c/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>blathers233@outlook.com (Blathers)</webMaster><lastBuildDate>Tue, 03 Jan 2023 15:30:00 &#43;0800</lastBuildDate><atom:link href="https://blathers23.netlify.app/categories/c/" rel="self" type="application/rss+xml" /><item>
+  <title>C/C&#43;&#43;程序设计</title>
+  <link>https://blathers23.netlify.app/ccppprogramdesign/</link>
+  <pubDate>Tue, 03 Jan 2023 15:30:00 &#43;0800</pubDate>
+  <author>Blathers</author>
+  <guid>https://blathers23.netlify.app/ccppprogramdesign/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://s2.loli.net/2023/01/03/5uF1hGWk4s2e9df.png" referrerpolicy="no-referrer">
+      </div>系统学习C/C++语言]]></description>
+</item>
+<item>
   <title>使用C语言学习算法及数据结构</title>
   <link>https://blathers23.netlify.app/datastructurewithc/</link>
   <pubDate>Mon, 11 Jul 2022 00:28:00 &#43;0800</pubDate>

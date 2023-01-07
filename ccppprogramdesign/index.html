@@ -1,0 +1,2311 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>C/C&#43;&#43;程序设计 - Blathers&#39; Tent</title><meta name="author" content="Blathers">
+<meta name="author-link" content="">
+<meta name="description" content="系统学习C/C&#43;&#43;语言" /><meta name="keywords" content='C, CPP' /><meta itemprop="name" content="C/C&#43;&#43;程序设计">
+<meta itemprop="description" content="系统学习C/C&#43;&#43;语言"><meta itemprop="datePublished" content="2023-01-03T15:30:00+08:00" />
+<meta itemprop="dateModified" content="2023-01-07T00:00:00+00:00" />
+<meta itemprop="wordCount" content="4551">
+<meta itemprop="keywords" content="C,CPP," /><meta property="og:title" content="C/C&#43;&#43;程序设计" />
+<meta property="og:description" content="系统学习C/C&#43;&#43;语言" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blathers23.netlify.app/ccppprogramdesign/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-01-03T15:30:00+08:00" />
+<meta property="article:modified_time" content="2023-01-07T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="C/C&#43;&#43;程序设计"/>
+<meta name="twitter:description" content="系统学习C/C&#43;&#43;语言"/>
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://blathers23.netlify.app/ccppprogramdesign/" /><link rel="prev" href="https://blathers23.netlify.app/lc239/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "C/C++程序设计",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blathers23.netlify.app\/ccppprogramdesign\/"
+    },"genre": "posts","keywords": "C, CPP","wordcount":  4551 ,
+    "url": "https:\/\/blathers23.netlify.app\/ccppprogramdesign\/","datePublished": "2023-01-03T15:30:00+08:00","dateModified": "2023-01-07T00:00:00+00:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Blathers"
+      },"description": "系统学习C/C++语言"
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Blathers&#39; Tent"><span class="header-title-pre">🏕️</span><span class="header-title-text">Blathers&#39; Tent</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                title="全部文章"
+                
+              >Posts 📑</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                title="标签"
+                
+              >Tags 🏷️</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                title="分类"
+                
+              >Categories 📚</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/friends"
+                title="友情链接"
+                
+              >Friends 🎈</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about"
+                title="关于"
+                
+              >About 🦉</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Blathers&#39; Tent"><span class="header-title-pre">🏕️</span><span class="header-title-text">Blathers&#39; Tent</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  title="全部文章"
+                  
+                >Posts 📑</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  title="标签"
+                  
+                >Tags 🏷️</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  title="分类"
+                  
+                >Categories 📚</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/friends"
+                  title="友情链接"
+                  
+                >Friends 🎈</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about"
+                  title="关于"
+                  
+                >About 🦉</a></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX">
+        <span>C/C&#43;&#43;程序设计</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="https://gravatar.loli.net/avatar/1cc24367e7133aceb81bfd9ef41481cd?s=32&amp;d="
+    data-srcset="https://gravatar.loli.net/avatar/1cc24367e7133aceb81bfd9ef41481cd?s=32&amp;d=, https://gravatar.loli.net/avatar/1cc24367e7133aceb81bfd9ef41481cd?s=32&amp;d= 1.5x, https://gravatar.loli.net/avatar/1cc24367e7133aceb81bfd9ef41481cd?s=32&amp;d= 2x"
+    data-sizes="auto"
+    alt="Blathers"
+    title="Blathers"/>&nbsp;Blathers</span></span>
+          <span class="post-category">收录于 <a href="/categories/c/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> C</a></span></div>
+      <div class="post-meta-line"><span title=2023-01-03&#32;15:30:00><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-03">2023-01-03</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 4551 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 10 分钟</span>&nbsp;</div>
+    </div><div class="featured-image"><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://s2.loli.net/2023/01/03/5uF1hGWk4s2e9df.png"
+    data-srcset="https://s2.loli.net/2023/01/03/5uF1hGWk4s2e9df.png, https://s2.loli.net/2023/01/03/5uF1hGWk4s2e9df.png 1.5x, https://s2.loli.net/2023/01/03/5uF1hGWk4s2e9df.png 2x"
+    data-sizes="auto"
+    alt="https://s2.loli.net/2023/01/03/5uF1hGWk4s2e9df.png"
+    title="系统学习C/C&#43;&#43;语言"/></div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#week01">WEEK01</a>
+      <ul>
+        <li><a href="#different-programing-languages">Different Programing Languages</a></li>
+        <li><a href="#compile-and-line">Compile and Line</a></li>
+        <li><a href="#preprocessor-and-macros宏">Preprocessor and Macros(宏)</a></li>
+        <li><a href="#simple-output-and-input">Simple Output and Input</a></li>
+      </ul>
+    </li>
+    <li><a href="#week02">WEEK02</a>
+      <ul>
+        <li><a href="#integer-numbers">Integer Numbers</a></li>
+        <li><a href="#more-integer-types">More Integer Types</a></li>
+        <li><a href="#floating-point-numbers">Floating-point Numbers</a></li>
+        <li><a href="#arithmetic-operators算术运算">Arithmetic Operators(算术运算)</a></li>
+      </ul>
+    </li>
+    <li><a href="#week03">WEEK03</a>
+      <ul>
+        <li><a href="#if-statement"><code>if</code> Statement</a></li>
+        <li><a href="#condition">Condition</a></li>
+        <li><a href="#while-loop"><code>while</code> loop</a></li>
+        <li><a href="#for-loop"><code>for</code> loop</a></li>
+        <li><a href="#goto-and-switch-statement"><code>goto</code> and <code>switch</code> Statement</a></li>
+      </ul>
+    </li>
+    <li><a href="#week04">WEEK04</a>
+      <ul>
+        <li><a href="#array">Array</a></li>
+        <li><a href="#strings">Strings</a></li>
+        <li><a href="#structures-unions-and-enumerations">Structures, Unions and Enumerations</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><blockquote>
+<p>南方科技大学计算机系“C/C++程序设计”课程<a href="https://www.bilibili.com/video/BV1Vf4y1P7pq"target="_blank" rel="external nofollow noopener noreferrer">视频</a>。</p>
+</blockquote>
+<h2 id="week01">WEEK01</h2>
+<hr>
+<h3 id="different-programing-languages">Different Programing Languages</h3>
+<ol>
+<li>
+<p>编译型语言&amp;解释型语言：</p>
+<ul>
+<li>
+<p>编译型语言程序在执行前需要一个专门的编译过程，把程序编译为机器语言的文件，运行时不需要重新翻译，直接使用编译的结果。</p>
+</li>
+<li>
+<p>解释性语言编写的程序不进行预先编译，以文本的方式存储程序代码。在程序运行的时候，解释性语言必须先解释再运行。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Advantages of C/C++:</p>
+<ul>
+<li>High efficiency</li>
+<li>Widely optimized compilers</li>
+<li>Access memory directly</li>
+<li>Excellent on computing</li>
+</ul>
+</li>
+</ol>
+<h3 id="compile-and-line">Compile and Line</h3>
+<ol>
+<li>
+<p>function prototypes(声明) &amp; definitiones:</p>
+<ul>
+<li>
+<p>function prototypes normally are put into head files (*.h, *.hpp)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">mul</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>function definitiones normally are in source files (*.c, *.cpp)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">mul</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+<li>
+<p>Separate the sorce code into multiple files:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="c1">// main.cpp
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;mul.hpp&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">result</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Pick two integers:&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">result</span> <span class="o">=</span> <span class="n">mul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;The result is &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">result</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="c1">// mul.hpp
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#pragma once
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="kt">int</span> <span class="nf">mul</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">// mul.cpp
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&#34;mul.hpp&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="kt">int</span> <span class="nf">mul</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>要生成可执行文件，应当执行以下命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 对源文件进行编译</span>
+</span></span><span class="line"><span class="cl">g++ -c main.cpp	<span class="c1"># 生成目标文件mian.o</span>
+</span></span><span class="line"><span class="cl">g++ -c mul.cpp	<span class="c1"># 生成目标文件mul.o</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 对目标文件进行链接</span>
+</span></span><span class="line"><span class="cl">g++ main.o mul.o -o mul	<span class="c1"># 生成可执行文件mul</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Debug</p>
+<ol>
+<li>Compilation errors
+<ul>
+<li>Normally caused by grammar error</li>
+<li>Check the source code</li>
+</ul>
+</li>
+<li>Link errors
+<ul>
+<li>&ldquo;Symbol not found&rdquo;</li>
+<li>Function misspelled</li>
+</ul>
+</li>
+<li>Runtime errors
+<ul>
+<li>The source code can successfully compiled and linked</li>
+<li>The floating point exception (divided by 0) will kill the program</li>
+<li>It is a typical runtime error</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="preprocessor-and-macros宏">Preprocessor and Macros(宏)</h3>
+<ol>
+<li>
+<p>Preprocessor</p>
+<ul>
+<li>
+<p>The preprocessor is excuted before the compilation</p>
+</li>
+<li>
+<p>Preprocessing directives(预处理指令) begin with a # character</p>
+</li>
+<li>
+<p>Each directive occupies one line</p>
+</li>
+<li>
+<p>Preprocessing instruction</p>
+<p>(define, undef, include, if, ifdef, ifndef, else, elif, endif, line, error, pragma)</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Include directive</p>
+<p>原文件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;mul.hpp&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(){}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>经过预处理器预处理得到：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">mul</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(){}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Macros(#define)</p>
+<p>原文件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#define PI 3.14
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="kt">double</span> <span class="nf">len</span><span class="p">(</span><span class="kt">double</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">PI</span> <span class="o">*</span> <span class="n">r</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>经过预处理器预处理得到：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">double</span> <span class="nf">len</span><span class="p">(</span><span class="kt">double</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="mf">3.14</span> <span class="o">*</span> <span class="n">r</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h3 id="simple-output-and-input">Simple Output and Input</h3>
+<ol>
+<li>
+<p>C++ Style Output</p>
+<ul>
+<li>
+<p>What is <code>cout</code>?</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="n">cout</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><code>cout</code> is an object of data type ostream in namespace std.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;hello&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><code>&lt;&lt;</code> is an operator which is defined as follows</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">basic_ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span> <span class="kt">short</span> <span class="n">value</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">...</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><code>endl</code>, an output-only I/O manipulator. It will output a new line character and flushes.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>C++ Style Input</p>
+<ul>
+<li>Similarly, cin is an object of type <code>std::istream</code></li>
+<li><code>&gt;&gt;</code> is an operator</li>
+</ul>
+</li>
+<li>
+<p>C Style Output</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Hello, value = %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">v</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>int printf( const char *format, ... );</code> is a function</li>
+<li>format: a string specifying how to interpret the data</li>
+<li><code>%d</code> will let the function interpret v as an integer</li>
+</ul>
+</li>
+<li>
+<p>C Style Input</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">v</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">ret</span> <span class="o">=</span> <span class="nf">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>scanf reads data from stdin, and interrpret the input as an integer and store it into v</li>
+</ul>
+</li>
+<li>
+<p>Command line arguments</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span> <span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span> <span class="n">argc</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">argv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>argc是arugment count的缩写，表示传入main函数的参数个数。argv是argument vector的缩写，表示传入main函数的参数序列或指针，并且第一个参数<code>argv[0]</code>是包含路径的程序名称。</p>
+</li>
+</ol>
+<h2 id="week02">WEEK02</h2>
+<hr>
+<h3 id="integer-numbers">Integer Numbers</h3>
+<ol>
+<li>
+<p>int</p>
+<ul>
+<li><code>int</code> is the most frequently used integer type</li>
+</ul>
+</li>
+<li>
+<p>Initialization</p>
+<ul>
+<li>
+<p>Uninitialized variables may have random values. The behavior depends on the compiler.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">num1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">num2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;num1 = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">num1</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;num2 = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">num2</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// num1 = 32767
+</span></span></span><span class="line"><span class="cl"><span class="c1">// num2 = -137238492
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>Clang(x86_64)表现为随机值，Clang(arm64)表现为0</p>
+</li>
+<li>
+<p>How to initialize</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">num</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">num</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">num</span> <span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">num</span> <span class="p">{</span><span class="mi">10</span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+<li>
+<p>Overflow</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">789789</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">789987</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;c = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">c</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// c = -1069976775
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>The correct result is 0xC0397339, the sign bit is 1</p>
+</li>
+<li>
+<p>signed and unsigned</p>
+<ul>
+<li><code>unsigned</code>没有符号位，32位全部保存正数。</li>
+<li><code>signed int</code> can be shorten as <code>int</code>. Its range is [-2^31, 2^31 - 1] if it&rsquo;s 32-bit</li>
+<li><code>unsigned int</code>: Its range is [0, 2^32 - 1] if it&rsquo;s 32-bit</li>
+</ul>
+</li>
+<li>
+<p>Different Data Types for Integer</p>
+<ul>
+<li>use <code>long int</code> for longer integers</li>
+<li>use <code>short int</code> for shorter integers</li>
+<li>and <code>long long</code></li>
+<li>C and C++ standards do not fix the widths of them</li>
+<li><code>sizeof</code> opertor can return the width in bytes.</li>
+</ul>
+</li>
+<li>
+<p>sizeof</p>
+<ul>
+<li>It is a operator, not a function</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">short</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;sizeof(int) = &#34;</span> <span class="o">&lt;&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;sizeof(i) = &#34;</span> <span class="o">&lt;&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;sizeof(short) = &#34;</span> <span class="o">&lt;&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">short</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;sizeof(long) = &#34;</span> <span class="o">&lt;&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;sizeof(size_t) = &#34;</span> <span class="o">&lt;&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">size_t</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// sizeof(int) = 4	// 长度为4个字节
+</span></span></span><span class="line"><span class="cl"><span class="c1">// sizeof(i) = 4
+</span></span></span><span class="line"><span class="cl"><span class="c1">// sizeof(short) = 2
+</span></span></span><span class="line"><span class="cl"><span class="c1">// sizeof(long) = 8
+</span></span></span><span class="line"><span class="cl"><span class="c1">// sizeof(size_t) = 8
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>函数的参数必须是一个变量，但是<code>sizeof(int)</code>中的<code>int</code>不是变量，因此<code>sizeof</code>是一个操作符</p>
+</li>
+</ol>
+<h3 id="more-integer-types">More Integer Types</h3>
+<ol>
+<li>
+<p>char</p>
+<ul>
+<li>char: type for character, 8-bit integer indeed</li>
+<li>signed char: signed 8-bit integer</li>
+<li>unsigned char: unsigned 8-bit integer</li>
+<li>char: either signed char or unsignede char</li>
+</ul>
+</li>
+<li>
+<p>Integers and characters</p>
+<ul>
+<li>How we represent a character?
+<ul>
+<li>use an 8-bit integer</li>
+<li>use an 16-bit or 32-bit integer (Chinese characters)</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">c1</span> <span class="o">=</span> <span class="sc">&#39;C&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">c2</span> <span class="o">=</span> <span class="mi">80</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">c3</span> <span class="o">=</span> <span class="mh">0x50</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char16_t</span> <span class="n">c4</span> <span class="o">=</span> <span class="n">u</span><span class="sc">&#39;于&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char32_t</span> <span class="n">c5</span> <span class="o">=</span> <span class="n">U</span><span class="sc">&#39;于&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">c1</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;:&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">c2</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;:&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">c3</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 添加+使c1、c2、c3以整数的形式打印出来
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">+</span><span class="n">c1</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;:&#34;</span> <span class="o">&lt;&lt;</span> <span class="o">+</span><span class="n">c2</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;:&#34;</span> <span class="o">&lt;&lt;</span> <span class="o">+</span><span class="n">c3</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">c4</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">c5</span> <span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// C:P:P
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 67:80:80
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 20110
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 20110
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>bool</p>
+<ul>
+<li>A C++ keyword, but not a C keyword</li>
+<li>bool width: 1 byte (8 bit), NOT 1 bit</li>
+<li>Value: true (1) or false (0)</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="n">b1</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="n">b2</span> <span class="o">=</span> <span class="o">-</span><span class="mi">256</span><span class="p">;</span>	<span class="c1">// bool类型不为零均为true
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;i = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;b1 = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">b1</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;b2 = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">b2</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// i = 1
+</span></span></span><span class="line"><span class="cl"><span class="c1">// b1 = 1
+</span></span></span><span class="line"><span class="cl"><span class="c1">// b2 = 1
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Boolean in C</p>
+<ul>
+<li>
+<p>Use typedef to create a type</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">typedef</span> <span class="kt">char</span> <span class="kt">bool</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define true 1
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define false 0
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Defined in stdbool.h since C99</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdbool.h&gt;</span><span class="cp">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+<li>
+<p>size_t</p>
+<ul>
+<li>Computer memory keeps increasing</li>
+<li>32-bit int was enough in the past to for data length</li>
+<li>But now it is not</li>
+</ul>
+<p><code>size_t</code>:</p>
+<ul>
+<li>Unsigned integer</li>
+<li>Type of the result of <code>sizeof</code> operator</li>
+<li>Can store the maximum size of theoretically possible object of any type</li>
+<li>32-bit or 64-bit</li>
+</ul>
+</li>
+<li>
+<p>Fixed width integer types(since C++11)</p>
+<p>Defined in <code>&lt;cstdint&gt;</code>:</p>
+<ul>
+<li><code>int8_t</code>, <code>int16_t</code>, <code>int32_t</code>, <code>int64_t</code>, <code>uint8_t</code>, <code>uint16_t</code>, <code>uint32_t</code>, <code>uint64_t</code>, &hellip;</li>
+<li>and some useful macros: <code>INT8_MIN</code>, <code>INT16_MIN</code>, <code>INT32_MIN</code>, <code>INT64_MIN</code>, <code>INT8_MAX</code>, <code>INT16_MAX</code>, <code>INT32_MAX</code>, <code>INT64_MAX</code>, &hellip;</li>
+</ul>
+</li>
+</ol>
+<h3 id="floating-point-numbers">Floating-point Numbers</h3>
+<ol>
+<li>
+<p>float</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iomanip&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">float</span> <span class="n">f1</span> <span class="o">=</span> <span class="mf">1.2f</span><span class="p">;</span>    <span class="c1">// f意味该数为float型，否则为double
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">float</span> <span class="n">f2</span> <span class="o">=</span> <span class="n">f1</span> <span class="o">*</span> <span class="mf">1e15</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">fixed</span> <span class="o">&lt;&lt;</span> <span class="n">setprecision</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">f1</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>    <span class="c1">// setprecision设定有效位
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">fixed</span> <span class="o">&lt;&lt;</span> <span class="n">setprecision</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">f2</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 1.200000047683716
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 1200000038076416.000000000000000
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>You want 1.2, but <code>float</code> can only provide you 1.200000047683716&hellip;</p>
+</li>
+<li>
+<p>Floating-point operations always bring some tiny errors, those errors cannot be eliminated</p>
+</li>
+<li>
+<p>What can we do: to manage them not to cause a problem</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Floating-point types</p>
+<ul>
+<li><code>float</code>: single precision floating-point type, 32 bits</li>
+<li><code>double</code>: double precision floating-point type, 64 bits</li>
+<li><code>long double</code>: extended precision floating-point type
+<ul>
+<li>128 bits if supported</li>
+<li>64 bits otherwise</li>
+</ul>
+</li>
+<li>half precision floating-point, 16 bits
+<ul>
+<li>used in deep learning, but not a C++ standard</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Floating-point VS integer</p>
+<ul>
+<li>Represent values between integers</li>
+<li>A much greater range of values</li>
+<li>Floating-point operations are slower than integer operations</li>
+<li>Lose precision</li>
+<li><code>double</code> operations is slower than <code>float</code></li>
+</ul>
+</li>
+<li>
+<p>Precision</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">float</span> <span class="n">f1</span> <span class="o">=</span> <span class="mf">2.34e10</span><span class="n">f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">float</span> <span class="n">f2</span> <span class="o">=</span> <span class="n">f1</span> <span class="o">+</span> <span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// fixed-point定点数，小数点后位数固定
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">cout</span><span class="p">.</span><span class="n">setf</span><span class="p">(</span><span class="n">ios_base</span><span class="o">::</span><span class="n">fixed</span><span class="p">,</span> <span class="n">ios_base</span><span class="o">::</span><span class="n">floatfield</span><span class="p">);</span>   
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;f1 = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">f1</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;f2 = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">f2</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;f1 - f2 = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">f1</span> <span class="o">-</span> <span class="n">f2</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;(f1 - f2 == 0) = &#34;</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">f1</span> <span class="o">-</span> <span class="n">f2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// f1 = 23399999488.000000
+</span></span></span><span class="line"><span class="cl"><span class="c1">// f2 = 23399999488.000000
+</span></span></span><span class="line"><span class="cl"><span class="c1">// f1 - f2 = 0.000000
+</span></span></span><span class="line"><span class="cl"><span class="c1">// (f1 - f2 == 0) = 1
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>Can we use == operator to compare two floating point numbers?</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">f1</span> <span class="o">==</span> <span class="n">f2</span><span class="p">)</span>	<span class="c1">// bad
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">if</span> <span class="p">(</span><span class="n">fabs</span><span class="p">(</span><span class="n">f1</span> <span class="o">-</span> <span class="n">f2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">FLT_EPSILON</span><span class="p">)</span>	<span class="c1">// good
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><code>inf</code> and <code>nan</code></p>
+<ul>
+<li><code>inf</code>: infinity</li>
+<li><code>nan</code>: not a number</li>
+</ul>
+</li>
+</ol>
+<h3 id="arithmetic-operators算术运算">Arithmetic Operators(算术运算)</h3>
+<ol>
+<li>
+<p>Constant numer</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="mi">95</span>	<span class="c1">// decimal
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="mo">0137</span>	<span class="c1">// octal 前加0表示8进制
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="mh">0x5f</span>	<span class="c1">// hexadecimal 前加0x表示16进制
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="mi">95</span>	<span class="c1">// int
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="mi">95u</span>	<span class="c1">// unsigned int
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="mi">95l</span>	<span class="c1">// long
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="mi">95ul</span>	<span class="c1">// unsigned long
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="mi">95lu</span>	<span class="c1">// unsigned long
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="mf">3.14159</span>	<span class="c1">// 3.14159
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="mf">6.02e23</span>	<span class="c1">// 6.02 * 10^23
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="mf">1.6e-19</span>	<span class="c1">// 1.6 * 10^-19
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="mf">3.0</span>	<span class="c1">// 3.0
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="mf">6.02e23L</span>	<span class="c1">// long double
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="mf">6.02e23</span><span class="n">f</span>	<span class="c1">// float
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="mf">6.02e23</span>	<span class="c1">// double
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Const type qualifier(const 限定符)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">float</span> <span class="n">PI</span> <span class="o">=</span> <span class="mf">3.1415926f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">PI</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>	<span class="c1">// error
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>If a variable/object is constant-qualified, it cannot be modified</li>
+<li>It must be initialized when you define it</li>
+</ul>
+</li>
+<li>
+<p>auto</p>
+<p><code>auto</code> is placeholder type specifier</p>
+<p>The type of variable will be deduced from its initializer</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>	<span class="c1">// type of a is int
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">auto</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">2.3</span><span class="p">;</span>	<span class="c1">// type of b is double
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">auto</span> <span class="n">c</span><span class="p">;</span>	<span class="c1">// valid in C, error in C++
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">auto</span> <span class="n">d</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="mf">1.2</span><span class="p">;</span>	<span class="c1">// type of d is double
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="mf">2.3</span><span class="p">;</span>	<span class="c1">// 2.3 will converted to a int 2, then assigned to a
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Arithmetic operators</p>
+<table>
+<thead>
+<tr>
+<th>Operator name</th>
+<th>Synatax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>unary plus</td>
+<td>+a</td>
+</tr>
+<tr>
+<td>unary minus</td>
+<td>-a</td>
+</tr>
+<tr>
+<td>addition</td>
+<td>a + b</td>
+</tr>
+<tr>
+<td>subtraction</td>
+<td>a - b</td>
+</tr>
+<tr>
+<td>multiplication</td>
+<td>a * b</td>
+</tr>
+<tr>
+<td>division</td>
+<td>a / b</td>
+</tr>
+<tr>
+<td>modulo(求余)</td>
+<td>a % b</td>
+</tr>
+<tr>
+<td>bitwise NOT</td>
+<td>~a</td>
+</tr>
+<tr>
+<td>bitwise AND</td>
+<td>a &amp; b</td>
+</tr>
+<tr>
+<td>bitwise OR</td>
+<td>a | b</td>
+</tr>
+<tr>
+<td>bitwise XOR</td>
+<td>a ^ b</td>
+</tr>
+<tr>
+<td>bitwise left shift</td>
+<td>a &laquo; b</td>
+</tr>
+<tr>
+<td>bitwise right shift</td>
+<td>a &raquo; b</td>
+</tr>
+</tbody>
+</table>
+<p>Operator Precdence(优先级):</p>
+<ul>
+<li><code>a++</code></li>
+<li><code>++a</code></li>
+<li><code>* /</code></li>
+<li><code>+ -</code></li>
+<li><code>&lt;&lt; &gt;&gt;</code></li>
+</ul>
+</li>
+<li>
+<p>Data type conversions</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">num_int1</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>	<span class="c1">// assigning an int value to num_int1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="n">num_int2</span> <span class="o">=</span> <span class="sc">&#39;C&#39;</span><span class="p">;</span>	<span class="c1">// implicit conversion(隐式转换)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="n">num_int3</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="sc">&#39;C&#39;</span><span class="p">;</span>	<span class="c1">// explicit conversion, C-style
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="n">num_int4</span> <span class="o">=</span> <span class="kt">int</span><span class="p">(</span><span class="sc">&#39;C&#39;</span><span class="p">);</span>	<span class="c1">// explicit conversion, function style
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="n">num_int5</span> <span class="o">=</span> <span class="mf">2.8</span><span class="p">;</span>	<span class="c1">// implicit conversion
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">float</span> <span class="n">num_float</span> <span class="o">=</span> <span class="mf">2.3</span><span class="p">;</span>	<span class="c1">// implicit conversion from double to float
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">short</span> <span class="n">num_short</span> <span class="o">=</span> <span class="mi">650000</span><span class="p">;</span>	<span class="c1">// 低位截断
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>The source code can be compiled successfully even with warning message when the data types do not match.</li>
+<li>Please ues expilcit conversion if possible</li>
+</ul>
+</li>
+<li>
+<p>Data loss</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">num_int1</span> <span class="o">=</span> <span class="mh">0x7ABCDEF0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">float</span> <span class="n">num_int_float</span> <span class="o">=</span> <span class="n">num_int1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">num_int2</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">num_int_float</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;num_int1 = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">num_int1</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;num_int_float = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">num_int_float</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;num_int2 = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">num_int2</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// num_int1 = 2059198192
+</span></span></span><span class="line"><span class="cl"><span class="c1">// num_int_float = 2.0592e+09
+</span></span></span><span class="line"><span class="cl"><span class="c1">// num_int2 = 2059198208
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Division</p>
+<ul>
+<li>
+<p>Both operands(操作数) are integers</p>
+<ul>
+<li>Perform integer division</li>
+<li>Any fractional part of the answer is discarded to make the result an integer</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="kt">float</span> <span class="n">f</span> <span class="o">=</span> <span class="mi">17</span> <span class="o">/</span> <span class="mi">5</span><span class="p">;</span>	<span class="c1">// f will be 3.f, not 3.4f
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>One or both operands are floating-point numbers</p>
+<ul>
+<li>Perform floating-point division</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="kt">float</span> <span class="n">f</span> <span class="o">=</span> <span class="mi">17</span> <span class="o">/</span> <span class="mf">5.f</span><span class="p">;</span>	<span class="c1">// f will be 3.4f
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+<li>
+<p>Distinct Operations for Different Types</p>
+<ul>
+<li>
+<p><code>int</code>, <code>long</code>, <code>float</code>, <code>double</code>: four kinds of operations</p>
+</li>
+<li>
+<p>If the operands are not the four types, automatic convert their types</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">255</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>	<span class="c1">// c = 256;
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>The  operands will be converted to one of the four types without losing data</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="week03">WEEK03</h2>
+<hr>
+<h3 id="if-statement"><code>if</code> Statement</h3>
+<ol>
+<li>
+<p>Statements are executed conditionally</p>
+<ul>
+<li>if</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;The number is less than 5. &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>if-else</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;The number is 5. &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;The number is not 5. &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>if-else-if-else</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;The number is less than 5.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;The number is greater than 5.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;The number is in range [5, 10]. &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>A little more complex</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;The number is less than 5&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// else 与最近的if进行匹配
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;The number is less than 10 and greater than 5&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><code>? : </code>operator</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">isPositive</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">factor</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">isPositive</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">factor</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">factor</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="n">factor</span> <span class="o">=</span> <span class="n">isPositive</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="n">facotr</span> <span class="o">=</span> <span class="n">isPositive</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h3 id="condition">Condition</h3>
+<ol>
+<li>
+<p>The condition should be an expression which is convertilbe to <code>bool</code></p>
+<ul>
+<li>Its value can be <code>bool</code>, <code>int</code>, <code>char</code>, <code>float</code></li>
+</ul>
+</li>
+<li>
+<p>Relational Expressions</p>
+<ul>
+<li>
+<p>The condition can be a relational expression</p>
+</li>
+<li>
+<p>The 6 relational/comparison operators</p>
+<table>
+<thead>
+<tr>
+<th>Operator name</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>equal to</td>
+<td>a == b</td>
+</tr>
+<tr>
+<td>not equal to</td>
+<td>a != b</td>
+</tr>
+<tr>
+<td>less than</td>
+<td>a &lt; b</td>
+</tr>
+<tr>
+<td>greater than</td>
+<td>a &gt; b</td>
+</tr>
+<tr>
+<td>less than and equal to</td>
+<td>a &lt;= b</td>
+</tr>
+<tr>
+<td>greater than and equal to</td>
+<td>a &gt;= b</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Return 1 if condition is true</p>
+</li>
+<li>
+<p>Return 0 if condition is false</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Logical Expressions</p>
+<ul>
+<li>
+<p>If an operand is not <code>bool</code>, it will be converted to <code>tool</code> implicitly</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Operator name</th>
+<th style="text-align:center">Symbol-like operator</th>
+<th style="text-align:center">Keyword like operator</th>
+<th style="text-align:center">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Negation</td>
+<td style="text-align:center">!</td>
+<td style="text-align:center">not</td>
+<td style="text-align:center">!a</td>
+</tr>
+<tr>
+<td style="text-align:center">AND</td>
+<td style="text-align:center">&amp;&amp;</td>
+<td style="text-align:center">and</td>
+<td style="text-align:center">a &amp;&amp; b</td>
+</tr>
+<tr>
+<td style="text-align:center">Inclusive OR</td>
+<td style="text-align:center">||</td>
+<td style="text-align:center">or</td>
+<td style="text-align:center">a || b</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Precedence: ! &gt; &amp;&amp; &gt; ||</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Non-Boolean Expressions</p>
+<ul>
+<li>
+<p>They will be converted to <code>bool</code> implicitly if it is feasible.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="kt">float</span> <span class="n">count</span> <span class="o">=</span> <span class="mf">0.2f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// not recommend to use a floating-point number
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">if</span> <span class="p">(</span><span class="n">count</span><span class="p">)</span> <span class="p">{</span>	<span class="c1">// if (count != 0)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;There are some. &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Pointers are also frequently used as conditions</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="kt">int</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="mi">1024</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">p</span><span class="p">)</span> <span class="p">{</span>	<span class="c1">// if (p == NULL);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Memory allocation failed. &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+</ol>
+<h3 id="while-loop"><code>while</code> loop</h3>
+<ol>
+<li>
+<p>Syntax:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="k">while</span> <span class="p">(</span><span class="n">expression</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>If the condition is true, the statement (loop body) will be executed.</p>
+</li>
+<li>
+<p><code>do-while</code> loop</p>
+<ul>
+<li>The test takes place after iteration in a <code>do-while</code> loop</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">do</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;num = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">num</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">num</span><span class="o">--</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">num</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><code>break</code> statement</p>
+<ul>
+<li>Terminate a loop</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="p">(</span><span class="n">num</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;num = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">num</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">num</span><span class="o">--</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><code>continue</code> statement</p>
+<ul>
+<li>skip the remianing part of the loop body and continue the next iteration</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="p">(</span><span class="n">num</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">num</span><span class="o">--</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">continue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;num = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">num</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">num</span><span class="o">--</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>The Condition, Be Careful!</p>
+<ul>
+<li>
+<p>Expression <code>3 + 4</code> has a value;</p>
+</li>
+<li>
+<p>Expression <code>a + b</code> has a value;</p>
+</li>
+<li>
+<p>Expression <code>(a == b)</code> has value (true or false);</p>
+</li>
+<li>
+<p><code>a = b</code> is an assignment, also an expression and has a value (b);</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="for-loop"><code>for</code> loop</h3>
+<ol>
+<li>
+<p>Syntax</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="n">init</span><span class="o">-</span><span class="n">clause</span><span class="p">;</span> <span class="n">cond</span><span class="o">-</span><span class="n">expression</span><span class="p">;</span> <span class="n">iteration</span><span class="o">-</span><span class="n">expression</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">loop</span><span class="o">-</span><span class="n">statement</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Example
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">init</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sum</span> <span class="o">+=</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Line &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;sum = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">sum</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Endless Loop</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(;;)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Endless Loop!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Endless Loop!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h3 id="goto-and-switch-statement"><code>goto</code> and <code>switch</code> Statement</h3>
+<ol>
+<li>
+<p><code>goto</code> Statement</p>
+<ul>
+<li>Jump to a desired location</li>
+<li>An unrecommended statement</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="kt">float</span> <span class="nf">mysquare</span><span class="p">(</span><span class="kt">float</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">float</span> <span class="n">result</span> <span class="o">=</span> <span class="mf">0.0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">&gt;=</span> <span class="mf">1.0f</span> <span class="o">||</span> <span class="n">value</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;The input is out of range.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">goto</span> <span class="n">EXIT_ERROR</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">result</span> <span class="o">=</span> <span class="n">value</span> <span class="o">*</span> <span class="n">value</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nl">EXIT_ERROR</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    	<span class="c1">// do sth such as closing files here
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    	<span class="k">return</span> <span class="mf">0.0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><code>switch</code> Statement</p>
+<ul>
+<li>Execute one of several statements, depending on the value of a condition</li>
+<li><code>break</code> prevent to excute some following statement</li>
+<li>More similar with <code>goto</code>, not <code>if-else</code></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="k">switch</span> <span class="p">(</span><span class="n">input_char</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="sc">&#39;a&#39;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="sc">&#39;A&#39;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Move left.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="sc">&#39;d&#39;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="sc">&#39;D&#39;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Move right.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">default</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Undifined key.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h2 id="week04">WEEK04</h2>
+<hr>
+<h3 id="array">Array</h3>
+<ol>
+<li>
+<p>Arrays</p>
+<ul>
+<li>
+<p>A contiguously(连续的) allocated memory</p>
+</li>
+<li>
+<p>Fixed number of object (The array size cannot be changed)</p>
+</li>
+<li>
+<p>Its element type can be any fundamental type (int, float, bool, etc), structure, class, pointer, enumeration(列举)</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">num_array1</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>	<span class="c1">// uninitialized array, random values
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="n">num_array2</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">};</span>	<span class="c1">// initialization
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Variable-length arrays</p>
+<ul>
+<li>If the length is not an integer constant expression, the array will  be a variable-length one.</li>
+<li>数组的长度在编译时不能确定，只有在运行的时候才可以确定</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="p">(</span><span class="n">len</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">num_array2</span><span class="p">[</span><span class="n">len</span><span class="p">];</span>	<span class="c1">// 变长数组不支持初始化
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;len = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">len</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;, sizeof(num_array2) = &#34;</span> <span class="o">&lt;&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">num_array2</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">len</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Array of unknown size</p>
+<ul>
+<li>The number is not specified in the declaration</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">num_array</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>The arguments of a function</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="kt">float</span> <span class="nf">array_sum</span><span class="p">(</span><span class="kt">float</span> <span class="n">values</span><span class="p">[],</span> <span class="n">size_t</span> <span class="n">length</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kt">float</span> <span class="nf">array_sum</span><span class="p">(</span><span class="kt">float</span> <span class="o">*</span><span class="n">values</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">length</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Element accesssing</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">array1</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">array2</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="n">array2</span> <span class="o">=</span> <span class="n">array1</span><span class="p">;</span>	<span class="c1">// error
+</span></span></span><span class="line"><span class="cl"><span class="c1">// array的实质是数组的首地址
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">array2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">array1</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="n">array2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">array1</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="n">array2</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">array1</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="n">array2</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">array1</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>No bounds-checking in C/C++</strong></li>
+<li>Arrays are not objects in C/C++, can be regarded as addresses</li>
+</ul>
+</li>
+<li>
+<p>Multidimensional arrays</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">mat</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{{</span><span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">},</span> <span class="p">{</span><span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">}};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">rows</span><span class="p">;</span> <span class="n">r</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">clos</span><span class="p">;</span> <span class="n">c</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">mat</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;,&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Arrays of unknown bound
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="nf">init_2d_array</span><span class="p">(</span><span class="kt">float</span> <span class="n">mat</span><span class="p">[][],</span> <span class="n">size_t</span> <span class="n">rows</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">cols</span><span class="p">);</span>	<span class="c1">// error
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="nf">init_2d_array</span><span class="p">(</span><span class="kt">float</span> <span class="n">mat</span><span class="p">[][</span><span class="mi">3</span><span class="p">],</span> <span class="n">size_t</span> <span class="n">rows</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">cols</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><code>const</code> Arrays</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">float</span> <span class="n">PI</span> <span class="o">=</span> <span class="mf">3.14f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">PI</span> <span class="o">+=</span> <span class="mf">1.f</span><span class="p">;</span>	<span class="c1">// error
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">const</span> <span class="kt">float</span> <span class="n">values</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mf">1.0f</span><span class="p">,</span> <span class="mf">2.0f</span> <span class="mf">3.0f</span><span class="p">,</span> <span class="mf">4.0f</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.1f</span><span class="p">;</span>	<span class="c1">// error
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Used as function arguments
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">float</span> <span class="nf">array_sum</span><span class="p">(</span><span class="k">const</span> <span class="kt">float</span> <span class="n">values</span><span class="p">[],</span> <span class="n">size_t</span> <span class="n">length</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">float</span> <span class="n">sum</span> <span class="o">=</span> <span class="mf">0.0f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">sum</span> <span class="o">+=</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// values[i] = 0;	// error
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">sum</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h3 id="strings">Strings</h3>
+<ol>
+<li>
+<p>Array-style strings</p>
+<ul>
+<li>An array-style string (null-terminated string/arrays of characters) is a series of characters stored in bytes in memory</li>
+<li>This kind of string can be declared as follows</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="kt">char</span> <span class="n">rabbit</span><span class="p">[</span><span class="mi">16</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="sc">&#39;P&#39;</span><span class="p">,</span> <span class="sc">&#39;e&#39;</span><span class="p">,</span> <span class="sc">&#39;t&#39;</span><span class="p">,</span>  <span class="sc">&#39;e&#39;</span><span class="p">,</span> <span class="sc">&#39;r&#39;</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="kt">char</span> <span class="n">bad_pig</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="sc">&#39;P&#39;</span><span class="p">,</span> <span class="sc">&#39;e&#39;</span><span class="p">,</span> <span class="sc">&#39;p&#39;</span><span class="p">,</span> <span class="sc">&#39;p&#39;</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">};</span>	<span class="c1">// a bad one
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">char</span> <span class="n">good_pig</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="sc">&#39;P&#39;</span><span class="p">,</span> <span class="sc">&#39;e&#39;</span><span class="p">,</span> <span class="sc">&#39;p&#39;</span><span class="p">,</span> <span class="sc">&#39;p&#39;</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;\0&#39;</span><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="c1">// Returns the number of characters, the first NULL will not be included.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">size_t</span> <span class="nf">strlen</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">str</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="sc">&#39;Y&#39;</span><span class="p">,</span> <span class="sc">&#39;u&#39;</span><span class="p">,</span> <span class="sc">&#39;\0&#39;</span><span class="p">,</span> <span class="sc">&#39;S&#39;</span><span class="p">,</span> <span class="sc">&#39;.&#39;</span><span class="p">,</span> <span class="sc">&#39;0&#39;</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">strlen</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 2
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>String literals(常量字符串)</p>
+<ul>
+<li>It isn&rsquo;t convenient to initial a string character by character.</li>
+<li>String literals can help</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="kt">char</span> <span class="n">name1</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&#34;Southern University of Science and Technology&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">char</span> <span class="n">name2</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&#34;Southern University of &#34;</span> <span class="s">&#34;Science and Technology&#34;</span><span class="p">;</span>	<span class="c1">// 与第一行没有差别，写法为两个字符串的连接
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">char</span> <span class="n">name3</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&#34;ABCD&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">wchar_t</span> <span class="n">s5</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">L</span><span class="s">&#34;ABCD&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">char16_t</span> <span class="n">s9</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">u</span><span class="s">&#34;ABCD&#34;</span><span class="p">;</span>	<span class="c1">// since C++11
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">const</span> <span class="kt">char32_t</span> <span class="n">s6</span><span class="p">[]</span> <span class="o">=</span> <span class="sa">U</span><span class="s">&#34;ABCD&#34;</span><span class="p">;</span>	<span class="c1">// since C++11
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>String manipulation(操作) and examination</p>
+<ul>
+<li>Copy</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="kt">char</span><span class="o">*</span> <span class="nf">strcpy</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">dest</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">src</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// safe one
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">char</span><span class="o">*</span> <span class="nf">strncpy</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">dest</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">src</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">count</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Concatenate: appends a copy of src to dest</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="kt">char</span><span class="o">*</span> <span class="nf">strcat</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">dest</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">src</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Compare
+<ul>
+<li>如果返回值小于 0，则表示 lhs 小于 rhs。</li>
+<li>如果返回值大于 0，则表示 lhs 大于 rhs。</li>
+<li>如果返回值等于 0，则表示 lhs 等于 rhs。</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">strcmp</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">lhs</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">rsh</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>string class</p>
+<ul>
+<li>Null-terminated string are easy to be out of bound, and to cause problems</li>
+<li>string class provides functions to manipulate and examinate strings</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">str1</span> <span class="o">=</span> <span class="s">&#34;Hello&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">str2</span> <span class="o">=</span> <span class="s">&#34;SUSTech&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">result</span> <span class="o">=</span> <span class="n">str1</span> <span class="o">+</span> <span class="s">&#34;, &#34;</span> <span class="o">+</span> <span class="n">str2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;result = &#34;</span> <span class="o">+</span> <span class="n">result</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;The length is &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">result</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;str1 &lt; str2 is &#34;</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">str1</span> <span class="o">&lt;</span> <span class="n">str2</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// cout &lt;&lt; &#34;strcmp(str1, str2) = &#34; &lt;&lt; strcmp(str1, str2) &lt;&lt; endl;
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Different types of string</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">string</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">wstring</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">u8string</span>	<span class="c1">// C++20
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">u16string</span>	<span class="c1">// C++11
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">u32string</span>	<span class="c1">// C++11
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>String类同样没有越界检查</li>
+</ul>
+</li>
+</ol>
+<h3 id="structures-unions-and-enumerations">Structures, Unions and Enumerations</h3></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2023-01-07&#32;00:00:00>更新于 2023-01-07&nbsp;</span>
+      </div><div class="post-info-license">
+          <span><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"><span><a href="/ccppprogramdesign/index.md" title="阅读原始文档" class="link-to-markdown">阅读原始文档</a></span></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blathers23.netlify.app/ccppprogramdesign/" data-title="C/C&#43;&#43;程序设计" data-image="https://s2.loli.net/2023/01/03/5uF1hGWk4s2e9df.png"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://blathers23.netlify.app/ccppprogramdesign/" data-title="C/C&#43;&#43;程序设计"><i data-svg-src="/lib/simple-icons/icons/baidu.min.svg" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://blathers23.netlify.app/ccppprogramdesign/" data-title="C/C&#43;&#43;程序设计"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/c/">C</a>,&nbsp;<a href="/tags/cpp/">CPP</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/lc239/" class="post-nav-item" rel="prev" title="LC239 - 滑动窗口的最大值"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>LC239 - 滑动窗口的最大值</a></div>
+</div>
+<div id="comments"><div id="waline" class="comment"></div><noscript>
+        Please enable JavaScript to view the comments powered by <a href="https://waline.js.org/" rel="external nofollow noopener noreferrer">Waline</a>.
+      </noscript></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.109.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.17-RC"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">Blathers</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i>&nbsp;<span class="run-times">网站运行中 ...</span></span></div><div class="footer-line ibruce">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/waline/waline.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/waline/waline.js" defer></script><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":50},"comment":{"enable":true,"expired":false,"waline":{"copyright":true,"dark":"body[data-theme='dark']","el":"#waline","highlighter":false,"imageUploader":false,"lang":"zh-cn","login":"enable","meta":["nick","mail","link"],"pageSize":10,"search":false,"serverURL":"https://i143vg.deta.dev/","texRenderer":false}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"siteTime":"2022-04-19T01:19:11+08:00"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

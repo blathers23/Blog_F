@@ -1,10 +1,20 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>Cpp - 标签 - Blathers&#39; Tent</title>
+    <title>CPP - 标签 - Blathers&#39; Tent</title>
     <link>https://blathers23.netlify.app/tags/cpp/</link>
-    <description>Cpp - 标签 - Blathers&#39; Tent</description>
+    <description>CPP - 标签 - Blathers&#39; Tent</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>blathers233@outlook.com (Blathers)</managingEditor>
-      <webMaster>blathers233@outlook.com (Blathers)</webMaster><lastBuildDate>Sun, 14 Mar 2021 09:00:04 &#43;0000</lastBuildDate><atom:link href="https://blathers23.netlify.app/tags/cpp/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>blathers233@outlook.com (Blathers)</webMaster><lastBuildDate>Tue, 03 Jan 2023 15:30:00 &#43;0800</lastBuildDate><atom:link href="https://blathers23.netlify.app/tags/cpp/" rel="self" type="application/rss+xml" /><item>
+  <title>C/C&#43;&#43;程序设计</title>
+  <link>https://blathers23.netlify.app/ccppprogramdesign/</link>
+  <pubDate>Tue, 03 Jan 2023 15:30:00 &#43;0800</pubDate>
+  <author>Blathers</author>
+  <guid>https://blathers23.netlify.app/ccppprogramdesign/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://s2.loli.net/2023/01/03/5uF1hGWk4s2e9df.png" referrerpolicy="no-referrer">
+      </div>系统学习C/C++语言]]></description>
+</item>
+<item>
   <title>VSCode 搭配 g&#43;&#43; 配置 Cpp 编译环境</title>
   <link>https://blathers23.netlify.app/vscode_and_msys2/</link>
   <pubDate>Sun, 14 Mar 2021 09:00:04 &#43;0000</pubDate>
