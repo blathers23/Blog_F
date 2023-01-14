@@ -1114,6 +1114,89 @@
 
 ### Structures, Unions and Enumerations
 
+1. `struct`
+
+   - A `struct` is a type consisting of a sequence of members
+   - The members are allocated in an ordered sequence
+
+   ```C
+   struct Student {
+       char name[4];
+       int born;
+       bool male;
+   };
+   
+   struct Student stu;
+   strcpy(stu.name, "Yu");
+   stu.born = 2000;
+   stu.male = true;
+   
+   struct Student stu = {"Yu", 2000, true};
+   
+   struct Student students[100];
+   students[50].born = 2000;
+   ```
+
+2. Structure padding
+
+   - In order to align the data in memory, some empty bytes will be padded
+
+   ```C++
+   struct Student1 {
+       int id;
+       bool male;
+       char label;
+       float height;
+   }
+   
+   struct Student2 {
+       int id;
+       bool male;
+       float height;
+       char label;
+   }
+   
+   // size of student1: 12
+   // size of student2: 16
+   ```
+
+3. `struct` in C and C++
+
+   - `struct` and `class` in C++ are identical(相同) expect for several features
+   - No `typedef` needed in C++
+
+4. `union`
+
+   - `union` declaration is similar to `struct` declaration
+   - To storage of members overlaps/shared
+
+   ```C++
+   union ipv4address{
+       std::uint32_t address32;
+       std::uint8_t address8[4];
+   };
+   // sizeof(union ipv4address) is 4
+   // 成员首地址变量相同
+   
+   union ipv4address  ip;
+   ip.address8[3] = 127;
+   ip.address8[2] = 0;
+   ip.address8[1] = 0;
+   ip.address8[0] = 1;
+   
+   cout << "The address is ";
+   cout << +ip.address8[3] << ".";
+   cout << +ip.address8[2] << ".";
+   cout << +ip.address8[1] << ".";
+   cout << +ip.address8[0] << endl;
+   
+   cout << std::hex;
+   cout << "in hex" << ip.address32 << endl;
+   // The address is 127.0.0.1
+   // in hex 7f000001
+   ```
+
+5. 
 
 
 ---

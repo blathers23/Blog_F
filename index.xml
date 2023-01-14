@@ -4,9 +4,17 @@
     <link>https://blathers23.netlify.app/</link>
     <description>This is my new Hugo FixIt site</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>blathers233@outlook.com (Blathers)</managingEditor>
-      <webMaster>blathers233@outlook.com (Blathers)</webMaster><lastBuildDate>Tue, 03 Jan 2023 15:30:00 &#43;0800</lastBuildDate>
+      <webMaster>blathers233@outlook.com (Blathers)</webMaster><lastBuildDate>Tue, 10 Jan 2023 09:59:00 &#43;0800</lastBuildDate>
       <atom:link href="https://blathers23.netlify.app/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>Linux 下利用 Jallyfin 搭建家庭媒体服务器</title>
+  <link>https://blathers23.netlify.app/jallyfin/</link>
+  <pubDate>Tue, 10 Jan 2023 09:59:00 &#43;0800</pubDate>
+  <author>Blathers</author>
+  <guid>https://blathers23.netlify.app/jallyfin/</guid>
+  <description><![CDATA[Fast & Forward]]></description>
+</item>
+<item>
   <title>C/C&#43;&#43;程序设计</title>
   <link>https://blathers23.netlify.app/ccppprogramdesign/</link>
   <pubDate>Tue, 03 Jan 2023 15:30:00 &#43;0800</pubDate>
@@ -90,16 +98,6 @@
   <author>Blathers</author>
   <guid>https://blathers23.netlify.app/python%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%AE%B9%E5%99%A8%E5%8F%8A%E6%96%B9%E6%B3%95/</guid>
   <description><![CDATA[磨刀不误砍柴功。]]></description>
-</item>
-<item>
-  <title>LC433 - 最小基因变化</title>
-  <link>https://blathers23.netlify.app/lc433/</link>
-  <pubDate>Sun, 08 May 2022 00:09:00 &#43;0800</pubDate>
-  <author>Blathers</author>
-  <guid>https://blathers23.netlify.app/lc433/</guid>
-  <description><![CDATA[<div class="featured-image">
-        <img src="/images/leetcode.jpg" referrerpolicy="no-referrer">
-      </div>简单记录：做题应当由浅入深。]]></description>
 </item>
 </channel>
 </rss>
