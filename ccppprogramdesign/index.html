@@ -9,14 +9,14 @@
 <meta name="author-link" content="">
 <meta name="description" content="系统学习C/C&#43;&#43;语言" /><meta name="keywords" content='C, CPP' /><meta itemprop="name" content="C/C&#43;&#43;程序设计">
 <meta itemprop="description" content="系统学习C/C&#43;&#43;语言"><meta itemprop="datePublished" content="2023-01-03T15:30:00+08:00" />
-<meta itemprop="dateModified" content="2023-01-07T00:00:00+00:00" />
-<meta itemprop="wordCount" content="4838"><meta itemprop="image" content="https://blathers23.netlify.app/logo.png"/>
+<meta itemprop="dateModified" content="2023-02-07T00:00:00+00:00" />
+<meta itemprop="wordCount" content="5483"><meta itemprop="image" content="https://blathers23.netlify.app/logo.png"/>
 <meta itemprop="keywords" content="C,CPP," /><meta property="og:title" content="C/C&#43;&#43;程序设计" />
 <meta property="og:description" content="系统学习C/C&#43;&#43;语言" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blathers23.netlify.app/ccppprogramdesign/" /><meta property="og:image" content="https://blathers23.netlify.app/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-01-03T15:30:00+08:00" />
-<meta property="article:modified_time" content="2023-01-07T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-02-07T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://blathers23.netlify.app/logo.png"/>
 
@@ -34,8 +34,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/blathers23.netlify.app\/ccppprogramdesign\/"
-    },"genre": "posts","keywords": "C, CPP","wordcount":  4838 ,
-    "url": "https:\/\/blathers23.netlify.app\/ccppprogramdesign\/","datePublished": "2023-01-03T15:30:00+08:00","dateModified": "2023-01-07T00:00:00+00:00","publisher": {
+    },"genre": "posts","keywords": "C, CPP","wordcount":  5483 ,
+    "url": "https:\/\/blathers23.netlify.app\/ccppprogramdesign\/","datePublished": "2023-01-03T15:30:00+08:00","dateModified": "2023-02-07T00:00:00+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -185,7 +185,7 @@
     alt="Blathers"
     title="Blathers"/>&nbsp;Blathers</span></span>
           <span class="post-category">收录于 <a href="/categories/c/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> C</a></span></div>
-      <div class="post-meta-line"><span title=2023-01-03&#32;15:30:00><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-03">2023-01-03</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 4838 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 10 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title=2023-01-03&#32;15:30:00><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-03">2023-01-03</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 5483 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 11 分钟</span>&nbsp;</div>
     </div><div class="featured-image"><img
     class="lazyload"
     src="/svg/loading.min.svg"
@@ -203,7 +203,7 @@
     <li><a href="#week01">WEEK01</a>
       <ul>
         <li><a href="#different-programing-languages">Different Programing Languages</a></li>
-        <li><a href="#compile-and-line">Compile and Line</a></li>
+        <li><a href="#compile-and-link">Compile and Link</a></li>
         <li><a href="#preprocessor-and-macros宏">Preprocessor and Macros(宏)</a></li>
         <li><a href="#simple-output-and-input">Simple Output and Input</a></li>
       </ul>
@@ -229,7 +229,13 @@
       <ul>
         <li><a href="#array">Array</a></li>
         <li><a href="#strings">Strings</a></li>
-        <li><a href="#structures-unions-and-enumerations">Structures, Unions and Enumerations</a></li>
+        <li><a href="#structures-unions-and-enumerations枚举类型">Structures, Unions and Enumerations(枚举类型)</a></li>
+        <li><a href="#typedef">typedef</a></li>
+      </ul>
+    </li>
+    <li><a href="#week05">WEEK05</a>
+      <ul>
+        <li><a href="#pointers">Pointers</a></li>
       </ul>
     </li>
   </ul>
@@ -262,7 +268,7 @@
 </ul>
 </li>
 </ol>
-<h3 id="compile-and-line">Compile and Line</h3>
+<h3 id="compile-and-link">Compile and Link</h3>
 <ol>
 <li>
 <p>function prototypes(声明) &amp; definitiones:</p>
@@ -2268,7 +2274,7 @@
 </ul>
 </li>
 </ol>
-<h3 id="structures-unions-and-enumerations">Structures, Unions and Enumerations</h3>
+<h3 id="structures-unions-and-enumerations枚举类型">Structures, Unions and Enumerations(枚举类型)</h3>
 <ol>
 <li>
 <p><code>struct</code></p>
@@ -2423,12 +2429,297 @@
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div></li>
-<li></li>
+<li>
+<p><code>enum</code></p>
+<ul>
+<li><code>enum</code> makes a new type</li>
+<li>It provides an alternative to <code>const</code> for creating symbolic constants</li>
+<li>Its members are integers, but they cannot be operands in arithmetic expressions</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="k">enum</span> <span class="nc">color</span> <span class="p">{</span><span class="n">WHITE</span><span class="p">,</span> <span class="n">BLACK</span><span class="p">,</span> <span class="n">RED</span><span class="p">,</span> <span class="n">GREEN</span><span class="p">,</span> <span class="n">BLUE</span><span class="p">,</span> <span class="n">YELLOW</span><span class="p">,</span> <span class="n">NUM_COLORS</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="k">enum</span> <span class="nc">color</span> <span class="n">pen_color</span> <span class="o">=</span> <span class="n">RED</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">pen_color</span> <span class="o">=</span> <span class="n">color</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;We have &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">NUM_COLORS</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; pens.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>	
+</span></span><span class="line"><span class="cl"><span class="c1">// We have 6 pens.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// pen_color += 1;	// error
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="n">color_index</span> <span class="o">=</span> <span class="n">pen_color</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">color_index</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;color_index = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">color_index</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>An example with struct, union and enum</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="k">enum</span> <span class="n">datatype</span> <span class="p">{</span><span class="n">TYPE_INT8</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">TYPE_INT16</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">TYPE_INT32</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">TYPE_INIT64</span> <span class="o">=</span> <span class="mi">8</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">Point</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">enum</span> <span class="n">datatype</span> <span class="n">type</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">union</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="kt">int8_t</span> <span class="n">data8</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="kt">int16_t</span> <span class="n">data16</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="kt">int32_t</span> <span class="n">data32</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="n">data64</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">size_t</span> <span class="nf">datawidth</span><span class="p">(</span><span class="k">struct</span> <span class="n">Point</span> <span class="n">pt</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">(</span><span class="kt">size_t</span><span class="p">)</span><span class="n">pt</span><span class="p">.</span><span class="n">type</span> <span class="o">*</span> <span class="mi">3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int64_t</span> <span class="nf">l1norm</span><span class="p">(</span><span class="k">struct</span> <span class="n">Point</span> <span class="n">pt</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int64_t</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">switch</span><span class="p">(</span><span class="n">pt</span><span class="p">.</span><span class="n">type</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">case</span> <span class="p">(</span><span class="n">TYPE_INT8</span><span class="p">)</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">result</span> <span class="o">=</span> <span class="nf">abs</span><span class="p">(</span><span class="n">pt</span><span class="p">.</span><span class="n">data8</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="nf">abs</span><span class="p">(</span><span class="n">pt</span><span class="p">.</span><span class="n">data8</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="nf">abs</span><span class="p">(</span><span class="n">pt</span><span class="p">.</span><span class="n">data8</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// declaration and initialization
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">struct</span> <span class="n">Point</span> <span class="n">point1</span> <span class="o">=</span> <span class="p">{.</span><span class="n">type</span> <span class="o">=</span> <span class="n">TYPE_INT8</span><span class="p">,</span> <span class="p">.</span><span class="n">data8</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">}};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h3 id="typedef">typedef</h3>
+<ul>
+<li><code>typedef</code> can create an alias(别名) for a type</li>
+<li>It can be used to replace a possibly complex type name</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="k">typedef</span> <span class="kt">int</span> <span class="n">myint</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">typedef</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">vec3b</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="k">typedef</span> <span class="k">struct</span> <span class="n">_rgb_struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">r</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">g</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="n">rgb_struct</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="week05">WEEK05</h2>
+<hr>
+<h3 id="pointers">Pointers</h3>
+<ul>
+<li>A pointer is declared like a variable, but with * after the type</li>
+<li>What stored in a pointer variable is an address</li>
+<li>Operator <code>&amp;</code> can take the address of an object or a variable of fundamental types</li>
+<li>Operator <code>*</code> can take the content that the pointer point to</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="o">*</span><span class="n">p1</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">,</span> <span class="o">*</span><span class="n">p2</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">p1</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">num</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">p2</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">num</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">*</span><span class="n">p1</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">*</span><span class="n">p2</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol>
+<li>
+<p>Struct member accessing</p>
+<ul>
+<li>P -&gt; member(*p).member</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Student</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">born</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="n">male</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Student</span> <span class="n">stu</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#34;Yu&#34;</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="nb">true</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="n">Student</span> <span class="o">*</span><span class="n">pStu</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">stu</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">strncopy</span><span class="p">(</span><span class="n">pStu</span> <span class="o">-&gt;</span> <span class="n">name</span><span class="p">,</span> <span class="s">&#34;Li&#34;</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Print out the address</p>
+<ul>
+<li>Since the value of a pointer is an address,  we can print it out</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Address of stu: %p</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">pStu</span><span class="p">);</span>	<span class="c1">// C style
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Address of stu: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">pStu</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>	<span class="c1">// C++ style
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Address of stu: &#34;</span> <span class="o">&lt;&lt;</span> <span class="o">&amp;</span><span class="n">stu</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Address of member name: &#34;</span> <span class="o">&lt;&lt;</span> <span class="o">&amp;</span><span class="p">(</span><span class="n">pStu</span> <span class="o">-&gt;</span> <span class="n">name</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Pointers of Pointers</p>
+<ul>
+<li>Pointers are variables, they also have address</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">num</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="o">**</span><span class="n">pp</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">**</span><span class="n">pp</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">num</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>	<span class="c1">// 5
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Constant pointers</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">another</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// You cannot change the value the p1 points to through p1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">const</span> <span class="kt">int</span> <span class="o">*</span><span class="n">p1</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">num</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">*</span><span class="n">p1</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>	<span class="c1">// error
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">num</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>	<span class="c1">// ok
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// You cannot change value of p2 (address)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span><span class="o">*</span> <span class="k">const</span> <span class="n">p2</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">num</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">*</span><span class="n">p2</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>	<span class="c1">// okay
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">p2</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">another</span><span class="p">;</span>	<span class="c1">// error
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// You cannot change either of them
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">const</span> <span class="kt">int</span><span class="o">*</span> <span class="k">const</span> <span class="n">p3</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">num</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">foo</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">p</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// the value that p points to cannot be changed
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">char</span> <span class="o">*</span><span class="n">p2</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span>	
+</span></span><span class="line"><span class="cl">    <span class="c1">// syntax error
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// 不可以将一个 const 指针赋值给一个普通指针
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ol></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title=2023-01-07&#32;00:00:00>更新于 2023-01-07&nbsp;</span>
+        <span title=2023-02-07&#32;00:00:00>更新于 2023-02-07&nbsp;</span>
       </div><div class="post-info-license">
           <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
         </div></div>
@@ -2455,7 +2746,7 @@
 <div id="comments"><div id="waline" class="comment"></div><noscript>
         Please enable JavaScript to view the comments powered by <a href="https://waline.js.org/" rel="external nofollow noopener noreferrer">Waline</a>.
       </noscript></div></article></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.109.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.17"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.110.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.17"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
         </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">
               <a href="/">Blathers</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="run-times ms-1">网站运行中 ...</span></span></div><div class="footer-line visitor">

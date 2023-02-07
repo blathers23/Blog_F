@@ -5,7 +5,7 @@
 
 ```yaml
 - nickname: Blathers
-  avatar: https://gravatar.loli.net/avatar/1cc24367e7133aceb81bfd9ef41481cd?s=240&d=mp
+  avatar: https://gravatar.loli.net/avatar/c2b6381b13a64b189283c14fc4200f7f?s=240&d=mp
   url: https://blathers23.netlify.app
   description: Blathers' Tent
 ```

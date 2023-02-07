@@ -23,7 +23,7 @@
    - Access memory directly
    - Excellent on computing
 
-### Compile and Line
+### Compile and Link
 
 1. function prototypes(声明) & definitiones:
 
@@ -1112,7 +1112,7 @@
 
    - String类同样没有越界检查
 
-### Structures, Unions and Enumerations
+### Structures, Unions and Enumerations(枚举类型)
 
 1. `struct`
 
@@ -1196,7 +1196,164 @@
    // in hex 7f000001
    ```
 
-5. 
+5. `enum`
+
+   - `enum` makes a new type
+   - It provides an alternative to `const` for creating symbolic constants
+   - Its members are integers, but they cannot be operands in arithmetic expressions
+
+   ```C++
+   enum color {WHITE, BLACK, RED, GREEN, BLUE, YELLOW, NUM_COLORS};
+   enum color pen_color = RED;
+   pen_color = color(3);
+   
+   cout << "We have " << NUM_COLORS << " pens." << endl;	
+   // We have 6 pens.
+   
+   // pen_color += 1;	// error
+   int color_index = pen_color;
+   color_index += 1;
+   cout << "color_index = " << color_index << endl;
+   ```
+
+6. An example with struct, union and enum
+
+   ```C
+   enum datatype {TYPE_INT8 = 1, TYPE_INT16 = 2, TYPE_INT32 = 4, TYPE_INIT64 = 8};
+   
+   struct Point {
+       enum datatype type;
+       union {
+           std::int8_t data8[3];
+           std::int16_t data16[3];
+           std::int32_t data32[3];
+           std::int64_t data64[3];
+       };
+   };
+   
+   size_t datawidth(struct Point pt) {
+       return (size_t)pt.type * 3;
+   }
+   
+   int64_t l1norm(struct Point pt) {
+       int64_t result = 0;
+       switch(pt.type) {
+           case (TYPE_INT8):
+               result = abs(pt.data8[0]) + abs(pt.data8[1]) + abs(pt.data8[2]);
+               break;
+   		...
+       }
+   }
+   
+   // declaration and initialization
+   struct Point point1 = {.type = TYPE_INT8, .data8 = {-2, 3, 4}};
+   ```
+
+### typedef
+
+- `typedef` can create an alias(别名) for a type
+- It can be used to replace a possibly complex type name
+
+```C
+typedef int myint;
+typedef unsigned char vec3b[3];
+typedef struct _rgb_struct {
+    unsigned char r;
+    unsigned char g;
+    unsigned char b;
+} rgb_struct;
+```
+
+## WEEK05
+
+---
+
+### Pointers
+
+- A pointer is declared like a variable, but with * after the type
+- What stored in a pointer variable is an address
+- Operator `&` can take the address of an object or a variable of fundamental types
+- Operator `*` can take the content that the pointer point to
+
+```C
+int num = 10;
+int *p1 = NULL, *p2 = NULL;
+p1 = &num;
+p2 = &num;
+*p1 = 20;
+*p2 = 30;
+```
+
+1. Struct member accessing
+
+   - P -> member(*p).member
+
+   ```C++
+   struct Student {
+       char name[4];
+       int born;
+       bool male;
+   }
+   
+   Student stu = {"Yu", 2000, true};
+   Student *pStu = &stu;
+   
+   strncopy(pStu -> name, "Li", 4);
+   ```
+
+2. Print out the address
+
+   - Since the value of a pointer is an address,  we can print it out
+
+   ```C
+   printf("Address of stu: %p\n", pStu);	// C style
+   cout << "Address of stu: " << pStu << endl;	// C++ style
+   cout << "Address of stu: " << &stu << endl;
+   cout << "Address of member name: " << &(pStu -> name) << endl;
+   ```
+
+3. Pointers of Pointers
+
+   - Pointers are variables, they also have address
+
+   ```C
+   int num = 10;
+   int *p = &num;
+   int **pp = &p;
+   
+   **pp = 5;
+   cout << num << endl;	// 5
+   ```
+
+4. Constant pointers
+
+   ```C
+   int num = 1;
+   int another = 2;
+   // You cannot change the value the p1 points to through p1
+   const int *p1 = &num;
+   *p1 = 3;	// error
+   num = 3;	// ok
+   
+   // You cannot change value of p2 (address)
+   int* const p2 = &num;
+   *p2 = 3;	// okay
+   p2 = &another;	// error
+   
+   // You cannot change either of them
+   const int* const p3 = &num;
+   ```
+
+   ```C
+   int foo(const char *p) {
+       // the value that p points to cannot be changed
+       char *p2 = p;	
+       // syntax error
+       // 不可以将一个 const 指针赋值给一个普通指针
+   }
+   ```
+
+   
 
 
 ---
