@@ -2,15 +2,16 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   ><url>
-      <loc>https://blathers23.netlify.app/</loc><lastmod>2023-02-07T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://blathers23.netlify.app/categories/</loc><lastmod>2023-02-07T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://blathers23.netlify.app/</loc><lastmod>2023-02-09T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://blathers23.netlify.app/categories/</loc><lastmod>2023-02-09T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://blathers23.netlify.app/tags/jellyfin/</loc><lastmod>2023-02-09T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://blathers23.netlify.app/tags/linux/</loc><lastmod>2023-02-09T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://blathers23.netlify.app/posts/</loc><lastmod>2023-02-09T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://blathers23.netlify.app/tags/</loc><lastmod>2023-02-09T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://blathers23.netlify.app/jellyfineverywhere/</loc><lastmod>2023-02-09T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+      <loc>https://blathers23.netlify.app/categories/%E6%95%99%E7%A8%8B/</loc><lastmod>2023-02-09T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
       <loc>https://blathers23.netlify.app/tags/ffmpeg/</loc><lastmod>2023-02-07T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://blathers23.netlify.app/tags/jellyfin/</loc><lastmod>2023-02-07T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://blathers23.netlify.app/tags/linux/</loc><lastmod>2023-02-07T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
       <loc>https://blathers23.netlify.app/jallyfin/</loc><lastmod>2023-02-07T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://blathers23.netlify.app/posts/</loc><lastmod>2023-02-07T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://blathers23.netlify.app/tags/</loc><lastmod>2023-02-07T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-      <loc>https://blathers23.netlify.app/categories/%E6%95%99%E7%A8%8B/</loc><lastmod>2023-02-07T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
       <loc>https://blathers23.netlify.app/tags/c/</loc><lastmod>2023-02-07T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
       <loc>https://blathers23.netlify.app/categories/c/</loc><lastmod>2023-02-07T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
       <loc>https://blathers23.netlify.app/ccppprogramdesign/</loc><lastmod>2023-02-07T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>

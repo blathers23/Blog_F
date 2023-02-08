@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>将 Jellyfin 开放至公网并设立域名 - Blathers&#39; Tent</title><meta name="author" content="Blathers">
+<meta name="author-link" content="">
+<meta name="description" content="随时随地访问家庭内网服务" /><meta name="keywords" content='Jellyfin, Linux' /><meta itemprop="name" content="将 Jellyfin 开放至公网并设立域名">
+<meta itemprop="description" content="随时随地访问家庭内网服务"><meta itemprop="datePublished" content="2023-02-08T20:30:00+08:00" />
+<meta itemprop="dateModified" content="2023-02-09T00:00:00+00:00" />
+<meta itemprop="wordCount" content="3933"><meta itemprop="image" content="https://blathers23.netlify.app/logo.png"/>
+<meta itemprop="keywords" content="Jellyfin,Linux," /><meta property="og:title" content="将 Jellyfin 开放至公网并设立域名" />
+<meta property="og:description" content="随时随地访问家庭内网服务" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blathers23.netlify.app/jellyfineverywhere/" /><meta property="og:image" content="https://blathers23.netlify.app/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-08T20:30:00+08:00" />
+<meta property="article:modified_time" content="2023-02-09T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://blathers23.netlify.app/logo.png"/>
+
+<meta name="twitter:title" content="将 Jellyfin 开放至公网并设立域名"/>
+<meta name="twitter:description" content="随时随地访问家庭内网服务"/>
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blathers23.netlify.app/jellyfineverywhere/" /><link rel="prev" href="https://blathers23.netlify.app/jallyfin/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "将 Jellyfin 开放至公网并设立域名",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blathers23.netlify.app\/jellyfineverywhere\/"
+    },"genre": "posts","keywords": "Jellyfin, Linux","wordcount":  3933 ,
+    "url": "https:\/\/blathers23.netlify.app\/jellyfineverywhere\/","datePublished": "2023-02-08T20:30:00+08:00","dateModified": "2023-02-09T00:00:00+00:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Blathers"
+      },"description": "随时随地访问家庭内网服务"
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Blathers&#39; Tent"><span class="header-title-pre">🏕️</span><span class="header-title-text">Blathers&#39; Tent</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                title="全部文章"
+                
+              >Posts 📑</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                title="标签"
+                
+              >Tags 🏷️</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                title="分类"
+                
+              >Categories 📚</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/friends"
+                title="友情链接"
+                
+              >Friends 🎈</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about"
+                title="关于"
+                
+              >About 🦉</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Blathers&#39; Tent"><span class="header-title-pre">🏕️</span><span class="header-title-text">Blathers&#39; Tent</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  title="全部文章"
+                  
+                >Posts 📑</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  title="标签"
+                  
+                >Tags 🏷️</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  title="分类"
+                  
+                >Categories 📚</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/friends"
+                  title="友情链接"
+                  
+                >Friends 🎈</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about"
+                  title="关于"
+                  
+                >About 🦉</a></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX">
+        <span>将 Jellyfin 开放至公网并设立域名</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="https://gravatar.loli.net/avatar/c2b6381b13a64b189283c14fc4200f7f?s=32&amp;d=mp"
+    data-srcset="https://gravatar.loli.net/avatar/c2b6381b13a64b189283c14fc4200f7f?s=32&amp;d=mp, https://gravatar.loli.net/avatar/c2b6381b13a64b189283c14fc4200f7f?s=32&amp;d=mp 1.5x, https://gravatar.loli.net/avatar/c2b6381b13a64b189283c14fc4200f7f?s=32&amp;d=mp 2x"
+    data-sizes="auto"
+    alt="Blathers"
+    title="Blathers"/>&nbsp;Blathers</span></span>
+          <span class="post-category">收录于 <a href="/categories/%E6%95%99%E7%A8%8B/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 教程</a></span></div>
+      <div class="post-meta-line"><span title=2023-02-08&#32;20:30:00><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-02-08">2023-02-08</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 3933 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 8 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#ipv6-访问">IPv6 访问</a>
+      <ul>
+        <li><a href="#应用">应用</a></li>
+        <li><a href="#客户端">客户端</a></li>
+        <li><a href="#服务器">服务器</a></li>
+      </ul>
+    </li>
+    <li><a href="#ddns">DDNS</a>
+      <ul>
+        <li><a href="#域名购买及-dns-解析">域名购买及 DNS 解析</a></li>
+        <li><a href="#本地-ddns-服务">本地 DDNS 服务</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h2 id="前言">前言</h2>
+<hr>
+<p><del>最近突然感觉我写的前言全是没啥用处的废话啊</del></p>
+<p>前书说到，利用一台低功耗的笔记本搭建了家庭流媒体服务器，只需要使用浏览器或者专用软件访问服务器的地址，就可以在内网的各个设备上享受流媒体服务。但是，人不可能是每天都蹲在家里的，偶尔也会有在公网中访问家庭内网服务的需求。</p>
+<p>我们知道，由于 IPv4 地址数量有限，很多人是不能独占公网 IP 的，只能共享一个大内网 IP。具体表现为：路由器的公网 IP 地址和 <a href="https://ifconfig.me/"target="_blank" rel="external nofollow noopener noreferrer">ifconfig.me</a> 等 IP 查询网站得到的 IP 地址不相同，以本人的为例：</p>
+<figure><a class="lightgallery" href="https://s2.loli.net/2023/02/08/uRyW5KvIUg1JdCs.png" data-thumbnail="https://s2.loli.net/2023/02/08/uRyW5KvIUg1JdCs.png" data-sub-html="<h2>TP-Link 路由器设置界面 IP 地址</h2><p>TP-Link 路由器设置界面 IP 地址</p>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://s2.loli.net/2023/02/08/uRyW5KvIUg1JdCs.png"
+      data-srcset="https://s2.loli.net/2023/02/08/uRyW5KvIUg1JdCs.png, https://s2.loli.net/2023/02/08/uRyW5KvIUg1JdCs.png 1.5x, https://s2.loli.net/2023/02/08/uRyW5KvIUg1JdCs.png 2x"
+      data-sizes="auto"
+      alt="https://s2.loli.net/2023/02/08/uRyW5KvIUg1JdCs.png"
+      title="TP-Link 路由器设置界面 IP 地址" width="70%" height="70%" data-w data-h/>
+  </a><figcaption class="image-caption">TP-Link 路由器设置界面 IP 地址</figcaption>
+  </figure>
+<figure><a class="lightgallery" href="https://s2.loli.net/2023/02/08/c1UxoY6azfCOFwV.png" data-thumbnail="https://s2.loli.net/2023/02/08/c1UxoY6azfCOFwV.png" data-sub-html="<h2>ifconfig.me 查询得到的地址</h2><p>ifconfig.me 查询得到的地址</p>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://s2.loli.net/2023/02/08/c1UxoY6azfCOFwV.png"
+      data-srcset="https://s2.loli.net/2023/02/08/c1UxoY6azfCOFwV.png, https://s2.loli.net/2023/02/08/c1UxoY6azfCOFwV.png 1.5x, https://s2.loli.net/2023/02/08/c1UxoY6azfCOFwV.png 2x"
+      data-sizes="auto"
+      alt="https://s2.loli.net/2023/02/08/c1UxoY6azfCOFwV.png"
+      title="ifconfig.me 查询得到的地址" width="70%" height="70%" data-w data-h/>
+  </a><figcaption class="image-caption">ifconfig.me 查询得到的地址</figcaption>
+  </figure>
+<p>这意味着你将不能通过端口映射（TP-Link 称之为虚拟服务器）的方式在公网访问你内网的服务，据说可以和运营商要求分配公网 IP，但成功者不多见。其他的解决方案，例如内网穿透，或者异地组网等方案，则不得不在使用体验和价格之间做权衡，实在是捉襟见肘。</p>
+<div class="details admonition tip open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-lightbulb fa-fw" aria-hidden="true"></i>技巧<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content"><p>事实上，如果你的两个设备都被分入了同一个大内网中，那么端口映射的方式是可以使用的。以 TP-Link 路由器为例，在虚拟服务器中，将 Jellyfin 服务器的地址和端口映射到一个公网端口上后，就可以使用 TP-Link 路由器显示的公网 IP + 映射的公网端口来访问内网的 Jellyfin 服务器。</p>
+<p>然而两个设备分入同一个大内网是比较苛刻的条件，以目前的经验仅有本地电信宽带 + 本地电信手机成功过。</p>
+</div>
+    </div>
+  </div>
+<p>IPv6 的出现，就是为了应对逐渐枯竭的 IPv4 地址资源。随着 IPv6 的逐渐普及，三大运营商的宽带及蜂窝网络基本上都已经支持 IPv6。与 IPv4 不同，对于支持 IPv6 的网络环境及设备，每一个设备都拥有全球唯一的 IPv6 地址，因此，只要服务器和客户端都获取了 IPv6 地址的话，就可以实现访问，并且不需要设置端口映射等步骤。</p>
+<p>本篇文章以 Jellyfin 为例，介绍配置 IPv6 并实现公网访问家庭内网服务器的步骤，为解决 IP 地址变化的问题，同时设置一个本地 DDNS 服务的方案。</p>
+<h2 id="ipv6-访问">IPv6 访问</h2>
+<hr>
+<p>为实现 IPv6 访问内网应用，则需要同时满足 3 个条件：1. 应用支持 IPv6；2. 客户端支持 IPv6；3. 服务器支持 IPv6。这三个条件缺一不可，这里就这三个条件展开阐述。</p>
+<h3 id="应用">应用</h3>
+<p>对于不同的应用此处可能出入较大。对于 Jellyfin 来说，只需要在控制台 -&gt; 联网 -&gt;  IP 协议中勾选 IPv6 协议并重启应用即可。</p>
+<h3 id="客户端">客户端</h3>
+<p>首先提出一个 IPv6 可用性的测试基准：访问 <a href="http://test-ipv6.com/index.html.zh_CN"target="_blank" rel="external nofollow noopener noreferrer">test-ipv6.com</a> 网站，就可以查看当前设备对 IPv6 的支持性。如果得分为 10，那么恭喜你，你可以查看<strong>下一小节</strong>的内容了。不同的客户端可以通过不同的方式查询当前 IP 地址，如果存在公网 IPv6 地址（国内三大运营商的公网 IPv6 地址前三位均为 240，如果你不符合这个条件，那么可能是分配到了内网 IPv6），同样表明当前设备网络环境支持 IPv6。Linux 客户端可以运行 <code>ifconfig</code> 命令查看本机的 IP 地址；Windows 客户端则可以运行 <code>ipconfig /all</code> 命令查看；对于手机来说，以 MIUI 系统为例，进入设置 -&gt; 我的设备 -&gt; 全部参数 -&gt; 状态信息 -&gt; IP 地址查看。</p>
+<p>客户端 IPv6 的支持往往与所连接的网络环境有关，如果是蜂窝移动网络，那么一般来说是支持 IPv6 的。如果是公共场所的 Wi-Fi，那么直接选择放弃挣扎比较实在。如果是家庭网络的 Wi-Fi，那么可以直接查看下一小节的内容。</p>
+<h3 id="服务器">服务器</h3>
+<p>在设置之前，同样在服务器上访问 <a href="http://test-ipv6.com/index.html.zh_CN"target="_blank" rel="external nofollow noopener noreferrer">test-ipv6.com</a> 网站，如果得分为 10，那么恭喜你，你可以查看<strong>下下下一段以后</strong>的内容了。如果不是，则你可能需要一些配置才可以使用。</p>
+<p>首先，检查一下家庭的网络架构，如果你在阅读这段部分，那我想你的家庭网络架构不外乎为：<em>光猫连接路由器再通过路由器连接</em>和<em>直接通过光猫连接</em>两种。对于第一种，光猫连接路由器再通过路由器连接的方案，这里非常建议将光猫改为<strong>桥接模式</strong>并通过路由器拨号上网，以减少光猫对网络的损耗，然后在路由器中打开 IPv6 的支持。以 TP-Link 路由器为例，在路由设置 -&gt; IPv6 设置 -&gt; 基本设置中勾选开启 IPv6 功能、宽带拨号上网和复用 IPv4 拨号链路即可。如果你不知道如何给自己的光猫设置为<strong>桥接模式</strong>，请拨打三大运营商的客服电话询问。</p>
+<p>对于第二种，直接连接光猫的 LAN 口或者 Wi-Fi 的方案，则需要登陆光猫的后台，设置启用 IPv6。如果你不知道怎样设置，那么同样的建议你拨打三大运营商的电话询问。</p>
+<p>经过一番设置后，现在你访问 <a href="http://test-ipv6.com/index.html.zh_CN"target="_blank" rel="external nofollow noopener noreferrer">test-ipv6.com</a> 网站应该就会显示对 IPv6 的支持了。接下来，尝试在服务器中以 IPv6 地址访问服务，以 Jellyfin 默认设置为例，浏览器访问 <code>http://[::1]:8096</code>，如果成功访问，则说明 Jellyfin 已经启用 IPv6 服务。接下来获取本机的公网 IPv6 地址，以 Linux 为例，执行 <code>ifconfig | grep &quot;inet6&quot;</code> 即可获取本机全部的 IPv6 地址，公网 IPv6 往往是最长的那个。接下来在服务器浏览器访问 <code>http://[(YOUR_IPV6_ADDRESS)]:8096</code>，如果成功访问，那么说明你已经正确的获得了公网的 IPv6 地址。</p>
+<p>然而，当你使用手机或者其他客户端登陆对应的地址时，很可能会出现<strong>拒绝访问</strong>的情况。这是因为市面上大多数路由器都默认打开了 IPv6 防火墙的缘故，你可能需要在路由器中进行设置或者直接安装关闭了 IPv6 防火墙的固件。以 TP-Link 路由器为例，可以直接向客服索要关闭了 IPv6 防火墙的固件。如果一切顺利，更新好固件后，就可以使用任何拥有 IPv6 地址的设备访问内网的 Jellyfin 服务器了！🪅</p>
+<h2 id="ddns">DDNS</h2>
+<hr>
+<p>由于 IP 地址可能会发生变化，与之相比，一个固定的域名显着更加美观且使用。为了使用域名访问内网服务，我们需要解决域名购买及 DNS 解析和本地 DDNS 服务两个问题。</p>
+<h3 id="域名购买及-dns-解析">域名购买及 DNS 解析</h3>
+<p>粗糙的域名往往是便宜货，阿里云或腾讯云上 10 元以下包年的域名一抓一大把。以腾讯云为例，登陆 <a href="https://www.dnspod.cn/"target="_blank" rel="external nofollow noopener noreferrer">DNSPod</a> 网站，搜索想注册的域名，根据提示创建实名认证模板并购买后，设置 DNS 解析。</p>
+<p>进入控制台 -&gt; DNS 解析 -&gt; <a href="https://console.dnspod.cn/dns/list"target="_blank" rel="external nofollow noopener noreferrer">我的域名选项页</a>，点击<strong>添加域名</strong>，输入刚刚购买的域名(YOUR_DOMAIN)，完成域名添加的操作。点击购买的域名，点击添加记录，这里有一些选项需要填写：</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主机记录(YOUR_SUBDOMAIN)</td>
+<td>按照个人喜好填写，以我为例，我填入的内容为 &ldquo;jellyfin&rdquo;，这样的话，当一切设置完成后，要访问这个 IP 地址，只需要在浏览器中输入 &ldquo;jellyfin.(YOUR_DOMAIN)&quot;。</td>
+</tr>
+<tr>
+<td>记录类型</td>
+<td>由于我们需要访问 IPv6 地址，因此这里填入的内容应该为 &ldquo;AAAA&rdquo;。</td>
+</tr>
+<tr>
+<td>线路类型</td>
+<td>选择“默认”即可。</td>
+</tr>
+<tr>
+<td>记录值</td>
+<td>填入你需要解析的 IPv6 地址，此处就填入你服务器的 IPv6 地址。</td>
+</tr>
+<tr>
+<td>权重</td>
+<td>留空即可</td>
+</tr>
+<tr>
+<td>TTL</td>
+<td>默认 &ldquo;600&rdquo; 即可</td>
+</tr>
+</tbody>
+</table>
+<p>填写完毕后，点击添加，等待 DNS 服务器刷新缓存后，就可以使用 <code>http://(YOUR_SUBDOMAIN).(YOUR_DOMAIN):8096</code> 来访问 Jellyfin 服务了，根据应用的不同，端口号可能会有相应的改变。</p>
+<p>接下来是额外教学，简单讲一下如何给 Jellyfin 配置 SSL 证书。首先进入<a href="https://console.dnspod.cn/dns/list"target="_blank" rel="external nofollow noopener noreferrer">我的域名选项页</a>，点击刚购买的域名，然后在想要配置 SSL 证书的记录的右侧，将鼠标放置在 SSL 选项上，点击<strong>免费申请</strong>，即可快速申请免费的 SSL 证书。按照提示申请证书后，等待证书签发，即可在<a href="https://console.cloud.tencent.com/ssl"target="_blank" rel="external nofollow noopener noreferrer">证书管理页面</a>下载证书。</p>
+<p>这里选择 Tomcat(pfx 格式) 下载，压缩文件中有 <code>.pfx</code> 格式和 <code>.txt</code> 格式的两个文件。接下来打开 Jellyfin 控制台 -&gt; 联网页面，在服务器地址设置里勾选<strong>启用 HTTPS</strong>，在 HTTPS 设置里，自定义 SSL 证书路径选择刚才下载的 <code>.pfx</code> 格式文件的路径，证书密码则填写 <code>.txt</code> 格式文件中的内容。保存完成后，重启 Jellyfin 服务，即可使用默认的 <code>8920</code> 端口采用 HTTPS 访问 Jellyfin 服务。</p>
+<h3 id="本地-ddns-服务">本地 DDNS 服务</h3>
+<p>进入腾讯云 -&gt; 云 API 控制台 -&gt; API Explorer -&gt; DNSPod -&gt; 记录相关接口 -&gt; <a href="https://console.cloud.tencent.com/api/explorer?Product=dnspod&amp;Version=2021-03-23&amp;Action=ModifyRecord"target="_blank" rel="external nofollow noopener noreferrer">修改记录页面</a>，按照以下说明填写（未提及则留空）：</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Domain</td>
+<td>填写你购买的域名</td>
+</tr>
+<tr>
+<td>SubDomain</td>
+<td>填写需要修改的主机记录</td>
+</tr>
+<tr>
+<td>RecordType</td>
+<td>AAAA</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>这一栏将填入修改的 IP 地址，因此可以先随便填点啥占个坑</td>
+</tr>
+<tr>
+<td>RecordId</td>
+<td>进入腾讯云 -&gt; 云 API 控制台 -&gt; API Explorer -&gt; DNSPod -&gt; 记录相关接口 -&gt; <a href="https://console.cloud.tencent.com/api/explorer?Product=dnspod&amp;Version=2021-03-23&amp;Action=DescribeRecordList"target="_blank" rel="external nofollow noopener noreferrer">获取域名的解析记录列表页面</a>，输入 <code>Domain</code> 和 <code>SubDomain</code> ，点击最下方的发起调用，即可在返回结果中查询到。</td>
+</tr>
+</tbody>
+</table>
+<p>全部填写完成后，就可以自动生成修改记录的代码。这里以 Python 代码为例继续下面的讲解。</p>
+<p>我们需要对代码进行一些修改，来获取本机 IP 地址并修改记录，首先设置 API 访问密钥。下载保存 Python 代码后，根据 Python 代码中的提示，访问腾讯云控制台<a href="https://console.cloud.tencent.com/cam/capi"target="_blank" rel="external nofollow noopener noreferrer">访问密钥界面</a>，点击新建密钥，获得一对 SecretId 和 SecretKey，并修改代码中对应的位置。</p>
+<p>接下来设置 Python 环境，使用 <code>pip install tencentcloud-sdk-python tencentcloud-sdk-python-dnspod</code> 安装依赖 SDK，如果下载速度过慢，可以调整 <code>pip</code> 镜像的设置。</p>
+<p>接下来添加获取本机 IP 地址的代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">get_global_ipv6_address</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">getIPV6_process</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">popen</span><span class="p">(</span><span class="s2">&#34;/usr/sbin/ifconfig&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">output</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">getIPV6_process</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">    <span class="n">result</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;(([a-f0-9]{1,4}:)</span><span class="si">{7}</span><span class="s2">[a-f0-9]{1,4})&#34;</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># print(&#34;本机当前公网IPv6地址为: &#34;, result[0][0])</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这样返回的即为当前本机的 IPv6 地址。</p>
+<div class="details admonition tip open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-lightbulb fa-fw" aria-hidden="true"></i>技巧<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content"><p>在第 7 行的正则表达式中，采取了一个取巧的写法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;(([a-f0-9]{1,4}:)</span><span class="si">{7}</span><span class="s2">[a-f0-9]{1,4})&#34;</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>等同于</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;[a-f0-9]{1,4}:[a-f0-9]{1,4}:[a-f0-9]{1,4}:[a-f0-9]{1,4}:[a-f0-9]{1,4}:[a-f0-9]{1,4}:[a-f0-9]{1,4}:[a-f0-9]{1,4}&#34;</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>第一种写法中，通过加入小括号，得以将 <code>[a-f0-9]{1,4}:</code> 的模式通过 <code>{7}</code> 来重复 7 次。然而，<code>re</code> 库有一个特点是，当正则表达式中存在小括号时，只输出小括号中的内容，以 <code>&quot;1:2:3:4:5:6:7:8&quot;</code> 为输入为例，当正则表达式为 <code>([a-f0-9]{1,4}:){7}[a-f0-9]{1,4}</code> 时，输出的内容为 <code>7:</code>，即小括号中模式的第 7 次重复。为了输出全部的内容，则需要在正则表达式最外层再添加一个小括号。在拥有两个小括号的情况下，返回值为一个元组，第一个位置为 <code>1:2:3:4:5:6:7:8</code>，第二个位置为 <code>7:</code>。</p>
+</div>
+    </div>
+  </div>
+<div class="details admonition bug open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-bug fa-fw" aria-hidden="true"></i>Bug<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">在第 5 行的调用 <code>ifconfig</code> 命令时，采用了绝对路径的写法。这是因为这个脚本将交给 Linux 下的自动化任务 <code>crontab</code> 程序处理，该程序在运行脚本时是没有环境变量的（除非使用命令指定）。因此如果使用 <code>ifconfig</code> 而不是绝对路径 <code>/usr/sbin/ifconfig</code>，将会导致自动化任务的异常。</div>
+    </div>
+  </div>
+<p>最后将两份代码组合，效果如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">get_global_ipv6_address</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">getIPV6_process</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">popen</span><span class="p">(</span><span class="s2">&#34;/usr/sbin/ifconfig&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">output</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">getIPV6_process</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">    <span class="n">result</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;(([a-f0-9]{1,4}:)</span><span class="si">{7}</span><span class="s2">[a-f0-9]{1,4})&#34;</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">json</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">tencentcloud.common</span> <span class="kn">import</span> <span class="n">credential</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">tencentcloud.common.profile.client_profile</span> <span class="kn">import</span> <span class="n">ClientProfile</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">tencentcloud.common.profile.http_profile</span> <span class="kn">import</span> <span class="n">HttpProfile</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">tencentcloud.common.exception.tencent_cloud_sdk_exception</span> <span class="kn">import</span> <span class="n">TencentCloudSDKException</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">tencentcloud.dnspod.v20210323</span> <span class="kn">import</span> <span class="n">dnspod_client</span><span class="p">,</span> <span class="n">models</span>
+</span></span><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cred</span> <span class="o">=</span> <span class="n">credential</span><span class="o">.</span><span class="n">Credential</span><span class="p">(</span><span class="s2">&#34;YOUR_SECRETID&#34;</span><span class="p">,</span> <span class="s2">&#34;YOUR_SECRETKEY&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">httpProfile</span> <span class="o">=</span> <span class="n">HttpProfile</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">httpProfile</span><span class="o">.</span><span class="n">endpoint</span> <span class="o">=</span> <span class="s2">&#34;dnspod.tencentcloudapi.com&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">clientProfile</span> <span class="o">=</span> <span class="n">ClientProfile</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">clientProfile</span><span class="o">.</span><span class="n">httpProfile</span> <span class="o">=</span> <span class="n">httpProfile</span>
+</span></span><span class="line"><span class="cl">    <span class="n">client</span> <span class="o">=</span> <span class="n">dnspod_client</span><span class="o">.</span><span class="n">DnspodClient</span><span class="p">(</span><span class="n">cred</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">,</span> <span class="n">clientProfile</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">req</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ModifyRecordRequest</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Domain&#34;</span><span class="p">:</span> <span class="s2">&#34;YOUR_DOMAIN&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;SubDomain&#34;</span><span class="p">:</span> <span class="s2">&#34;YOUR_SUBDOMAIN&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;RecordType&#34;</span><span class="p">:</span> <span class="s2">&#34;AAAA&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;RecordLine&#34;</span><span class="p">:</span> <span class="s2">&#34;默认&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Value&#34;</span><span class="p">:</span> <span class="n">get_global_ipv6_address</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;RecordId&#34;</span><span class="p">:</span> <span class="n">YOUR_RECORDID</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">req</span><span class="o">.</span><span class="n">from_json_string</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">ModifyRecord</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">except</span> <span class="n">TencentCloudSDKException</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在设置自动化任务之前，运行一下脚本确定无误。</p>
+<p>最后设置自动化脚本，这里使用 <code>crontab</code> 工具进行设置，Fedora 系统可以运行 <code>dnf install cronie</code> 来安装。安装完成后，使用命令 <code>crontab -e</code> 编辑自动化命令，输入 <code>0 * * * * YOUR_PYTHON_PATH YOUR_SCRIPT_PATH</code> ，这里的 <code>0 * * * *</code> 表示每小时的 0 分运行后面的命令，<code>YOUR_PYTHON_PATH</code> 和 <code>YOUR_SCRIPT_PATH</code> 都应该填写绝对地址。</p>
+<p>编辑自动命令后，我们需要使用命令 <code>service crond start</code> 来启动自动化命令的服务。至此，全部的设置完成。</p></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2023-02-09&#32;00:00:00>更新于 2023-02-09&nbsp;</span>
+      </div><div class="post-info-license">
+          <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"><span><a href="/jellyfineverywhere/index.md" title="阅读原始文档" class="link-to-markdown">阅读原始文档</a></span></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blathers23.netlify.app/jellyfineverywhere/" data-title="将 Jellyfin 开放至公网并设立域名"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://blathers23.netlify.app/jellyfineverywhere/" data-title="将 Jellyfin 开放至公网并设立域名"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/jellyfin/' class="post-tag">Jellyfin</a><a href='/tags/linux/' class="post-tag">Linux</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/jallyfin/" class="post-nav-item" rel="prev" title="Linux 下利用 Jallyfin 搭建家庭媒体服务器"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Linux 下利用 Jallyfin 搭建家庭媒体服务器</a></div>
+</div>
+<div id="comments"><div id="waline" class="comment"></div><noscript>
+        Please enable JavaScript to view the comments powered by <a href="https://waline.js.org/" rel="external nofollow noopener noreferrer">Waline</a>.
+      </noscript></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.110.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.17"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">Blathers</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="run-times ms-1">网站运行中 ...</span></span></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/waline/waline.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/waline/waline.js" defer></script><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/lib/pangu/pangu.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":true,"expired":false,"waline":{"copyright":true,"dark":"body[data-theme='dark']","el":"#waline","emoji":["//unpkg.com/@waline/emojis@1.1.0/weibo"],"highlighter":false,"imageUploader":false,"lang":"zh-cn","login":"enable","meta":["nick","mail","link"],"pageSize":10,"search":false,"serverURL":"https://i143vg.deta.dev/","texRenderer":false}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"pangu":{"enable":true,"selector":"article"},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"siteTime":"2022-04-19T01:19:11+08:00"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

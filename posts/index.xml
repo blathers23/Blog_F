@@ -4,7 +4,15 @@
     <link>https://blathers23.netlify.app/posts/</link>
     <description>所有文章 | Blathers&#39; Tent</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>blathers23@outlook.com (Blathers)</managingEditor>
-      <webMaster>blathers23@outlook.com (Blathers)</webMaster><lastBuildDate>Tue, 10 Jan 2023 09:59:00 &#43;0800</lastBuildDate><atom:link href="https://blathers23.netlify.app/posts/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>blathers23@outlook.com (Blathers)</webMaster><lastBuildDate>Wed, 08 Feb 2023 20:30:00 &#43;0800</lastBuildDate><atom:link href="https://blathers23.netlify.app/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>将 Jellyfin 开放至公网并设立域名</title>
+  <link>https://blathers23.netlify.app/jellyfineverywhere/</link>
+  <pubDate>Wed, 08 Feb 2023 20:30:00 &#43;0800</pubDate>
+  <author>Blathers</author>
+  <guid>https://blathers23.netlify.app/jellyfineverywhere/</guid>
+  <description><![CDATA[随时随地访问家庭内网服务]]></description>
+</item>
+<item>
   <title>Linux 下利用 Jallyfin 搭建家庭媒体服务器</title>
   <link>https://blathers23.netlify.app/jallyfin/</link>
   <pubDate>Tue, 10 Jan 2023 09:59:00 &#43;0800</pubDate>
@@ -88,14 +96,6 @@
   <description><![CDATA[<div class="featured-image">
         <img src="/images/leetcode.jpg" referrerpolicy="no-referrer">
       </div>简单记录：BFS or DFS?]]></description>
-</item>
-<item>
-  <title>Python常用内置容器及方法</title>
-  <link>https://blathers23.netlify.app/python%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%AE%B9%E5%99%A8%E5%8F%8A%E6%96%B9%E6%B3%95/</link>
-  <pubDate>Sun, 08 May 2022 02:39:00 &#43;0800</pubDate>
-  <author>Blathers</author>
-  <guid>https://blathers23.netlify.app/python%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%AE%B9%E5%99%A8%E5%8F%8A%E6%96%B9%E6%B3%95/</guid>
-  <description><![CDATA[磨刀不误砍柴功。]]></description>
 </item>
 </channel>
 </rss>
