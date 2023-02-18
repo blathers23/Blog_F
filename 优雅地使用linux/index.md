@@ -97,7 +97,7 @@ proxy=http://192.168.0.0:8080
 
 ### 家庭影音解决方案：Jellyfin
 
-参见：[Linux 下利用 Jallyfin 搭建家庭媒体服务器](../jellyfin/)。
+参见：[Linux 下利用 Jellyfin 搭建家庭媒体服务器](../jellyfin/)。
 
 ---
 

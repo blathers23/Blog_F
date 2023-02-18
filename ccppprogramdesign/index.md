@@ -206,8 +206,8 @@
    #include <iostream>
    
    using namespace std;
-   int main(int argc, char ** argv) {
-       for (int i = 0; i< argc; i++) {
+   int main(int argc, char** argv) {
+       for (int i = 0; i < argc; i++) {
            cout << i << ": " << argv[i] << endl;
        }
        return 0;
@@ -1331,7 +1331,7 @@ p2 = &num;
    int num = 1;
    int another = 2;
    // You cannot change the value the p1 points to through p1
-   const int *p1 = &num;
+   const int* p1 = &num;
    *p1 = 3;	// error
    num = 3;	// ok
    
@@ -1353,7 +1353,1386 @@ p2 = &num;
    }
    ```
 
+
+### Pointers and Arrays
+
+1. Use `&` operator to get the addresses of elements
+
+   ```C
+   int nums[128];
+   int* p0 = &nums[0];
+   int* p1 = &nums[1];
    
+   printf("p0 = %p\n", p0);
+   printf("p1 = %p\n", p1);
+   
+   // the same behavior
+   num[1] = 10;
+   *p1 = 10;
+   ```
+
+   You can consider an array name as a pointer
+
+   ```c
+   int nums[128];
+   
+   printf("&nums = %p\n", &nums);
+   printf("nums = %p\n", nums);
+   printf("&nums[0] = %p\n", &nums[0]);
+   ```
+
+2. Pointer arithmetic(算术操作)
+
+   - `p + num` or `num + p` points to the num-th element of the type p
+   - `p - num` points to the -num-th element
+
+   ```C++
+   int nums[4] = {0, 1, 2, 3};
+   
+   int* p = nums + 1;	// *p == 1
+   p++; 	// *p == 2
+   // p[1] == 3
+   ```
+
+   - Be careful of out-of-bound
+
+3. Differences between a pointer and an array
+
+   - **Array is a constant pointer**
+   - The total size of all elements in an array can be got by operator `sizeof`
+   - `sizeof` operator to a pointer will  return the size of the address (4 or 8)
+
+   ```C++
+   int nums[4] = {0, 1, 2, 3};
+   int* p = nums;
+   cout << sizeof(nums) << endl;	// 4 * sizeof(int)
+   cout << sizeof(p) << endl;	// 4 or 8
+   cout << sizeof(double*) << endl;	// 4 or 8
+   ```
+
+### Allocate memory: C style
+
+1. Program memory
+
+   The address space of a program contains several data segments
+
+   - Code: executable code
+   - Data: initialized static variables
+   - BSS: uninitialized static data including variables and constants
+   - Heap: dynamically allocated memory
+   - Stack: local variables, call stack
+
+2. Memoy allocation
+
+   *与静态申请内存的方式相比，动态申请内存可以获得更大的内存空间，例如申请一个非常大的数组空间，使用 `int nums[SIZE]` 的方式出现内存不足的情况时，换成 `int* nums = malloc(sizeof(int) * SIZE)` 可能可以解决。*
+
+   - Allocate size bytes of uninitialized storage
+
+   ```C
+   void* malloc(size_t size)
+   ```
+
+3. Memory deallocation
+
+   - The dynamically allocated memory must be deallocated explicitly(显式)
+
+   ```C
+   void foo() {
+       int* p = malloc(sizeof(int));
+       return;
+   }	// memoy leak
+   ```
+
+   Memory leak: No variable to keep the first address. The management system will not deallocate it automatically. Waste of memory.
+
+### Allocate memory: C++ style
+
+1. Operator `new` and `new[]`
+
+   - Operator `new`  is similar with `malloc()` but with more features
+
+   ```C++
+   // allocate an int, default initializer (do nothing)
+   int* p1 = new int;
+   // allocate an int, initilized to 0
+   int* p2 = new int();
+   // allocate an int, initilized to 5
+   int* p3 = new int(5);
+   // allocate an int, initilized to 0
+   int* p4 = new int{};
+   // allocate an int, initilized to 5
+   int* p5 = new int{5};
+   
+   // allocate a Student object, default initilizer
+   Student* ps1 = new Student;
+   // allocate a Student object, initialize the members
+   Student* ps2 = new Student{"Yu", 2020, 1};
+   
+   // allocate 16 int, default initializer (do nothing)
+   int* pa1 = new int[16];
+   // allocate 16 int, zero initialized
+   int* pa2 = new int[16]();
+   // allocate 16 int, zero initialized
+   int* pa3 = new int[16]{};
+   // allocate 16 int, the first 3 element are initialized to 1,2,3, the rest 0
+   int* pa3 = new int[16]{1, 2, 3};
+   
+   // allocate memory for 16 Student objects, default initialize
+   Student* psa1 = new Student[16];
+   // allocate memory for 16 Student objects, the first two are initilized
+   Student* psa2 = new Student[16]{{"Li", 2000, 1}, {"Yu", 2001, 1}};
+   ```
+
+2. Operator `delete` and `delete[]`
+
+   - Destroys object/objects allocated by `new` and free memory
+
+   ```C++
+   // deallocate memory
+   delete p1;
+   
+   // deallocate the memory of the array
+   delete pa1;
+   // deallocate the memory of the array
+   delete []pa2;
+   
+   // deallocate the memory of the array, and call the destructor of the first element
+   delete psa1;
+   // deallocate the memory of the array, and call the destructors of all the elements
+   delete []psa2;
+   ```
+
+## WEEK06
+
+---
+
+### Functions
+
+1. the pointer should be checked first
+
+   ``` C++
+   float matrix_max(struct Matrix mat) {
+       float max = FLT_MIN;
+       for (int r = 0; r < mat.rows; r++) {
+           for (int c = 0; c < mat.cols; c++) {
+               float val = mat.pData[r * mat.cols + c];
+               max = (max > val ? max : val);
+           }
+       }
+       return max;
+   }
+   ```
+
+   if `Matrix::pData` is NULL or an invalid value, how to tell the calling function from the called one?
+
+2. Where should a function be?
+
+   ```C++
+   // draw.h
+   #ifndef __DRAW_H__	// 防止被多次调用重复定义
+   #define __DRAW_H__
+   bool drawLine(int, int, int, int);
+   bool drawRectangle(int, int, int, int);
+   #endif
+   ```
+
+   ```C++
+   // draw.cpp
+   #include <draw.h>
+   
+   bool drawRectangle(int x1, int x2, int y1, int y2) {
+       //...
+       drawLine(...);
+       drawLine(...);
+       drawline(...);
+       drawLine(...);
+       
+       return true;
+   }
+   
+   bool drawLine(int x1, int x2, int y1, int y2) {
+       //...
+       
+       return true;
+   }
+   ```
+
+   ```C++
+   // mian.cpp
+   #include <draw.h>
+   
+   int main() {
+       //...
+       drawRectangle(...);
+       //...
+       
+       return 0;
+   }
+   ```
+
+### Function Parameters
+
+1. Parameters
+
+   - The symbolic name for "data" that passes into a function
+
+   Two ways to pass into a function:
+
+   - Pass by value
+   - Pass by reference
+
+2. Pass by value: fundamental type(`int`, `double`, `float`, ...)
+
+   - The parameter is a copy of the original variable
+
+   ```C++
+   int foo(int x) {
+       // x is a copy
+       x += 10;
+       return x;
+   }
+   
+   int main() {
+       int num1 = 20;
+       int num2 = foo(num1);	// num1 will not be changed
+       
+       return 0;
+   }
+   ```
+
+3. Pass by value: pointer
+
+   ```C++
+   int foo(int* p) {
+       (*p) += 10;
+       return *p;
+   }
+   
+   int main() {
+       int num1 = 20;
+       int* p = &num1;
+       // num1 will be changed
+       // It still is passing by value (the address)
+       // A copy of the address
+       int num2 = foo(p);
+   	
+       return 0;
+   }
+   ```
+
+4. Pass by value: structure
+
+   ```C++
+   struct Matrix {
+       int rows;
+       int cols;
+       float* pData;
+   }
+   
+   float matrix_max(struct Matrix mat) {
+       float max = FLT_MIN;
+       for (int r = 0; r < mat.rows; r++) {
+           for (int c = 0; c < mat.cols; c++) {
+               float val = mat.pData[r * mat.cols + c];
+               max = (max > val ? max : val);
+           }
+       }
+       return max;
+   }
+   ```
+
+
+### References
+
+1. References in C++
+
+   - References are in C++, not in C
+   - A reference is an alias(别名) to an already-existing variable/object
+
+   ```C++
+   int num = 10;
+   int& num_ref = num;
+   
+   num_ref = 10;
+   cout << "num = " << num << endl;
+   
+   // "num = 10"
+   ```
+
+   - A reference to an object
+
+   ```C++
+   struct Matrix {
+       int rows;
+       int cols;
+       float* pData;
+   }
+   
+   Matrix matA = {3, 4};
+   mat.pData = new float[matA.rows * matA.cols]{}
+   
+   Matrix& matA_ref = matA;
+   ```
+
+   - A reference must be initialized after its declaration
+   - Reference VS Pointer: References are much safer
+
+2. Function parameters with a huge structure
+
+   - If the huge struct is passed as a function parameter
+
+   ```C++
+   struct PersonInfo {
+       char firstname[256];
+       char middlename[256];
+       char lastname[256];
+       char address[256];
+       char nationalID[16];
+       // and more
+   };
+   
+   char* fullname(struct PersonInfo pi) {
+       // ...
+   }
+   ```
+
+   The data will be copied. Not a good choice
+
+   - One solution is to use a pointer
+
+   ```C++
+   char* fullname(struct PersonInfo* ppi) {
+       if (ppi == NULL) {
+           cerr << "Invalid pointer" << endl;
+           return NULL;
+       }
+       // ...
+   }
+   ```
+
+3. References as a function parameters
+
+   - No data copying in the reference version; Better efficiency
+   - The modification to a reference will affect the original object
+
+   ```C++
+   char* fullname(struct PersonInfo& pi) {
+       // ...
+   }
+   ```
+
+   - To avoid the data is modified by mistakes
+
+   ```C++
+   char* fullname(const struct PersonInfo& pi) {
+       // ...
+   }
+   ```
+
+### Return statement
+
+- Statement `return;` is only vaild if the function return type is `void`
+- Just finish the execution of the function, no value returned
+
+```C++
+void print_gender(bool isMale) {
+    if (isMale) {
+        cout << "Male" << endl;
+    } else {
+        cout << "Female" << endl;
+    }
+    
+    return;
+}
+
+void print_gender(bool isMale) {
+    if (isMale)
+        cout << "Male" << endl;
+    else
+        cout << "Female" << endl;
+}
+```
+
+- The return type can be a fundamental type or a compound type
+
+- Pass by value:
+
+  - Fundamental types: the value of a constant/variable is copied
+  - Pointers: the address is copied
+  - Structures: the whole structure is copied
+
+  ```C++
+  float maxa = matrix_max(matA);
+  
+  Matrix* pMat = creat_matrix(4, 5);
+  ```
+
+1. If we have a lot to return 
+
+   - Such as a matrix addition function (A + B -> C)
+   - A suggested prototype:
+     - To use references to avoid data copying
+     - To use const parameters to avoid the input data is modified
+     - To use non-const reference parameters to receive the output
+
+   ```C++
+   bool matrix_add(const Matrix& matA, const Matrix& matB, Matrix& matC) {
+       // check the dimensions of the three matrices
+       // re-create matC if needed
+       // do: matC = matA + matB
+       // return true if everything is right
+   }
+   ```
+
+   **C 语言的返回值只能有一个**
+
+2. Similar mechanism in OpenCV
+
+   - Matrix add in OpenCV
+
+   ```C++
+   void cv::add(InputArray src1, InputArray src2, OutputArray dst, InputArray mask, int dtype) {
+       CV_INSTRUMENT_REGION();
+       
+       arithm(src1, src2, mask, dtype, getAddTab(), false);
+   }
+   ```
+
+### Inline function(内联函数)
+
+1. Inline function 
+
+   - Stack operations and jumps are needed for a function call
+   - It is a heavy cost for some frequently called *tiny* functions
+
+   ```C++
+   float max_function(float a, float b) {
+       if (a > b) {
+           return a;
+       } else {
+           return b;
+       }
+   }
+   
+   int main() {
+       int num1 = 20;
+       int num2 = 30;
+       int maxv = max_function(num1, num2);
+       
+       // ...
+   }
+   ```
+
+   - The generated **instructions** by a compiler can be as follows to improve efficiency
+
+   ```C++
+   int main() {
+       int num1 = 20;
+       int num2 = 30;
+       int maxv = {
+           if (num1 > num2) {
+               return num1;
+           } else {
+               return num2;
+           }
+       };
+   }
+   ```
+
+   - `inline` suggests the compiler to perform that kind of optimizations
+   - The compiler may not follow your suggestion if the function is too complex or contains some constrains
+   - Some functions without `inline` may be optimized as an inline one
+
+   ```C++
+   inline float max_function(float a, float b) {
+       if (a > b) {
+           return a;
+       } else {
+           return b;
+       }
+   }
+   ```
+
+2. Why not use a macros?
+
+   ```C++
+   #define MAX_MACROS(a, b) (a) > (b) ? (a) : (b)
+   ```
+
+   - The source code will be replaced by a preprocessor 
+   - Surely no cost of a function call
+   - And `a, b` can be any types which can compare
+
+   ```C++
+   int main() {
+       int num1 = 20;
+       int num2 = 30;
+       int maxv = max_function(num1++, num2++);
+       cout << maxv << endl;	// 30
+       // num1 = 21, num2 = 31
+       
+       maxv = MAX_MACROS(num1++, num2++);
+       cout << maxv << endl;	// 32
+       // num1 = 22, num2 = 33
+   }
+   ```
+
+## WEEK07
+
+---
+
+### Default Arguments
+
+1. Default arguments
+
+   - A feature in C++ (not C)
+   - To call a function without providing one or more trailing(拖尾的) arguments.
+
+   ```C++
+   float norm(float x, float y, float z);
+   float norm(float x, float y, float z = 0);
+   // 0 is a argument, z is a parameter
+   float norm(float x, float y = 0, float z);
+   // 分别设置了 y 和 z 的默认参数均为 0，默认参数的定义一定是从尾部开始定义的
+   // 默认参数不可以重定义，只可以设置一次
+   ```
+
+### Function Overloading(函数重载)
+
+- A feature in C++ (not C)
+
+1. Why to overload?
+
+   - C99
+
+     ```C
+     // <math.h>
+     
+     double		round	(double x);
+     float		roundf	(float x);
+     long double	roundl	(long double x);
+     ```
+
+   - C++11
+
+     ```C++
+     // <cmath>
+     
+     double		round	(double x);
+     float		round	(float x);
+     long double	round	(long double x);
+     ```
+
+2. Function overloading
+
+   - Which function to choose? the compiler will perform name lookup
+   - Argument-dependent lookup, also known as ADL
+   - The return type will not be considered in name lookup
+   - **Functions that differ only in their return type cannot be overload**
+
+### Function Templates(模板)
+
+1. Why function templates
+
+   - The definitions of some overloaded functions may be similar
+
+   ```C++
+   int sum(int x, int y) {
+       cout << "sum(int, int) is called" << endl;
+       return x + y;
+   }
+   
+   float sum(float x, float y) {
+       cout << "sum(float, float) is called" << endl;
+       return x + y;
+   }
+   
+   double sum(double x, double y) {
+       cout << "sum(double, double) is called" << endl;
+       return x + y;
+   }
+   ```
+
+2. Explicit instantiation(显式实例化)
+
+   - A function template is not a type, or a function, or any other entity
+   - No code is generated from a source file that contains only template definitions
+   - The template arguments must be determined, then the compiler can generate an actual function
+
+   ```C++
+   template<typename T>
+   T sum(T x, T y) {
+       cout << "The input type is " << typeid(T).name() << endl;
+       return x + y;
+   }
+   
+   // instantiation
+   template double sum<double>(double, double);
+   template char sum<>(char, char);
+   template int sum(int, int);
+   ```
+
+3. Implicit instantiation(隐式实例化)
+
+   - Implicit instantiation occurs when a function template is not explicitly instantiated
+
+   ```C++
+   template<tempname T>
+   T product(T x, T y){
+       cout << "The input type is " << typeid(T).name() << endl;
+       return x * y;
+   }
+   
+   // Implicitly instantiates product<int>(int, int)
+   cout << "product = " << product<int>(2.2f, 3.3f) << endl;
+   // Implicitly instantiates product<float>(float, float)
+   cout << "product = " << product(2.2f, 3.3f)
+   ```
+
+4. Function template specialization
+
+   - We have a function template 
+
+     ```C++
+     template<typename T> T sum(T x, T y)
+     ```
+
+   - If the input type is `Point`
+
+     ```C++
+     struct Point {
+         int x;
+         int y;
+     }
+     ```
+
+   - But no operator for `Point`
+
+   - We need to give a special definition for this case
+
+   ```C++
+   template<typename T>
+   T sum(T x, T y) {
+       cout << "The input type is " << typeid(T).name() << endl;
+       return x + y;
+   }
+   
+   // Specialization for Point + Point operation
+   template<>
+   Point sum<Point>(Point pt1, Point pt2) {
+       cout << "The input type is " << typeid(pt1).name() << endl;
+       Point pt;
+       pt.x = pt1.x + pt2.x;
+       pt.y = pt1.y + pt2.y;
+       
+       return pt;
+   }
+   ```
+
+### Function Pointers and References
+
+1. Function pointers
+
+   - `norm_ptr` is a pointer, a function pointer
+   - The function should have two `float` parameters, and returns `float`
+
+   ```C++
+   float norm_l1(float x, float y);
+   
+   float norm_l2(float x, float y);
+   
+   float (*norm_ptr)(float x, float y);
+   
+   norm_ptr = norm_l1;	// Pointer norm_ptr is pointing to norm_l1
+   
+   norm_ptr = &norm_l2;	// Pointer norm_ptr is pointing to norm_l1
+   
+   float len1 = norm_ptr(-3.f, 4.f);	// function invoked
+   
+   float len2 = (*norm_ptr)(-3.f, 4.f);// function invoked
+   ```
+
+   - A function pointer can be an argument and pass to a function
+
+     ```C++
+     // <stdlib.h>
+     
+     void qsort(void* ptr, size_t count, size_t size, int (*comp)(const void*, const void*));
+     ```
+
+     - To sort some customized types
+
+2. Function references
+
+   ```C++
+   float norm_l1(float x, float y);	// declaration
+   float norm_l2(float x, float y);	// declaration
+   float (&norm_ref)(float x, float y) = norm_l1;	// norm_ref is a function reference
+   // A reference must be initialized after its declaration
+   ```
+
+### Recursive(递归) Function
+
+1. A simple example
+
+   ```C++
+   int main() {
+       div2(1024.);	// call the recursive function
+       return 0;
+   }
+   
+   void div2(double val) {
+       cout << "Entering val = " << val << endl;
+       
+       if (val > 1.0) {
+           div(val / 2);	// function calls itself
+       } else {
+           cout << "----------" << endl;
+       }
+       
+       cout << "Leaving val = " << val << endl;
+   }
+   ```
+
+2. Pros and Cons
+
+   - Pros
+     - Good at tree traversal
+     - Less lines of source code
+   - Cons
+     - Consume more stack memory
+     - May be slow
+     - Difficult to implement and debug
+
+## WEEK08
+
+---
+
+### C/C++ with ARM
+
+1. Intel VS ARM
+   - With the help of C/C++ compilers, C and C++ are platform independent
+   - But we need to know some background information on different CPUs
+   - Intel achieved a dominant position the personal computer market
+2. ARM
+   - ARM(previously an acronym for Advanced RISC Machine and originally Acron RISC Machine) is a family of reduced instruction set computing (RISC) architectures for computer processors
+   - ARM is the most widely used instruction set architecture (ISA) and the ISA produced in the largest quantity
+
+### Speedup Your Program
+
+1. Some Tips on Optimization
+   - Choose an appropriate algoithm
+   - Clear and simple code for the compiler to optimize 
+   - Optimize code for memory
+   - Do not copy large memory
+   - No printf()/cout in loops
+   - Table lookup
+2. SIMD: Single instruction, multiple data
+   - Intel: MMX, SSE, SSE2, AVX, AVX2, AVX512
+   - ARM: NEON
+   - RISC-V(开源指令集): RVV(RISC-V Vector Extension)
+
+### An Example with SIMD and OpenMP
+
+1. Functions for dot product
+
+   ```C++
+   // matoperation.hpp
+   #pragma once
+   
+   float dotproduct(const float* p1, const float* p2, size_t n);
+   float dotproduct_unloop(const float* p1, const float* p2, size_t n);
+   float dotproduct_avx2(const float* p1, const float* p2, size_t n);
+   float dotproduct_avx2_omp(const float* p1, const float* p2, size_t n);
+   float dotproduct_neon(const float* p1, const float* p2, size_t n);
+   float dotproduct_neon_omp(const float* p1, const float* p2, size_t n);
+   ```
+
+   ```C++
+   // matoperation.cpp
+   
+   #include <iostream>
+   #include "matoperation.hpp"
+   
+   #ifdef WITH_AVX2
+   #include <immintrin.h>
+   #endif
+   
+   #ifdef WITH_NEON
+   #include <arm_neon.h>
+   #endif
+   
+   #ifdef _OPENMP
+   #include <omp.h>
+   #endif
+   
+   float dotproduct(const float* p1, const float* p2, size_t n) {
+       float sum = 0.0f;
+       for (size_t i = 0; i < n; i++) {
+           sum += (p1[i] * p2[i]);
+       }
+       
+       return sum;
+   }
+   
+   float dotproduct_unloop(const float* p1, const float* p2, size_t n) {
+       if (n % 8 != 0) {
+           std::cerr << "The size n must be a multiple of 8." << std::endl;
+           
+           return 0.0f;
+       }
+       
+       float sum = 0.0f;
+       for (size_t i = 0; i < n; i += 8) {
+           sum += (p1[i] * p2[i]);
+           sum += (p1[i+1] * p2[i+1]);
+           sum += (p1[i+2] * p2[i+2]);
+           sum += (p1[i+3] * p2[i+3]);
+           sum += (p1[i+4] * p2[i+4]);
+           sum += (p1[i+5] * p2[i+5]);
+           sum += (p1[i+6] * p2[i+6]);
+           sum += (p1[i+7] * p2[i+7]);
+       }
+       
+       return sum;
+   }
+   
+   float dotproduct_avx2(const float* p1, const float* p2) {
+       #ifdef WITH_AVX2
+      	if (n % 8 != 0) {
+           std::cerr << "The size n must be a multiple of 8." << std::endl;
+               
+           return 0.0f;
+       }
+       	
+       float sum[8] = {0};
+       __m256 a, b;
+       __m256 c = _mm256_setzero_ps();
+       
+       for (size_t i = 0; i < n; i += 8) {
+           a = _mm256_load_ps(p1 + i);
+           b = _mm256_load_ps(p2 + i);
+           c = _mm256_add_ps(c, _mm256_mul_ps(a, b));
+       }
+       _mm256_store_ps(sum, c);
+       
+       return (sum[0] + sum[1] + sum[2] + sum[3] + sum[4] + sum[5] + sum[6] + sum[7]);
+       
+       #else
+       std::cerr << "AVX2 is not supported" << std::endl;
+       return 0.0f;
+       #endif
+   }
+   
+   float dotproduct_avx2_omp(const float* p1, const float* p2) {
+       #ifdef WITH_AVX2
+      	if (n % 8 != 0) {
+           std::cerr << "The size n must be a multiple of 8." << std::endl;
+               
+           return 0.0f;
+       }
+       	
+       float sum[8] = {0};
+       __m256 a, b;
+       __m256 c = _mm256_setzero_ps();
+       
+       #pragma omp parallel for
+       for (size_t i = 0; i < n; i += 8) {
+           a = _mm256_load_ps(p1 + i);
+           b = _mm256_load_ps(p2 + i);
+           c = _mm256_add_ps(c, _mm256_mul_ps(a, b));
+       }
+       _mm256_store_ps(sum, c);
+       
+       return (sum[0] + sum[1] + sum[2] + sum[3] + sum[4] + sum[5] + sum[6] + sum[7]);
+       
+       #else
+       std::cerr << "AVX2 is not supported" << std::endl;
+       return 0.0f;
+       #endif
+   }
+   
+   float dotproduct_neon(const float* p1, const float* p2) {
+       #ifdef WITH_NEON
+      	if (n % 4 != 0) {
+           std::cerr << "The size n must be a multiple of 4." << std::endl;
+               
+           return 0.0f;
+       }
+       	
+       float sum[4] = {0};
+       float32x4 a, b;
+       float32x4 c = vdupq_n_f32(0);
+       
+       for (size_t i = 0; i < n; i += 4) {
+           a = vld1q_f32(p1 + i);
+           b = vld1q_f32(p2 + i);
+           c = vaddq_f32(c, vmulq_f32(a, b));
+       }
+       vst1q_f32(sum, c);
+       
+       return (sum[0] + sum[1] + sum[2] + sum[3]);
+       
+       #else
+       std::cerr << "NEON is not supported" << std::endl;
+       return 0.0f;
+       #endif
+   }
+   
+   float dotproduct_neon_omp(const float* p1, const float* p2) {
+       #ifdef WITH_NEON
+      	if (n % 4 != 0) {
+           std::cerr << "The size n must be a multiple of 4." << std::endl;
+               
+           return 0.0f;
+       }
+       	
+       float sum[4] = {0};
+       float32x4 a, b;
+       float32x4 c = vdupq_n_f32(0);
+       
+       #pragma omp parallel for
+       for (size_t i = 0; i < n; i += 4) {
+           a = vld1q_f32(p1 + i);
+           b = vld1q_f32(p2 + i);
+           // 多线程写冲突导致结果错误
+           c = vaddq_f32(c, vmulq_f32(a, b));
+       }
+       vst1q_f32(sum, c);
+       
+       return (sum[0] + sum[1] + sum[2] + sum[3]);
+       
+       #else
+       std::cerr << "NEON is not supported" << std::endl;
+       return 0.0f;
+       #endif
+   }
+   ```
+
+   ```C++
+   // main.cpp
+   
+   #include <iostream>
+   #include <cstdlib>
+   #include <chrono>
+   #include "matoperation.hpp"
+   using namespace std;
+   
+   #define TIME_START start = std::chrono::steady_clock::now();
+   #define TIME_END(NAME) end = std::chrono::steady_clock::now();\
+   					duration = std::chrono::duration_cast<std::chrono::milliseconds> (end - start).count();\
+   					cout << (NAME) << ": result = " << result\
+   					<< ", duration = " << duration << "ms" << endl;
+   
+   int main(int argc, char** argv) {
+       size_t nSize = 200000000;
+       // float* p1 = new float[nSize]();	// the memory is not aligned
+       // float* p2 = new float[nSize]();	// the memory is not aligned
+       
+       // 256bit aligned, C++17 standard
+       float* p1 = static_cast<float*>(aligned_alloc(256, nSize * sizeof(float)));
+       float* p2 = static_cast<float*>(aligned_alloc(256, nSize * sizeof(float)));
+       float result = 0.0f;
+       
+       p1[2] = 2.3f;
+       p2[2] = 3.0f;
+       p1[nSize - 1] = 2.0f;
+       p2[nSize - 1] = 1.1f;
+       
+       auto start = std::chrono::steady_clock::now();
+       auto end = std::chrono::steady_clock::now();
+       auto duration = 0L;
+       
+       // 热身
+       result = dotproduct(p1, p2, nSize);
+       result = dotproduct(p1, p2, nSize);
+       
+       TIME_START
+       result = dotproduct(p1, p2, nSize);
+       TIME_END("normal")
+           
+       TIME_START
+       result = dotproduct_unloop(p1, p2, nSize);
+       TIME_END("unloop")
+           
+       TIME_START
+       result = dotproduct_neon(p1, p2, nSize);
+       TIME_END("SIMD")
+       
+       TIME_START
+       result = dotproduct_neon_omp(p1, p2, nSize);
+       TIME_END("SIMD + OpenMP")
+           
+       delete []p1;
+       delete []p2;
+       
+       return 0;
+   }
+   ```
+
+### Avoid Memory Copy
+
+1. `cv::Mat class`
+
+   ```C++
+   class CV_EXPORTS Mat {
+       public:
+       // some variables
+       int rows, cols;
+       int* refcount;	// 是否释放内存
+       // pointer to data
+       uchar* data;
+       // size_t step.p
+       MatStep step;	// 每一行元素有多少个字节
+   }
+   ```
+
+2. step in `cv::Mat`
+
+   - Can be 3, 4, 8, and any other values >= 3
+
+   - Memorry alignment for SIMD
+
+   - ROI: Region of interest
+
+     - Mat A
+       - rows = 100
+       - cols = 100
+       - step = 100
+     - Mat B
+       - rows = 30
+       - cols = 28
+       - step = 100
+
+     Mat B 为 Mat A 矩阵中的 ROI，为了避免数据的复制，引入 step 用于计算 ROI 在内存中的位置
+
+## WEEK09
+
+### Classes and Objects
+
+1. Structures
+
+   - A `struct` in C is a type consisting of a sequence of data members
+   - Some functions/statements are needed to operate the data members of an object of a `struct` type
+
+   ```C
+   struct Student {
+       char name[4];
+       int born;
+       bool male;
+   };
+   
+   struct Student stu;
+   strcpy(stu.name, "Yu");
+   stu.born = 2000;
+   stu.male = true;
+   ```
+
+2. Classes
+
+   - You should be very careful to manipulated the data members in a `struct` object
+   - We can put some member functions in `class`
+
+   ```C++
+   class Student {
+       public:
+       char name[4];
+       int born;
+       bool male;
+       
+       void setName(const char* s) {
+           strncpy(name, s, sizeof(name));
+       }
+       
+       void setBorn(int b) {
+           //...
+       }
+   };
+   
+   Student stu;
+   stu.setName("Yu");
+   ```
+
+3. Access Specifiers
+
+   - You can protect data members by access specifier `private`
+   - Then data member can only be accessed by well designed member functions
+   - 默认为 `private`
+
+   ```C++
+   class Student {
+       private:
+       char name[4];
+       int born;
+       bool male;
+       
+       public:
+       void setName(const char* s) {
+           strncpy(name, s, sizeof(name));
+       }
+       
+       void setBorn(int b) {
+           // ...
+       }
+   };
+   ```
+
+4. Member Functions
+
+   - A member function can be defined inside or outside class
+
+   ```C++
+   class Student {
+       private:
+       char name[4];
+       int born;
+       bool male;
+       
+       public:
+       void setName(const char* s) {
+           strncpy(name, s, sizeof(name));
+       }
+       
+       void setBorn(int b) {
+           born = b;
+       }
+       
+       void setGender(bool isMale);
+       
+       void printInfo();
+   };
+   
+   inline void Student::setGender(bool isMale) {
+       male = isMale;
+   }
+   
+   void Student::printInfo() {
+       cout << "Name: " << name << endl;
+       cout << "Born in: " << born << endl;
+       cout << "Gender: " << (male ? "Male" : "Female") << endl; 
+   }
+   ```
+
+   对类的定义一般放在 `.hpp` 头文件中，而将所有的函数放在 `.cpp` 中。
+
+   {{<admonition tip>}}
+
+   `include <XXX>` 与 `include "XXX"` 的区别：
+
+   `include <XXX>` 使得编译器从编译器指定的头文件目录去寻找头文件
+
+   `include "XXX"` 使得编译器不止从编译器指定的头文件目录中去寻找头文件，而且在 `.cpp` 的当前目录下寻找头文件
+
+   {{</admonition>}}
+
+### Constructors(构造函数) and Destructors(析构函数)
+
+1. Constructors
+
+   - Different from `struct` in C, a constructor will  be invoked(调用) when creating an object of a `class`
+     - `struct` in C: allocate memory
+     - `class` in C++: allcoate memory & invoke a constructor
+     
+   - But ... No constructor is defined explicitly in previous examples
+     - The compiler will generate one with empty body
+     
+   - Constructor
+     - The same name with the class
+     
+     - Have no return value
+     
+     - 构造函数可以重载
+     
+       ```C++
+       class Student {
+           private:
+           // ...
+           public:
+           Student() {
+               name[0] = 0;
+               born = 0;
+               male = false;
+           }
+           
+           Student(const char* initName, int initBorn, bool isMale) {
+               setName(initName);
+               born = initBorn;
+               male = isMale;
+           }
+       };
+       ```
+     
+     - The members can also be initialized as follows
+     
+       ```C++
+       Student(const char* initName): born(0), male(true) {
+           setName(initName);
+       }
+       ```
+     
+     - 构造函数的调用
+     
+       ```C++
+       Student yu;
+       
+       Student li("Li");
+       
+       Student xue = Student("Xue", 1962, true);
+       
+       Student* zhou = new Student("Zhou", 1991, false);
+       ```
+
+2. Desturctors
+
+   - The destructor will be invoked when the object is destroyed
+   - Be formed from the class name preceded by a tilde(~)
+   - Have no return value, no parameters
+   - 析构函数不可以重载
+   - 当一个对象退出其作用域时会被自动销毁
+
+   ```C++
+   class Student {
+       private:
+       // ...
+       public:
+       Student() {
+           name = new char[1024]{0};
+           born = 0;
+           male = false;
+       }
+       
+       ~Student() {
+           delete [] name;
+       }
+   };
+   
+   Student* zhou = new Student("Zhou", 1991, false);
+   
+   delete zhou;	// 手动销毁
+   ```
+
+   - `delete` 和 `delete[]` 之间的区别：
+
+     ```C++
+     Student* class1 = new Student[3] {
+         {"Tom", 2000, true},
+         {"Bob", 2001, true},
+         {"Amy", 2002, false},
+     };
+     
+     delete class1;	// 只会调用第一个成员的析构函数
+     delete[] class1;	// 会调用所有成员的析构函数
+     ```
+
+### `this` Pointer
+
+1. Why is `this` needed?
+
+   - How does a member function know which `name`?
+
+   ```C++
+   void setName(const char* s) {
+       strncpy(name, s, 1024);
+   }
+   
+   Student yu = Student{"Yu", 2000, true};
+   Student amy = Student{"Amy", 2000, true};
+   yu.setName("yu");
+   amy.setName("Amy");
+   ```
+
+2. `this` Pointer
+
+   - All methods in a function have a `this` pointer
+   - It is set to the address of the object that invokes the method
+
+   ```C++
+   void setBorn(int b) {
+       born = b;
+   }
+   
+   void setBorn(int b) {
+       this -> born = b;
+   }
+   
+   void setBorn(int born) {
+       this -> born = born;
+   }
+   ```
+
+### `const` and `static` Members
+
+1. `const` variables
+
+   - Statements for constants
+
+     ```C++
+     #define VALUE 100
+     
+     const int value = 100;
+     
+     const int* p_int;	// 指针指向的内容不可以透过指针修改
+     int const *p_int;
+     
+     int* const p_int;	// 指针指向的地址不可以被修改
+     
+     void func(const int*);
+     void func(const int&);
+     ```
+
+2. `const` members
+
+   - `const` member variables behavior similar with normal const varibales
+   - `const` member functions promise not to modify member variables
+
+   ```C++
+   class Student {
+       private:
+       const int BMI = 24;
+       // ...
+       
+       public:
+       Student() {
+           BMI = 25;	// can't be modified
+       }
+       
+       int getBorn() const {
+           born++;	// can't be modified
+           return born;
+       }
+   };
+   ```
+
+3. `static` members
+
+   - `static` members are not bound to class instance
+
+   ```C++
+   class Student {
+       private:
+       static size_t student_total;	// declarration only;
+       inline static size_t student_total = 0;	// C++17, definition outside isn't needed
+       
+       public:
+       Student() {
+           student_total++;
+       }
+       
+       ~Student() {
+           student_total--;
+       }
+       
+       static size_t getTotal() {
+           return student_total;
+       }
+       
+       // definition it here
+       size_t Student::student_total = 0;
+   }
+   ```
+
+## WEEK10
+
 
 
 ---
