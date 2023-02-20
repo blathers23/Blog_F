@@ -4,6 +4,12 @@
 
 > 南方科技大学计算机系“C/C++程序设计”课程[视频](https://www.bilibili.com/video/BV1Vf4y1P7pq)。
 
+{{<center-quote>}}
+
+当你做一件事情很笨，很啰嗦的时候，你大概率做错了。
+
+{{</center-quote>}}
+
 ## WEEK01
 
 ---
@@ -1986,7 +1992,7 @@ void print_gender(bool isMale) {
    // Implicitly instantiates product<int>(int, int)
    cout << "product = " << product<int>(2.2f, 3.3f) << endl;
    // Implicitly instantiates product<float>(float, float)
-   cout << "product = " << product(2.2f, 3.3f)
+   cout << "product = " << product(2.2f, 3.3f) << endl;
    ```
 
 4. Function template specialization
@@ -1994,7 +2000,7 @@ void print_gender(bool isMale) {
    - We have a function template 
 
      ```C++
-     template<typename T> T sum(T x, T y)
+     template<typename T> T sum(T x, T y);
      ```
 
    - If the input type is `Point`
@@ -2003,7 +2009,7 @@ void print_gender(bool isMale) {
      struct Point {
          int x;
          int y;
-     }
+     };
      ```
 
    - But no operator for `Point`
@@ -2733,6 +2739,617 @@ void print_gender(bool isMale) {
 
 ## WEEK10
 
+### Opeators in OpenCV
+
+1. operators for `cv::Mat`
+
+   ```C++
+   #include <iostream>
+   #include <opencv2/opencv.hpp>
+   
+   using namespace std;
+   
+   int main() {
+       float a[6] = {1.0f, 1.0f, 1.0f, 2.0f, 2.0f, 2.0f};
+       float b[6] = {1.0f, 1.0f, 1.0f, 2.0f, 2.0f, 2.0f};
+       
+       cv::Mat A(2, 3, CV_32FC1, a);
+       cv::Mat B(3, 2, CV_32FC1, b);
+       
+       cv::Mat C = A * B;
+       
+       cout << "Matrix C = " << endl << C << endl;
+       
+       return 0;
+   }
+   ```
+
+2. operator overloading
+
+   - Customizes the C++ operators for operands(操作数) of user-defined types
+
+   - Overloading operators are functions with special function names
+
+     ```C++
+     std::string s("Hello ");
+     // `s +=` 与 `s.operator+=` 完全等价
+     s += "C";
+     s.operator+=(" and CPP!");
+     ```
+
+### Operator Overloading
+
+1. operator overloading
+
+   - implementation  of `operator+()` and `operator+=()`
+
+   ```C++
+   class MyTime {
+       int hours;
+       int minutes;
+       
+       public:
+       MyTime(): hours(0), minutes(0) {}
+       MyTime(int h, int m): hours(h), minutes(m) {}
+       
+       MyTime operator+(const MyTime & t) const {
+           MyTime sum;
+           sum.minutes = this -> minutes + t.minutes;
+           sum.hours = this -> hours + t.hours;
+           sum.hours += sum.minutes / 60;
+           sum.minutes %= 60;
+           
+           return sum;
+       }
+       
+       MyTime & operator+=(const MyTime & t) {
+           this -> minutes += t.minutes;
+           this -> hours += t.hours;
+           
+           this -> hours += this -> minutes / 60;
+           this -> minutes %= 60;
+           
+           return *this;
+       }
+       
+       std::string getTime() const {
+           return std::to_string(this -> hours) + "hours and " + std::to_string(this -> minutes) + " minutes.";
+       }
+   };
+   ```
+
+   - If one operand is not MyTime, and is an `int`
+
+   ```C++
+   MyTime t1(2, 40);
+   MyTime t2 = t1 + 20;
+   ```
+
+   - The function can be
+
+   ```C++
+   MyTime operator+(int m) const {
+       MyTime sum;
+       sum.minutes = this -> minutes + m;
+       sum.hours = this -> hours;
+       sum.hours += sum.minutes / 60;
+       sum.minutes %= 60;
+       
+       return sum;
+   }
+   ```
+
+   - We can even support the following operation to be more user friendly
+
+   ```C++
+   MyTime t1(2, 40);
+   MyTime t2 = t1 + "one hours";
+   
+   MyTime operator+(const std::string str) const {
+       MyTime sum = *this;
+       if (str == "one hours") {
+           sum.hours = this -> hours + 1;
+       } else {
+           std::cerr << "only \"one hours\" is supported." << std::endl;
+       }
+       
+       return sum;
+   }
+   ```
+
+   - Overloaded operators is more user-friendly than functions
+   
+   ```C++
+   t1 + 20;	// operator
+   t1.operator+(20);	// equivalent function invoking
+   ```
+
+### `friend` Function(友元函数)
+
+1. `friend` function
+
+   - If we want that operator + can support (`int` + `MyTime`)
+
+     ```C++
+     MyTime t1(2, 40);
+     20 + t1;
+     ```
+
+   - Friend functions
+
+     - Declare in a class body
+     - Granted class access to members (including private members)
+     - But **not** members
+
+   - Again, friend functions are not members! They just declareed in the class body
+
+     ```C++
+     class MyTime {
+         // ...
+         public:
+         friend MyTime operator+(int m, const MyTime & t) {
+             return t + m;
+         }
+     };
+     ```
+
+   - A friend function is defined out of the class
+
+   - No `MyTime::` before its function name
+
+     ```C++
+     class MyTime {
+         // ..
+         public:
+         friend MyTime operator+(int m, const MyTime & t);
+     }
+     
+     MyTime operator+(int m, const MyTime & t) {
+         return t + m;
+     }
+     ```
+
+   - Operator `<<` can also be overloaded
+
+   - But in (`cout << t1;`), the frist operand is `std::ostream`, not MyTime.
+
+   - To modify the definition of `std::ostream`? No
+
+   - Use a friend function
+
+     ```C++
+     friend std::ostream & operator<<(std::ostream & os, const MyTime & t) {
+         std::string str = std::to_string(t.hours) + " hours and " + std::to_string(t.minutes) + " minutes.";
+         os << str;
+         
+         return os;
+     }
+     
+     friend std::istream & operator>>(std::istream & is, MyTime & t) {
+         is >> t.hours >> t.minutes;
+         t.hours += t.minutes;
+         t.minutes %= 60;
+         
+         return is;
+     }
+     ```
+
+### User-defined Type Conversion
+
+1. opertor `type()`
+
+   - Overloading type conversion: convert the current type to another
+
+     ```C++
+     // implicit conversion
+     operator int() const {
+         return this -> hours * 60 + this -> minutes;
+     }
+     
+     // explicit conversion
+     // 意味着类型转换必须显式的进行
+     explicit operator float() const {
+         return float(this -> hours * 60 + this -> minutes);
+     }
+     ```
+
+     ```C++
+     MyTime t1(1, 20);
+     
+     int minutes = t1;	// implicit conversion
+     float f = float(t1);	// explicit conversion
+     ```
+
+2. converting constructor
+
+   - Convert anther type to the current
+
+     ```C++
+     MyTime(int m): hours(0), minutes(m) {
+         this -> hours += this -> minutes / 60;
+         this -> minutes %= 60;
+     }
+     ```
+
+     ```C++
+     MyTime t2 = 70;
+     ```
+
+3. Assignment operator overloading
+
+   - Convert anther type to the current
+
+     ```C++
+     MyTime & operator=(int m) {
+         this -> hours = 0;
+         this -> minutes = m;
+         this -> hours = this -> minutes / 60;
+         this -> minutes %= 60;
+         
+         return *this;
+     }
+     ```
+
+     ```C++
+     MyTime t3;
+     t3 = 80;
+     ```
+
+4. Be careful
+
+   - What is the difference in creating object `t2` and `t3`?
+
+     ```C++
+     MyTime t2 = 70;	// 调用构造函数
+     
+     MyTime t3;	
+     t3 = 80;	// 赋值
+     ```
+
+### Increment and decrement operators(自增自减运算符)
+
+1. Increment
+
+   - Two operators: prefix increment & postfix increment
+
+     ```C++
+     // prefix increment
+     MyTime& operator++() {
+         this -> minutes++;
+         this -> hours += this -> minutes / 60;
+         this -> minutes = this -> minutes % 60;
+         
+         return *this;
+     }
+     
+     // postfix increment
+     MyTime operator++(int) {
+         MyTime old = *this;	// keep the old value
+         operator++();	// prefix increment
+         
+         return old;
+     }
+     ```
+
+2. Decrement
+
+   - 与自增同理
+
+## WEEK11
+
+---
+
+### Some Default Operations
+
+1. Default Constructors
+
+   - Default constructor: a constructor which can be called without argument
+
+   - If you define no constroctors, the compiler automatically provide one
+
+     ```C++
+     MyTime::MyTime(){}
+     ```
+
+   - If you define constructors, the compiler will not generate a default one
+
+     ```C++
+     class MyTime {
+         public:
+         MyTime(int n) {
+             // ...
+         }
+     };
+     
+     MyTime mt;	// no appropriate constructor
+     ```
+
+   - To avoid ambigous
+
+     ```C++
+     class MyTime {
+         public:
+         MyTime() {
+             // ...
+         }
+         
+         MyTime(int n = 0) {
+             // ...
+         }
+     };
+     
+     MyTime mt;	// which constructor?
+     ```
+
+2. Implicitly-defined Destructor
+
+   - If no destructor is defined, the compiler will generate an empty one 
+
+     ```C++
+     MyTime::~MyTime(){}
+     ```
+
+   - Memory allocated in constructors is normally released in a destructor
+
+3. Default Copy Constructors
+
+   - A copy constructor. Only one parameter, or the rest have default  values
+
+     ```C++
+     MyTime::MyTime(MyTime & t) {
+         // ...
+     }
+     ```
+
+     ```C++
+     MyTime t1(1, 59);
+     MyTime t2(t1);	// copy constructor
+     MyTime t3 = t1;	// copy constructor
+     ```
+
+   - Default copy constructor
+
+     - If no user-defined copy constructors, the compiler will generate one
+     - Copy all non-static data member
+
+4. Default Copy Assignment
+
+   - Assignment operators: `=`, `+=`, `-=`, ...
+
+   - Copy assignment operator
+
+     ```C++
+     MyTime & MyTime::operator=(MyTime & ){
+         // ...
+     }
+     ```
+
+     ```C++
+     MyTime t1(1, 59);
+     MyTime t2 = t1;	// copy constructor
+     t2 = t1;	// copy assignment
+     ```
+
+   - Default copy assignment operator
+
+     - If no user-defined copy assignment constructors, the compiler will generate one
+     - Copy all non-static data members
+
+### An example with Dynamic Memory
+
+1. A Simple String Class
+
+   ```C++
+   class MyString {
+       int buf_len;
+       char* characters;
+       
+       public:
+       MyString(int buf_len = 64, const char* data = NULL) {
+           this -> buf_len = 0;
+           this -> characters = NULL;
+           
+           create(buf_len, data);
+       }
+       
+       ~MyString() {
+           delete []this -> characters;
+       }
+   }
+   ```
+
+   ```C++
+   MyString str1(10, "Shenzhen");
+   
+   MyString str2 = str1;	
+   // 这会导致 str2.characters 与 str1.characters 指针指向相同的位置
+   // 从而在释放内存时出现重复释放
+   // 不应该使用默认复制构造函数
+   ```
+
+### Solution 1: Hard Copy
+
+1. Copy Constructor
+
+   - Provide a user-defined copy constructor
+
+     ```C++
+     MyString::MyString(const MyString & ms) {
+         this -> buf_len = 0;
+         this -> characters = NULL;
+         create(ms.buf_len, ms.characters);
+     }
+     ```
+
+   - `create()` relase the current memory and allocate a new one
+
+   - `this -> characters` will not point to `ms.characters`
+
+   - It's a hard copy
+
+2. Copy Assignment
+
+   - Provide a user-defined copy assignment
+
+     ```C++
+     MyString & operator=(const MyString & ms) {
+         create(ms.buf_len, ms.characters);
+         
+         return *this;
+     }
+     ```
+
+### Solution 2: Soft Copy
+
+1. Problem of Hard Copy
+
+   - Frequently allocate and free memory
+   - Time consuming when the memory is big
+   - If several objects share the same memory, who should release it?
+
+2. CvMat struct
+
+   ```C
+   typedef struct CvMat {
+       int type;
+       int step;
+       
+       /* for internal use only */
+       int* refcount;
+       int hdr_refcount;
+       
+       union {
+           uchar* ptr;
+           short* s;
+           int* i;
+           float* fl;
+           double* db;
+       } data;
+   }
+   ```
+
+### Smart Pointers
+
+1. `std::shared_ptr`
+
+   - Smart pointers are used to make sure that an object can be delete when it is no longer used
+
+   - Several shared pointers can share/point to the same object
+
+   - The object is destroyed when no shared_ptr points to it
+
+     ```C++
+     std::shared_ptr<MyTime> mt1(new MyTime(10));
+     std::shared_ptr<MyTime> mt2 = mt1;
+     
+     std::shared_ptr<MyTime> mt1 = std::make_shared<MyTime>(1, 70);
+     ```
+
+2. `std::unique_ptr`
+
+   - Different from `std::shared_ptr`, a `std::unique_ptr` will point to an object, and not allow others to point to
+
+   - But an object pointed by a `std::unique_ptr` can be moved to another pointer
+
+     ```C++
+     std::unique_ptr<MyTime> mt1(new MyTime(10));
+     std::unique_ptr<MyTime> mt2 = std::make_unique<MyTime>(80);
+     
+     std::unique_ptr<MyTime> mt3 = std::move(mt1);
+     ```
+
+3. How to Understand Smart Pointers
+
+   - Let's look at their definitions
+
+     ```C++
+     template<class T> class shared_ptr;
+     
+     template<
+     	class T,
+     	class Deleter = std::default_delete<T>
+     	> class unique_ptr;
+     ```
+
+   - mt1 and mt2 are two objects of type shared_ptr<>
+
+     - you can do a lot in the constructors and the destructor
+
+       ```C++
+       std::shared_ptr<MyTime> mt1(new MyTime(10));
+       std::shared_ptr<MyTime> mt2 = mt1;
+       ```
+
+## WEEK12
+
+---
+
+### Improve Your Source Code
+
+1. Suggestions to Your Project 3 (Mat Operation)
+   - Use `size_t` for mat.cols and mat.rows
+   - Use memcpy() to copy data. Element assignment has a lower efficiency
+   - Use 1D(`float*`)  nor 2D array (`float**`) for matrix data
+   - Redundant computation in loops
+   - Do parameter checking in functions: null pointers, dimension matching in matrix operations, etc.
+   - Do not bind the create matrix function with file I/O
+   - File name
+   - Good implementation VS good homework
+
+### Derived Classes(类的继承)
+
+1. Inheritance
+
+   - Inherit members (attributes and functions) from one class
+
+     - Base class (parent)
+     - Derived class (child)
+
+     ```C++
+     class Base {
+         public:
+         int a;
+         int b;
+     };
+     
+     class Derived: public Base {
+         public:
+         int c;
+     };
+     ```
+
+   - C++ supports multiple inheritance and multilevel inheritance
+
+     ```C++
+     class Derived: public Base1, public Base2 {
+         // ...
+     };
+     ```
+
+2. Constructors
+
+   - To instantiate a derived class object
+
+     - Allocate memory
+     - Derived constructor is invoked
+       - Base object is constructed by a base constructor
+       - Member initializer list initializes members
+       - To execute the body of the derived constrructor
+
+     ```C++
+     class Derived: public Base {
+         public:
+         int c,
+         Derived(int c): Base(c - 2, c - 1), c(c) {
+             // ...
+         }
+     };
+     ```
+
+3. Destructors
+
+   - The destructor of the derived class is invoked first
+   - Then the destructor of the base class
 
 
 ---
