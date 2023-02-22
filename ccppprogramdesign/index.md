@@ -2,7 +2,7 @@
 
 <!--more-->
 
-> 南方科技大学计算机系“C/C++程序设计”课程[视频](https://www.bilibili.com/video/BV1Vf4y1P7pq)。
+> 《C/C++程序设计》课程[视频](https://www.bilibili.com/video/BV1Vf4y1P7pq)。
 
 {{<center-quote>}}
 
@@ -3350,6 +3350,1051 @@ void print_gender(bool isMale) {
 
    - The destructor of the derived class is invoked first
    - Then the destructor of the base class
+
+### Access Control
+
+1. Member Access
+
+   - Public members: Accessible anywhere
+
+   - Private members: Only accessible to the members and friends of that class
+
+     ```C++
+     class Person {
+         private:
+         int n;
+         public:
+         // this -> n is accessible
+         Person(): n(10) {}
+         // other.n is accessible
+         Person(const Person& other): n(other.n) {}
+         // this -> n is accessible
+         void set(int n) {this -> n = n;}
+         // this -> n and other.n are accessible
+         void set(const Person& other) {this -> n = other.n;}
+     };
+     ```
+
+   - Protected members
+
+     - Accessible to the members and friends of that class
+     - Accessible to the members and friends of the derived class
+
+     ```C++
+     class Base {
+         protected:
+         int n;
+         private:
+         void foo1(Base& b) {
+             n++;
+             b.n++;
+         }
+     };
+     
+     class Derived: public Base {
+         void foo2(Base& b, Derived& d) {
+             n++;
+             this -> n++;
+             // b.n++;	// error
+             d.n++;
+         }
+     };
+     ```
+
+2. Public Inheritance
+
+   - Public members of the base class
+     - Still public in the derived class
+     - Accessible anywhere
+   - Protected members of the base class
+     - Still be protected in the derived class
+     - Accessible in the derived class only
+   - Private members of the base class
+     - Not accessible in the derived class
+
+3. Protect Inheritance
+
+   - Public members and protected members of the base class
+     - Be protected in the derived class
+     - Accessible in the derived class only
+   - Private members of the base class
+     - Not accessible in the derived class
+
+4. Private Inheritance
+
+   - Public members and protected members of the base class
+     - Be private in the derivate class
+     - Accessible in the derivate class only
+   - Private members of the base class
+     - Not accessible in the derived class
+
+### Virtual Functions(虚函数)
+
+1. Virtual Functions
+
+   - What will be output?
+
+     ```C++
+     class Person {
+         public:
+         virtual void print() {
+             cout << "Name: " << name << endl;
+         }
+     };
+     
+     class Student: public Person {
+         public:
+         void print() {
+             cout << "Name: " << name;
+             cout << ". ID: " << id << endl;
+         }
+     };
+     
+     Person* p = new Student();
+     p -> print();	// call Person::print()?
+     ```
+
+   - If we define `print()` function as a virtual function, the output will be different
+
+   - `Static` binding: the compiler decides which function to call
+
+   - `Dynamic` binding: the called function is decided at runtime
+
+   - Keyword virtual makes the function virtual for the base and all derived classes
+
+2. Virtual Destructors
+
+   - If a virtual destructor is not virtual, only the destructor of the base class is executed in the fellow example
+
+     ```C++
+     Person* p = new Student("xue", "2020");
+     p -> print;
+     delete p;	// if its destructor is not virtual
+     ```
+
+### Inheritance and Dynamic Memory Allocation
+
+1. Question
+
+   - If a base class uses dynamic memory allocation, and redefines a copy constructor and assignment operator
+
+     - Case 1: If no dynamic memory allocation in the derived class, no special operations are needed
+
+     - Case 2: If dynamic memory is allocated in the derived class, you should redefine a copy constructor and an assignment operator 
+
+       ```C++
+       class MyMap: public MyString {
+           char* keyname;
+           public:
+           MyMap(const char* key, const char* value) {
+               // ...
+           }
+           
+           MyMap(const MyMap& mm): MyString(mm.buf_len. mm.characters) {
+               // allocate memory forr keyname
+               // and hard copy from mm to *this
+           }
+           
+           MyMap& operator=(const MyMap& mm) {
+               MyString::operator=(mm);
+               // allocate memory for keyname
+               // and hard copy from mm to *this
+               return *this;
+           }
+       };
+       ```
+
+## WEEK13
+
+---
+
+### Class Templates
+
+1. Review: Function Templates
+
+   - A function template is not a type, or a function, or any other entity
+
+   - No code is generated from a source file that contains only template definitions
+
+   - The template arguments must be determined, then the compiler can generate an actual function
+
+   - "function templates" VS "template functions"
+
+     ```C++
+     template<typename T>
+     T sum(T x, T y) {
+         cout << "The input type is " << typeid(T).name() << endl;
+         return x + y;
+     }
+     
+     template double sun<double>(double, double);
+     template char sum<>(char, char);
+     template int sum(int, int);
+     ```
+
+   - Implicit instantiation occurs when a function template is not explicitly instantiated
+
+     ```C++
+     // implicit instantiates product<int>(int, int)
+     cout << "product = " << product<int>(2.2f, 3.0f) << endl;
+     // implicit instantiates product(2.2f, 3.0f)
+     cout << "product = " << product(2.2f, 3.0f) << endl;
+     ```
+
+2. Different Classes for Different Type Matrices
+
+   - Matrix with `int` elements, Matrix with `flaot` elements
+
+     ```C++
+     class IntMat {
+         size_t rows;
+         size_t cols;
+         int* data;
+         public:
+         IntMat(size_t, rows, size_t, cols): rows(rows), cols(cols) {
+             data = new int[rows * cols * sizeof(int)]{};
+         }
+         
+         ~IntMat() {
+             delete []data;
+         }
+         
+         IntMat(const IntMat&) = delete;
+         IntMat& operator=(const IntMat&) = delete;
+         int getElement(size_t r, size_t c);
+         bool setElement(size_t r, size_t c, int value);
+     };
+     
+     class FloatMat {
+         size_t rows;
+         size_t cols;
+         float* data;
+         public:
+         FloatMat(size_t rows, size_t cols): rows(rows) cols(cols) {
+             data = new float[rows * cols * sizeof(float)]{};
+         }
+         
+         ~FloatMat() {
+             delete []data;
+         }
+         
+         // 禁止编译器提供默认的构造函数
+         FloatMat(const FloatMat&) = delete;
+         FloatMat& operator=(const FloatMat&) = delete;
+         float getElement(size_t r, size_t c);
+         bool setElement(size_t r, size_t c, float value);
+     };
+     ```
+
+3. Class Templates
+
+   - A class template defines a family of classes
+
+     ```C++
+     template<typename T>
+     class Mat {
+         size_t rows;
+         size_t cols;
+         public:
+         Mat(size_t rows, size_t cols): rows(rows), cols(cols) {
+             data = new T[rows * cols * sizeof(T)]{};
+         }
+         
+         ~Mat() {
+             delete []data;
+         }
+         
+         T getElement(size_t r, size_t c);
+         bool setElement(size_t r, size_t c, T value);
+     };
+     
+     template <typename T>
+     T Mat<T>::getElement(size_t r, size_t c) {
+         if (r >= this -> rows || c >= this -> cols) {
+             cerr << "getElement(): Indices are out of range" << endl;
+             
+             return 0;
+         }
+         return data[this -> cols * r + c];
+     }
+     
+     template <typename T>
+     bool Mat<T>::setElement(size_t r, size_t c, T value) {
+         if (r >= this -> rows || c >= this -> cols) {
+             cerr << "setElement(): Indices are out of range" << endl;
+             
+             return false;
+         }
+        	data[this -> cols * r + c] = value;
+         
+         return true
+     }
+     
+     // Explicitly instantiate
+     template class Mat<int>;
+     Mat<int> imat(3, 4);
+     // template Mat<float> will be instantiate implicitly
+     Mat<float> fmat(2, 3);
+     ```
+
+
+### Template Non-Type Parameters
+
+1. Non-Type Parameters
+
+   - To declare a template
+
+     ```C++
+     template<parameter-list> declaration
+     ```
+
+   - The parameters can be
+
+     - type template parameters
+
+     - template template parameters
+
+     - non-type template parameters
+
+       - integral types
+       - floating-point types
+       - pointer types
+       - value reference types
+
+       ```C++
+       vector<int> vec1;
+       vector<int, 16> vec2;
+       ```
+
+   - If we want to create a static matrix (no dynamic memory allocation inside)
+
+     ```C++
+     template<typename T, size_t rows, size_t cols>
+     class Mat{
+         T data[rows][cols];
+         public:
+         Mat(){}
+         // the default copy constructor will copy element of a static array member
+         // so we do not 'delete' the copy constructor
+         // the same with the assignment operator
+         T getElement(size_t r, size_t c);
+        	bool setElement(size_t r, size_t c, T value);
+     };
+     
+     template<typename T, size_t rows, size_t cols>
+     T Mat<T, rows, cols>::getElement(size_t r, size_t c) {
+         if (r >= rows || c >= cols) {
+             cerr << "getElement(): indices are out of range" << endl;
+             return 0;
+         }
+         return data[r][c];
+     }
+     
+     template<typename T, size_t rows, size_t cols>
+     T Mat<T, rows, cols>::setElement(size_t r, size_t c, T value) {
+         if (r >= rows || c >= cols) {
+             cerr << "setElement(): Indices are out of range" << endl;
+             return false;
+         }
+         data[r][c] = value;
+         return true;
+     }
+     ```
+
+     ```C++
+     Mat<int> vec1(3, 3);	// 动态申请
+     Mat<int, 3, 3> vec2;	// 编译时确定
+     ```
+
+### Class Template Specialization
+
+1. Class template specialization
+
+   - The class template can be for most types
+
+   - But we want to save memory for type `bool`
+
+     ```C++
+     template<typename T>
+     class MyVector {
+         size_t length;
+         T* data;
+         public:
+         MyVector(size_t length): length(length) {
+             data = new T[length * sizeof(T)]{};
+         }
+         
+         ~MyVector() {
+             delete []data;
+         }
+         
+         MyVector(const MyVector&) = delete;
+         MyVector& operator=(const MyVector&) = delete;
+         T getElement(size_t index);
+         bool setElement(size_t index, T value);
+     };
+     ```
+
+   - Specialize `MyVector` for `bool`
+
+     ```C++
+     template<>
+     class MyVector<bool> {
+         size_t length;
+         unsigned char* data;
+         public:
+         MyVector(size_t length): length(length) {
+             int num_bytes = (length - 1) / 8 + 1;
+             data = new unsigned char[num_bytes]{};
+         }
+         
+         ~MyVector() {
+             delete []data;
+         }
+         
+         MyVector(const MyVector&) = delete;
+         MyVector& operator=(const MyVector&) = delete;
+         bool getElement(size_t index);
+         bool setElement(size_t index, bool value);
+     };
+     
+     bool MyVector<bool>::getElement(size_t index) {
+         if (index >= this -> length) {
+             cerr << "getElement(): Indices are out of range" << endl;
+             return 0;
+         }
+         size_t byte_id = index / 8;
+         size_t bit_id = index % 8;
+         unsigned char mask = (1 << bit_id);
+         return bool(data[byte_id] & mask);
+     }
+     
+     bool MyVector<bool>::setElement(size_t index, bool value) {
+         if (index >= this -> length) {
+             cerr << "setElement(): Indices are out of range" << endl;
+             return false;
+         }
+         
+         size_t byte_id = index / 8;
+         size_t bit_id = index % 8;
+         unsigned char mask = (1 << bit_id);
+         
+         if (value) {
+             data[byte_id] |= mask;
+         } else {
+             data[byte_id] &= ~mask;
+         }
+         
+         return true;
+     }
+     ```
+
+### `std` Class
+
+1. `std::basic_string`
+
+   - Store and manipulate sequences of char-like objects
+
+     | Type           | Definition                   |
+     | -------------- | ---------------------------- |
+     | `std::string`  | `std::basic_string<char>`    |
+     | `std::wstring` | `std::basic_string<wchar_t>` |
+
+2. `std::array`
+
+   - A container that encapsulates **fixed** size arrays
+
+     ```C++
+     template <
+     	class T,
+     	std::size_t N
+     > strcut array;
+     ```
+
+     ```C++
+     std::array<int, 3> a = {1, 2, 3};
+     ```
+
+     *Keyword: `typename`/`class`, `class`/`strcut`
+
+3. Some other template
+
+   ```C++
+   template <
+   	class T,
+   	class Allocator = std::allocator<T>
+   > class vector;
+   
+   template <
+   	class T,
+   	class Allocator = std::allocator<T>
+   > class list;
+   
+   template <
+   	class Key,
+   	class Compare = std::less<Key>,
+   	class Allocator = std::allocator<Key>
+   > class set;
+   
+   template <
+   	class Key,
+   	class T,
+   	class Compare = std::less<Key>,
+   	class Allocator = std::allocator<std::pair<const Key, T>>
+   > class map;
+   
+   template <
+   	class T,
+   	class Container = sed::deque<T>
+   > class stack;
+   ```
+
+## WEEK14
+
+---
+
+### Standard Output Stream and Standard Error Stream
+
+1. `stdin`, `stdout`, `stderr`
+
+   - In C, three text streams are predefined, and their types is (`FILE *`)
+   - `stdin`: standard input stream
+   - `stdout`: standard output stream
+   - `stderr`: standard error stream, for diagnostic output
+
+2. Output Stream and Error Stream
+
+   - Send contents into streams in C and C++
+
+     ```C
+     fprintf(stdout, "Info: ...\n", ...);
+     printf("Info: ...\n", ...);
+     
+     fprintf(stderr, "Error: ...\n", ...);
+     ```
+
+     ```C++
+     std::cout << "Info: ..." << std::endl;
+     std::cerr << "Error: ..." << std::endl;
+     ```
+
+3. Redirection
+
+   - The output of a program is in a pipeline
+   - The output can be redirected. You can redirect the output into a file for debugging especially when the program run a very long time
+
+   ```C
+   void div2(int n) {
+       if (n % 2 != 0) {
+           fprintf(stderr, "Error: The input must be an even number. Here it's %d\n", n);
+       } else {
+           int result = n / 2;
+           fprintf(stdout, "Info: The result is %d\n", result);
+       }
+       return;
+   }
+   
+   int main() {
+       for (int n = -5; n <= 5; n++) {
+           div2(n);
+       }
+       
+       return 0;
+   }
+   ```
+
+   - `less`: 文本文件查看器
+
+   ```sh
+   ./a.out | less # 只有标准输出而没有错误输出，这是因为两种输出流不相同
+   ./a.out > output.log	# 将输出重定向到文本文件中
+   ./a.out 1> output.log	# 1 表示标准输出流，与上一行相同
+   ./a.out >> output.log	# 两个箭头表示将内容附在原有内容之后，一个箭头表示销毁原有内容后重新生成
+   ./a.out > /dev/null		# 直接销毁输出
+   ./a.out 2> error.log	# 2 表示标准错误流，将标准错误流的输出重定向到文本文件中
+   ./a.out > output.log 2> error.log	# 可以同时使用
+   ./a.out &> all.out		# 表示全部重定向到文本文件
+   ./a.out > all.out 2>&1	# 先将标准输出流重定向到文本文件，再将标准错误流重定向到标准输出流中
+   ```
+
+### `assert`
+
+1. `assert`
+
+   - `assert` is a function-like macro in `<assert.h>` and `<cassert>`
+
+     ```C++
+     #ifdef NDEBUG
+     #define assert(conditon) ((void)0)
+     #else
+     #define assert(condition)	/* implementation defined */
+     #endif
+     ```
+
+   - Do nothing if the condition is true
+
+   - Output diagnostic information and call abort() if the condition is false
+
+   - if `NDEBUG` is defined, do nothing whatever the condition is
+
+   - assert can be used only for debugging, be removed by a macro `NDEBUG` before releasing
+
+   ```C++
+   #include <iostream>
+   // #define NDEBUG
+   #include <cassert>
+   
+   int main(int argc, char** argv) {
+       assert(argc == 2);
+       std::cout << "This is an assert example" << std::endl;
+       return 0;
+   }
+   ```
+
+   - 要点：
+     1. `#define NDEBUG` 应该在 `include <cassert>` 之前
+     2. 添加 `#define NDEBUG` 后，相当于注释了 `assert` 所在行
+     3. 同样可以在编译时添加宏，使用 `-D` 参数，例如 `g++ assert.cpp -DNDEBUG`
+   - Many applications define their own assert macros
+   - `CV_Assert` in OpenCV checks a condition at runtime and throws exception if it fails
+
+### Exceptions
+
+1. Error Handling
+
+   - Solution 1: Kill the program when error occurs
+
+     ```C++
+     float ratio(float a, float b) {
+         if (fabs(a + b) < FLT_EPSILON) {
+             std::cerr << "Error ..." << std::endl;
+             std::abort();
+         }
+         
+         return (a - b) / (a + b);
+     }
+     ```
+
+   - Solution 2: Tell the caller by the return value when error occurs
+
+   - We have to use the 3rd parameter to send the result
+
+     ```C++
+     bool ratio(float a, float b, float& c) {
+         if (fabs(a + b) < FLT_EPSILON) {
+             std::cerr << "Error ..." << std::endl;
+             return false;
+         }
+         c = (a - b) / (a + b);
+         return true;
+     }
+     ```
+
+   - Solution 3: Throw exceptions(C++ feature) 
+
+     ```C++
+     float ration(float a, float b) {
+         if (fabs(a + b) < FLT_EPSILON) {
+             throw "Error ...";
+         }
+         
+         return (a - b) / (a + b);
+     }
+     ```
+
+     ```C++
+     try {
+         z = ratio(x, y);
+         std::cout << z << std::endl;
+     } catch(const char* msg) {
+         std::cerr << msg << std::endl;
+     }
+     ```
+
+### More about Exception
+
+1. Handling Exception
+
+   - A try block can be followed by multiple catch blocks
+
+     ```C++
+     float ratio(float a, float b) {
+         if (a < 0) {
+             throw 1;
+         }
+         
+         if (b < 0) {
+             throw 2;
+         }
+         
+         if (fabs(a + b) < FLT_EPSILON) {
+             throw "Error ...";
+         }
+         
+         return (a - b) / (a + b);
+     }
+     ```
+
+     ```C++
+     try {
+         z = ratio(x, y);
+     } catch(const char* msg) {
+         // ...
+     } catch(int eid) {
+         // ...
+     }
+     ```
+
+2. Stack Unwinding(解开)
+
+   - If an exception is not handling in the function, throw it to the callerr
+
+   - If the caller dose not handle, throw it to the caller of the caller, or until main()
+
+     ```C++
+     float ratio(float a, float b) {
+         if (a < 0) {
+             throw 1;
+         }
+         
+         if (b < 0) {
+             throw 2;
+         }
+         
+         if (fabs(a - b) < FLT_EPSILON) {
+             throw "Error ...";
+         }
+         
+         return (a - b) / (a + b);
+     }
+     
+     float ratio_wrapper(float a, float b) {
+         try {
+             return ratio(a, b);
+         } catch(int eid) {
+             // ...
+         }
+         
+       	return 0;
+     }
+     
+     int main() {
+         try {
+             z = ratio_warpper(x, y);
+         } catch(const char* msg) {
+             // ...
+         }
+         
+         return 0;
+     }
+     ```
+
+3. Catch-all Handler
+
+   - If an exception is not caught, it will reach to the top caller, and terminate the program
+
+   - A catch-all hander can catch all kinds of exceptions
+
+     ```C++
+     int main() {
+         runSomething0();
+         try {
+             runSomething1();
+         } 
+         runSomeOthers();
+         catch(...) {
+             std::cerr << "Unrecognized Exception" << std::endl;
+         }
+         
+         return 0;
+     }
+     ```
+
+4. Exceptions and Inheritance
+
+   - If an object is thrown, and its class is derived from another class
+
+   - An exception handler with the base class type can catch the exception
+
+     ```C++
+     try {
+         throw Derived();
+     } catch(const Base& base) {
+         std::cerr << "I caught Base" << std::endl;
+     } catch(const Derived& derived) {
+         // never reach here
+         std::cerr << "I caught Deived" << std::endl;
+     }
+     ```
+
+5. `std::exception`
+
+   - `std::exception` is a class which can be a base class to any exception
+   - Function `std::exception::what()` can be overrode to return a C-style string message
+
+6. Exception Specifications and `noexcept`
+
+   - The `noexcept` specifier defines a function which will not throw anything
+
+     ```C++
+     void foo() noexcept;	// the function is non-throwing
+     ```
+
+### `nothrow`
+
+1. `nothrow new`
+
+   - `std::nothrow` is a constant to select a non-throwing allocation function
+
+     ```C++
+     int* p = NULL;
+     
+     try {	// may throw an exception
+         p = new int[length];
+     } catch(std::bad_alloc& ba) {
+         cerr << ba.what() << endl;
+     }
+     
+     // not throw an exception
+     p = new(nothrow) int[length];
+     if (p == NULL) {
+         // ...
+     }
+     ```
+
+## WEEK15
+
+---
+
+### Friend Classes
+
+1. `friend` Function
+
+   - A friend function is defined out of the class
+
+     ```C++
+     class MyTime {
+         public:
+         friend MyTime operator+(int m, const MyTime& t);
+     };
+     
+     MyTime operator+(int m, const MyTime& t) {
+         return t + m;
+     }
+     ```
+
+2. `friend` Class
+
+   - A class is a friend of another class
+
+   - The friend class can access all members even private members
+
+   - A friend class can be public, protected and private
+
+     ```C++
+     class Sniper {
+         private:
+         int bullets;
+         public:
+         Sniper(int bullets = 0): bullets(bullets) {}
+         friend class Supplier;
+     };
+     
+     class Supplier {
+         int storage;
+         public:
+         Supplier(int storage = 1000): storage(storage) {}
+         bool provide(Sniper& sniper) {
+             // bullets is a private member
+             if (sniper.bullets < 20) {
+                 // ...
+             }
+         }
+     };
+     ```
+
+3. `friend` Member Function
+
+   - A single member function of a class is a friend
+
+   - Different from friend functions
+
+   - But very similar to a normal friend function
+
+     ```C++
+     class Sniper {
+         private:
+         int bullets;
+         public:
+         Sniper(int bullets = 0): bullets(bullets) {}
+         friend bool Supplier::provide(Sniper& sniper);
+     }
+     ```
+
+### Nested Types(内部类型)
+
+1. Nested Enumeration(C++11)
+
+   - `enum DataType` is only used in class Mat, we can put it inside of the Mat
+
+     ```C++
+     enum DataType {
+         TYPE8U,
+         TYPE8S,
+         TYPE32F,
+         TYPE64F
+     };
+     
+     class Mat {
+         private:
+         DataType type;
+         void* data;
+         public:
+         Mat(DataType type): type(type), data(NULL) {}
+         DataType getType() const {
+             return type;
+         }
+     };
+     ```
+
+   - It can be accessed outside of the class, but with the class name scope(作用域) qualifier（`Mat::DataType::TYPE8U`）
+
+     ```C++
+     class Mat {
+         public:
+         enum DataType {
+             TYPE8U,
+             TYPE8S,
+             TYPE32F,
+             TYPE64F
+         };
+         private:
+         DataType type;
+         void* data;
+         public:
+         Mat(DataType type): type(type), data(NULL) {}
+         DataType getType() const {
+             return type;
+         }
+     };
+     ```
+
+2. Nested Classes
+
+   - Nested classes: The declaration of a `class`/`struct` or `union` may appear inside another class
+
+     ```C++
+     class Storage {
+         public:
+         class Fruit {
+             string name;
+             int weight;
+             public:
+             Fruit(string name = "", int weight = 0);
+             string getInfo();
+         };
+         
+         private:
+         Fruit fruit;
+         
+         public:
+         Storage(Fruit f);
+     };
+     ```
+
+3. Nested Type: Scope
+
+   - Private:
+     - Only visible to the containing class
+   - Protect:
+     - Visible to the containing class and its derived class
+   - Public:
+     - Visible to the containing class, to its derived classes, and to the outside world
+
+### RTTI and Type Cast Operators
+
+1. Runtime Type Identification(RTTI)
+
+   - We can convert a pointer explicitly to another, even it isn't appropriate
+
+   - How to convert safely?
+
+     ```C++
+     class Person;
+     class Student: public Person;
+     
+     Person person("Yu");
+     Student student("Sam", "20210212");
+     Person* pp = &student;
+     Person& rp = student;
+     Student* ps = (Student*)&person;	// danger
+     ```
+
+2. RTTI and Type Cast Operators
+
+   - Runtime type identification(RTTI)
+     - C++ feature
+     - The type of an object to be determined during runtime
+   - `dynamic_cast` operator: conversion of **polymorphic(多态的) types**
+   - `typeid` operator: identify the exact type of an object
+   - `type_info` class: the type information returned by the `typeid` operator
+
+3. `typeid`
+
+   - `typeid` operator
+     - determine whether two objects are the same type
+     - Accept: the name of a class. An expression that evaluates to an object
+   - `type_info` class
+     - The `typeid` operator returns a reference to a type_info object
+     - Defined in the `<typeinfo>` header file
+     - Comparing type using the overloaded `==` and `!=` operators
+
+4. `dynamic_cast`
+
+   - It can safely assign the address of an object to a pointer of a particular type
+
+   - Invoke the correct version of a class method (remember virtual functions)
+
+     ```C++
+     Person person("Yu");
+     Student student("Sam", "20210212");
+     Person* pp = NULL;
+     Student* ps = NULL;
+     
+     ps = dynamic_cast<Student*>(&person);	// NULL
+     pp = dynamic_cast<Person*>(&student);
+     ```
+
+5. More Type Cast Operators
+
+   - `const_cast`
+
+     - Type cast for `const` or `volatile` value
+
+       ```C++
+       const int value = 100;
+       int* pv = const_cast<int*>(&value);
+       (*pv)++;	// value = 100, *pv = 101
+       
+       int& rv = const_cast<int&>(value);
+       rv++;	// value = 100, *pv = 102, rv = 102
+       ```
+
+   - `static_cast`
+
+     - It's valid only if `type_name` can be converted implicitly to the same type that expression has, or vice versa
+     - Otherwise, the type cast is an error
+
+   - `reinterpret_cast`
+
+     - Convert between types by reinterpreting the underlying bit pattern
+
+       ```C++
+       int i = 18;
+       float* p1 = reinterpret_cast<float*>(i);	// static_cast will fail
+       ```
+
+       
 
 
 ---
