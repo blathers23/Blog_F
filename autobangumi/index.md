@@ -120,13 +120,14 @@ import feedparser
 from qbittorrentapi import Client as QbittorrentClient
 from jellyfin_apiclient_python import JellyfinClient
 
-__version__ = "1.3.3"
-
+NAME = "AutoAnime"
+VERSION = "1.4.1"
+HOST_NAME = ""
 BASE_URL = "" 
 BASE_PATH = ""
-INFO_PATH = "aniInfo.txt"
+FEED_PATH = "aniFeed.txt"
 CKPT_PATH = "aniCkpt.txt"
-JELLYFIN_PORT = "8096"
+JELLYFIN_PORT = ""
 JELLYFIN_USERNAME = ""
 JELLYFIN_PASSWORD = ""
 QB_PORT = ""
@@ -136,7 +137,7 @@ REFRESH = 10
 DOWNLOAD = False
 
 jf = JellyfinClient()
-jf.config.app("AutoBGM", __version__, "350xaa", JELLYFIN_USERNAME)
+jf.config.app(NAME, VERSION, HOST_NAME, JELLYFIN_USERNAME)
 jf.config.data["auth.ssl"] = True
 jf.auth.connect_to_address(BASE_URL + ":" + JELLYFIN_PORT)
 jf.auth.login(BASE_URL + ":" + JELLYFIN_PORT, 
@@ -165,10 +166,10 @@ class Anime():
         
         print("导入的追番:", self.name)
         if os.path.exists(self.folder):
-            print("\t文件夹已经存在...")
+            print("文件夹已经存在...")
         else:
             os.makedirs(self.folder)
-            print("\t创建文件夹...")
+            print("创建文件夹...")
 
     def _parse_rss(self) -> feedparser.FeedParserDict:
         r"""
@@ -311,12 +312,12 @@ class Anime():
         else:
             print("还未到更新的时间捏 ;)")
 
-def _check_file() -> list:
+def _check_file(path: str) -> list:
     r"""
     检查输入文件, 返回 Anime 记录列表
     """
     aniRecords = []
-    with open(INFO_PATH, "r") as f:
+    with open(path, "r") as f:
         lines = f.read().splitlines()
         for line in lines:
             record = line.split(',')
@@ -364,19 +365,30 @@ def _new_anime(aniInfo: list) -> Anime:
 def main():
     aniDict = dict()
 
+    print("正在启动...", NAME)
+    print("版本:", VERSION)
+
+    print("从检查点恢复中...")
+
+    for aniInfo in _check_file(CKPT_PATH):
+        aniDict[aniInfo[0]] = _new_anime(aniInfo)
+        print()
+
     while (True):
+        print("检查订阅...")
         keepAlive = []
-        for aniInfo in _check_file():
+        for aniInfo in _check_file(FEED_PATH):
             keepAlive.append(aniInfo[0])
 
             if (aniInfo[0] not in aniDict):
                 aniDict[aniInfo[0]] = _new_anime(aniInfo)
+                print()
 
         for aniName in list(set(aniDict.keys()) - set(keepAlive)):
-            print("\n删除动漫 {}".format(aniName))
+            print("删除动漫 {}\n".format(aniName))
             del aniDict[aniName]
 
-        print("\n更新检查...")
+        print("检查更新...")
         for Ani in aniDict:
             print("Anime:", aniDict[Ani].name)
             print("当前集数: {}\n上次更新时间: {}".format(aniDict[Ani].episode, time.ctime(aniDict[Ani].published + 28800)))
@@ -384,6 +396,7 @@ def main():
             print()
 
         _make_ckpt(aniDict)
+        print()
         
         time.sleep(REFRESH)
 

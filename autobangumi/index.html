@@ -10,7 +10,7 @@
 <meta name="description" content="自动化时代" /><meta name="keywords" content='Python, Jellyfin' /><meta itemprop="name" content="使用 Python 实现自动追番! ">
 <meta itemprop="description" content="自动化时代"><meta itemprop="datePublished" content="2023-04-15T00:13:00+08:00" />
 <meta itemprop="dateModified" content="2023-04-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="3967"><meta itemprop="image" content="https://blathers23.netlify.app/logo.png"/>
+<meta itemprop="wordCount" content="4086"><meta itemprop="image" content="https://blathers23.netlify.app/logo.png"/>
 <meta itemprop="keywords" content="Python,Jellyfin," /><meta property="og:title" content="使用 Python 实现自动追番! " />
 <meta property="og:description" content="自动化时代" />
 <meta property="og:type" content="article" />
@@ -34,7 +34,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/blathers23.netlify.app\/autobangumi\/"
-    },"genre": "posts","keywords": "Python, Jellyfin","wordcount":  3967 ,
+    },"genre": "posts","keywords": "Python, Jellyfin","wordcount":  4086 ,
     "url": "https:\/\/blathers23.netlify.app\/autobangumi\/","datePublished": "2023-04-15T00:13:00+08:00","dateModified": "2023-04-15T00:00:00+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -185,7 +185,7 @@
     alt="Blathers"
     title="Blathers"/>&nbsp;Blathers</span></span>
           <span class="post-category">收录于 <a href="/categories/%E6%95%99%E7%A8%8B/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 教程</a></span></div>
-      <div class="post-meta-line"><span title=2023-04-15&#32;00:13:00><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-04-15">2023-04-15</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 3967 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 8 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title=2023-04-15&#32;00:13:00><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-04-15">2023-04-15</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 4086 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 9 分钟</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
@@ -613,6 +613,19 @@
 </span><span class="lnt">278
 </span><span class="lnt">279
 </span><span class="lnt">280
+</span><span class="lnt">281
+</span><span class="lnt">282
+</span><span class="lnt">283
+</span><span class="lnt">284
+</span><span class="lnt">285
+</span><span class="lnt">286
+</span><span class="lnt">287
+</span><span class="lnt">288
+</span><span class="lnt">289
+</span><span class="lnt">290
+</span><span class="lnt">291
+</span><span class="lnt">292
+</span><span class="lnt">293
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">time</span>
@@ -626,13 +639,14 @@
 </span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">qbittorrentapi</span> <span class="kn">import</span> <span class="n">Client</span> <span class="k">as</span> <span class="n">QbittorrentClient</span>
 </span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">jellyfin_apiclient_python</span> <span class="kn">import</span> <span class="n">JellyfinClient</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">__version__</span> <span class="o">=</span> <span class="s2">&#34;1.3.3&#34;</span>
-</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">NAME</span> <span class="o">=</span> <span class="s2">&#34;AutoAnime&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">VERSION</span> <span class="o">=</span> <span class="s2">&#34;1.4.1&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">HOST_NAME</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="n">BASE_URL</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span> 
 </span></span><span class="line"><span class="cl"><span class="n">BASE_PATH</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="n">INFO_PATH</span> <span class="o">=</span> <span class="s2">&#34;aniInfo.txt&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">FEED_PATH</span> <span class="o">=</span> <span class="s2">&#34;aniFeed.txt&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="n">CKPT_PATH</span> <span class="o">=</span> <span class="s2">&#34;aniCkpt.txt&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="n">JELLYFIN_PORT</span> <span class="o">=</span> <span class="s2">&#34;8096&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">JELLYFIN_PORT</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="n">JELLYFIN_USERNAME</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="n">JELLYFIN_PASSWORD</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="n">QB_PORT</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
@@ -642,7 +656,7 @@
 </span></span><span class="line"><span class="cl"><span class="n">DOWNLOAD</span> <span class="o">=</span> <span class="kc">False</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">jf</span> <span class="o">=</span> <span class="n">JellyfinClient</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="n">jf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">app</span><span class="p">(</span><span class="s2">&#34;AutoBGM&#34;</span><span class="p">,</span> <span class="n">__version__</span><span class="p">,</span> <span class="s2">&#34;350xaa&#34;</span><span class="p">,</span> <span class="n">JELLYFIN_USERNAME</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">jf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">app</span><span class="p">(</span><span class="n">NAME</span><span class="p">,</span> <span class="n">VERSION</span><span class="p">,</span> <span class="n">HOST_NAME</span><span class="p">,</span> <span class="n">JELLYFIN_USERNAME</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">jf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&#34;auth.ssl&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
 </span></span><span class="line"><span class="cl"><span class="n">jf</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">connect_to_address</span><span class="p">(</span><span class="n">BASE_URL</span> <span class="o">+</span> <span class="s2">&#34;:&#34;</span> <span class="o">+</span> <span class="n">JELLYFIN_PORT</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">jf</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">BASE_URL</span> <span class="o">+</span> <span class="s2">&#34;:&#34;</span> <span class="o">+</span> <span class="n">JELLYFIN_PORT</span><span class="p">,</span> 
@@ -671,10 +685,10 @@
 </span></span><span class="line"><span class="cl">        
 </span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;导入的追番:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">folder</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\t</span><span class="s2">文件夹已经存在...&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;文件夹已经存在...&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">folder</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\t</span><span class="s2">创建文件夹...&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;创建文件夹...&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">_parse_rss</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">feedparser</span><span class="o">.</span><span class="n">FeedParserDict</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">        <span class="sa">r</span><span class="s2">&#34;&#34;&#34;
@@ -817,12 +831,12 @@
 </span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;还未到更新的时间捏 ;)&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">_check_file</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">_check_file</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="sa">r</span><span class="s2">&#34;&#34;&#34;
 </span></span></span><span class="line"><span class="cl"><span class="s2">    检查输入文件, 返回 Anime 记录列表
 </span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
 </span></span><span class="line"><span class="cl">    <span class="n">aniRecords</span> <span class="o">=</span> <span class="p">[]</span>
-</span></span><span class="line"><span class="cl">    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">INFO_PATH</span><span class="p">,</span> <span class="s2">&#34;r&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&#34;r&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">        <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">            <span class="n">record</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
@@ -870,19 +884,30 @@
 </span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
 </span></span><span class="line"><span class="cl">    <span class="n">aniDict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;正在启动...&#34;</span><span class="p">,</span> <span class="n">NAME</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;版本:&#34;</span><span class="p">,</span> <span class="n">VERSION</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;从检查点恢复中...&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">aniInfo</span> <span class="ow">in</span> <span class="n">_check_file</span><span class="p">(</span><span class="n">CKPT_PATH</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">aniDict</span><span class="p">[</span><span class="n">aniInfo</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">_new_anime</span><span class="p">(</span><span class="n">aniInfo</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="kc">True</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;检查订阅...&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="n">keepAlive</span> <span class="o">=</span> <span class="p">[]</span>
-</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">aniInfo</span> <span class="ow">in</span> <span class="n">_check_file</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">aniInfo</span> <span class="ow">in</span> <span class="n">_check_file</span><span class="p">(</span><span class="n">FEED_PATH</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">            <span class="n">keepAlive</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">aniInfo</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">aniInfo</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">aniDict</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">                <span class="n">aniDict</span><span class="p">[</span><span class="n">aniInfo</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">_new_anime</span><span class="p">(</span><span class="n">aniInfo</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">print</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">aniName</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">aniDict</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">keepAlive</span><span class="p">)):</span>
-</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">删除动漫 </span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">aniName</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;删除动漫 </span><span class="si">{}</span><span class="se">\n</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">aniName</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">            <span class="k">del</span> <span class="n">aniDict</span><span class="p">[</span><span class="n">aniName</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">更新检查...&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;检查更新...&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">Ani</span> <span class="ow">in</span> <span class="n">aniDict</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Anime:&#34;</span><span class="p">,</span> <span class="n">aniDict</span><span class="p">[</span><span class="n">Ani</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;当前集数: </span><span class="si">{}</span><span class="se">\n</span><span class="s2">上次更新时间: </span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">aniDict</span><span class="p">[</span><span class="n">Ani</span><span class="p">]</span><span class="o">.</span><span class="n">episode</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">(</span><span class="n">aniDict</span><span class="p">[</span><span class="n">Ani</span><span class="p">]</span><span class="o">.</span><span class="n">published</span> <span class="o">+</span> <span class="mi">28800</span><span class="p">)))</span>
@@ -890,6 +915,7 @@
 </span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">_make_ckpt</span><span class="p">(</span><span class="n">aniDict</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">        
 </span></span><span class="line"><span class="cl">        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">REFRESH</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
