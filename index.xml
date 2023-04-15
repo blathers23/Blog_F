@@ -4,9 +4,17 @@
     <link>https://blathers23.netlify.app/</link>
     <description>这是我的全新 Hugo FixIt 网站</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>blathers23@outlook.com (Blathers)</managingEditor>
-      <webMaster>blathers23@outlook.com (Blathers)</webMaster><lastBuildDate>Wed, 08 Feb 2023 20:30:00 &#43;0800</lastBuildDate>
+      <webMaster>blathers23@outlook.com (Blathers)</webMaster><lastBuildDate>Sat, 15 Apr 2023 00:13:00 &#43;0800</lastBuildDate>
       <atom:link href="https://blathers23.netlify.app/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>使用 Python 实现自动追番! </title>
+  <link>https://blathers23.netlify.app/autobangumi/</link>
+  <pubDate>Sat, 15 Apr 2023 00:13:00 &#43;0800</pubDate>
+  <author>Blathers</author>
+  <guid>https://blathers23.netlify.app/autobangumi/</guid>
+  <description><![CDATA[自动化时代]]></description>
+</item>
+<item>
   <title>将 Jellyfin 开放至公网并设立域名</title>
   <link>https://blathers23.netlify.app/jellyfineverywhere/</link>
   <pubDate>Wed, 08 Feb 2023 20:30:00 &#43;0800</pubDate>
@@ -88,16 +96,6 @@
   <author>Blathers</author>
   <guid>https://blathers23.netlify.app/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1-%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E5%A4%A7%E6%B0%94%E9%A2%97%E7%B2%92%E6%B1%A1%E6%9F%93%E7%89%A9%E6%89%A9%E6%95%A3%E6%A8%A1%E6%8B%9F%E6%8A%80%E6%9C%AF%E7%9A%84%E7%A0%94%E7%A9%B6/</guid>
   <description><![CDATA[]]></description>
-</item>
-<item>
-  <title>LC691 - 贴纸拼词</title>
-  <link>https://blathers23.netlify.app/lc691/</link>
-  <pubDate>Mon, 16 May 2022 00:52:00 &#43;0800</pubDate>
-  <author>Blathers</author>
-  <guid>https://blathers23.netlify.app/lc691/</guid>
-  <description><![CDATA[<div class="featured-image">
-        <img src="/images/leetcode.jpg" referrerpolicy="no-referrer">
-      </div>简单记录：BFS or DFS?]]></description>
 </item>
 </channel>
 </rss>
